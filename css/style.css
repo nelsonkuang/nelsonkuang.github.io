@@ -1657,6 +1657,9 @@ pre .css ~ * .id {
 .back_home a:hover {
   color: #6e6e6e;
 }
+.jiathis_style {
+  padding-left: 10px;
+}
 #page-nav {
   text-align: center;
   margin-top: 30px;
