@@ -55,7 +55,7 @@
     <link href="http://www.kuangzen.com/2016/03/21/jquery-scroll-cascade-select/"/>
     <id>http://www.kuangzen.com/2016/03/21/jquery-scroll-cascade-select/</id>
     <published>2016-03-21T06:57:45.000Z</published>
-    <updated>2016-03-31T10:29:24.124Z</updated>
+    <updated>2016-04-05T01:58:41.334Z</updated>
     
     <content type="html">&lt;p&gt;Scroll Cascade Select, a light-weight flexible Scroll Picker similiar to Mobiscroll. &lt;/p&gt;
 &lt;p&gt;Support swipping up / down, mouse dragging up / down are supported too&lt;/p&gt;
@@ -67,6 +67,10 @@
 &lt;h2 id=&quot;Todo&quot;&gt;&lt;a href=&quot;#Todo&quot; class=&quot;headerlink&quot; title=&quot;Todo:&quot;&gt;&lt;/a&gt;Todo:&lt;/h2&gt;&lt;p&gt;&lt;del&gt;Add mouse dragging effect.&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;Add more examples.&lt;/p&gt;
 &lt;p&gt;Add scroll triggering options changing.&lt;/p&gt;
+&lt;h3 id=&quot;实现原理&quot;&gt;&lt;a href=&quot;#实现原理&quot; class=&quot;headerlink&quot; title=&quot;实现原理:&quot;&gt;&lt;/a&gt;实现原理:&lt;/h3&gt;&lt;p&gt;每一个滑轮用flex流式布局以保证都在同一行排列各各滑轮，用css3的transform3D来实现划动效果，滑屏放开时，计算当时的速度，然后滑轮以当时的速度进行匀减速运动一直到停止，因为每个选择框的高度都是固定40像数，停止的位置要按40的倍数计算而成。&lt;/p&gt;
+&lt;p&gt;如果是支持触屏就绑定touch事件，如果不支持就绑定mouse事件。&lt;/p&gt;
+&lt;p&gt;每个滑轮的滑动变化都可以绑定一个回调函数用来触发级联变化。&lt;/p&gt;
+&lt;p&gt;每个滑轮都可以根据输入的固定格式的数组数据进行重新渲染。&lt;/p&gt;
 </content>
     
     <summary type="html">

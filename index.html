@@ -297,6 +297,10 @@
 <h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo:"></a>Todo:</h2><p><del>Add mouse dragging effect.</del></p>
 <p>Add more examples.</p>
 <p>Add scroll triggering options changing.</p>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理:"></a>实现原理:</h3><p>每一个滑轮用flex流式布局以保证都在同一行排列各各滑轮，用css3的transform3D来实现划动效果，滑屏放开时，计算当时的速度，然后滑轮以当时的速度进行匀减速运动一直到停止，因为每个选择框的高度都是固定40像数，停止的位置要按40的倍数计算而成。</p>
+<p>如果是支持触屏就绑定touch事件，如果不支持就绑定mouse事件。</p>
+<p>每个滑轮的滑动变化都可以绑定一个回调函数用来触发级联变化。</p>
+<p>每个滑轮都可以根据输入的固定格式的数组数据进行重新渲染。</p>
 
       
     </div>
