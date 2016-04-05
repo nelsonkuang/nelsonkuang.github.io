@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-03-31T10:29:44.684Z</updated>
+  <updated>2016-04-05T02:43:35.809Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jQuery.sDialog</title>
+    <link href="http://www.kuangzen.com/2016/04/05/jQuery-sDialog/"/>
+    <id>http://www.kuangzen.com/2016/04/05/jQuery-sDialog/</id>
+    <published>2016-04-05T02:32:38.000Z</published>
+    <updated>2016-04-05T02:43:35.809Z</updated>
+    
+    <content type="html">&lt;p&gt;A dialog jquery-plugin for mobile site, easy, simple.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/hiooyUI/jQuery.sDialog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;how-to-use-it&quot;&gt;&lt;a href=&quot;#how-to-use-it&quot; class=&quot;headerlink&quot; title=&quot;how to use it?&quot;&gt;&lt;/a&gt;how to use it?&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;sdialog.min.css&amp;quot; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&amp;quot;your path/jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&amp;quot;sdialog.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;//1、open a OK/Cancel Dialog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     $.sDialog(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         skin: &quot;block&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         content: &quot;添加购物车成功！&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         okBtnText: &quot;再逛逛&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         cancelBtnText: &quot;去购物车&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         width: 250,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         okFn: function () &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             console.log(&quot;click 去购物车!&quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         cancelFn: function () &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             console.log(&quot;click 再逛逛!&quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         onDestroy: function () &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             console.log(&quot;destroy!&quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//2、open a success Dialog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     $.sDialog(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         skin: &quot;green&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         content: &quot;添加购物车成功！&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &quot;okBtn&quot;: false, //是否显示确定按钮&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &quot;cancelBtn&quot;: false, //是否显示确定按钮&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         width: 250,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         onDestroy: function () &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             console.log(&quot;destroy!&quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//3、open a warning Dialog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     $.sDialog(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         skin: &quot;red&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         content: &quot;你输入的东西有误！&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &quot;okBtn&quot;: false, //是否显示确定按钮&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &quot;cancelBtn&quot;: false, //是否显示确定按钮&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         width: 250,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         onDestroy: function () &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             console.log(&quot;destroy!&quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//4、open a window Dialog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     $.sWindow(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         title: &quot;我的标题&quot;,//弹出框标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         content: &#39;我的内容&#39;, //弹出框里面的内容，支持html标签&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         height: 330,//内容部分高度，不是整个对话框高度&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         callback: function () &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             //加载完成后执行回调函数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//5、slide up a Menu Dialog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     $.sMenu(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &quot;menus&quot;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             name: &quot;退款&quot;, class: &quot;rf&quot;, onclick: function () &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                 console.log(&quot;点击了退款&quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             name: &quot;退款退货&quot;, class: &quot;rg&quot;, onclick: function () &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                 console.log(&quot;点击了退款退货&quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &quot;okBtn&quot;: false, //是否显示确定按钮&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &quot;cancelBtnText&quot;: &quot;取消&quot;, //取消按钮的文字&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &quot;cancelFn&quot;: function () &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             console.log(&quot;点击了取消&quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &amp;#125;//点击取消按钮执行的函数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;check out the example/example.html demo.&lt;/p&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://sandbox.runjs.cn/show/fkq0n7jy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;live Demo&lt;/a&gt;, you can use mobile phone mode to view the demo for better experience!&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;A dialog jquery-plugin for mobile site, easy, simple.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/hiooyUI/jQuery.sDialog&quot; target=&quot;_blank&quot; rel=&quot;ext
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>simple-switch</title>
@@ -42,11 +68,11 @@
     </summary>
     
     
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -81,11 +107,11 @@
     </summary>
     
     
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -112,9 +138,9 @@
     </summary>
     
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="react" scheme="http://www.kuangzen.com/tags/react/"/>
     
@@ -142,9 +168,9 @@
     </summary>
     
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="rem" scheme="http://www.kuangzen.com/tags/rem/"/>
     
@@ -175,9 +201,9 @@
     </summary>
     
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="canvas" scheme="http://www.kuangzen.com/tags/canvas/"/>
     
@@ -204,9 +230,9 @@
     
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
   </entry>
   
@@ -275,9 +301,9 @@
     </summary>
     
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="random" scheme="http://www.kuangzen.com/tags/random/"/>
     
