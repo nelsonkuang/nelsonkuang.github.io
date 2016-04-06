@@ -82,12 +82,12 @@
     <link href="http://www.kuangzen.com/2016/03/30/simple-switch/"/>
     <id>http://www.kuangzen.com/2016/03/30/simple-switch/</id>
     <published>2016-03-30T06:57:45.000Z</published>
-    <updated>2016-04-06T06:10:37.183Z</updated>
+    <updated>2016-04-06T06:15:11.019Z</updated>
     
     <content type="html">&lt;p&gt;A simple switch jQuery plugin to beautify your checkbox&lt;/p&gt;
 &lt;p&gt;Support swipping left / right&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/nelsonkuang/simple-switch&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/20160330111443.png&quot; alt=&quot;Demo&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://d.pcs.baidu.com/thumbnail/4394a42f490d06f99007a8f390b58e7c?fid=1628604823-250528-173053029744889&amp;amp;time=1459922400&amp;amp;rt=sh&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-j52oiVRcuOv8Zl5Fxo2GNmNGQNk%3D&amp;amp;expires=8h&amp;amp;chkv=0&amp;amp;chkbd=0&amp;amp;chkpc=&amp;amp;dp-logid=2240273882692451316&amp;amp;dp-callid=0&amp;amp;size=c710_u500&amp;amp;quality=100&quot; alt=&quot;Demo&quot;&gt; &lt;/p&gt;
 &lt;h2 id=&quot;how-to-use-it&quot;&gt;&lt;a href=&quot;#how-to-use-it&quot; class=&quot;headerlink&quot; title=&quot;how to use it?&quot;&gt;&lt;/a&gt;how to use it?&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;simple-switch.min.css&amp;quot; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&amp;quot;your path/jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&amp;quot;jquery.simpleswitch.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&amp;quot;yourcheckbox&amp;quot;).simpleSwitch();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;check the demo.html example.&lt;/p&gt;
@@ -250,10 +250,10 @@
     <link href="http://www.kuangzen.com/2015/05/17/css3clockjs/"/>
     <id>http://www.kuangzen.com/2015/05/17/css3clockjs/</id>
     <published>2015-05-17T06:57:45.000Z</published>
-    <updated>2016-03-31T10:29:25.235Z</updated>
+    <updated>2016-04-06T06:15:59.861Z</updated>
     
     <content type="html">&lt;h6 id=&quot;a-simple-responsive-css3-clock-it’s-for-learning-only-lol&quot;&gt;&lt;a href=&quot;#a-simple-responsive-css3-clock-it’s-for-learning-only-lol&quot; class=&quot;headerlink&quot; title=&quot;a simple, responsive css3 clock, it’s for learning only - -! lol&quot;&gt;&lt;/a&gt;a simple, responsive css3 clock, it’s for learning only - -! lol&lt;/h6&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/nelsonkuang/css3clock.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/78e0903af56e713a9526ea16315a8afcd85e8b04/687474703a2f2f7777772e61697368696e69616e2e636f6d2f696d616765732f636c6f636b2e706e67&quot; alt=&quot;Demo&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://d.pcs.baidu.com/thumbnail/d7f49d2ea652092dd5e8202b62172314?fid=1628604823-250528-207901521239423&amp;amp;time=1459922400&amp;amp;rt=sh&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-NShG3%2BAm8qBw1zoZ6byzxUEDzfs%3D&amp;amp;expires=8h&amp;amp;chkv=0&amp;amp;chkbd=0&amp;amp;chkpc=&amp;amp;dp-logid=2240288957866774602&amp;amp;dp-callid=0&amp;amp;size=c710_u500&amp;amp;quality=100&quot; alt=&quot;Demo&quot;&gt; &lt;/p&gt;
 &lt;h3 id=&quot;License&quot;&gt;&lt;a href=&quot;#License&quot; class=&quot;headerlink&quot; title=&quot;License&quot;&gt;&lt;/a&gt;License&lt;/h3&gt;&lt;p&gt;css3clock is available under the terms of the &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MIT License&lt;/a&gt;.&lt;/p&gt;
 </content>
     
