@@ -82,12 +82,12 @@
     <link href="http://www.kuangzen.com/2016/03/30/simple-switch/"/>
     <id>http://www.kuangzen.com/2016/03/30/simple-switch/</id>
     <published>2016-03-30T06:57:45.000Z</published>
-    <updated>2016-03-31T10:29:44.684Z</updated>
+    <updated>2016-04-06T06:10:37.183Z</updated>
     
     <content type="html">&lt;p&gt;A simple switch jQuery plugin to beautify your checkbox&lt;/p&gt;
 &lt;p&gt;Support swipping left / right&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/nelsonkuang/simple-switch&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/nelsonkuang/simple-switch/master/20160330111443.png&quot; alt=&quot;Demo&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/20160330111443.png&quot; alt=&quot;Demo&quot;&gt; &lt;/p&gt;
 &lt;h2 id=&quot;how-to-use-it&quot;&gt;&lt;a href=&quot;#how-to-use-it&quot; class=&quot;headerlink&quot; title=&quot;how to use it?&quot;&gt;&lt;/a&gt;how to use it?&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;simple-switch.min.css&amp;quot; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&amp;quot;your path/jquery.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src=&amp;quot;jquery.simpleswitch.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&amp;quot;yourcheckbox&amp;quot;).simpleSwitch();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;check the demo.html example.&lt;/p&gt;
