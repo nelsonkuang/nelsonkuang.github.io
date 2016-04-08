@@ -308,7 +308,9 @@ gem install sass
 <li>压缩js文件</li>
 <li>合并js文件</li>
 <li>清空样式、js</li>
-<li>监听文件变化,自动执行上面指定的任务<h3 id="Window环境下Gulp安装"><a href="#Window环境下Gulp安装" class="headerlink" title="Window环境下Gulp安装"></a>Window环境下Gulp安装</h3></li>
+<li>监听文件变化,自动执行上面指定的任务  </li>
+</ol>
+<h3 id="Window环境下Gulp安装"><a href="#Window环境下Gulp安装" class="headerlink" title="Window环境下Gulp安装"></a>Window环境下Gulp安装</h3><ol>
 <li><p>确保已经安装了node.js环境并配置好npm全局环境，并在项目所在的目录创建了package.json(可以用 <code>npm init</code> 创建)项目文档  </p>
 </li>
 <li><p>全局环境安装Gulp<br><code>npm install -g gulp</code><br>为了确保是否安装完成可以输入 <code>gulp -v</code> 查看Gulp的版本  </p>
@@ -327,8 +329,9 @@ gem install sass
 <li>gulp-rename 重命名  </li>
 </ul>
 </li>
-<li><p>新建gulpfile.js文件，配置如下： </p>
-</li>
+</ol>
+<ol>
+<li>新建gulpfile.js文件，配置如下： </li>
 </ol>
 <pre><code class="javascript">
 <span class="comment">// 引入 gulp</span>
@@ -350,7 +353,7 @@ gulp.task(<span class="string">'jshint'</span>, <span class="function"><span cla
     <span class="keyword">var</span> jsSrc = <span class="string">'./src/js/*.js'</span>,
         jsDst = <span class="string">'./dist/js'</span>;
     gulp.src(jsSrc)
-        .pipe(jshint(<span class="string">'.jshintrc'</span>))
+        .pipe(jshint(<span class="string">'.jshintrc'</span>))<span class="comment">//或者如果不用配置文件.jshintrc，直接jshint()就可以了</span>
         .pipe(jshint.reporter(<span class="string">'default'</span>));
 });
 
@@ -407,7 +410,10 @@ gulp.task(<span class="string">'default'</span>, <span class="function"><span cl
 });
 </code></pre>
 <ol>
-<li>配置完成，命令行下执行 <code>gulp</code> 命令开始使用！</li>
+<li><p>配置完成，命令行下执行 <code>gulp</code> 命令开始使用！  </p>
+</li>
+<li><p>目录结构如下：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/20160408110023.png" alt="目录结构"></p>
+</li>
 </ol>
 
       

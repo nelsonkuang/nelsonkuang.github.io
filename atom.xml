@@ -69,7 +69,7 @@ gem install sass
     <link href="http://www.kuangzen.com/2016/04/08/getting-started-with-gulp/"/>
     <id>http://www.kuangzen.com/2016/04/08/getting-started-with-gulp/</id>
     <published>2016-04-08T00:39:49.000Z</published>
-    <updated>2016-04-08T02:36:03.729Z</updated>
+    <updated>2016-04-08T03:01:52.011Z</updated>
     
     <content type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;平时习惯用Grunt管理前端项目，由于近期项目需要，开始转向了Gulp，用起来给我最大的感受是流程更加清晰，链式的配置流程,用 &lt;code&gt;.pipe()&lt;/code&gt; 把所有的流程串联起来，更加方便；而用Grunt，平时习惯是按每个task来配置流程，但总体上都差不多，基本上两者都可以满足日常项目需求。&lt;/p&gt;
 &lt;h3 id=&quot;项目中的出现使用场景&quot;&gt;&lt;a href=&quot;#项目中的出现使用场景&quot; class=&quot;headerlink&quot; title=&quot;项目中的出现使用场景&quot;&gt;&lt;/a&gt;项目中的出现使用场景&lt;/h3&gt;&lt;ol&gt;
@@ -78,7 +78,9 @@ gem install sass
 &lt;li&gt;压缩js文件&lt;/li&gt;
 &lt;li&gt;合并js文件&lt;/li&gt;
 &lt;li&gt;清空样式、js&lt;/li&gt;
-&lt;li&gt;监听文件变化,自动执行上面指定的任务&lt;h3 id=&quot;Window环境下Gulp安装&quot;&gt;&lt;a href=&quot;#Window环境下Gulp安装&quot; class=&quot;headerlink&quot; title=&quot;Window环境下Gulp安装&quot;&gt;&lt;/a&gt;Window环境下Gulp安装&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;监听文件变化,自动执行上面指定的任务  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Window环境下Gulp安装&quot;&gt;&lt;a href=&quot;#Window环境下Gulp安装&quot; class=&quot;headerlink&quot; title=&quot;Window环境下Gulp安装&quot;&gt;&lt;/a&gt;Window环境下Gulp安装&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;确保已经安装了node.js环境并配置好npm全局环境，并在项目所在的目录创建了package.json(可以用 &lt;code&gt;npm init&lt;/code&gt; 创建)项目文档  &lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;全局环境安装Gulp&lt;br&gt;&lt;code&gt;npm install -g gulp&lt;/code&gt;&lt;br&gt;为了确保是否安装完成可以输入 &lt;code&gt;gulp -v&lt;/code&gt; 查看Gulp的版本  &lt;/p&gt;
@@ -97,8 +99,9 @@ gem install sass
 &lt;li&gt;gulp-rename 重命名  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;新建gulpfile.js文件，配置如下： &lt;/p&gt;
-&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol&gt;
+&lt;li&gt;新建gulpfile.js文件，配置如下： &lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;
 &lt;span class=&quot;comment&quot;&gt;// 引入 gulp&lt;/span&gt;
@@ -120,7 +123,7 @@ gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;jshint&#39;&lt;/span&gt;, &l
     &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; jsSrc = &lt;span class=&quot;string&quot;&gt;&#39;./src/js/*.js&#39;&lt;/span&gt;,
         jsDst = &lt;span class=&quot;string&quot;&gt;&#39;./dist/js&#39;&lt;/span&gt;;
     gulp.src(jsSrc)
-        .pipe(jshint(&lt;span class=&quot;string&quot;&gt;&#39;.jshintrc&#39;&lt;/span&gt;))
+        .pipe(jshint(&lt;span class=&quot;string&quot;&gt;&#39;.jshintrc&#39;&lt;/span&gt;))&lt;span class=&quot;comment&quot;&gt;//或者如果不用配置文件.jshintrc，直接jshint()就可以了&lt;/span&gt;
         .pipe(jshint.reporter(&lt;span class=&quot;string&quot;&gt;&#39;default&#39;&lt;/span&gt;));
 });
 
@@ -177,7 +180,10 @@ gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;default&#39;&lt;/span&gt;, &
 });
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ol&gt;
-&lt;li&gt;配置完成，命令行下执行 &lt;code&gt;gulp&lt;/code&gt; 命令开始使用！&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;配置完成，命令行下执行 &lt;code&gt;gulp&lt;/code&gt; 命令开始使用！  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;目录结构如下：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/20160408110023.png&quot; alt=&quot;目录结构&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 </content>
     
