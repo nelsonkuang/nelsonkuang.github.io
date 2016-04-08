@@ -311,16 +311,16 @@ gem install sass
 <li>监听文件变化,自动执行上面指定的任务  </li>
 </ol>
 <h3 id="Window环境下Gulp安装"><a href="#Window环境下Gulp安装" class="headerlink" title="Window环境下Gulp安装"></a>Window环境下Gulp安装</h3><ol>
-<li><p>确保已经安装了node.js环境并配置好npm全局环境，并在项目所在的目录创建了package.json(可以用 <code>npm init</code> 创建)项目文档  </p>
+<li><p>确保已经安装了node.js环境并配置好npm全局环境，并在项目所在的目录创建了package.json (可以用 <code>npm init</code> 创建) 项目文档  </p>
 </li>
 <li><p>全局环境安装Gulp<br><code>npm install -g gulp</code><br>为了确保是否安装完成可以输入 <code>gulp -v</code> 查看Gulp的版本  </p>
 </li>
-<li><p>把Gulp安装到项目本地<br><code>npm install --save-dev gulp</code><br>要先在命令行定位到项目当前目录再执行命令安装， <code>--save-dev</code> 是用来更新到package.json文件中的devDependencies值，用来定义项目依赖关系的，以后方便项目移植(在package.json文件中定义好项目依赖关系的好处是，别人拿到项目文件夹后，只需要执行 <code>npm install</code> 即可自动从npm环境中加载好所需的依赖包，可以立即使用)。  </p>
+<li><p>把Gulp安装到项目本地<br><code>npm install --save-dev gulp</code><br>要先在命令行定位到项目当前目录再执行命令安装， <code>--save-dev</code> 是用来更新到package.json文件中的devDependencies值，用来定义项目依赖关系的，以后方便项目移植 (在package.json文件中定义好项目依赖关系的好处是，别人拿到项目文件夹后，只需要执行 <code>npm install</code> 即可自动从npm环境中加载好所需的依赖包，可以立即使用) 。  </p>
 </li>
 <li><p>安需安装项目依赖包<br> npm install gulp-jshint gulp-ruby-sass gulp-minify-css gulp-autoprefixer gulp-concat gulp-uglify gulp-rename gulp-clean –save-dev<br>其中各包的作用如下：</p>
 <ul>
 <li>gulp-jshint   检查js脚本</li>
-<li><strong>gulp-ruby-sass   编译Sass</strong> (注意：安装后需要ruby环境下安装sass才可以正常运行，详细请看下一篇<a href="http://www.kuangzen.com/2016/04/08/ruby-gem-install-sass/" title="windows中ruby环境下用gem安装sass">windows中ruby环境下用gem安装sass</a>)</li>
+<li><strong>gulp-ruby-sass   编译Sass</strong> ( 注意：安装后需要ruby环境下安装sass才可以正常运行，详细请看下一篇<a href="http://www.kuangzen.com/2016/04/08/ruby-gem-install-sass/" title="windows中ruby环境下用gem安装sass">windows中ruby环境下用gem安装sass</a> )</li>
 <li>gulp-minify-css   css压缩</li>
 <li>gulp-autoprefixer   自动添加兼容各内核浏览器的css3前缀</li>
 <li>gulp-concat    文件合并</li>
@@ -330,91 +330,9 @@ gem install sass
 </ul>
 </li>
 </ol>
-<ol>
-<li>新建gulpfile.js文件，配置如下： </li>
-</ol>
-<pre><code class="javascript">
-<span class="comment">// 引入 gulp</span>
-<span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);
-
-<span class="comment">// 引入组件</span>
-<span class="keyword">var</span> jshint = <span class="built_in">require</span>(<span class="string">'gulp-jshint'</span>),            <span class="comment">// 检查脚本</span>
-    sass = <span class="built_in">require</span>(<span class="string">'gulp-ruby-sass'</span>),           <span class="comment">// 编译Sass</span>
-    minifycss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>),     <span class="comment">// css压缩</span>
-    autoprefixer = <span class="built_in">require</span>(<span class="string">'gulp-autoprefixer'</span>),<span class="comment">// 自动添加css3前缀</span>
-    concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>),            <span class="comment">// 合并</span>
-    uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>),            <span class="comment">// js压缩</span>
-    clean = <span class="built_in">require</span>(<span class="string">'gulp-clean'</span>),              <span class="comment">// 清空文件夹</span>
-    rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>);            <span class="comment">// 重命名</span>
-
-
-<span class="comment">// 检查脚本</span>
-gulp.task(<span class="string">'jshint'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-    <span class="keyword">var</span> jsSrc = <span class="string">'./src/js/*.js'</span>,
-        jsDst = <span class="string">'./dist/js'</span>;
-    gulp.src(jsSrc)
-        .pipe(jshint(<span class="string">'.jshintrc'</span>))<span class="comment">//或者如果不用配置文件.jshintrc，直接jshint()就可以了</span>
-        .pipe(jshint.reporter(<span class="string">'default'</span>));
-});
-
-<span class="comment">// 编译Sass</span>
-gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-    <span class="keyword">var</span> cssSrc = <span class="string">'./src/scss/*.scss'</span>,
-        cssDst = <span class="string">'./dist/css'</span>;
-    <span class="keyword">return</span> sass(cssSrc, { style: <span class="string">'expanded'</span> })
-        .pipe(autoprefixer(<span class="string">'last 2 version'</span>, <span class="string">'safari 5'</span>, <span class="string">'ie 8'</span>, <span class="string">'ie 9'</span>, <span class="string">'opera 12.1'</span>, <span class="string">'ios 6'</span>, <span class="string">'android 4'</span>))
-        .pipe(gulp.dest(cssDst))
-        .pipe(rename({ suffix: <span class="string">'.min'</span> }))
-        .pipe(minifycss())
-        .pipe(gulp.dest(cssDst));
-});
-
-<span class="comment">// 压缩js文件</span>
-gulp.task(<span class="string">'jsuglify'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-    <span class="keyword">var</span> jsSrc = <span class="string">'./src/js/*.js'</span>,
-        jsDst = <span class="string">'./dist/js'</span>;
-    gulp.src(jsSrc)
-        .pipe(rename({ suffix: <span class="string">'.min'</span> }))
-        .pipe(uglify())
-        .pipe(gulp.dest(jsDst));
-});
-
-<span class="comment">// 合并,压缩js文件</span>
-gulp.task(<span class="string">'jsconcat'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-    <span class="keyword">var</span> jsSrc = <span class="string">'./src/js/*.js'</span>,
-        jsDst = <span class="string">'./dist/js'</span>;
-    gulp.src(jsSrc)
-        .pipe(concat(<span class="string">'all.js'</span>))
-        .pipe(gulp.dest(jsDst))
-        .pipe(rename(<span class="string">'all.min.js'</span>))
-        .pipe(uglify())
-        .pipe(gulp.dest(jsDst));
-});
-
-<span class="comment">// 清空样式、js</span>
-gulp.task(<span class="string">'clean'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-    gulp.src([<span class="string">'./dist/css'</span>, <span class="string">'./dist/js'</span>], { read: <span class="literal">false</span> })
-        .pipe(clean());
-});
-
-<span class="comment">// 默认任务</span>
-gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-    gulp.run(<span class="string">'jshint'</span>, <span class="string">'sass'</span>, <span class="string">'jsuglify'</span>);
-
-    <span class="comment">// 监听文件变化</span>
-    <span class="keyword">var</span> jsSrc = <span class="string">'./src/js/*.js'</span>,
-        cssSrc = <span class="string">'./src/scss/*.scss'</span>;
-    gulp.watch([jsSrc, cssSrc], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-        gulp.run(<span class="string">'jshint'</span>, <span class="string">'sass'</span>, <span class="string">'jsuglify'</span>);
-    });
-});
-</code></pre>
-<ol>
-<li><p>配置完成，命令行下执行 <code>gulp</code> 命令开始使用！  </p>
-</li>
-<li><p>目录结构如下：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/20160408110023.png" alt="目录结构"></p>
-</li>
-</ol>
+<h3 id="新建gulpfile-js文件，配置如下"><a href="#新建gulpfile-js文件，配置如下" class="headerlink" title="新建gulpfile.js文件，配置如下:"></a>新建gulpfile.js文件，配置如下:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入 gulp</span></span><br><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引入组件</span></span><br><span class="line"><span class="keyword">var</span> jshint = <span class="built_in">require</span>(<span class="string">'gulp-jshint'</span>),            <span class="comment">// 检查脚本</span></span><br><span class="line">    sass = <span class="built_in">require</span>(<span class="string">'gulp-ruby-sass'</span>),           <span class="comment">// 编译Sass</span></span><br><span class="line">    minifycss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>),     <span class="comment">// css压缩</span></span><br><span class="line">    autoprefixer = <span class="built_in">require</span>(<span class="string">'gulp-autoprefixer'</span>),<span class="comment">// 自动添加css3前缀</span></span><br><span class="line">    concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>),            <span class="comment">// 合并</span></span><br><span class="line">    uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>),            <span class="comment">// js压缩</span></span><br><span class="line">    clean = <span class="built_in">require</span>(<span class="string">'gulp-clean'</span>),              <span class="comment">// 清空文件夹</span></span><br><span class="line">    rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>);            <span class="comment">// 重命名</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查脚本</span></span><br><span class="line">gulp.task(<span class="string">'jshint'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> jsSrc = <span class="string">'./src/js/*.js'</span>,</span><br><span class="line">        jsDst = <span class="string">'./dist/js'</span>;</span><br><span class="line">    gulp.src(jsSrc)</span><br><span class="line">        .pipe(jshint(<span class="string">'.jshintrc'</span>))</span><br><span class="line">        .pipe(jshint.reporter(<span class="string">'default'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 编译Sass</span></span><br><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> cssSrc = <span class="string">'./src/scss/*.scss'</span>,</span><br><span class="line">        cssDst = <span class="string">'./dist/css'</span>;</span><br><span class="line">    <span class="keyword">return</span> sass(cssSrc, &#123; style: <span class="string">'expanded'</span> &#125;)</span><br><span class="line">        .pipe(autoprefixer(<span class="string">'last 2 version'</span>, <span class="string">'safari 5'</span>, <span class="string">'ie 8'</span>, <span class="string">'ie 9'</span>, <span class="string">'opera 12.1'</span>, <span class="string">'ios 6'</span>, <span class="string">'android 4'</span>))</span><br><span class="line">        .pipe(gulp.dest(cssDst))</span><br><span class="line">        .pipe(rename(&#123; suffix: <span class="string">'.min'</span> &#125;))</span><br><span class="line">        .pipe(minifycss())</span><br><span class="line">        .pipe(gulp.dest(cssDst));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 压缩js文件</span></span><br><span class="line">gulp.task(<span class="string">'jsuglify'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> jsSrc = <span class="string">'./src/js/*.js'</span>,</span><br><span class="line">        jsDst = <span class="string">'./dist/js'</span>;</span><br><span class="line">    gulp.src(jsSrc)</span><br><span class="line">        .pipe(rename(&#123; suffix: <span class="string">'.min'</span> &#125;))</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(jsDst));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并,压缩js文件</span></span><br><span class="line">gulp.task(<span class="string">'jsconcat'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> jsSrc = <span class="string">'./src/js/*.js'</span>,</span><br><span class="line">        jsDst = <span class="string">'./dist/js'</span>;</span><br><span class="line">    gulp.src(jsSrc)</span><br><span class="line">        .pipe(concat(<span class="string">'all.js'</span>))</span><br><span class="line">        .pipe(gulp.dest(jsDst))</span><br><span class="line">        .pipe(rename(<span class="string">'all.min.js'</span>))</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(jsDst));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 清空样式、js</span></span><br><span class="line">gulp.task(<span class="string">'clean'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.src([<span class="string">'./dist/css'</span>, <span class="string">'./dist/js'</span>], &#123; read: <span class="literal">false</span> &#125;)</span><br><span class="line">        .pipe(clean());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 默认任务</span></span><br><span class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.run(<span class="string">'jshint'</span>, <span class="string">'sass'</span>, <span class="string">'jsuglify'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 监听文件变化</span></span><br><span class="line">    <span class="keyword">var</span> jsSrc = <span class="string">'./src/js/*.js'</span>,</span><br><span class="line">        cssSrc = <span class="string">'./src/scss/*.scss'</span>;</span><br><span class="line">    gulp.watch([jsSrc, cssSrc], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        gulp.run(<span class="string">'jshint'</span>, <span class="string">'sass'</span>, <span class="string">'jsuglify'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="配置完成，命令行下执行-gulp-命令开始使用！"><a href="#配置完成，命令行下执行-gulp-命令开始使用！" class="headerlink" title="配置完成，命令行下执行 gulp 命令开始使用！"></a>配置完成，命令行下执行 <code>gulp</code> 命令开始使用！</h3><p> <code>gulp</code> </p>
+<h3 id="目录结构如下："><a href="#目录结构如下：" class="headerlink" title="目录结构如下："></a>目录结构如下：</h3><p><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/20160408110023.png" alt="目录结构"></p>
 
       
     </div>
