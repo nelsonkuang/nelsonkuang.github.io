@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-04-06T08:38:25.170Z</updated>
+  <updated>2016-04-08T02:26:52.783Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,130 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>windows中ruby环境下用gem安装sass</title>
+    <link href="http://www.kuangzen.com/2016/04/08/ruby-gem-install-sass/"/>
+    <id>http://www.kuangzen.com/2016/04/08/ruby-gem-install-sass/</id>
+    <published>2016-04-08T01:38:45.000Z</published>
+    <updated>2016-04-08T02:26:52.783Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;上一篇文章中windows配置gulp时用到gulp-ruby-sass来编译sass/scss文件，其实也可以用gulp-sass来编译sass/scss文件，两者安装时依赖的环境不一样。  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gulp-ruby-sass 要先安装Ruby，再用其包环境gem安装sass&lt;/li&gt;
+&lt;li&gt;gulp-sass 要安装完成不容易，其依赖于node-sass，要先安装python2，再安装visual studio 2015 express，然后配置vs2015，最后执行 &lt;code&gt;npm install gulp-sass --save-dev&lt;/code&gt; 来完成安装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;安装gulp-ruby-sass&quot;&gt;&lt;a href=&quot;#安装gulp-ruby-sass&quot; class=&quot;headerlink&quot; title=&quot;安装gulp-ruby-sass&quot;&gt;&lt;/a&gt;安装gulp-ruby-sass&lt;/h3&gt;&lt;p&gt;由于Gulp-sass过于麻烦，最后选择了gulp-ruby-sass  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Ruby安装&lt;br&gt;到官网&lt;a href=&quot;http://rubyinstaller.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://rubyinstaller.org/&lt;/a&gt;下载安装包直接安装。注意，要打勾上环境变量路径，如下图：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/20160408095701.png&quot; alt=&quot;ruby安装图&quot;&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ruby China - RubyGems Mirror镜像安装 sass&lt;br&gt;由于国内网络原因，导致 rubygems.org 的gem 源连接不上，可以通过配置gem sources来修改gem 源。 打开命令行：   &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;gem sources --remove https://rubygems.org/   
+
+gem sources -a https://gems.ruby-china.org/  
+
+gem sources -l  
+
+*** CURRENT SOURCES ***  
+https://gems.ruby-china.org/
+
+gem install sass
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果gem sources添加失败可以把&lt;a href=&quot;https://gems.ruby-china.org/中的**https**改为**http**试试。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gems.ruby-china.org/中的**https**改为**http**试试。&lt;/a&gt; &lt;code&gt;gem sources --remove https://rubygems.org/&lt;/code&gt; 是移除官方源&lt;a href=&quot;https://rubygems.org/；&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://rubygems.org/；&lt;/a&gt; &lt;code&gt;gem sources -a https://gems.ruby-china.org/&lt;/code&gt; 是添加&lt;a href=&quot;https://gems.ruby-china.org/国内源；&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gems.ruby-china.org/国内源；&lt;/a&gt; &lt;code&gt;gem sources -l&lt;/code&gt; 是查看当前源；最后关键的一步 &lt;code&gt;gem install sass&lt;/code&gt; 就是安装sass！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;上一篇文章中windows配置gulp时用到gulp-ruby-sass来编译sass/scss文件，其实也可以用gulp-sass来编译s
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
+    
+      <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
+    
+      <category term="ruby" scheme="http://www.kuangzen.com/tags/ruby/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用Gulp配置前端自动化</title>
+    <link href="http://www.kuangzen.com/2016/04/08/getting-started-with-gulp/"/>
+    <id>http://www.kuangzen.com/2016/04/08/getting-started-with-gulp/</id>
+    <published>2016-04-08T00:39:49.000Z</published>
+    <updated>2016-04-08T02:30:07.170Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;平时习惯用Grunt管理前端项目，由于近期项目需要，开始转向了Gulp，用起来给我最大的感受是流程更加清晰，链式的配置流程,用 &lt;code&gt;.pipe()&lt;/code&gt; 把所有的流程串联起来，更加方便；而用Grunt，平时习惯是按每个task来配置流程，但总体上都差不多，基本上两者都可以满足日常项目需求。&lt;/p&gt;
+&lt;h3 id=&quot;项目中的出现使用场景&quot;&gt;&lt;a href=&quot;#项目中的出现使用场景&quot; class=&quot;headerlink&quot; title=&quot;项目中的出现使用场景&quot;&gt;&lt;/a&gt;项目中的出现使用场景&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;js语法检查&lt;/li&gt;
+&lt;li&gt;编译Sass/Scss&lt;/li&gt;
+&lt;li&gt;压缩js文件&lt;/li&gt;
+&lt;li&gt;合并js文件&lt;/li&gt;
+&lt;li&gt;清空样式、js&lt;/li&gt;
+&lt;li&gt;监听文件变化,自动执行上面指定的任务&lt;h3 id=&quot;Window环境下Gulp安装&quot;&gt;&lt;a href=&quot;#Window环境下Gulp安装&quot; class=&quot;headerlink&quot; title=&quot;Window环境下Gulp安装&quot;&gt;&lt;/a&gt;Window环境下Gulp安装&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;确保已经安装了node.js环境并配置好npm全局环境，并在项目所在的目录创建了package.json(可以用 &lt;code&gt;npm init&lt;/code&gt; 创建)项目文档  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;全局环境安装Gulp&lt;br&gt;&lt;code&gt;npm install -g gulp&lt;/code&gt;&lt;br&gt;为了确保是否安装完成可以输入 &lt;code&gt;gulp -v&lt;/code&gt; 查看Gulp的版本  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;把Gulp安装到项目本地&lt;br&gt;&lt;code&gt;npm install --save-dev gulp&lt;/code&gt;&lt;br&gt;要先在命令行定位到项目当前目录再执行命令安装， &lt;code&gt;--save-dev&lt;/code&gt; 是用来更新到package.json文件中的devDependencies值，用来定义项目依赖关系的，以后方便项目移植(在package.json文件中定义好项目依赖关系的好处是，别人拿到项目文件夹后，只需要执行 &lt;code&gt;npm install&lt;/code&gt; 即可自动从npm环境中加载好所需的依赖包，可以立即使用)。  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安需安装项目依赖包&lt;br&gt; npm install gulp-jshint gulp-ruby-sass gulp-minify-css gulp-autoprefixer gulp-concat gulp-uglify gulp-rename gulp-clean –save-dev&lt;br&gt;其中各包的作用如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gulp-jshint   检查js脚本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gulp-ruby-sass   编译Sass&lt;/strong&gt; (注意：安装后需要ruby环境下安装sass才可以正常运行，详细请看下一篇&lt;a href=&quot;http://www.kuangzen.com/2016/04/06/android-wechat6-3-15-browser-bug/&quot; title=&quot;windows中ruby环境下用gem安装sass&quot;&gt;windows中ruby环境下用gem安装sass&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;gulp-minify-css   css压缩&lt;/li&gt;
+&lt;li&gt;gulp-autoprefixer   自动添加兼容各内核浏览器的css3前缀&lt;/li&gt;
+&lt;li&gt;gulp-concat    文件合并&lt;/li&gt;
+&lt;li&gt;gulp-uglify js压缩混淆&lt;/li&gt;
+&lt;li&gt;gulp-clean 清空文件夹&lt;/li&gt;
+&lt;li&gt;gulp-rename 重命名  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;新建gulpfile.js文件，配置如下：&lt;br&gt;```javascript&lt;br&gt;// 引入 gulp&lt;br&gt;var gulp = require(‘gulp’);&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;// 引入组件&lt;br&gt;var jshint = require(‘gulp-jshint’),            // 检查脚本&lt;br&gt;    sass = require(‘gulp-ruby-sass’),           // 编译Sass&lt;br&gt;    minifycss = require(‘gulp-minify-css’),     // css压缩&lt;br&gt;    autoprefixer = require(‘gulp-autoprefixer’),// 自动添加css3前缀&lt;br&gt;    concat = require(‘gulp-concat’),            // 合并&lt;br&gt;    uglify = require(‘gulp-uglify’),            // js压缩&lt;br&gt;    clean = require(‘gulp-clean’),              // 清空文件夹&lt;br&gt;    rename = require(‘gulp-rename’);            // 重命名&lt;/p&gt;
+&lt;p&gt;// 检查脚本&lt;br&gt;gulp.task(‘jshint’, function () {&lt;br&gt;    var jsSrc = ‘./src/js/*.js’,&lt;br&gt;        jsDst = ‘./dist/js’;&lt;br&gt;    gulp.src(jsSrc)&lt;br&gt;        .pipe(jshint(‘.jshintrc’))&lt;br&gt;        .pipe(jshint.reporter(‘default’));&lt;br&gt;});&lt;/p&gt;
+&lt;p&gt;// 编译Sass&lt;br&gt;gulp.task(‘sass’, function () {&lt;br&gt;    var cssSrc = ‘./src/scss/*.scss’,&lt;br&gt;        cssDst = ‘./dist/css’;&lt;br&gt;    return sass(cssSrc, { style: ‘expanded’ })&lt;br&gt;        .pipe(autoprefixer(‘last 2 version’, ‘safari 5’, ‘ie 8’, ‘ie 9’, ‘opera 12.1’, ‘ios 6’, ‘android 4’))&lt;br&gt;        .pipe(gulp.dest(cssDst))&lt;br&gt;        .pipe(rename({ suffix: ‘.min’ }))&lt;br&gt;        .pipe(minifycss())&lt;br&gt;        .pipe(gulp.dest(cssDst));&lt;br&gt;});&lt;/p&gt;
+&lt;p&gt;// 压缩js文件&lt;br&gt;gulp.task(‘jsuglify’, function () {&lt;br&gt;    var jsSrc = ‘./src/js/*.js’,&lt;br&gt;        jsDst = ‘./dist/js’;&lt;br&gt;    gulp.src(jsSrc)&lt;br&gt;        .pipe(rename({ suffix: ‘.min’ }))&lt;br&gt;        .pipe(uglify())&lt;br&gt;        .pipe(gulp.dest(jsDst));&lt;br&gt;});&lt;/p&gt;
+&lt;p&gt;// 合并,压缩js文件&lt;br&gt;gulp.task(‘jsconcat’, function () {&lt;br&gt;    var jsSrc = ‘./src/js/*.js’,&lt;br&gt;        jsDst = ‘./dist/js’;&lt;br&gt;    gulp.src(jsSrc)&lt;br&gt;        .pipe(concat(‘all.js’))&lt;br&gt;        .pipe(gulp.dest(jsDst))&lt;br&gt;        .pipe(rename(‘all.min.js’))&lt;br&gt;        .pipe(uglify())&lt;br&gt;        .pipe(gulp.dest(jsDst));&lt;br&gt;});&lt;/p&gt;
+&lt;p&gt;// 清空样式、js&lt;br&gt;gulp.task(‘clean’, function () {&lt;br&gt;    gulp.src([‘./dist/css’, ‘./dist/js’], { read: false })&lt;br&gt;        .pipe(clean());&lt;br&gt;});&lt;/p&gt;
+&lt;p&gt;// 默认任务&lt;br&gt;gulp.task(‘default’, function () {&lt;br&gt;    gulp.run(‘jshint’, ‘sass’, ‘jsuglify’);&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 监听文件变化
+var jsSrc = &amp;apos;./src/js/*.js&amp;apos;,
+    cssSrc = &amp;apos;./src/scss/*.scss&amp;apos;;
+gulp.watch([jsSrc, cssSrc], function () {
+    gulp.run(&amp;apos;jshint&amp;apos;, &amp;apos;sass&amp;apos;, &amp;apos;jsuglify&amp;apos;);
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;});&lt;/p&gt;
+&lt;p&gt;```  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;配置完成，命令行下执行 &lt;code&gt;gulp&lt;/code&gt; 命令开始使用！&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;平时习惯用Grunt管理前端项目，由于近期项目需要，开始转向了Gulp，用起来给我最大的感受是流程更加清晰，链式的配置流程,用 &lt;code&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
+    
+      <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
+    
+      <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
+    
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
+    
+  </entry>
   
   <entry>
     <title>新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时不会触发resize动作，导致遮挡住输入框问题</title>
@@ -44,13 +168,13 @@
     </summary>
     
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
-      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -78,9 +202,9 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -108,11 +232,11 @@
     </summary>
     
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
   </entry>
   
@@ -143,11 +267,11 @@
     </summary>
     
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
   </entry>
   
@@ -182,11 +306,11 @@
     </summary>
     
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
   </entry>
   
@@ -303,11 +427,11 @@
     </summary>
     
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
   </entry>
   
