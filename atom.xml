@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-04-08T05:49:01.868Z</updated>
+  <updated>2016-04-08T05:48:52.738Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,22 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>pix2rem-with-gulp-sass</title>
-    <link href="http://www.kuangzen.com/2016/04/08/pix2rem-with-gulp-sass-1/"/>
-    <id>http://www.kuangzen.com/2016/04/08/pix2rem-with-gulp-sass-1/</id>
-    <published>2016-04-08T05:49:01.000Z</published>
-    <updated>2016-04-08T05:49:01.868Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>pix2rem-with-gulp-sass</title>
