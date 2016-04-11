@@ -166,13 +166,13 @@ gem install sass
     <link href="http://www.kuangzen.com/2016/04/06/android-wechat6-3-15-browser-bug/"/>
     <id>http://www.kuangzen.com/2016/04/06/android-wechat6-3-15-browser-bug/</id>
     <published>2016-04-06T08:04:30.000Z</published>
-    <updated>2016-04-11T06:58:30.958Z</updated>
+    <updated>2016-04-11T07:07:14.574Z</updated>
     
     <content type="html">&lt;h3 id=&quot;应用场景&quot;&gt;&lt;a href=&quot;#应用场景&quot; class=&quot;headerlink&quot; title=&quot;应用场景&quot;&gt;&lt;/a&gt;应用场景&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;填写表单页面&lt;/li&gt;
 &lt;li&gt;固定(Fixed)在底部的输入框的页面，如评论框&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&quot;解决思路&quot;&gt;&lt;a href=&quot;#解决思路&quot; class=&quot;headerlink&quot; title=&quot;解决思路&quot;&gt;&lt;/a&gt;解决思路&lt;/h3&gt;&lt;h5 id=&quot;针对第一种情况：&quot;&gt;&lt;a href=&quot;#针对第一种情况：&quot; class=&quot;headerlink&quot; title=&quot;针对第一种情况：&quot;&gt;&lt;/a&gt;针对第一种情况：&lt;/h5&gt;&lt;p&gt;先判断是否为新版的安卓版微信内置浏览器(版本6.3.15+), 当然经测试华为手机除外，用旧坑办法解决。  &lt;/p&gt;
+&lt;h3 id=&quot;解决思路&quot;&gt;&lt;a href=&quot;#解决思路&quot; class=&quot;headerlink&quot; title=&quot;解决思路&quot;&gt;&lt;/a&gt;解决思路&lt;/h3&gt;&lt;h5 id=&quot;针对第一种情况：&quot;&gt;&lt;a href=&quot;#针对第一种情况：&quot; class=&quot;headerlink&quot; title=&quot;针对第一种情况：&quot;&gt;&lt;/a&gt;针对第一种情况：&lt;/h5&gt;&lt;p&gt;先判断是否为新版的安卓版微信内置浏览器(版本6.3.15+), 当然经测试&lt;strong&gt;华为手机&lt;/strong&gt;除外，用旧坑办法解决。  &lt;/p&gt;
 &lt;p&gt;然后判断当手机键盘弹出时，用margin把可视区蹭高50%(即&lt;code&gt;$(window).height()/2&lt;/code&gt;)的高度、如margin-top为-50%的你的元素的高度；收回键盘时再恢复margin为0。  &lt;/p&gt;
 &lt;p&gt;如何判断当手机键盘有没有弹出？可以捕获focus和blur事件来确认，还可以绑定click点击事件来监听，如果效果不明显可以加上setTimeout来确保等键盘弹出或者收回后再执行focus或者blur的绑定事件。&lt;/p&gt;
 &lt;h5 id=&quot;针对第二种情况：&quot;&gt;&lt;a href=&quot;#针对第二种情况：&quot; class=&quot;headerlink&quot; title=&quot;针对第二种情况：&quot;&gt;&lt;/a&gt;针对第二种情况：&lt;/h5&gt;&lt;p&gt;当然首先填了&lt;strong&gt;ios及华为手机&lt;/strong&gt;对fixed支持不好的旧坑，如何填？最简单的方法是键盘弹出时把fixed改为absolute，收回时再设回为fixed。具体js判断方法如下：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function isHuaweiOrIOS() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    var ua = navigator.userAgent;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return navigator.userAgent.match(/iPhone|iPod|iPad|HUAWEI|HONOR|H60-L[0-1]&amp;#123;1&amp;#125;[1-3]&amp;#123;1&amp;#125;/i);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
