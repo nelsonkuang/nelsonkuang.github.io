@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-04-08T05:48:52.738Z</updated>
+  <updated>2016-04-12T05:33:53.293Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://www.kuangzen.com/2016/04/08/pix2rem-with-gulp-sass/"/>
     <id>http://www.kuangzen.com/2016/04/08/pix2rem-with-gulp-sass/</id>
     <published>2016-04-08T05:40:00.000Z</published>
-    <updated>2016-04-08T05:48:52.738Z</updated>
+    <updated>2016-04-12T05:33:53.293Z</updated>
     
-    <content type="html">&lt;p&gt;Use Gulp + Sass instead of Grunt + less, check the repos - &lt;a href=&quot;https://github.com/hiooyUI/pix2remjs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hiooyUI/pix2remjs&lt;/a&gt;, both are the same.&lt;br&gt;a responsive design soluction for mobile web page [mainly for some certain Chinese popular mobile browsers]    &lt;/p&gt;
-&lt;p&gt;与&lt;a href=&quot;https://github.com/hiooyUI/pix2remjs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hiooyUI/pix2remjs&lt;/a&gt;项目一样，只是实现方式不一样，这里用Gulp + Sass实现，而前者用Grunt + less实现。&lt;br&gt;一个几乎能适配所有手机端的非常简单易用的h5响应式设计解决方案[主要是针对于中文排版]，[不好意思，这里忽略了1像素问题，个人觉得这问题不是问题] &lt;/p&gt;
+    <content type="html">&lt;p&gt;Use Gulp + Sass instead of Grunt + less, check the repos - &lt;a href=&quot;https://github.com/hiooyUI/pix2remjs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hiooyUI/pix2remjs&lt;/a&gt;, both are the same.&lt;br&gt;a responsive design soluction for mobile web page [be compatible with all popular mobile / appwebview browsers], meanwhile REM lives harmony with Pixel that means you can use ‘px’ and ‘rem’ at the same time.    &lt;/p&gt;
+&lt;p&gt;与&lt;a href=&quot;https://github.com/hiooyUI/pix2remjs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hiooyUI/pix2remjs&lt;/a&gt;项目一样，只是实现方式不一样，这里用Gulp + Sass实现，而前者用Grunt + less实现。&lt;br&gt;一个几乎能适配所有手机端的非常简单易用的h5响应式设计解决方案[兼容所有流行的移动浏览器或者app内置浏览器], 移动端Rem解决方案， 与此同时，最方便之处是你可以同时使用REM单位或者px像素单位互不冲突，非常和谐，[不好意思，这里忽略了1像素问题，个人觉得这问题不是问题] &lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/nelsonkuang/pix2rem&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt; &lt;/p&gt;
 &lt;h2 id=&quot;Usage-使用方式&quot;&gt;&lt;a href=&quot;#Usage-使用方式&quot; class=&quot;headerlink&quot; title=&quot;Usage 使用方式&quot;&gt;&lt;/a&gt;Usage 使用方式&lt;/h2&gt;&lt;p&gt;Use Gulp in Command line, run &lt;code&gt;npm install&lt;/code&gt; and &lt;code&gt;gulp&lt;/code&gt;&lt;br&gt;Gulp环境命令行通过npm安装, 输入 &lt;code&gt;npm install&lt;/code&gt; 和 &lt;code&gt;gulp&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gulp&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Showcase-谁在用&quot;&gt;&lt;a href=&quot;#Showcase-谁在用&quot; class=&quot;headerlink&quot; title=&quot;Showcase 谁在用&quot;&gt;&lt;/a&gt;Showcase 谁在用&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://wx.hiooy.com/wap&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;海印优选&lt;/a&gt;&lt;/p&gt;
@@ -372,10 +372,10 @@ gem install sass
     <link href="http://www.kuangzen.com/2015/12/31/pix2remjs/"/>
     <id>http://www.kuangzen.com/2015/12/31/pix2remjs/</id>
     <published>2015-12-31T06:57:45.000Z</published>
-    <updated>2016-03-31T10:29:31.316Z</updated>
+    <updated>2016-04-12T05:33:10.179Z</updated>
     
-    <content type="html">&lt;p&gt;a responsive design soluction for mobile web page [mainly for some certain Chinese popular mobile browsers]    &lt;/p&gt;
-&lt;p&gt;一个几乎能适配所有手机端的非常简单易用的h5响应式设计解决方案[主要是针对于中文排版]，[不好意思，这里忽略了1像素问题，个人觉得这问题不是问题]  &lt;/p&gt;
+    <content type="html">&lt;p&gt;a responsive design soluction for mobile web page [be compatible with all popular mobile / appwebview browsers], meanwhile REM lives harmony with Pixel that means you can use ‘px’ and ‘rem’ at the same time.    &lt;/p&gt;
+&lt;p&gt;一个几乎能适配所有手机端的非常简单易用的h5响应式设计解决方案[兼容所有流行的移动浏览器或者app内置浏览器], 移动端Rem解决方案， 与此同时，最方便之处是你可以同时使用REM单位或者px像素单位互不冲突，非常和谐，[不好意思，这里忽略了1像素问题，个人觉得这问题不是问题]  &lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/nelsonkuang/pix2remjs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github Address&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Usage-使用方式&quot;&gt;&lt;a href=&quot;#Usage-使用方式&quot; class=&quot;headerlink&quot; title=&quot;Usage 使用方式&quot;&gt;&lt;/a&gt;Usage 使用方式&lt;/h2&gt;&lt;p&gt;Use Crunt in Command line, run 用Grunt环境命令行通过npm安装, 输入&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;grunt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Showcase-谁在用&quot;&gt;&lt;a href=&quot;#Showcase-谁在用&quot; class=&quot;headerlink&quot; title=&quot;Showcase 谁在用&quot;&gt;&lt;/a&gt;Showcase 谁在用&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://wx.hiooy.com/wap&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;海印优选&lt;/a&gt;&lt;/p&gt;
@@ -383,8 +383,7 @@ gem install sass
     
     <summary type="html">
     
-      &lt;p&gt;a responsive design soluction for mobile web page [mainly for some certain Chinese popular mobile browsers]    &lt;/p&gt;
-&lt;p&gt;一个几乎能适配所有手机端的非常简单易
+      &lt;p&gt;a responsive design soluction for mobile web page [be compatible with all popular mobile / appwebview browsers], meanwhile REM lives harm
     
     </summary>
     
