@@ -47,6 +47,20 @@ require([], function (){
 		}
 	});
 
+	//return to top
+    var isRttShow=false;
+	$(window).scroll(function(){
+        var scrollTop = $(this).scrollTop(),
+            $rtt=$("#return_to_top");
+        if(scrollTop>100 && !isRttShow){
+        	$rtt.css("display","block");
+        	isRttShow=true;
+        }else{
+        	$rtt.css("display","none");
+        	isRttShow=false;        	
+        }
+	});
+
 	if(browser.versions.mobile === true || $(window).width() < 700){
 		loadMobile();
 	}else{
