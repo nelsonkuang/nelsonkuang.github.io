@@ -48,7 +48,7 @@ require([], function (){
 	});
 
 	//return to top
-    var isRttShow=false;
+    var isRttShow=false,
     $rtt=$("#return_to_top");
 	$(window).scroll(function(){
         var scrollTop = $(this).scrollTop();
