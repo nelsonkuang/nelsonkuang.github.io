@@ -49,16 +49,20 @@ require([], function (){
 
 	//return to top
     var isRttShow=false;
+    $rtt=$("#return_to_top");
 	$(window).scroll(function(){
-        var scrollTop = $(this).scrollTop(),
-            $rtt=$("#return_to_top");
+        var scrollTop = $(this).scrollTop();
         if(scrollTop>100 && !isRttShow){
         	$rtt.css("display","block");
         	isRttShow=true;
-        }else{
+        }else if(scrollTop<100 && isRttShow){
         	$rtt.css("display","none");
         	isRttShow=false;        	
         }
+	});
+
+	$rtt.click(function(){
+        $('html,body').animate({scrollTop: '0px'}, 800);
 	});
 
 	if(browser.versions.mobile === true || $(window).width() < 700){
