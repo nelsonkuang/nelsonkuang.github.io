@@ -48,14 +48,14 @@ require([], function (){
 	});
 
 	//return to top
-    var isRttShow=false,
+    var isRttShow=false;
 	$(window).scroll(function(){
         var scrollTop = $(this).scrollTop();
         if(scrollTop>100 && !isRttShow){
-        	$("#return_to_top").css("display","block");
+        	$("#return_to_top").show();
         	isRttShow=true;
         }else if(scrollTop<100 && isRttShow){
-        	$("#return_to_top").css("display","none");
+        	$("#return_to_top").hide();
         	isRttShow=false;        	
         }
 	});
