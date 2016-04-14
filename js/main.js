@@ -47,23 +47,6 @@ require([], function (){
 		}
 	});
 
-	//return to top
-    var isRttShow=false;
-	$(window).scroll(function(){
-        var scrollTop = $(this).scrollTop();
-        if(scrollTop>100 && !isRttShow){
-        	$("#return_to_top").show();
-        	isRttShow=true;
-        }else if(scrollTop<100 && isRttShow){
-        	$("#return_to_top").hide();
-        	isRttShow=false;        	
-        }
-	});
-
-	$("#return_to_top").click(function(){
-        $('html,body').animate({scrollTop: '0px'}, 800);
-	});
-
 	if(browser.versions.mobile === true || $(window).width() < 700){
 		loadMobile();
 	}else{
@@ -123,5 +106,25 @@ require([], function (){
 	if(yiliaConfig.open_in_new == true){
 		$(".article a[href]").attr("target", "_blank")
 	}
-	
+
+
+	//return to top
+	$(function() {
+	    var isRttShow = false;
+	    $(window).scroll(function() {
+	        var scrollTop = $(this).scrollTop();
+	        if (scrollTop > 100 && !isRttShow) {
+	            $("#return_to_top").show();
+	            isRttShow = true;
+	        } else if (scrollTop < 100 && isRttShow) {
+	            $("#return_to_top").hide();
+	            isRttShow = false;
+	        }
+	    });
+
+	    $("#return_to_top").click(function() {
+	        $('html,body').animate({ scrollTop: '0px' }, 800);
+	    });
+	});
+
 });
