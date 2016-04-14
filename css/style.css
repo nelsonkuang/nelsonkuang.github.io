@@ -718,6 +718,12 @@ a {
 #disqus_thread {
   padding: 0 40px;
 }
+#ds-reset .ds-avatar {
+  -webkit-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+}
 .archives-wrap {
   position: relative;
   margin: 0 30px;
