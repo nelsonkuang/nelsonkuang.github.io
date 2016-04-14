@@ -49,19 +49,18 @@ require([], function (){
 
 	//return to top
     var isRttShow=false,
-    $rtt=$("#return_to_top");
 	$(window).scroll(function(){
         var scrollTop = $(this).scrollTop();
         if(scrollTop>100 && !isRttShow){
-        	$rtt.css("display","block");
+        	$("#return_to_top").css("display","block");
         	isRttShow=true;
         }else if(scrollTop<100 && isRttShow){
-        	$rtt.css("display","none");
+        	$("#return_to_top").css("display","none");
         	isRttShow=false;        	
         }
 	});
 
-	$rtt.click(function(){
+	$("#return_to_top").click(function(){
         $('html,body').animate({scrollTop: '0px'}, 800);
 	});
 
