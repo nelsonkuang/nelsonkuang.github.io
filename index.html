@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.67px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.67px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.67px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/scss/" style="font-size: 11.67px;">scss</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/网页兼容性/" style="font-size: 10px;">网页兼容性</a>
+						<a href="/tags/UI设计/" style="font-size: 10px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.67px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.67px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.67px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/scss/" style="font-size: 11.67px;">scss</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/网页兼容性/" style="font-size: 10px;">网页兼容性</a>
 					</div>
 				</section>
 				
@@ -195,6 +195,122 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-useful-wechat-code-interactive" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/18/useful-wechat-code-interactive/" class="article-date">
+  	<time datetime="2016-04-18T01:12:45.000Z" itemprop="datePublished">2016-04-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/18/useful-wechat-code-interactive/">微信网页里面同时出现2个二维码长按时不能准确识别问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在微信网页里面如果同时放了2个或者多个二维码时，长按二维码图片时只能识别到其中一个二维码，原因是其识别机制问题，其运行方式是先判断有没有按到图片(img)，有则提示识别二维码菜单，当按下菜单时，截取屏幕然后由上而下，由左而右识别，所以只能识别到靠左/上的那个二维码。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>可以把几个二维码做成<strong>可点击</strong>或者<strong>绑定按下</strong>弹出对话框的形式把相应的二维码以图片的形式放大显示，这样再按着就可以正确显示与识别相应的二维码了。如下图：<br><strong>没按下</strong>：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/code_normal.png" alt="地图形象展示"><br><strong>按下屏幕</strong>：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/code_press.png" alt="地图形象展示">   </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-useful-map-interactive" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/18/useful-map-interactive/" class="article-date">
+  	<time datetime="2016-04-18T01:11:15.000Z" itemprop="datePublished">2016-04-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/18/useful-map-interactive/">一个有用的地图方面的UI设计-地图形象展示</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在UI设计时，要求一些在地图上的一些特定地点上加上鼠标经过或者点击就提示相应的信息，但遇到地图上有个比较偏远的小岛屿，若要按比例展示地图却不可能展示出来。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>可以把岛屿缩小放到主图旁边，再把局部放大叠加在岛屿上方展示，如下图：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/map_id.jpg" alt="地图形象展示"> </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI设计/">UI设计</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-pix2rem-with-gulp-sass" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -731,129 +847,6 @@ gem install sass
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-react-cascading-address-selector" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/04/react-cascading-address-selector/" class="article-date">
-  	<time datetime="2016-03-04T06:57:45.000Z" itemprop="datePublished">2016-03-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/04/react-cascading-address-selector/">react-cascading-address-selector</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>React级联地址选择器组件纯前端实现 地址数组的检索充分运用了以空间换时间的思路</p>
-<p><a href="https://github.com/nelsonkuang/react-cascading-address-selector" target="_blank" rel="external">Github</a></p>
-<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/nelsonkuang/react-cascading-address-selector.git</span><br><span class="line">cd react-cascading-address-selector</span><br><span class="line">npm install</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
-<hr>
-<p>好！OK！<br>现在可以通过<a href="http://localhost:8080/webpack-dev-server/index.html打开页面" target="_blank" rel="external">http://localhost:8080/webpack-dev-server/index.html打开页面</a></p>
-<p><a href="http://runjs.cn/detail/wyreqgtd" target="_blank" rel="external">在线查看Demo效果</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-pix2remjs" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/31/pix2remjs/" class="article-date">
-  	<time datetime="2015-12-31T06:57:45.000Z" itemprop="datePublished">2015-12-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/31/pix2remjs/">pix2remjs</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>a responsive design soluction for mobile web page [be compatible with all popular mobile / appwebview browsers], meanwhile REM lives harmony with Pixel that means you can use ‘px’ and ‘rem’ at the same time.    </p>
-<p>一个几乎能适配所有手机端的非常简单易用的h5响应式设计解决方案[兼容所有流行的移动浏览器或者app内置浏览器], 移动端Rem解决方案， 与此同时，最方便之处是你可以同时使用REM单位或者px像素单位互不冲突，非常和谐，[不好意思，这里忽略了1像素问题，个人觉得这问题不是问题]  </p>
-<p><a href="https://github.com/nelsonkuang/pix2remjs" target="_blank" rel="external">Github Address</a></p>
-<h2 id="Usage-使用方式"><a href="#Usage-使用方式" class="headerlink" title="Usage 使用方式"></a>Usage 使用方式</h2><p>Use Crunt in Command line, run 用Grunt环境命令行通过npm安装, 输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">grunt</span><br></pre></td></tr></table></figure></p>
-<h2 id="Showcase-谁在用"><a href="#Showcase-谁在用" class="headerlink" title="Showcase 谁在用"></a>Showcase 谁在用</h2><p><a href="http://wx.hiooy.com/wap" target="_blank" rel="external">海印优选</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rem/">rem</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/responsive-design/">responsive design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
 	</div>
 
       

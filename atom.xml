@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-04-12T05:33:53.293Z</updated>
+  <updated>2016-04-18T01:52:28.650Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信网页里面同时出现2个二维码长按时不能准确识别问题</title>
+    <link href="http://www.kuangzen.com/2016/04/18/useful-wechat-code-interactive/"/>
+    <id>http://www.kuangzen.com/2016/04/18/useful-wechat-code-interactive/</id>
+    <published>2016-04-18T01:12:45.000Z</published>
+    <updated>2016-04-18T01:52:28.650Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;在微信网页里面如果同时放了2个或者多个二维码时，长按二维码图片时只能识别到其中一个二维码，原因是其识别机制问题，其运行方式是先判断有没有按到图片(img)，有则提示识别二维码菜单，当按下菜单时，截取屏幕然后由上而下，由左而右识别，所以只能识别到靠左/上的那个二维码。&lt;/p&gt;
+&lt;h3 id=&quot;解决方案&quot;&gt;&lt;a href=&quot;#解决方案&quot; class=&quot;headerlink&quot; title=&quot;解决方案&quot;&gt;&lt;/a&gt;解决方案&lt;/h3&gt;&lt;p&gt;可以把几个二维码做成&lt;strong&gt;可点击&lt;/strong&gt;或者&lt;strong&gt;绑定按下&lt;/strong&gt;弹出对话框的形式把相应的二维码以图片的形式放大显示，这样再按着就可以正确显示与识别相应的二维码了。如下图：&lt;br&gt;&lt;strong&gt;没按下&lt;/strong&gt;：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/code_normal.png&quot; alt=&quot;地图形象展示&quot;&gt;&lt;br&gt;&lt;strong&gt;按下屏幕&lt;/strong&gt;：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/code_press.png&quot; alt=&quot;地图形象展示&quot;&gt;   &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;在微信网页里面如果同时放了2个或者多个二维码时，长按二维码图片时只能识别到其中一个二维码，原因是其识别机制问题，其运行方式是先判断有没有按到
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个有用的地图方面的UI设计-地图形象展示</title>
+    <link href="http://www.kuangzen.com/2016/04/18/useful-map-interactive/"/>
+    <id>http://www.kuangzen.com/2016/04/18/useful-map-interactive/</id>
+    <published>2016-04-18T01:11:15.000Z</published>
+    <updated>2016-04-18T01:35:04.536Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;在UI设计时，要求一些在地图上的一些特定地点上加上鼠标经过或者点击就提示相应的信息，但遇到地图上有个比较偏远的小岛屿，若要按比例展示地图却不可能展示出来。&lt;/p&gt;
+&lt;h3 id=&quot;解决方案&quot;&gt;&lt;a href=&quot;#解决方案&quot; class=&quot;headerlink&quot; title=&quot;解决方案&quot;&gt;&lt;/a&gt;解决方案&lt;/h3&gt;&lt;p&gt;可以把岛屿缩小放到主图旁边，再把局部放大叠加在岛屿上方展示，如下图：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/map_id.jpg&quot; alt=&quot;地图形象展示&quot;&gt; &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;在UI设计时，要求一些在地图上的一些特定地点上加上鼠标经过或者点击就提示相应的信息，但遇到地图上有个比较偏远的小岛屿，若要按比例展示地图却不
+    
+    </summary>
+    
+    
+      <category term="UI设计" scheme="http://www.kuangzen.com/tags/UI%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>pix2rem-with-gulp-sass</title>
@@ -194,9 +238,9 @@ gem install sass
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
-    
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
+      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     
   </entry>
   
