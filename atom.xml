@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-04-20T02:20:59.334Z</updated>
+  <updated>2016-04-20T02:28:11.831Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -20,26 +20,330 @@
     <link href="http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/"/>
     <id>http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/</id>
     <published>2016-04-20T00:59:50.000Z</published>
-    <updated>2016-04-20T02:20:59.334Z</updated>
+    <updated>2016-04-20T02:28:11.831Z</updated>
     
     <content type="html">&lt;h3 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h3&gt;&lt;p&gt;先学习node调试方法，用node搭建简单的web服务器  &lt;/p&gt;
 &lt;h3 id=&quot;使用node-inspector来调试node程序&quot;&gt;&lt;a href=&quot;#使用node-inspector来调试node程序&quot; class=&quot;headerlink&quot; title=&quot;使用node-inspector来调试node程序&quot;&gt;&lt;/a&gt;使用node-inspector来调试node程序&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;npm全局安装node-inspector&lt;br&gt;&lt;code&gt;npm install -g node-inspector&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;检查是否安装成功，与此同时调试服务已经开启了&lt;br&gt;&lt;code&gt;node-inspector&lt;/code&gt;&lt;br&gt;若成功应该出现下面提示  &lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Node Inspector v0.12.8  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;info  - socket.io started  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Visit http://127.0.0.1:8080/debug?port=5858 to start debugging&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;Node Inspector v0.12.8  
+info  - socket.io started  
+Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用谷歌浏览器chrome打开上面的链接，应该暂时还看不到代码，如下图所示：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-1.png&quot; alt=&quot;无代码&quot;&gt; &lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;用谷歌浏览器chrome打开上面的链接，应该暂时还看不到代码，如下图所示：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/5415466.png&quot; alt=&quot;无代码&quot;&gt; &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;创建example.js文件，使用官方代码如下：  &lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; http = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;http&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; hostname = &lt;span class=&quot;string&quot;&gt;&#39;127.0.0.1&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; port = &lt;span class=&quot;number&quot;&gt;3000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; server = http.createServer((req, res) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;res.statusCode = &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;res.setHeader(&lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;text/plain&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;res.end(&lt;span class=&quot;string&quot;&gt;&#39;Hello World\n&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server.listen(port, hostname, () =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;`Server running at http://&lt;span class=&quot;subst&quot;&gt;$&amp;#123;hostname&amp;#125;&lt;/span&gt;:&lt;span class=&quot;subst&quot;&gt;$&amp;#123;port&amp;#125;&lt;/span&gt;/`&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;打开新命令行使用&lt;code&gt;node --debug-brk example.js&lt;/code&gt;(强制断点在第一行)或者&lt;code&gt;node --debug example.js&lt;/code&gt;开始调试，如下图，刷新刚才打开的调试页面代码已经出来了，并且断点在第一行，这时可以自由添加断点或者查看变量或者函数值了，按F8可以进行单点调试  &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;![命令行](http://7xsj8c.com2.z0.glb.clouddn.com/img/5415466.png)   
-![有代码](http://7xsj8c.com2.z0.glb.clouddn.com/img/5415466.png) 
+&lt;li&gt;创建example.js文件，使用官方代码如下：  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; http = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;http&#39;&lt;/span&gt;)
+
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; hostname = &lt;span class=&quot;string&quot;&gt;&#39;127.0.0.1&#39;&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; port = &lt;span class=&quot;number&quot;&gt;3000&lt;/span&gt;
+
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; server = http.createServer((req, res) =&amp;gt; {
+res.statusCode = &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;
+res.setHeader(&lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;text/plain&#39;&lt;/span&gt;)
+res.end(&lt;span class=&quot;string&quot;&gt;&#39;Hello World\n&#39;&lt;/span&gt;)
+})
+
+server.listen(port, hostname, () =&amp;gt; {
+  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;`Server running at http://&lt;span class=&quot;subst&quot;&gt;${hostname}&lt;/span&gt;:&lt;span class=&quot;subst&quot;&gt;${port}&lt;/span&gt;/`&lt;/span&gt;)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;打开新命令行使用&lt;code&gt;node --debug-brk example.js&lt;/code&gt;(强制断点在第一行)或者&lt;code&gt;node --debug example.js&lt;/code&gt;开始调试，如下图，刷新刚才打开的调试页面代码已经出来了，并且断点在第一行，这时可以自由添加断点或者查看变量或者函数值了，按F8可以进行单点调试  &lt;pre&gt;&lt;code&gt;![命令行](http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-3.png)   
+![有代码](http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-2.png) 
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;用node搭建简单的web服务器&quot;&gt;&lt;a href=&quot;#用node搭建简单的web服务器&quot; class=&quot;headerlink&quot; title=&quot;用node搭建简单的web服务器&quot;&gt;&lt;/a&gt;用node搭建简单的web服务器&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;入口文件index.js&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;88&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;89&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;90&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;91&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;92&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;93&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;94&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;95&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;96&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;97&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;98&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;99&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;101&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;102&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;103&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;104&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;105&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;106&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;107&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;108&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;109&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;110&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;111&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;112&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;113&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;114&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;115&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;116&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;117&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;118&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;119&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;120&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;121&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;122&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;123&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;124&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;125&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;126&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;127&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;128&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;129&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;130&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;131&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;132&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;133&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;134&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;135&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;136&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;137&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;138&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;139&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;140&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;141&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;142&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;143&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;144&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;145&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;146&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;147&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;148&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;149&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;150&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;151&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;152&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;153&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;154&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;155&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;156&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;157&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;158&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;159&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;160&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;161&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;162&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;163&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;164&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;165&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;166&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;167&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;168&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;169&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;170&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;171&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;172&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;173&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;174&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;175&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;176&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;177&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;178&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;179&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;180&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;181&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;182&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;183&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;184&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;185&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;186&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;187&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;188&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;189&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;190&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;191&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;192&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;193&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;194&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;195&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;196&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;197&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;198&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;199&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;200&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;201&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;202&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;203&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;204&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;205&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;206&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;207&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;208&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;209&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;210&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;211&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;212&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;213&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;214&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;215&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;216&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;217&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;218&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;219&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;220&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;221&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;222&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;223&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;224&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;225&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;226&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;227&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;228&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;229&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;230&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;231&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;232&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;233&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;234&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;235&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;236&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;237&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;238&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;239&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;240&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;241&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;242&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;243&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;244&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;245&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;246&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;247&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;248&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;249&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;250&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;251&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;252&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;253&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;254&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;255&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;256&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;257&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;258&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;259&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;260&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;261&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;262&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;263&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;264&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;265&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;266&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;267&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;268&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;269&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;270&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;271&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;272&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;273&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;274&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;275&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;276&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;277&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;278&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;279&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;280&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;281&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;282&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;283&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;284&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;285&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;286&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;287&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;288&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;289&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;290&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;291&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;292&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;293&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; server = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;./server&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; router = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;./router&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; requestHandlers = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;./requestHandlers&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; handle = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;handle[&lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt;] = requestHandlers.start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;handle[&lt;span class=&quot;string&quot;&gt;&#39;/start&#39;&lt;/span&gt;] = requestHandlers.start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;handle[&lt;span class=&quot;string&quot;&gt;&#39;/upload&#39;&lt;/span&gt;] = requestHandlers.upload&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;handle[&lt;span class=&quot;string&quot;&gt;&#39;/show&#39;&lt;/span&gt;] = requestHandlers.show&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;handle[&lt;span class=&quot;string&quot;&gt;&#39;/wcshare&#39;&lt;/span&gt;] = requestHandlers.wcshare&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;handle[&lt;span class=&quot;string&quot;&gt;&#39;/static&#39;&lt;/span&gt;] = requestHandlers.static &lt;span class=&quot;comment&quot;&gt;//处理静态文件输出&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server.start(router.route, handle)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;` &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**请求处理文件requestHandlers.js(控制器)**   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;javascript  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; querystring = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;querystring&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; fs = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;fs&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; formidable = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;formidable&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; path = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;path&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; url = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;url&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; https = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;https&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; jsSHA = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;jssha&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;exports.start = response =&amp;gt; &amp;#123;&lt;span class=&quot;comment&quot;&gt;//输出上传文件form界面&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Request handler &#39;start&#39; was called.&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; body = &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;html&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;head&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; &#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;charset=UTF-8&quot; /&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/head&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;body&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;form action=&quot;/upload&quot; enctype=&quot;multipart/form-data&quot; &#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;method=&quot;post&quot;&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;file&quot; name=&quot;upload&quot; multiple=&quot;multiple&quot;&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;submit&quot; value=&quot;Upload file&quot; /&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/form&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/body&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/html&amp;gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    response.writeHead(&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, &amp;#123; &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt; &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    response.write(body)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    response.end()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;exports.upload = (response, request) =&amp;gt; &amp;#123;&lt;span class=&quot;comment&quot;&gt;//处理png图片上传并改名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Request handler &#39;upload&#39; was called.&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; form = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; formidable.IncomingForm()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    form.uploadDir = &lt;span class=&quot;string&quot;&gt;&#39;./tmp/wwwroot/static/upload&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;about to parse&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    form.parse(request, (error, fields, files) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;parsing done&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fs.renameSync(files.upload.path, &lt;span class=&quot;string&quot;&gt;&#39;./tmp/wwwroot/static/upload/test.png&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        response.writeHead(&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, &amp;#123; &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt; &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        response.write(&lt;span class=&quot;string&quot;&gt;&#39;received image:&amp;lt;br/&amp;gt;&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        response.write(&lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;img src=&#39;/show&#39; /&amp;gt;&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        response.end()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;exports.show = response =&amp;gt; &amp;#123;&lt;span class=&quot;comment&quot;&gt;//显示图片&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Request handler &#39;show&#39; was called.&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fs.readFile(&lt;span class=&quot;string&quot;&gt;&#39;./tmp/wwwroot/static/upload/test.png&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;binary&#39;&lt;/span&gt;, (error, file) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (error) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            response.writeHead(&lt;span class=&quot;number&quot;&gt;500&lt;/span&gt;, &amp;#123; &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/plain&#39;&lt;/span&gt; &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            response.write(error + &lt;span class=&quot;string&quot;&gt;&#39;\n&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            response.end()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            response.writeHead(&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, &amp;#123; &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;image/png&#39;&lt;/span&gt; &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            response.write(file, &lt;span class=&quot;string&quot;&gt;&#39;binary&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            response.end()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getJsapiTicket&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;appid, secret, callback&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; str1 = &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; str2 = &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; resp1 = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; resp2 = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//先根据appid与secret获取access_token&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    https.get(&lt;span class=&quot;string&quot;&gt;&#39;https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;amp;appid=&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        appid + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;secret=&#39;&lt;/span&gt; + secret, response =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            response.on(&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;, data =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                str1 += data&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            response.on(&lt;span class=&quot;string&quot;&gt;&#39;end&#39;&lt;/span&gt;, () =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;return access_token:  &#39;&lt;/span&gt; + str1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    resp1 = &lt;span class=&quot;built_in&quot;&gt;JSON&lt;/span&gt;.parse(str1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;解析远程access_token JSON数据错误&#39;&lt;/span&gt; + str1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//再根据access_token获取jsapiTicket&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                https.get(&lt;span class=&quot;string&quot;&gt;&#39;https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    resp1.access_token + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;type=jsapi&#39;&lt;/span&gt;, response =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        response.on(&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;, data =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            str2 += data&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        response.on(&lt;span class=&quot;string&quot;&gt;&#39;end&#39;&lt;/span&gt;, () =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;return ticket:  &#39;&lt;/span&gt; + str2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                                resp2 = &lt;span class=&quot;built_in&quot;&gt;JSON&lt;/span&gt;.parse(str2);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                                &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;解析远程ticket JSON数据错误&#39;&lt;/span&gt; + str2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            callback(resp2.ticket)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;).on(&lt;span class=&quot;string&quot;&gt;&#39;error&#39;&lt;/span&gt;, e =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.error(e)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;exports.wcshare = (res, request) =&amp;gt; &amp;#123;&lt;span class=&quot;comment&quot;&gt;//生成sha1签名，并输出测试&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Request handler &#39;wcshare&#39; was called.&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; appId = &lt;span class=&quot;string&quot;&gt;&#39;你的appId&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; appSecret = &lt;span class=&quot;string&quot;&gt;&#39;你的appSecret&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; timestamp = &lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;().getTime() / &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;//计算时间戳&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; nonceStr = &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random().toString(&lt;span class=&quot;number&quot;&gt;36&lt;/span&gt;).substr(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;)  &lt;span class=&quot;comment&quot;&gt;//生成随时字符串&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; url = &lt;span class=&quot;string&quot;&gt;&#39;http://&#39;&lt;/span&gt; + request.headers.host + request.url &lt;span class=&quot;comment&quot;&gt;//当时url&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    getJsapiTicket(appId, appSecret, jsapi_ticket =&amp;gt; &amp;#123;&lt;span class=&quot;comment&quot;&gt;//获取jsapiTicket&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; string1 = &lt;span class=&quot;string&quot;&gt;&#39;jsapi_ticket=&#39;&lt;/span&gt; + jsapi_ticket +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;noncestr=&#39;&lt;/span&gt; + nonceStr +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;timestamp=&#39;&lt;/span&gt; + timestamp +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;url=&#39;&lt;/span&gt; + url&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; signature = (&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; jsSHA(string1, &lt;span class=&quot;string&quot;&gt;&#39;TEXT&#39;&lt;/span&gt;)).getHash(&lt;span class=&quot;string&quot;&gt;&#39;SHA-1&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;HEX&#39;&lt;/span&gt;)&lt;span class=&quot;comment&quot;&gt;//生成sha1签名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; body = &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;html&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;head&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; &#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;charset=UTF-8&quot; /&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/head&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;body&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;hidden&quot; id=&quot;appId&quot; value=&quot;&#39;&lt;/span&gt; + appId + &lt;span class=&quot;string&quot;&gt;&#39;&quot; /&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;hidden&quot; id=&quot;timestamp&quot; value=&quot;&#39;&lt;/span&gt; + timestamp + &lt;span class=&quot;string&quot;&gt;&#39;&quot; /&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;hidden&quot; id=&quot;nonceStr&quot; value=&quot;&#39;&lt;/span&gt; + nonceStr + &lt;span class=&quot;string&quot;&gt;&#39;&quot; /&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;hidden&quot; id=&quot;signature&quot; value=&quot;&#39;&lt;/span&gt; + signature + &lt;span class=&quot;string&quot;&gt;&#39;&quot; /&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;script src=&quot;http://res.wx.qq.com/open/js/jweixin-1.0.0.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;script src=&quot;static/js/main.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/body&amp;gt;&#39;&lt;/span&gt; +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/html&amp;gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        res.writeHead(&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, &amp;#123; &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt; &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        res.write(body)&lt;span class=&quot;comment&quot;&gt;//输出测试&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        res.end()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;exports.static = (response, request) =&amp;gt; &amp;#123;&lt;span class=&quot;comment&quot;&gt;//处理所有静态文件输出，简单的静态文件服务器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Request handler &#39;static&#39; was called.&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; pathname = url.parse(request.url).pathname&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; filepath = path.join(&lt;span class=&quot;string&quot;&gt;&#39;./tmp&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;wwwroot&#39;&lt;/span&gt;, pathname)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; stream = fs.createReadStream(filepath, &amp;#123; flags: &lt;span class=&quot;string&quot;&gt;&#39;r&#39;&lt;/span&gt;, encoding: &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt; &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    stream.on(&lt;span class=&quot;string&quot;&gt;&#39;error&#39;&lt;/span&gt;, () =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        response.writeHead(&lt;span class=&quot;number&quot;&gt;404&lt;/span&gt;, &amp;#123; &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt; &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        response.write(&lt;span class=&quot;string&quot;&gt;&#39;404 Not found&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        response.end()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    stream.pipe(response)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;` &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**路由器文件router.js**  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;javascript &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;exports.route = (handle, pathname, response, request) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;About to route a request for &#39;&lt;/span&gt; + pathname)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; handle[pathname] === &lt;span class=&quot;string&quot;&gt;&#39;function&#39;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    handle[pathname](response, request)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;No request handler found for &#39;&lt;/span&gt; + pathname)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    response.writeHead(&lt;span class=&quot;number&quot;&gt;404&lt;/span&gt;, &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    response.write(&lt;span class=&quot;string&quot;&gt;&#39;404 Not found&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    response.end()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;` &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**web服务器文件server.js**  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;javascript &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; http = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;http&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; url = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;url&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;exports.start = (route, handle) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  http.createServer((request, response) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; pathname = url.parse(request.url).pathname&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;Request for &#39;&lt;/span&gt; + pathname + &lt;span class=&quot;string&quot;&gt;&#39; received.&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    route(handle, pathname.indexOf(&lt;span class=&quot;string&quot;&gt;&#39;/static/&#39;&lt;/span&gt;) &amp;gt; &lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt; ? &lt;span class=&quot;string&quot;&gt;&#39;/static&#39;&lt;/span&gt; : pathname, response, request)&lt;span class=&quot;comment&quot;&gt;//特殊处理带/static/路径的静态文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;).listen(&lt;span class=&quot;number&quot;&gt;8888&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;Server has started.&#39;&lt;/span&gt;)	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;` &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**前端调用微信分享js文件main.js**  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;javascript&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 所有要调用的 API 都要加到这个列表中   &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wx.config(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    debug: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    appId: &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelector(&lt;span class=&quot;string&quot;&gt;&#39;#appid&#39;&lt;/span&gt;).value,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    timestamp: &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelector(&lt;span class=&quot;string&quot;&gt;&#39;#timestamp&#39;&lt;/span&gt;).value,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    nonceStr: &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelector(&lt;span class=&quot;string&quot;&gt;&#39;#nonceStr&#39;&lt;/span&gt;).value,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    signature: &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelector(&lt;span class=&quot;string&quot;&gt;&#39;#signature&#39;&lt;/span&gt;).value,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    jsApiList: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;onMenuShareTimeline&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;onMenuShareAppMessage&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;onMenuShareQQ&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;onMenuShareWeibo&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;openLocation&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;editAddress&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;chooseImage&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;previewImage&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;uploadImage&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;downloadImage&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;/*	  &#39;hideMenuItems&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;showMenuItems&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;hideAllNonBaseMenuItem&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;showAllNonBaseMenuItem&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;translateVoice&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;startRecord&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;stopRecord&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;onRecordEnd&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;playVoice&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;pauseVoice&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;stopVoice&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;uploadVoice&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;downloadVoice&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;getNetworkType&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;getLocation&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;hideOptionMenu&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;showOptionMenu&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;closeWindow&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;scanQRCode&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;chooseWXPay&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;openProductSpecificView&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;addCard&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;chooseCard&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        	  &#39;openCard&#39;*/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wx.ready(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sharedata = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;img&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;http://7xsj8c.com2.z0.glb.clouddn.com/img/5415466.png&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;title&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;title: kdjfkdjfkdjfkdjfkjdkfjkdjfdkjfkdjkfjdkfjdkjfkdjf...&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;desc&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;url&#39;&lt;/span&gt;: location.href&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    wx.onMenuShareTimeline(&amp;#123; &lt;span class=&quot;comment&quot;&gt;//朋友圈&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        title: sharedata.title,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        link: sharedata.url,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        imgUrl: sharedata.img,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        trigger: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        success: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cancel: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fail: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    wx.onMenuShareAppMessage(&amp;#123; &lt;span class=&quot;comment&quot;&gt;//转发朋友&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        title: sharedata.title,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        desc: sharedata.desc,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        link: sharedata.url,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        imgUrl: sharedata.img,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        trigger: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        success: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cancel: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fail: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    wx.onMenuShareQQ(&amp;#123; &lt;span class=&quot;comment&quot;&gt;//转发到QQ&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        title: sharedata.title,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        desc: sharedata.desc,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        link: sharedata.url,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        imgUrl: sharedata.img,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        trigger: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        complete: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        success: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cancel: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fail: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;测试url&lt;/strong&gt;&lt;br&gt;命令行输入&lt;code&gt;node --debug index.js&lt;/code&gt;启动程序并进行调试/测试&lt;br&gt;&lt;a href=&quot;http://127.0.0.1:8888/start&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://127.0.0.1:8888/start&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://127.0.0.1:8888/wcshare&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://127.0.0.1:8888/wcshare&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://127.0.0.1:8888/static/upload/test.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://127.0.0.1:8888/static/upload/test.png&lt;/a&gt;&lt;br&gt;等等&lt;br&gt;&lt;strong&gt;文件目录如下&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/5415466.png&quot; alt=&quot;文件目录结构&quot;&gt;  &lt;/p&gt;
+&lt;h3 id=&quot;用node搭建简单的web服务器&quot;&gt;&lt;a href=&quot;#用node搭建简单的web服务器&quot; class=&quot;headerlink&quot; title=&quot;用node搭建简单的web服务器&quot;&gt;&lt;/a&gt;用node搭建简单的web服务器&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;入口文件index.js&lt;/strong&gt;  &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; server = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;./server&#39;&lt;/span&gt;)
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; router = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;./router&#39;&lt;/span&gt;)
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; requestHandlers = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;./requestHandlers&#39;&lt;/span&gt;)
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; handle = {}
+handle[&lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt;] = requestHandlers.start
+handle[&lt;span class=&quot;string&quot;&gt;&#39;/start&#39;&lt;/span&gt;] = requestHandlers.start
+handle[&lt;span class=&quot;string&quot;&gt;&#39;/upload&#39;&lt;/span&gt;] = requestHandlers.upload
+handle[&lt;span class=&quot;string&quot;&gt;&#39;/show&#39;&lt;/span&gt;] = requestHandlers.show
+handle[&lt;span class=&quot;string&quot;&gt;&#39;/wcshare&#39;&lt;/span&gt;] = requestHandlers.wcshare
+handle[&lt;span class=&quot;string&quot;&gt;&#39;/static&#39;&lt;/span&gt;] = requestHandlers.static &lt;span class=&quot;comment&quot;&gt;//处理静态文件输出&lt;/span&gt;
+
+server.start(router.route, handle)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;请求处理文件requestHandlers.js(控制器)&lt;/strong&gt;  &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; querystring = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;querystring&#39;&lt;/span&gt;)
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; fs = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;fs&#39;&lt;/span&gt;)
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; formidable = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;formidable&#39;&lt;/span&gt;)
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; path = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;path&#39;&lt;/span&gt;)
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; url = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;url&#39;&lt;/span&gt;)
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; https = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;https&#39;&lt;/span&gt;)
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; jsSHA = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;jssha&#39;&lt;/span&gt;)
+
+exports.start = response =&amp;gt; {&lt;span class=&quot;comment&quot;&gt;//输出上传文件form界面&lt;/span&gt;
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Request handler &#39;start&#39; was called.&quot;&lt;/span&gt;);
+
+    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; body = &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;html&amp;gt;&#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;head&amp;gt;&#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; &#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;charset=UTF-8&quot; /&amp;gt;&#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/head&amp;gt;&#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;body&amp;gt;&#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;form action=&quot;/upload&quot; enctype=&quot;multipart/form-data&quot; &#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;method=&quot;post&quot;&amp;gt;&#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;file&quot; name=&quot;upload&quot; multiple=&quot;multiple&quot;&amp;gt;&#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;submit&quot; value=&quot;Upload file&quot; /&amp;gt;&#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/form&amp;gt;&#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/body&amp;gt;&#39;&lt;/span&gt; +
+        &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/html&amp;gt;&#39;&lt;/span&gt;
+
+    response.writeHead(&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, { &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt; })
+    response.write(body)
+    response.end()
+}
+
+exports.upload = (response, request) =&amp;gt; {&lt;span class=&quot;comment&quot;&gt;//处理png图片上传并改名&lt;/span&gt;
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Request handler &#39;upload&#39; was called.&quot;&lt;/span&gt;)
+
+    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; form = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; formidable.IncomingForm()
+    form.uploadDir = &lt;span class=&quot;string&quot;&gt;&#39;./tmp/wwwroot/static/upload&#39;&lt;/span&gt;
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;about to parse&#39;&lt;/span&gt;)
+    form.parse(request, (error, fields, files) =&amp;gt; {
+        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;parsing done&#39;&lt;/span&gt;)
+        fs.renameSync(files.upload.path, &lt;span class=&quot;string&quot;&gt;&#39;./tmp/wwwroot/static/upload/test.png&#39;&lt;/span&gt;)
+        response.writeHead(&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, { &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt; })
+        response.write(&lt;span class=&quot;string&quot;&gt;&#39;received image:&amp;lt;br/&amp;gt;&#39;&lt;/span&gt;)
+        response.write(&lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;img src=&#39;/show&#39; /&amp;gt;&quot;&lt;/span&gt;)
+        response.end()
+    });
+}
+
+exports.show = response =&amp;gt; {&lt;span class=&quot;comment&quot;&gt;//显示图片&lt;/span&gt;
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Request handler &#39;show&#39; was called.&quot;&lt;/span&gt;)
+    fs.readFile(&lt;span class=&quot;string&quot;&gt;&#39;./tmp/wwwroot/static/upload/test.png&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;binary&#39;&lt;/span&gt;, (error, file) =&amp;gt; {
+        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (error) {
+            response.writeHead(&lt;span class=&quot;number&quot;&gt;500&lt;/span&gt;, { &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/plain&#39;&lt;/span&gt; })
+            response.write(error + &lt;span class=&quot;string&quot;&gt;&#39;\n&#39;&lt;/span&gt;)
+            response.end()
+        } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {
+            response.writeHead(&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, { &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;image/png&#39;&lt;/span&gt; })
+            response.write(file, &lt;span class=&quot;string&quot;&gt;&#39;binary&#39;&lt;/span&gt;)
+            response.end()
+        }
+    })
+}
+
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getJsapiTicket&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;appid, secret, callback&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; str1 = &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; str2 = &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; resp1 = {}
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; resp2 = {}
+
+    &lt;span class=&quot;comment&quot;&gt;//先根据appid与secret获取access_token&lt;/span&gt;
+    https.get(&lt;span class=&quot;string&quot;&gt;&#39;https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;amp;appid=&#39;&lt;/span&gt; +
+        appid + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;secret=&#39;&lt;/span&gt; + secret, response =&amp;gt; {
+            response.on(&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;, data =&amp;gt; {
+                str1 += data
+            })
+            response.on(&lt;span class=&quot;string&quot;&gt;&#39;end&#39;&lt;/span&gt;, () =&amp;gt; {
+                &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;return access_token:  &#39;&lt;/span&gt; + str1)
+                &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; {
+                    resp1 = &lt;span class=&quot;built_in&quot;&gt;JSON&lt;/span&gt;.parse(str1);
+                } &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (e) {
+                    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;解析远程access_token JSON数据错误&#39;&lt;/span&gt; + str1
+                }
+
+                &lt;span class=&quot;comment&quot;&gt;//再根据access_token获取jsapiTicket&lt;/span&gt;
+                https.get(&lt;span class=&quot;string&quot;&gt;&#39;https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=&#39;&lt;/span&gt; +
+                    resp1.access_token + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;type=jsapi&#39;&lt;/span&gt;, response =&amp;gt; {
+                        response.on(&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;, data =&amp;gt; {
+                            str2 += data
+                        })
+                        response.on(&lt;span class=&quot;string&quot;&gt;&#39;end&#39;&lt;/span&gt;, () =&amp;gt; {
+                            &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;return ticket:  &#39;&lt;/span&gt; + str2)
+                            &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; {
+                                resp2 = &lt;span class=&quot;built_in&quot;&gt;JSON&lt;/span&gt;.parse(str2);
+                            } &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (e) {
+                                &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;解析远程ticket JSON数据错误&#39;&lt;/span&gt; + str2
+                            }
+                            callback(resp2.ticket)
+                        })
+
+                    })
+
+
+            })
+
+
+
+
+        }).on(&lt;span class=&quot;string&quot;&gt;&#39;error&#39;&lt;/span&gt;, e =&amp;gt; {
+        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.error(e)
+    });
+
+
+}
+exports.wcshare = (res, request) =&amp;gt; {&lt;span class=&quot;comment&quot;&gt;//生成sha1签名，并输出测试&lt;/span&gt;
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Request handler &#39;wcshare&#39; was called.&quot;&lt;/span&gt;)
+    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; appId = &lt;span class=&quot;string&quot;&gt;&#39;你的appId&#39;&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; appSecret = &lt;span class=&quot;string&quot;&gt;&#39;你的appSecret&#39;&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; timestamp = &lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;().getTime() / &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;//计算时间戳&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; nonceStr = &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random().toString(&lt;span class=&quot;number&quot;&gt;36&lt;/span&gt;).substr(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;)  &lt;span class=&quot;comment&quot;&gt;//生成随时字符串&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; url = &lt;span class=&quot;string&quot;&gt;&#39;http://&#39;&lt;/span&gt; + request.headers.host + request.url &lt;span class=&quot;comment&quot;&gt;//当时url&lt;/span&gt;
+    getJsapiTicket(appId, appSecret, jsapi_ticket =&amp;gt; {&lt;span class=&quot;comment&quot;&gt;//获取jsapiTicket&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; string1 = &lt;span class=&quot;string&quot;&gt;&#39;jsapi_ticket=&#39;&lt;/span&gt; + jsapi_ticket +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;noncestr=&#39;&lt;/span&gt; + nonceStr +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;timestamp=&#39;&lt;/span&gt; + timestamp +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;url=&#39;&lt;/span&gt; + url
+
+        &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; signature = (&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; jsSHA(string1, &lt;span class=&quot;string&quot;&gt;&#39;TEXT&#39;&lt;/span&gt;)).getHash(&lt;span class=&quot;string&quot;&gt;&#39;SHA-1&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;HEX&#39;&lt;/span&gt;)&lt;span class=&quot;comment&quot;&gt;//生成sha1签名&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; body = &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;html&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;head&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; &#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;charset=UTF-8&quot; /&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/head&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;body&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;hidden&quot; id=&quot;appId&quot; value=&quot;&#39;&lt;/span&gt; + appId + &lt;span class=&quot;string&quot;&gt;&#39;&quot; /&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;hidden&quot; id=&quot;timestamp&quot; value=&quot;&#39;&lt;/span&gt; + timestamp + &lt;span class=&quot;string&quot;&gt;&#39;&quot; /&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;hidden&quot; id=&quot;nonceStr&quot; value=&quot;&#39;&lt;/span&gt; + nonceStr + &lt;span class=&quot;string&quot;&gt;&#39;&quot; /&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;input type=&quot;hidden&quot; id=&quot;signature&quot; value=&quot;&#39;&lt;/span&gt; + signature + &lt;span class=&quot;string&quot;&gt;&#39;&quot; /&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;script src=&quot;http://res.wx.qq.com/open/js/jweixin-1.0.0.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;script src=&quot;static/js/main.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/body&amp;gt;&#39;&lt;/span&gt; +
+            &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/html&amp;gt;&#39;&lt;/span&gt;
+        res.writeHead(&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, { &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt; })
+        res.write(body)&lt;span class=&quot;comment&quot;&gt;//输出测试&lt;/span&gt;
+        res.end()
+    })
+
+
+}
+
+exports.static = (response, request) =&amp;gt; {&lt;span class=&quot;comment&quot;&gt;//处理所有静态文件输出，简单的静态文件服务器&lt;/span&gt;
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Request handler &#39;static&#39; was called.&quot;&lt;/span&gt;)
+    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; pathname = url.parse(request.url).pathname
+    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; filepath = path.join(&lt;span class=&quot;string&quot;&gt;&#39;./tmp&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;wwwroot&#39;&lt;/span&gt;, pathname)
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; stream = fs.createReadStream(filepath, { flags: &lt;span class=&quot;string&quot;&gt;&#39;r&#39;&lt;/span&gt;, encoding: &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt; })
+    stream.on(&lt;span class=&quot;string&quot;&gt;&#39;error&#39;&lt;/span&gt;, () =&amp;gt; {
+        response.writeHead(&lt;span class=&quot;number&quot;&gt;404&lt;/span&gt;, { &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt; })
+        response.write(&lt;span class=&quot;string&quot;&gt;&#39;404 Not found&#39;&lt;/span&gt;)
+        response.end()
+    })
+    stream.pipe(response)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;路由器文件router.js&lt;/strong&gt; &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;exports.route = (handle, pathname, response, request) =&amp;gt; {
+  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;About to route a request for &#39;&lt;/span&gt; + pathname)
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; handle[pathname] === &lt;span class=&quot;string&quot;&gt;&#39;function&#39;&lt;/span&gt;) {
+    handle[pathname](response, request)
+  } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;No request handler found for &#39;&lt;/span&gt; + pathname)
+    response.writeHead(&lt;span class=&quot;number&quot;&gt;404&lt;/span&gt;, {&lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt;})
+    response.write(&lt;span class=&quot;string&quot;&gt;&#39;404 Not found&#39;&lt;/span&gt;)
+    response.end()
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;web服务器文件server.js&lt;/strong&gt;  &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; http = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;http&#39;&lt;/span&gt;)
+&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; url = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;url&#39;&lt;/span&gt;)
+
+exports.start = (route, handle) =&amp;gt; {
+  http.createServer((request, response) =&amp;gt; {
+    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; pathname = url.parse(request.url).pathname
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;Request for &#39;&lt;/span&gt; + pathname + &lt;span class=&quot;string&quot;&gt;&#39; received.&#39;&lt;/span&gt;)
+    route(handle, pathname.indexOf(&lt;span class=&quot;string&quot;&gt;&#39;/static/&#39;&lt;/span&gt;) &amp;gt; &lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt; ? &lt;span class=&quot;string&quot;&gt;&#39;/static&#39;&lt;/span&gt; : pathname, response, request)&lt;span class=&quot;comment&quot;&gt;//特殊处理带/static/路径的静态文件&lt;/span&gt;
+  }).listen(&lt;span class=&quot;number&quot;&gt;8888&lt;/span&gt;)
+  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;Server has started.&#39;&lt;/span&gt;)    
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;前端调用微信分享js文件main.js&lt;/strong&gt;  &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 所有要调用的 API 都要加到这个列表中   &lt;/span&gt;
+wx.config({
+    debug: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;,
+    appId: &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelector(&lt;span class=&quot;string&quot;&gt;&#39;#appid&#39;&lt;/span&gt;).value,
+    timestamp: &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelector(&lt;span class=&quot;string&quot;&gt;&#39;#timestamp&#39;&lt;/span&gt;).value,
+    nonceStr: &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelector(&lt;span class=&quot;string&quot;&gt;&#39;#nonceStr&#39;&lt;/span&gt;).value,
+    signature: &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelector(&lt;span class=&quot;string&quot;&gt;&#39;#signature&#39;&lt;/span&gt;).value,
+    jsApiList: [
+        &lt;span class=&quot;string&quot;&gt;&#39;onMenuShareTimeline&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;onMenuShareAppMessage&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;onMenuShareQQ&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;onMenuShareWeibo&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;openLocation&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;editAddress&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;chooseImage&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;previewImage&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;uploadImage&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;downloadImage&#39;&lt;/span&gt;,
+        &lt;span class=&quot;comment&quot;&gt;/*      &#39;hideMenuItems&#39;,
+              &#39;showMenuItems&#39;,
+              &#39;hideAllNonBaseMenuItem&#39;,
+              &#39;showAllNonBaseMenuItem&#39;,
+              &#39;translateVoice&#39;,
+              &#39;startRecord&#39;,
+              &#39;stopRecord&#39;,
+              &#39;onRecordEnd&#39;,
+              &#39;playVoice&#39;,
+              &#39;pauseVoice&#39;,
+              &#39;stopVoice&#39;,
+              &#39;uploadVoice&#39;,
+              &#39;downloadVoice&#39;,
+              &#39;getNetworkType&#39;,
+              &#39;getLocation&#39;,
+              &#39;hideOptionMenu&#39;,
+              &#39;showOptionMenu&#39;,
+              &#39;closeWindow&#39;,
+              &#39;scanQRCode&#39;,
+              &#39;chooseWXPay&#39;,
+              &#39;openProductSpecificView&#39;,
+              &#39;addCard&#39;,
+              &#39;chooseCard&#39;,
+              &#39;openCard&#39;*/&lt;/span&gt;
+    ]
+});
+
+wx.ready(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sharedata = {
+        &lt;span class=&quot;string&quot;&gt;&#39;img&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;http://7xsj8c.com2.z0.glb.clouddn.com/img/5415466.png&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;title&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;title: kdjfkdjfkdjfkdjfkjdkfjkdjfdkjfkdjkfjdkfjdkjfkdjf...&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;desc&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容&#39;&lt;/span&gt;,
+        &lt;span class=&quot;string&quot;&gt;&#39;url&#39;&lt;/span&gt;: location.href
+    }
+    wx.onMenuShareTimeline({ &lt;span class=&quot;comment&quot;&gt;//朋友圈&lt;/span&gt;
+        title: sharedata.title,
+        link: sharedata.url,
+        imgUrl: sharedata.img,
+        trigger: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{},
+        success: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{},
+        cancel: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{},
+        fail: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{}
+    });
+    wx.onMenuShareAppMessage({ &lt;span class=&quot;comment&quot;&gt;//转发朋友&lt;/span&gt;
+        title: sharedata.title,
+        desc: sharedata.desc,
+        link: sharedata.url,
+        imgUrl: sharedata.img,
+        trigger: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{},
+        success: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{},
+        cancel: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{},
+        fail: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{}
+    });
+    wx.onMenuShareQQ({ &lt;span class=&quot;comment&quot;&gt;//转发到QQ&lt;/span&gt;
+        title: sharedata.title,
+        desc: sharedata.desc,
+        link: sharedata.url,
+        imgUrl: sharedata.img,
+        trigger: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{},
+        complete: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{},
+        success: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{},
+        cancel: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{},
+        fail: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;res&lt;/span&gt;) &lt;/span&gt;{}
+    });
+
+
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;测试url&lt;/strong&gt;&lt;br&gt;命令行输入&lt;code&gt;node --debug index.js&lt;/code&gt;启动程序并进行调试/测试&lt;br&gt;&lt;a href=&quot;http://127.0.0.1:8888/start&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://127.0.0.1:8888/start&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://127.0.0.1:8888/wcshare&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://127.0.0.1:8888/wcshare&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://127.0.0.1:8888/static/upload/test.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://127.0.0.1:8888/static/upload/test.png&lt;/a&gt;&lt;br&gt;等等&lt;br&gt;&lt;strong&gt;文件目录如下&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-4.png&quot; alt=&quot;文件目录结构&quot;&gt;  &lt;/p&gt;
 &lt;p&gt;参考资料如下&lt;br&gt;Node入门 &lt;a href=&quot;http://www.nodebeginner.org/index-zh-cn.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.nodebeginner.org/index-zh-cn.html&lt;/a&gt;&lt;br&gt;使用 node.js 进行服务器端 JavaScript 编程 &lt;a href=&quot;http://www.ibm.com/developerworks/cn/web/1107_chengfu_nodejs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.ibm.com/developerworks/cn/web/1107_chengfu_nodejs/&lt;/a&gt;&lt;/p&gt;
 </content>
     
@@ -51,9 +355,9 @@
     </summary>
     
     
-      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
-    
       <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
   </entry>
   
@@ -122,13 +426,13 @@
     </summary>
     
     
-      <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
-    
-      <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+      <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
+    
+      <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
     
       <category term="rem" scheme="http://www.kuangzen.com/tags/rem/"/>
     
@@ -175,11 +479,11 @@ gem install sass
     </summary>
     
     
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
       <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
     
       <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="ruby" scheme="http://www.kuangzen.com/tags/ruby/"/>
     
@@ -235,15 +539,15 @@ gem install sass
     </summary>
     
     
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
+    
       <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
     
       <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
     
       <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
   </entry>
   
@@ -276,13 +580,13 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
-      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -310,9 +614,9 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -340,11 +644,11 @@ gem install sass
     </summary>
     
     
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -375,11 +679,11 @@ gem install sass
     </summary>
     
     
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -414,11 +718,11 @@ gem install sass
     </summary>
     
     
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -445,9 +749,9 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="react" scheme="http://www.kuangzen.com/tags/react/"/>
     
@@ -474,9 +778,9 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="rem" scheme="http://www.kuangzen.com/tags/rem/"/>
     
@@ -507,9 +811,9 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="canvas" scheme="http://www.kuangzen.com/tags/canvas/"/>
     
@@ -534,11 +838,11 @@ gem install sass
     </summary>
     
     
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
   </entry>
   
@@ -607,9 +911,9 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="random" scheme="http://www.kuangzen.com/tags/random/"/>
     
