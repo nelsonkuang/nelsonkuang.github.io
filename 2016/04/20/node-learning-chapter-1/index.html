@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Node.js 入门到实践生成微信数字签名实践（用于前端调用微信js sdk接口） | Kuang Zen</title>
+  <title>Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口） | Kuang Zen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="思路先学习node调试方法，用node搭建简单的web服务器  
 使用node-inspector来调试node程序
@@ -13,7 +13,7 @@ npm全局安装node-inspectornpm install -g node-inspector
 Node Inspector v0.12.8  
 info  - socket.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node.js 入门到实践生成微信数字签名实践（用于前端调用微信js sdk接口）">
+<meta property="og:title" content="Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）">
 <meta property="og:url" content="http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/index.html">
 <meta property="og:site_name" content="Kuang Zen">
 <meta property="og:description" content="思路先学习node调试方法，用node搭建简单的web服务器  
@@ -23,10 +23,12 @@ npm全局安装node-inspectornpm install -g node-inspector
 Node Inspector v0.12.8  
 info  - socket.">
 <meta property="og:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-1.png">
+<meta property="og:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-3.png">
+<meta property="og:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-2.png">
 <meta property="og:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-4.png">
-<meta property="og:updated_time" content="2016-04-20T02:28:11.831Z">
+<meta property="og:updated_time" content="2016-04-20T02:32:50.695Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node.js 入门到实践生成微信数字签名实践（用于前端调用微信js sdk接口）">
+<meta name="twitter:title" content="Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）">
 <meta name="twitter:description" content="思路先学习node调试方法，用node搭建简单的web服务器  
 使用node-inspector来调试node程序
 npm全局安装node-inspectornpm install -g node-inspector
@@ -117,6 +119,8 @@ info  - socket.">
 				        
 							<li><a href="/tags/前端">前端</a></li>
 				        
+							<li><a href="/tags/后端">后端</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -195,6 +199,8 @@ info  - socket.">
 		        
 					<li><a href="/tags/前端">前端</a></li>
 		        
+					<li><a href="/tags/后端">后端</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
@@ -230,7 +236,7 @@ info  - socket.">
         
   
     <h1 class="article-title" itemprop="name">
-      Node.js 入门到实践生成微信数字签名实践（用于前端调用微信js sdk接口）
+      Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）
     </h1>
   
 
@@ -278,9 +284,7 @@ server.listen(port, hostname, () =&gt; {
 })
 </code></pre>
 <ul>
-<li>打开新命令行使用<code>node --debug-brk example.js</code>(强制断点在第一行)或者<code>node --debug example.js</code>开始调试，如下图，刷新刚才打开的调试页面代码已经出来了，并且断点在第一行，这时可以自由添加断点或者查看变量或者函数值了，按F8可以进行单点调试  <pre><code>![命令行](http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-3.png)   
-![有代码](http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-2.png) 
-</code></pre></li>
+<li>打开新命令行使用<code>node --debug-brk example.js</code>(强制断点在第一行)或者<code>node --debug example.js</code>开始调试，如下图，刷新刚才打开的调试页面代码已经出来了，并且断点在第一行，这时可以自由添加断点或者查看变量或者函数值了，按F8可以进行单点调试<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-3.png" alt="命令行"><br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-2.png" alt="有代码"> </li>
 </ul>
 <h3 id="用node搭建简单的web服务器"><a href="#用node搭建简单的web服务器" class="headerlink" title="用node搭建简单的web服务器"></a>用node搭建简单的web服务器</h3><p><strong>入口文件index.js</strong>  </p>
 <pre><code class="javascript"><span class="keyword">const</span> server = <span class="built_in">require</span>(<span class="string">'./server'</span>)
@@ -619,7 +623,7 @@ wx.ready(<span class="function"><span class="keyword">function</span>(<span clas
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="node-learning-chapter-1" data-title="Node.js 入门到实践生成微信数字签名实践（用于前端调用微信js sdk接口）" data-url="http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/"></div>
+	<div class="ds-thread" data-thread-key="node-learning-chapter-1" data-title="Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）" data-url="http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

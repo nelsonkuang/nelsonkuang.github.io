@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-04-20T02:28:11.831Z</updated>
+  <updated>2016-04-20T02:32:50.695Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Node.js 入门到实践生成微信数字签名实践（用于前端调用微信js sdk接口）</title>
+    <title>Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）</title>
     <link href="http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/"/>
     <id>http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/</id>
     <published>2016-04-20T00:59:50.000Z</published>
-    <updated>2016-04-20T02:28:11.831Z</updated>
+    <updated>2016-04-20T02:32:50.695Z</updated>
     
     <content type="html">&lt;h3 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h3&gt;&lt;p&gt;先学习node调试方法，用node搭建简单的web服务器  &lt;/p&gt;
 &lt;h3 id=&quot;使用node-inspector来调试node程序&quot;&gt;&lt;a href=&quot;#使用node-inspector来调试node程序&quot; class=&quot;headerlink&quot; title=&quot;使用node-inspector来调试node程序&quot;&gt;&lt;/a&gt;使用node-inspector来调试node程序&lt;/h3&gt;&lt;ul&gt;
@@ -50,9 +50,7 @@ server.listen(port, hostname, () =&amp;gt; {
 })
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-&lt;li&gt;打开新命令行使用&lt;code&gt;node --debug-brk example.js&lt;/code&gt;(强制断点在第一行)或者&lt;code&gt;node --debug example.js&lt;/code&gt;开始调试，如下图，刷新刚才打开的调试页面代码已经出来了，并且断点在第一行，这时可以自由添加断点或者查看变量或者函数值了，按F8可以进行单点调试  &lt;pre&gt;&lt;code&gt;![命令行](http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-3.png)   
-![有代码](http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-2.png) 
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;打开新命令行使用&lt;code&gt;node --debug-brk example.js&lt;/code&gt;(强制断点在第一行)或者&lt;code&gt;node --debug example.js&lt;/code&gt;开始调试，如下图，刷新刚才打开的调试页面代码已经出来了，并且断点在第一行，这时可以自由添加断点或者查看变量或者函数值了，按F8可以进行单点调试&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-3.png&quot; alt=&quot;命令行&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-2.png&quot; alt=&quot;有代码&quot;&gt; &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;用node搭建简单的web服务器&quot;&gt;&lt;a href=&quot;#用node搭建简单的web服务器&quot; class=&quot;headerlink&quot; title=&quot;用node搭建简单的web服务器&quot;&gt;&lt;/a&gt;用node搭建简单的web服务器&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;入口文件index.js&lt;/strong&gt;  &lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; server = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;./server&#39;&lt;/span&gt;)
@@ -355,9 +353,9 @@ wx.ready(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quo
     </summary>
     
     
-      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
-    
       <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
+    
+      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
@@ -541,13 +539,13 @@ gem install sass
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
-    
       <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
     
       <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
     
       <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
+    
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
   </entry>
   
@@ -580,13 +578,13 @@ gem install sass
     </summary>
     
     
-      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+    
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -614,9 +612,9 @@ gem install sass
     </summary>
     
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -644,11 +642,11 @@ gem install sass
     </summary>
     
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -679,11 +677,11 @@ gem install sass
     </summary>
     
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -718,11 +716,11 @@ gem install sass
     </summary>
     
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -838,11 +836,11 @@ gem install sass
     </summary>
     
     
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
+    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
   </entry>
   
