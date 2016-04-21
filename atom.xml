@@ -578,13 +578,13 @@ gem install sass
     </summary>
     
     
-      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+    
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -612,9 +612,9 @@ gem install sass
     </summary>
     
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -642,11 +642,11 @@ gem install sass
     </summary>
     
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -677,11 +677,11 @@ gem install sass
     </summary>
     
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -716,11 +716,11 @@ gem install sass
     </summary>
     
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -836,11 +836,11 @@ gem install sass
     </summary>
     
     
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
+    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
   </entry>
   
