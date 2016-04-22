@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/</loc>
+    <lastmod>2016-04-20T02:32:50.695Z</lastmod>
+    <data>
+        <display>
+        <title>Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）</title>
+        <pubTime>2016-04-20T00:59:50.000Z</pubTime>
+        
+        <tag>node.js</tag>
+         
+        <tag>后端</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/04/18/useful-wechat-code-interactive/</loc>
+    <lastmod>2016-04-18T01:52:28.650Z</lastmod>
+    <data>
+        <display>
+        <title>微信网页里面同时出现2个二维码长按时不能准确识别问题</title>
+        <pubTime>2016-04-18T01:12:45.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/04/18/useful-map-interactive/</loc>
+    <lastmod>2016-04-18T01:35:04.536Z</lastmod>
+    <data>
+        <display>
+        <title>一个有用的地图方面的UI设计-地图形象展示</title>
+        <pubTime>2016-04-18T01:11:15.000Z</pubTime>
+        
+        <tag>UI设计</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/04/08/pix2rem-with-gulp-sass/</loc>
+    <lastmod>2016-04-12T05:33:53.293Z</lastmod>
+    <data>
+        <display>
+        <title>pix2rem-with-gulp-sass</title>
+        <pubTime>2016-04-08T05:40:00.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>gulp</tag>
+         
+        <tag>sass</tag>
+         
+        <tag>rem</tag>
+         
+        <tag>responsive design</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2015/12/31/pix2remjs/</loc>
+    <lastmod>2016-04-12T05:33:10.179Z</lastmod>
+    <data>
+        <display>
+        <title>pix2remjs</title>
+        <pubTime>2015-12-31T06:57:45.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>rem</tag>
+         
+        <tag>responsive design</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/04/06/android-wechat6-3-15-browser-bug/</loc>
+    <lastmod>2016-04-11T07:07:14.574Z</lastmod>
+    <data>
+        <display>
+        <title>新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时不会触发resize动作，导致遮挡住输入框问题</title>
+        <pubTime>2016-04-06T08:04:30.000Z</pubTime>
+        
+        <tag>网页兼容性</tag>
+         
+        <tag>javascript</tag>
+         
+        <tag>jQuery</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/04/08/getting-started-with-gulp/</loc>
+    <lastmod>2016-04-08T05:47:07.226Z</lastmod>
+    <data>
+        <display>
+        <title>用Gulp配置前端自动化</title>
+        <pubTime>2016-04-08T00:39:49.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>gulp</tag>
+         
+        <tag>sass</tag>
+         
+        <tag>scss</tag>
+         
+        <tag>node.js</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/04/08/ruby-gem-install-sass/</loc>
+    <lastmod>2016-04-08T02:34:23.081Z</lastmod>
+    <data>
+        <display>
+        <title>windows中ruby环境下用gem安装sass</title>
+        <pubTime>2016-04-08T01:38:45.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>sass</tag>
+         
+        <tag>scss</tag>
+         
+        <tag>ruby</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2015/05/17/css3clockjs/</loc>
+    <lastmod>2016-04-07T00:49:41.857Z</lastmod>
+    <data>
+        <display>
+        <title>css3clock.js</title>
+        <pubTime>2015-05-17T06:57:45.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>css3</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/03/30/simple-switch/</loc>
+    <lastmod>2016-04-07T00:49:40.402Z</lastmod>
+    <data>
+        <display>
+        <title>simple-switch</title>
+        <pubTime>2016-03-30T06:57:45.000Z</pubTime>
+        
+        <tag>jQuery</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>css3</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/04/05/jQuery-countdown/</loc>
+    <lastmod>2016-04-05T02:54:05.523Z</lastmod>
+    <data>
+        <display>
+        <title>jQuery.countdown</title>
+        <pubTime>2016-04-05T02:52:16.000Z</pubTime>
+        
+        <tag>jQuery</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/04/05/jQuery-sDialog/</loc>
+    <lastmod>2016-04-05T02:44:35.330Z</lastmod>
+    <data>
+        <display>
+        <title>jQuery.sDialog</title>
+        <pubTime>2016-04-05T02:32:38.000Z</pubTime>
+        
+        <tag>jQuery</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>css3</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/03/21/jquery-scroll-cascade-select/</loc>
+    <lastmod>2016-04-05T01:58:41.334Z</lastmod>
+    <data>
+        <display>
+        <title>jquery-scroll-cascade-select</title>
+        <pubTime>2016-03-21T06:57:45.000Z</pubTime>
+        
+        <tag>jQuery</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>css3</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://www.kuangzen.com/2015/11/11/simplepen/</loc>
+    <lastmod>2016-03-31T10:29:48.931Z</lastmod>
+    <data>
+        <display>
+        <title>simplepen.js</title>
+        <pubTime>2015-11-11T06:57:45.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>canvas</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/03/04/react-cascading-address-selector/</loc>
+    <lastmod>2016-03-31T10:29:40.618Z</lastmod>
+    <data>
+        <display>
+        <title>react-cascading-address-selector</title>
+        <pubTime>2016-03-04T06:57:45.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>react</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2015/04/14/randomjs/</loc>
+    <lastmod>2016-03-31T10:29:35.916Z</lastmod>
+    <data>
+        <display>
+        <title>random.js</title>
+        <pubTime>2015-04-14T06:57:45.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>random</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>
