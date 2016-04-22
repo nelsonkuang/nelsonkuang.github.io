@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://www.kuangzen.com/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/</loc>
+    <lastmod>2016-04-22T05:59:17.770Z</lastmod>
+    <data>
+        <display>
+        <title>用node.js向百度推送hexo博客所有链接</title>
+        <pubTime>2016-04-22T05:35:40.000Z</pubTime>
+        
+        <tag>node.js</tag>
+         
+        <tag>后端</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/</loc>
     <lastmod>2016-04-20T02:32:50.695Z</lastmod>
     <data>
@@ -114,13 +133,13 @@
         <title>新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时不会触发resize动作，导致遮挡住输入框问题</title>
         <pubTime>2016-04-06T08:04:30.000Z</pubTime>
         
-        <tag>网页兼容性</tag>
-         
         <tag>javascript</tag>
          
-        <tag>jQuery</tag>
-         
         <tag>前端</tag>
+         
+        <tag>网页兼容性</tag>
+         
+        <tag>jQuery</tag>
          
          
            
@@ -185,11 +204,11 @@
         <title>css3clock.js</title>
         <pubTime>2015-05-17T06:57:45.000Z</pubTime>
         
+        <tag>css3</tag>
+         
         <tag>javascript</tag>
          
         <tag>前端</tag>
-         
-        <tag>css3</tag>
          
          
            
@@ -206,11 +225,11 @@
         <title>simple-switch</title>
         <pubTime>2016-03-30T06:57:45.000Z</pubTime>
         
-        <tag>jQuery</tag>
+        <tag>css3</tag>
          
         <tag>前端</tag>
          
-        <tag>css3</tag>
+        <tag>jQuery</tag>
          
          
            
@@ -227,9 +246,9 @@
         <title>jQuery.countdown</title>
         <pubTime>2016-04-05T02:52:16.000Z</pubTime>
         
-        <tag>jQuery</tag>
-         
         <tag>前端</tag>
+         
+        <tag>jQuery</tag>
          
          
            
@@ -246,11 +265,11 @@
         <title>jQuery.sDialog</title>
         <pubTime>2016-04-05T02:32:38.000Z</pubTime>
         
-        <tag>jQuery</tag>
+        <tag>css3</tag>
          
         <tag>前端</tag>
          
-        <tag>css3</tag>
+        <tag>jQuery</tag>
          
          
            
@@ -267,11 +286,11 @@
         <title>jquery-scroll-cascade-select</title>
         <pubTime>2016-03-21T06:57:45.000Z</pubTime>
         
-        <tag>jQuery</tag>
+        <tag>css3</tag>
          
         <tag>前端</tag>
          
-        <tag>css3</tag>
+        <tag>jQuery</tag>
          
          
            

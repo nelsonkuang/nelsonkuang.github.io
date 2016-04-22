@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.kuangzen.com/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/</loc>
+    
+    <lastmod>2016-04-22T05:59:17.770Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/</loc>
     
     <lastmod>2016-04-20T02:32:50.695Z</lastmod>

@@ -120,7 +120,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/UI设计/" style="font-size: 10px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.67px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/node-js/" style="font-size: 11.67px;">node.js</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.67px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.67px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/scss/" style="font-size: 11.67px;">scss</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 10px;">网页兼容性</a>
+						<a href="/tags/UI设计/" style="font-size: 10px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.67px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/node-js/" style="font-size: 13.33px;">node.js</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.67px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.67px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/scss/" style="font-size: 11.67px;">scss</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 11.67px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 10px;">网页兼容性</a>
 					</div>
 				</section>
 				
@@ -203,6 +203,69 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-push-urls-to-baidu-with-nodejs-in-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/" class="article-date">
+  	<time datetime="2016-04-22T05:35:40.000Z" itemprop="datePublished">2016-04-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/">用node.js向百度推送hexo博客所有链接</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>百度提供了4种方式用于提交网站链接，分别是主动推送(实时)，自动推送，sitemap和手动提交，其中主动推送是最快的。自动摧送是加js在页面上，但要打开页面才能执行推送，sitemap没爬到时也没有执行推送，手动提交还要登陆到百度网站上面去提交效率太低。  </p>
+<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>读取blog自动生成的baidusitemap.xml文件里面所有的url并post到baidu</p>
+<h3 id="用node-js执行推送"><a href="#用node-js执行推送" class="headerlink" title="用node.js执行推送"></a>用node.js执行推送</h3><p><strong>先按装依赖包</strong><br>两个sitemap文件装了后会每次deploy会自动生成sitemap.xml与baidusitemap.xml文件，xml2js用于把xml转化成为json</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap</span><br><span class="line">npm install hexo-generator-baidu-sitemap</span><br><span class="line">npm install xml2js --save</span><br></pre></td></tr></table></figure>
+<p><strong>文件处理js(pushtobaidu.js)代码如下：</strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">const</span> xml2js = <span class="built_in">require</span>(<span class="string">'xml2js'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> urls = []</span><br><span class="line"><span class="keyword">const</span> parser = <span class="keyword">new</span> xml2js.Parser()</span><br><span class="line">fs.readFile(<span class="string">'./public/baidusitemap.xml'</span>, <span class="string">'utf-8'</span>, (error, data) =&gt; &#123;<span class="comment">//先读取文件</span></span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        parser.parseString(data, (err, result) =&gt; &#123;<span class="comment">//xml转为json</span></span><br><span class="line">            urls = result.urlset.url.map(obj =&gt; obj.loc)<span class="comment">//读取所有url存到数组</span></span><br><span class="line">            <span class="keyword">const</span> reqData = urls.join(<span class="string">'\n'</span>)<span class="comment">//用换行符把所有url连成字符串</span></span><br><span class="line">            <span class="keyword">const</span> postOptions = &#123;</span><br><span class="line">                host: <span class="string">'data.zz.baidu.com'</span>,</span><br><span class="line">                path: <span class="string">'/urls?site=www.kuangzen.com&amp;token=XXXXXX'</span>,<span class="comment">//这里填写你从百度拿到的token</span></span><br><span class="line">                port: <span class="string">'80'</span>,</span><br><span class="line">                method: <span class="string">'POST'</span>,</span><br><span class="line">                headers: &#123;</span><br><span class="line">                    <span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>,</span><br><span class="line">                    <span class="string">'Content-Length'</span>: reqData.length</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            postData(reqData, postOptions)<span class="comment">//post给百度</span></span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">postData</span>(<span class="params">reqData, postOptions</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> postReq = http.request(postOptions, response =&gt; &#123;</span><br><span class="line">    	response.setEncoding(<span class="string">'utf8'</span>)</span><br><span class="line">        response.on(<span class="string">'data'</span>, data =&gt; &#123;</span><br><span class="line">        	data = <span class="built_in">JSON</span>.parse(data)</span><br><span class="line">            <span class="keyword">if</span> (data.success)</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'post data success!'</span>)</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">console</span>.log(data.error)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    postReq.on(<span class="string">'error'</span>, e =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'problem with request: '</span> + e.message);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// post the data</span></span><br><span class="line">    postReq.write(reqData)</span><br><span class="line">    postReq.end()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">``</span><span class="string">`  </span><br><span class="line"></span><br><span class="line">**每新增有blog文就可以在命令行执行摧送**</span></span><br></pre></td></tr></table></figure>
+<p>node pushtobaidu<br>```</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-node-learning-chapter-1" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1088,71 +1151,6 @@ gem install sass
 <p>check out the example/example.html demo.</p>
 <p>or</p>
 <p><a href="http://sandbox.runjs.cn/show/fkq0n7jy" target="_blank" rel="external">live Demo</a>, you can use mobile phone mode to view the demo for better experience!</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-simple-switch" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/30/simple-switch/" class="article-date">
-  	<time datetime="2016-03-30T06:57:45.000Z" itemprop="datePublished">2016-03-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/30/simple-switch/">simple-switch</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>A simple switch jQuery plugin to beautify your checkbox</p>
-<p>Support swipping left / right</p>
-<p><a href="https://github.com/nelsonkuang/simple-switch" target="_blank" rel="external">Github</a></p>
-<p><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/20160330111443.png" alt="Demo"> </p>
-<h2 id="how-to-use-it"><a href="#how-to-use-it" class="headerlink" title="how to use it?"></a>how to use it?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;simple-switch.min.css&quot; /&gt;</span><br><span class="line">&lt;script src=&quot;your path/jquery.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;jquery.simpleswitch.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;yourcheckbox&quot;).simpleSwitch();</span><br></pre></td></tr></table></figure>
-<p>check the demo.html example.</p>
-<p>or</p>
-<p><a href="http://sandbox.runjs.cn/show/iel8tvl4" target="_blank" rel="external">live Demo</a>, you can use mobile phone mode to view the demo for better experience!</p>
 
       
     </div>
