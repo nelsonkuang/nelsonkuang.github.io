@@ -42,11 +42,11 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
-      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -540,13 +540,13 @@ wx.ready(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quo
     </summary>
     
     
-      <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
-    
-      <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+      <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
+    
+      <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
     
       <category term="rem" scheme="http://www.kuangzen.com/tags/rem/"/>
     
@@ -593,11 +593,11 @@ gem install sass
     </summary>
     
     
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
       <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
     
       <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="ruby" scheme="http://www.kuangzen.com/tags/ruby/"/>
     
@@ -653,13 +653,13 @@ gem install sass
     </summary>
     
     
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
       <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
     
       <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
     
       <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
@@ -694,13 +694,13 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
-      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -728,9 +728,9 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -758,11 +758,11 @@ gem install sass
     </summary>
     
     
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -793,11 +793,11 @@ gem install sass
     </summary>
     
     
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -832,11 +832,11 @@ gem install sass
     </summary>
     
     
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
   </entry>
   
@@ -863,9 +863,9 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="react" scheme="http://www.kuangzen.com/tags/react/"/>
     
@@ -892,9 +892,9 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="rem" scheme="http://www.kuangzen.com/tags/rem/"/>
     
@@ -925,9 +925,9 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="canvas" scheme="http://www.kuangzen.com/tags/canvas/"/>
     
@@ -952,11 +952,11 @@ gem install sass
     </summary>
     
     
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
   </entry>
   
@@ -1025,9 +1025,9 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="random" scheme="http://www.kuangzen.com/tags/random/"/>
     
