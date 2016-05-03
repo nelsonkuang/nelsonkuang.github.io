@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-04-22T06:07:21.771Z</updated>
+  <updated>2016-05-03T01:14:49.633Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug</title>
+    <link href="http://www.kuangzen.com/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/"/>
+    <id>http://www.kuangzen.com/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/</id>
+    <published>2016-05-03T01:09:32.000Z</published>
+    <updated>2016-05-03T01:14:49.633Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;应用场景&quot;&gt;&lt;a href=&quot;#应用场景&quot; class=&quot;headerlink&quot; title=&quot;应用场景&quot;&gt;&lt;/a&gt;应用场景&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;使用mobicroll时，对input已经设置了readonly&lt;/li&gt;
+&lt;li&gt;其他input用作组件时，不需要输入，设置了readonly&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;解决思路&quot;&gt;&lt;a href=&quot;#解决思路&quot; class=&quot;headerlink&quot; title=&quot;解决思路&quot;&gt;&lt;/a&gt;解决思路&lt;/h3&gt;&lt;p&gt;只需要给input绑定一个click后设置为blur事件就可以了   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;$($input).click(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{&lt;span class=&quot;comment&quot;&gt;//fixed 虚拟键盘弹出&lt;/span&gt;
+    $(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;).blur();
+});
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;应用场景&quot;&gt;&lt;a href=&quot;#应用场景&quot; class=&quot;headerlink&quot; title=&quot;应用场景&quot;&gt;&lt;/a&gt;应用场景&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;使用mobicroll时，对input已经设置了readonly&lt;/li&gt;
+&lt;li&gt;其他input用作组件时，不
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
+      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>用node.js向百度推送hexo博客所有链接</title>
@@ -505,13 +540,13 @@ wx.ready(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quo
     </summary>
     
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
     
       <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="rem" scheme="http://www.kuangzen.com/tags/rem/"/>
     
@@ -558,11 +593,11 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
     
       <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="ruby" scheme="http://www.kuangzen.com/tags/ruby/"/>
     
@@ -618,13 +653,13 @@ gem install sass
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
     
       <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
     
       <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
@@ -659,13 +694,13 @@ gem install sass
     </summary>
     
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
+      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     
   </entry>
   
@@ -723,9 +758,9 @@ gem install sass
     </summary>
     
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
@@ -758,9 +793,9 @@ gem install sass
     </summary>
     
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
@@ -797,9 +832,9 @@ gem install sass
     </summary>
     
     
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
@@ -828,9 +863,9 @@ gem install sass
     </summary>
     
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="react" scheme="http://www.kuangzen.com/tags/react/"/>
     
@@ -857,9 +892,9 @@ gem install sass
     </summary>
     
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="rem" scheme="http://www.kuangzen.com/tags/rem/"/>
     
@@ -890,9 +925,9 @@ gem install sass
     </summary>
     
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="canvas" scheme="http://www.kuangzen.com/tags/canvas/"/>
     
@@ -917,11 +952,11 @@ gem install sass
     </summary>
     
     
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -990,9 +1025,9 @@ gem install sass
     </summary>
     
     
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="random" scheme="http://www.kuangzen.com/tags/random/"/>
     

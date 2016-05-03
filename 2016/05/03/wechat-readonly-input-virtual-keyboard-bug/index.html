@@ -4,18 +4,39 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Kuang Zen</title>
+  <title>安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug | Kuang Zen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="404Page Not Found.你访问的页面不存在…">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kuang Zen">
-<meta property="og:url" content="http://www.kuangzen.com/404.html">
+  <meta name="description" content="应用场景
+使用mobicroll时，对input已经设置了readonly
+其他input用作组件时，不需要输入，设置了readonly
+
+解决思路只需要给input绑定一个click后设置为blur事件就可以了   
+$($input).click(function () {//fixed 虚拟键盘弹出
+    $(this).blur();
+});">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug">
+<meta property="og:url" content="http://www.kuangzen.com/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/index.html">
 <meta property="og:site_name" content="Kuang Zen">
-<meta property="og:description" content="404Page Not Found.你访问的页面不存在…">
-<meta property="og:updated_time" content="2016-04-01T02:12:18.878Z">
+<meta property="og:description" content="应用场景
+使用mobicroll时，对input已经设置了readonly
+其他input用作组件时，不需要输入，设置了readonly
+
+解决思路只需要给input绑定一个click后设置为blur事件就可以了   
+$($input).click(function () {//fixed 虚拟键盘弹出
+    $(this).blur();
+});">
+<meta property="og:updated_time" content="2016-05-03T01:14:49.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kuang Zen">
-<meta name="twitter:description" content="404Page Not Found.你访问的页面不存在…">
+<meta name="twitter:title" content="安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug">
+<meta name="twitter:description" content="应用场景
+使用mobicroll时，对input已经设置了readonly
+其他input用作组件时，不需要输入，设置了readonly
+
+解决思路只需要给input绑定一个click后设置为blur事件就可以了   
+$($input).click(function () {//fixed 虚拟键盘弹出
+    $(this).blur();
+});">
   
     <link rel="alternative" href="/atom.xml" title="Kuang Zen" type="application/atom+xml">
   
@@ -203,11 +224,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-wechat-readonly-input-virtual-keyboard-bug" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/404.html" class="article-date">
-  	<time datetime="2016-04-01T02:12:18.878Z" itemprop="datePublished">2016-04-01</time>
+      <a href="/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/" class="article-date">
+  	<time datetime="2016-05-03T01:09:32.000Z" itemprop="datePublished">2016-05-03</time>
 </a>
     </div>
   
@@ -216,15 +237,56 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网页兼容性/">网页兼容性</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="404"><a href="#404" class="headerlink" title="404"></a><center>404</center></h1><h1 id="Page-Not-Found"><a href="#Page-Not-Found" class="headerlink" title="Page Not Found."></a><center style="color:red">Page Not Found.</center></h1><h1 id="你访问的页面不存在…"><a href="#你访问的页面不存在…" class="headerlink" title="你访问的页面不存在…"></a><center>你访问的页面不存在…</center></h1>
+        <h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
+<li>使用mobicroll时，对input已经设置了readonly</li>
+<li>其他input用作组件时，不需要输入，设置了readonly</li>
+</ol>
+<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><p>只需要给input绑定一个click后设置为blur事件就可以了   </p>
+<pre><code class="javascript">$($input).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{<span class="comment">//fixed 虚拟键盘弹出</span>
+    $(<span class="keyword">this</span>).blur();
+});
+</code></pre>
+
       
     </div>
     
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用node.js向百度推送hexo博客所有链接</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -254,7 +316,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="" data-url="http://www.kuangzen.com/404.html"></div>
+	<div class="ds-thread" data-thread-key="wechat-readonly-input-virtual-keyboard-bug" data-title="安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug" data-url="http://www.kuangzen.com/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -317,7 +379,7 @@ var _hmt = _hmt || [];
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
