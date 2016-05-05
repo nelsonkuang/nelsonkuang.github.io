@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>http://www.kuangzen.com/2016/05/05/avoid-wechat-input-bug/</loc>
+    <lastmod>2016-05-05T10:36:34.366Z</lastmod>
+    <data>
+        <display>
+        <title>新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时，导致遮挡住fixed在底部输入框问题</title>
+        <pubTime>2016-05-05T10:30:11.000Z</pubTime>
+        
+        <tag>网页兼容性</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>UI设计</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kuangzen.com/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/</loc>
     <lastmod>2016-05-03T01:14:49.633Z</lastmod>
     <data>

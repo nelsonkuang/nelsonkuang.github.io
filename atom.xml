@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-05-03T01:14:49.633Z</updated>
+  <updated>2016-05-05T10:36:34.366Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时，导致遮挡住fixed在底部输入框问题</title>
+    <link href="http://www.kuangzen.com/2016/05/05/avoid-wechat-input-bug/"/>
+    <id>http://www.kuangzen.com/2016/05/05/avoid-wechat-input-bug/</id>
+    <published>2016-05-05T10:30:11.000Z</published>
+    <updated>2016-05-05T10:36:34.366Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;固定(Fixed)在底部的输入框的页面，如下图评论框&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/bottom_input.png&quot; alt=&quot;Fixed在底部的评论框&quot;&gt; &lt;/p&gt;
+&lt;h3 id=&quot;解决方案&quot;&gt;&lt;a href=&quot;#解决方案&quot; class=&quot;headerlink&quot; title=&quot;解决方案&quot;&gt;&lt;/a&gt;解决方案&lt;/h3&gt;&lt;p&gt;可以做成Popup弹出输入框，这样就可以解决所有的iphone和各种乱七八糟的安卓手机的适配问题，如下图：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/popup_input.png&quot; alt=&quot;Popup弹出输入框&quot;&gt; &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;固定(Fixed)在底部的输入框的页面，如下图评论框&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clou
+    
+    </summary>
+    
+    
+      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="UI设计" scheme="http://www.kuangzen.com/tags/UI%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug</title>
