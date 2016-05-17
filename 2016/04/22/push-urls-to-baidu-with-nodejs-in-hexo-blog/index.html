@@ -253,6 +253,7 @@
       <div style="color: #aaa;font-size: 12px;margin-top: -20px;">阅读 <span id="busuanzi_value_page_pv"></span> | 本站总访问 <span id="busuanzi_value_site_pv"></span> | 本站访客 <span id="busuanzi_value_site_uv"></span></div>
       
       
+      
         <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>百度提供了4种方式用于提交网站链接，分别是主动推送(实时)，自动推送，sitemap和手动提交，其中主动推送是最快的。自动摧送是加js在页面上，但要打开页面才能执行推送，sitemap没爬到时也没有执行推送，手动提交还要登陆到百度网站上面去提交效率太低。  </p>
 <h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>读取blog自动生成的baidusitemap.xml文件里面所有的url并post到baidu</p>
 <h3 id="用node-js执行推送"><a href="#用node-js执行推送" class="headerlink" title="用node.js执行推送"></a>用node.js执行推送</h3><p><strong>先按装依赖包</strong><br>两个sitemap文件装了后会每次deploy会自动生成sitemap.xml与baidusitemap.xml文件。<br>xml2js用于把xml转化成为json。<a id="more"></a></p>
