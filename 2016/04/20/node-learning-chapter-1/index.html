@@ -9,9 +9,8 @@
   <meta name="description" content="思路先学习node调试方法，用node搭建简单的web服务器  
 使用node-inspector来调试node程序
 npm全局安装node-inspectornpm install -g node-inspector
-检查是否安装成功，与此同时调试服务已经开启了node-inspector若成功应该出现下面提示  
-Node Inspector v0.12.8  
-info  - socket.">
+检查是否安装成功，与此同时调试服务已经开启了node-inspector若成功应该出现下面提示  Node Inspector v0.12.8  
+info  - socket.i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）">
 <meta property="og:url" content="http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/index.html">
@@ -19,22 +18,20 @@ info  - socket.">
 <meta property="og:description" content="思路先学习node调试方法，用node搭建简单的web服务器  
 使用node-inspector来调试node程序
 npm全局安装node-inspectornpm install -g node-inspector
-检查是否安装成功，与此同时调试服务已经开启了node-inspector若成功应该出现下面提示  
-Node Inspector v0.12.8  
-info  - socket.">
+检查是否安装成功，与此同时调试服务已经开启了node-inspector若成功应该出现下面提示  Node Inspector v0.12.8  
+info  - socket.i">
 <meta property="og:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-1.png">
 <meta property="og:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-3.png">
 <meta property="og:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-2.png">
 <meta property="og:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-4.png">
-<meta property="og:updated_time" content="2016-04-20T02:32:50.695Z">
+<meta property="og:updated_time" content="2016-05-17T09:05:18.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）">
 <meta name="twitter:description" content="思路先学习node调试方法，用node搭建简单的web服务器  
 使用node-inspector来调试node程序
 npm全局安装node-inspectornpm install -g node-inspector
-检查是否安装成功，与此同时调试服务已经开启了node-inspector若成功应该出现下面提示  
-Node Inspector v0.12.8  
-info  - socket.">
+检查是否安装成功，与此同时调试服务已经开启了node-inspector若成功应该出现下面提示  Node Inspector v0.12.8  
+info  - socket.i">
 <meta name="twitter:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-1.png">
   
     <link rel="alternative" href="/atom.xml" title="Kuang Zen" type="application/atom+xml">
@@ -270,13 +267,11 @@ info  - socket.">
         <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>先学习node调试方法，用node搭建简单的web服务器  </p>
 <h3 id="使用node-inspector来调试node程序"><a href="#使用node-inspector来调试node程序" class="headerlink" title="使用node-inspector来调试node程序"></a>使用node-inspector来调试node程序</h3><ul>
 <li>npm全局安装node-inspector<br><code>npm install -g node-inspector</code></li>
-<li><p>检查是否安装成功，与此同时调试服务已经开启了<br><code>node-inspector</code><br>若成功应该出现下面提示  </p>
-<pre><code>Node Inspector v0.12.8  
+<li>检查是否安装成功，与此同时调试服务已经开启了<br><code>node-inspector</code><br>若成功应该出现下面提示  <pre><code>Node Inspector v0.12.8  
 info  - socket.io started  
 Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
-</code></pre></li>
-<li><p>用谷歌浏览器chrome打开上面的链接，应该暂时还看不到代码，如下图所示：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-1.png" alt="无代码"> </p>
-</li>
+</code></pre><a id="more"></a></li>
+<li>用谷歌浏览器chrome打开上面的链接，应该暂时还看不到代码，如下图所示：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-1.png" alt="无代码"> </li>
 <li>创建example.js文件，使用官方代码如下：  </li>
 </ul>
 <pre><code class="javascript"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)
