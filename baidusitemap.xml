@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://www.kuangzen.com/2016/05/17/web-front-end-awesome/</loc>
+    <lastmod>2016-05-17T06:29:05.829Z</lastmod>
+    <data>
+        <display>
+        <title>web前端实用集锦导航</title>
+        <pubTime>2016-05-17T01:26:15.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>jQuery</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>css3</tag>
+         
+        <tag>css</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kuangzen.com/2016/04/18/useful-wechat-code-interactive/</loc>
     <lastmod>2016-05-06T07:56:24.024Z</lastmod>
     <data>
@@ -30,9 +55,9 @@
         <title>新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时，导致遮挡住fixed在底部输入框问题</title>
         <pubTime>2016-05-05T10:30:11.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>网页兼容性</tag>
+         
+        <tag>前端</tag>
          
         <tag>UI设计</tag>
          
@@ -51,11 +76,11 @@
         <title>安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug</title>
         <pubTime>2016-05-03T01:09:32.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>网页兼容性</tag>
          
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
          
            
@@ -177,13 +202,13 @@
         <title>新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时不会触发resize动作，导致遮挡住输入框问题</title>
         <pubTime>2016-04-06T08:04:30.000Z</pubTime>
         
-        <tag>javascript</tag>
-         
-        <tag>前端</tag>
-         
         <tag>网页兼容性</tag>
          
+        <tag>javascript</tag>
+         
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
          
            
@@ -248,11 +273,11 @@
         <title>css3clock.js</title>
         <pubTime>2015-05-17T06:57:45.000Z</pubTime>
         
-        <tag>css3</tag>
-         
         <tag>javascript</tag>
          
         <tag>前端</tag>
+         
+        <tag>css3</tag>
          
          
            
@@ -269,11 +294,11 @@
         <title>simple-switch</title>
         <pubTime>2016-03-30T06:57:45.000Z</pubTime>
         
-        <tag>css3</tag>
+        <tag>jQuery</tag>
          
         <tag>前端</tag>
          
-        <tag>jQuery</tag>
+        <tag>css3</tag>
          
          
            
@@ -290,9 +315,9 @@
         <title>jQuery.countdown</title>
         <pubTime>2016-04-05T02:52:16.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
          
            
@@ -309,11 +334,11 @@
         <title>jQuery.sDialog</title>
         <pubTime>2016-04-05T02:32:38.000Z</pubTime>
         
-        <tag>css3</tag>
+        <tag>jQuery</tag>
          
         <tag>前端</tag>
          
-        <tag>jQuery</tag>
+        <tag>css3</tag>
          
          
            
@@ -330,11 +355,11 @@
         <title>jquery-scroll-cascade-select</title>
         <pubTime>2016-03-21T06:57:45.000Z</pubTime>
         
-        <tag>css3</tag>
+        <tag>jQuery</tag>
          
         <tag>前端</tag>
          
-        <tag>jQuery</tag>
+        <tag>css3</tag>
          
          
            
