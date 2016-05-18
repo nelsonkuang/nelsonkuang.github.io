@@ -205,7 +205,7 @@ a {
   height: 110px;
   position: absolute;
   width: 100%;
-  background: #4d4d4d;
+  background: #8b5a00;
 }
 #container #mobile-nav .overlay.fixed {
   position: fixed;
@@ -246,7 +246,7 @@ a {
 #container .left-col .overlay {
   width: 100%;
   height: 180px;
-  background-color: #000;
+  background-color: #8b5a00;
   position: absolute;
   opacity: 0.7;
 }
@@ -477,6 +477,7 @@ a {
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s;
+  font-weight: 700;
 }
 #header {
   width: 100%;
@@ -550,6 +551,7 @@ a {
 #header .header-menu li a {
   font-size: 14px;
   min-width: 300px;
+  text-shadow: 2px 2px 2px #a8a8a8;
 }
 #header .switch-area {
   position: relative;
@@ -702,6 +704,7 @@ a {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   padding: 5px;
+  color: #258fb8;
 }
 #header .switch-part3 .switch-friends-link:hover {
   background: #88acdb;
@@ -1218,6 +1221,23 @@ a {
 #toc ol li a,
 #toc ol li span {
   color: #ffa500;
+}
+#js-aboutme {
+  padding: 10px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  color: #333;
+  text-shadow: 2px 2px 2px #a8a8a8;
+}
+#js-friends {
+  padding: 10px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  text-shadow: 2px 2px 2px #a8a8a8;
 }
 @-moz-keyframes cd-bounce-1 {
   0% {
@@ -1862,7 +1882,11 @@ pre .css ~ * .id {
   padding: 4px 0;
   cursor: pointer;
   font-size: 13px;
-  color: #ddd;
+  color: #f5deb3;
+  border-bottom: 1px dashed #333;
+}
+.switch-btn .tips-box .tips-inner li:last-of-type {
+  border-bottom: none;
 }
 .switch-btn .tips-box .tips-inner li:hover {
   background: #111;

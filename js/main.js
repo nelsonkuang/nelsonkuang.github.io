@@ -108,8 +108,8 @@ require([], function (){
 	}
 
 
-	//return to top
 	$(function() {
+		//return to top
 	    var isRttShow = false;
 	    $(window).scroll(function() {
 	        var scrollTop = $(this).scrollTop();

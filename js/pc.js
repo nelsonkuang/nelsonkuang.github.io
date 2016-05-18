@@ -12,7 +12,28 @@ define([], function(){
 				$tipBox.addClass("hide");
 			},
 			init: function(){
-				
+				var count = $(".tips-inner li").length,
+				    currentIdx = 1;
+				var timer = setInterval(function(){
+					if (currentIdx >= count) {
+					    currentIdx = 0;
+					}
+					slide(currentIdx);
+					currentIdx++;
+
+				},6000);
+				$(".switch-btn").mouseover(function() {
+				    clearInterval(timer);
+				}).mouseleave(function() {
+				    timer = setInterval(function() {
+				        if (currentIdx >= count) {
+				            currentIdx = 0;
+				        }
+				        slide(currentIdx);
+				        currentIdx++;
+				    }, 6000);
+				});
+
 			}
 		}
 	})();
