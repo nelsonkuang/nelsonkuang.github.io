@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.kuangzen.com/2016/05/17/web-front-end-awesome/</loc>
-    <lastmod>2016-05-18T10:07:06.064Z</lastmod>
+    <lastmod>2016-05-20T02:25:53.052Z</lastmod>
     <data>
         <display>
         <title>web前端实用集锦导航</title>
@@ -20,6 +20,27 @@
         <tag>css3</tag>
          
         <tag>css</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/</loc>
+    <lastmod>2016-05-20T02:17:33.628Z</lastmod>
+    <data>
+        <display>
+        <title>安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug</title>
+        <pubTime>2016-05-03T01:09:32.000Z</pubTime>
+        
+        <tag>网页兼容性</tag>
+         
+        <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
          
            
@@ -339,27 +360,6 @@
         <tag>网页兼容性</tag>
          
         <tag>javascript</tag>
-         
-        <tag>jQuery</tag>
-         
-        <tag>前端</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.kuangzen.com/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/</loc>
-    <lastmod>2016-05-03T01:14:49.633Z</lastmod>
-    <data>
-        <display>
-        <title>安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug</title>
-        <pubTime>2016-05-03T01:09:32.000Z</pubTime>
-        
-        <tag>网页兼容性</tag>
          
         <tag>jQuery</tag>
          

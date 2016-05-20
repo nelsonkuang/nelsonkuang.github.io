@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-05-18T10:07:06.064Z</updated>
+  <updated>2016-05-20T02:25:53.052Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.kuangzen.com/2016/05/17/web-front-end-awesome/"/>
     <id>http://www.kuangzen.com/2016/05/17/web-front-end-awesome/</id>
     <published>2016-05-17T01:26:15.000Z</published>
-    <updated>2016-05-18T10:07:06.064Z</updated>
+    <updated>2016-05-20T02:25:53.052Z</updated>
     
     <content type="html">&lt;h3 id=&quot;前端编码规范&quot;&gt;&lt;a href=&quot;#前端编码规范&quot; class=&quot;headerlink&quot; title=&quot;前端编码规范&quot;&gt;&lt;/a&gt;前端编码规范&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/airbnb/javascript&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;javascript ES6&lt;/a&gt; | &lt;a href=&quot;https://github.com/airbnb/javascript/tree/master/es5&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;javascript ES5&lt;/a&gt; | &lt;a href=&quot;https://github.com/airbnb/css&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;css&lt;/a&gt; | &lt;a href=&quot;https://github.com/airbnb/javascript/tree/master/react&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;react&lt;/a&gt;   &lt;/p&gt;
 &lt;h3 id=&quot;js库&quot;&gt;&lt;a href=&quot;#js库&quot; class=&quot;headerlink&quot; title=&quot;js库&quot;&gt;&lt;/a&gt;js库&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jQuery&lt;/a&gt; | &lt;a href=&quot;http://zeptojs.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;zepto&lt;/a&gt; | &lt;a href=&quot;http://mootools.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;mootools&lt;/a&gt; &lt;/p&gt;
@@ -98,7 +98,7 @@
     <link href="http://www.kuangzen.com/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/"/>
     <id>http://www.kuangzen.com/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/</id>
     <published>2016-05-03T01:09:32.000Z</published>
-    <updated>2016-05-03T01:14:49.633Z</updated>
+    <updated>2016-05-20T02:17:33.628Z</updated>
     
     <content type="html">&lt;h3 id=&quot;应用场景&quot;&gt;&lt;a href=&quot;#应用场景&quot; class=&quot;headerlink&quot; title=&quot;应用场景&quot;&gt;&lt;/a&gt;应用场景&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;使用mobicroll时，对input已经设置了readonly&lt;/li&gt;
