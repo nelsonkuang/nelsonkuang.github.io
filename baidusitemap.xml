@@ -4,18 +4,54 @@
 
     
   <url>
+    <loc>http://www.kuangzen.com/2016/06/13/what-s-up-2016-6-13/</loc>
+    <lastmod>2016-06-13T08:32:03.349Z</lastmod>
+    <data>
+        <display>
+        <title>忙忙碌碌几个月，随便写写</title>
+        <pubTime>2016-06-13T02:17:58.000Z</pubTime>
+        
+        <tag>一些事一些情</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kuangzen.com/2016/04/18/useful-map-interactive/</loc>
+    <lastmod>2016-06-13T02:26:12.207Z</lastmod>
+    <data>
+        <display>
+        <title>一个有用的地图方面的UI设计-地图形象展示</title>
+        <pubTime>2016-04-18T01:11:15.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>UI设计</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kuangzen.com/2016/05/17/web-front-end-awesome/</loc>
-    <lastmod>2016-05-25T02:22:45.477Z</lastmod>
+    <lastmod>2016-06-13T02:24:10.720Z</lastmod>
     <data>
         <display>
         <title>web前端实用集锦导航</title>
         <pubTime>2016-05-17T01:26:15.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
          
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
         <tag>css3</tag>
          
@@ -39,9 +75,9 @@
         
         <tag>网页兼容性</tag>
          
-        <tag>前端</tag>
-         
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
          
            
@@ -58,9 +94,9 @@
         <title>微信网页里面同时出现2个二维码长按时不能准确识别问题</title>
         <pubTime>2016-04-18T01:12:45.000Z</pubTime>
         
-        <tag>UI设计</tag>
-         
         <tag>前端</tag>
+         
+        <tag>UI设计</tag>
          
          
            
@@ -77,9 +113,9 @@
         <title>simple-switch</title>
         <pubTime>2016-03-30T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
         <tag>css3</tag>
          
@@ -121,9 +157,9 @@
         <title>react-cascading-address-selector</title>
         <pubTime>2016-03-04T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>react</tag>
          
@@ -142,9 +178,9 @@
         <title>random.js</title>
         <pubTime>2015-04-14T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>random</tag>
          
@@ -182,9 +218,9 @@
         <title>pix2remjs</title>
         <pubTime>2015-12-31T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>rem</tag>
          
@@ -205,9 +241,9 @@
         <title>pix2rem-with-gulp-sass</title>
         <pubTime>2016-04-08T05:40:00.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>gulp</tag>
          
@@ -251,9 +287,9 @@
         <title>jQuery.sDialog</title>
         <pubTime>2016-04-05T02:32:38.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
         <tag>css3</tag>
          
@@ -272,9 +308,9 @@
         <title>jquery-scroll-cascade-select</title>
         <pubTime>2016-03-21T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
         <tag>css3</tag>
          
@@ -293,9 +329,9 @@
         <title>jQuery.countdown</title>
         <pubTime>2016-04-05T02:52:16.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
          
            
@@ -339,9 +375,9 @@
         
         <tag>网页兼容性</tag>
          
-        <tag>UI设计</tag>
-         
         <tag>前端</tag>
+         
+        <tag>UI设计</tag>
          
          
            
@@ -360,28 +396,11 @@
         
         <tag>网页兼容性</tag>
          
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
          
         <tag>jQuery</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.kuangzen.com/2016/04/18/useful-map-interactive/</loc>
-    <lastmod>2016-04-18T01:35:04.536Z</lastmod>
-    <data>
-        <display>
-        <title>一个有用的地图方面的UI设计-地图形象展示</title>
-        <pubTime>2016-04-18T01:11:15.000Z</pubTime>
-        
-        <tag>UI设计</tag>
+        <tag>前端</tag>
          
          
            
@@ -398,9 +417,9 @@
         <title>css3clock.js</title>
         <pubTime>2015-05-17T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>css3</tag>
          
@@ -419,9 +438,9 @@
         <title>simplepen.js</title>
         <pubTime>2015-11-11T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>canvas</tag>
          
