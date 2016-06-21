@@ -242,6 +242,7 @@ a {
   -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   height: 100%;
+  background-image: url("http://7xsj8c.com1.z0.glb.clouddn.com/img/new_bg.jpg");
 }
 #container .left-col .overlay {
   width: 100%;
