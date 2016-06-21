@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-06-13T08:32:03.349Z</updated>
+  <updated>2016-06-21T10:27:03.503Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,148 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript设计模式 - 观察者模式</title>
+    <link href="http://www.kuangzen.com/2016/06/21/js-observer/"/>
+    <id>http://www.kuangzen.com/2016/06/21/js-observer/</id>
+    <published>2016-06-21T07:47:05.000Z</published>
+    <updated>2016-06-21T10:27:03.503Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   &lt;/p&gt;
+&lt;h3 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h3&gt;&lt;p&gt;观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   &lt;/p&gt;
+&lt;p&gt;当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   &lt;/p&gt;
+&lt;p&gt;这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   &lt;/p&gt;
+&lt;h3 id=&quot;图表&quot;&gt;&lt;a href=&quot;#图表&quot; class=&quot;headerlink&quot; title=&quot;图表&quot;&gt;&lt;/a&gt;图表&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg&quot; alt=&quot;观察者模式&quot;&gt;    &lt;/p&gt;
+&lt;p&gt;以click事件为例:&lt;br&gt;&lt;strong&gt;主题&lt;/strong&gt;可以是click，维护一系列的观察者，提供一个接口给观察者订阅或者退订，当状态改变时向观察都发送通知。&lt;br&gt;而各&lt;strong&gt;观察者&lt;/strong&gt;是各clickHandler，是一系列的函数，当主题状态改变时将被通知触发。   &lt;/p&gt;
+&lt;h3 id=&quot;代码样版&quot;&gt;&lt;a href=&quot;#代码样版&quot; class=&quot;headerlink&quot; title=&quot;代码样版&quot;&gt;&lt;/a&gt;代码样版&lt;/h3&gt;&lt;p&gt;代码来源于网络&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;
+&lt;span class=&quot;comment&quot;&gt;// 方式一 &lt;/span&gt;
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Observer&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.fns = [];
+}
+Observer.prototype = {
+    subscribe: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;fn&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.fns.push(fn);
+    },
+    unsubscribe: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;fn&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.fns = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.fns.filter(
+                        &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;el&lt;/span&gt;) &lt;/span&gt;{
+                            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (el !== fn) {
+                                &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; el;
+                            }
+                        }
+                    );
+    },
+    update: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;o, thisObj&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; scope = thisObj || &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;;
+        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.fns.forEach(
+                        &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;el&lt;/span&gt;) &lt;/span&gt;{
+                            el.call(scope, o);
+                        }
+                    );
+    }
+};
+
+&lt;span class=&quot;comment&quot;&gt;// 测试&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; o = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Observer;
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; f1 = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;data&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;Robbin: &#39;&lt;/span&gt; + data + &lt;span class=&quot;string&quot;&gt;&#39;, 赶紧干活了！&#39;&lt;/span&gt;);
+};
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; f2 = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;data&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;Randall: &#39;&lt;/span&gt; + data + &lt;span class=&quot;string&quot;&gt;&#39;, 找他加点工资去！&#39;&lt;/span&gt;);
+};
+
+o.subscribe(f1);
+o.subscribe(f2);
+
+o.update(&lt;span class=&quot;string&quot;&gt;&quot;Tom回来了！&quot;&lt;/span&gt;)
+
+&lt;span class=&quot;comment&quot;&gt;// 退订f1&lt;/span&gt;
+o.unsubscribe(f1);
+&lt;span class=&quot;comment&quot;&gt;//再来验证&lt;/span&gt;
+o.update(&lt;span class=&quot;string&quot;&gt;&quot;Tom回来了！&quot;&lt;/span&gt;);
+
+&lt;span class=&quot;comment&quot;&gt;// 方式二&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// 通用代码&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; observer = {
+    &lt;span class=&quot;comment&quot;&gt;// 订阅&lt;/span&gt;
+    addSubscriber: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;callback&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.subscribers[&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.subscribers.length] = callback;
+    },
+    &lt;span class=&quot;comment&quot;&gt;// 退订&lt;/span&gt;
+    removeSubscriber: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;callback&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.subscribers.length; i++) {
+            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.subscribers[i] === callback) {
+                &lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.subscribers[i]);
+            }
+        }
+    },
+    &lt;span class=&quot;comment&quot;&gt;// 发布&lt;/span&gt;
+    publish: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;what&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.subscribers.length; i++) {
+            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.subscribers[i] === &lt;span class=&quot;string&quot;&gt;&#39;function&#39;&lt;/span&gt;) {
+                &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.subscribers[i](what);
+            }
+        }
+    },
+    &lt;span class=&quot;comment&quot;&gt;// 将对象o具有观察者功能&lt;/span&gt;
+    make: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;o&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;) {
+            o[i] = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;[i];
+            o.subscribers = [];
+        }
+    }
+};
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; blogger = {
+    recommend: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;) &lt;/span&gt;{
+        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; msg = { userID: obj.userID, bloggerID: obj.bloggerID }
+        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.publish(msg);
+    }
+};
+
+observer.make(blogger);
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; updateUI = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;第二步：更新界面，id为[&quot;&lt;/span&gt; + obj.userID + &lt;span class=&quot;string&quot;&gt;&quot;]的用户推荐了id为[&quot;&lt;/span&gt; + obj.bloggerID + &lt;span class=&quot;string&quot;&gt;&quot;]的博客！&quot;&lt;/span&gt;);
+}
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; updateData = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;第一步：更新后台数据，id为[&quot;&lt;/span&gt; + obj.userID + &lt;span class=&quot;string&quot;&gt;&quot;]的用户推荐了id为[&quot;&lt;/span&gt; + obj.bloggerID + &lt;span class=&quot;string&quot;&gt;&quot;]的博客！&quot;&lt;/span&gt;);
+}
+&lt;span class=&quot;comment&quot;&gt;// 订阅&lt;/span&gt;
+blogger.addSubscriber(updateData);
+blogger.addSubscriber(updateUI);
+blogger.recommend({
+    userID: &lt;span class=&quot;string&quot;&gt;&quot;65412365&quot;&lt;/span&gt;,
+    bloggerID: &lt;span class=&quot;string&quot;&gt;&quot;65412369&quot;&lt;/span&gt;
+}); &lt;span class=&quot;comment&quot;&gt;// 调用发布&lt;/span&gt;
+
+&lt;span class=&quot;comment&quot;&gt;// 退订&lt;/span&gt;
+blogger.removeSubscriber(updateUI);
+blogger.removeSubscriber(updateData);
+blogger.recommend({
+    userID: &lt;span class=&quot;string&quot;&gt;&quot;65412365&quot;&lt;/span&gt;,
+    bloggerID: &lt;span class=&quot;string&quot;&gt;&quot;65412369&quot;&lt;/span&gt;
+}); &lt;span class=&quot;comment&quot;&gt;// 测试退订调用发布&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   &lt;/p&gt;
+&lt;h3 id
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>忙忙碌碌几个月，随便写写</title>
@@ -1066,33 +1208,6 @@ gem install sass
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="canvas" scheme="http://www.kuangzen.com/tags/canvas/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css3clock.js</title>
-    <link href="http://www.kuangzen.com/2015/05/17/css3clockjs/"/>
-    <id>http://www.kuangzen.com/2015/05/17/css3clockjs/</id>
-    <published>2015-05-17T06:57:45.000Z</published>
-    <updated>2016-04-07T00:49:41.857Z</updated>
-    
-    <content type="html">&lt;h6 id=&quot;a-simple-responsive-css3-clock-it’s-for-learning-only-lol&quot;&gt;&lt;a href=&quot;#a-simple-responsive-css3-clock-it’s-for-learning-only-lol&quot; class=&quot;headerlink&quot; title=&quot;a simple, responsive css3 clock, it’s for learning only - -! lol&quot;&gt;&lt;/a&gt;a simple, responsive css3 clock, it’s for learning only - -! lol&lt;/h6&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/nelsonkuang/css3clock.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/5415466.png&quot; alt=&quot;Demo&quot;&gt; &lt;/p&gt;
-&lt;h3 id=&quot;License&quot;&gt;&lt;a href=&quot;#License&quot; class=&quot;headerlink&quot; title=&quot;License&quot;&gt;&lt;/a&gt;License&lt;/h3&gt;&lt;p&gt;css3clock is available under the terms of the &lt;a href=&quot;http://www.opensource.org/licenses/mit-license.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MIT License&lt;/a&gt;.&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h6 id=&quot;a-simple-responsive-css3-clock-it’s-for-learning-only-lol&quot;&gt;&lt;a href=&quot;#a-simple-responsive-css3-clock-it’s-for-learning-only-lol&quot; clas
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
   </entry>
   

@@ -123,7 +123,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/UI设计/" style="font-size: 13.33px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.67px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/node-js/" style="font-size: 13.33px;">node.js</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.67px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.67px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/scss/" style="font-size: 11.67px;">scss</a> <a href="/tags/一些事一些情/" style="font-size: 10px;">一些事一些情</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 11.67px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 13.33px;">网页兼容性</a>
+						<a href="/tags/UI设计/" style="font-size: 13.33px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.67px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 10px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 13.33px;">node.js</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.67px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.67px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/scss/" style="font-size: 11.67px;">scss</a> <a href="/tags/一些事一些情/" style="font-size: 10px;">一些事一些情</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 11.67px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 13.33px;">网页兼容性</a>
 					</div>
 				</section>
 				
@@ -259,6 +259,181 @@
         <p class="article-more-link">
           <a  href="/2016/05/17/web-front-end-awesome/#more">阅读全文 >></a>
         </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/21/js-observer/" class="article-date">
+  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
+<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
+<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
+<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式">    </p>
+<p>以click事件为例:<br><strong>主题</strong>可以是click，维护一系列的观察者，提供一个接口给观察者订阅或者退订，当状态改变时向观察都发送通知。<br>而各<strong>观察者</strong>是各clickHandler，是一系列的函数，当主题状态改变时将被通知触发。   </p>
+<h3 id="代码样版"><a href="#代码样版" class="headerlink" title="代码样版"></a>代码样版</h3><p>代码来源于网络</p>
+<pre><code class="javascript">
+<span class="comment">// 方式一 </span>
+<span class="function"><span class="keyword">function</span> <span class="title">Observer</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.fns = [];
+}
+Observer.prototype = {
+    subscribe: <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>{
+        <span class="keyword">this</span>.fns.push(fn);
+    },
+    unsubscribe: <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>{
+        <span class="keyword">this</span>.fns = <span class="keyword">this</span>.fns.filter(
+                        <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>{
+                            <span class="keyword">if</span> (el !== fn) {
+                                <span class="keyword">return</span> el;
+                            }
+                        }
+                    );
+    },
+    update: <span class="function"><span class="keyword">function</span> (<span class="params">o, thisObj</span>) </span>{
+        <span class="keyword">var</span> scope = thisObj || <span class="built_in">window</span>;
+        <span class="keyword">this</span>.fns.forEach(
+                        <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>{
+                            el.call(scope, o);
+                        }
+                    );
+    }
+};
+
+<span class="comment">// 测试</span>
+<span class="keyword">var</span> o = <span class="keyword">new</span> Observer;
+<span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>{
+    <span class="built_in">console</span>.log(<span class="string">'Robbin: '</span> + data + <span class="string">', 赶紧干活了！'</span>);
+};
+
+<span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>{
+    <span class="built_in">console</span>.log(<span class="string">'Randall: '</span> + data + <span class="string">', 找他加点工资去！'</span>);
+};
+
+o.subscribe(f1);
+o.subscribe(f2);
+
+o.update(<span class="string">"Tom回来了！"</span>)
+
+<span class="comment">// 退订f1</span>
+o.unsubscribe(f1);
+<span class="comment">//再来验证</span>
+o.update(<span class="string">"Tom回来了！"</span>);
+
+<span class="comment">// 方式二</span>
+<span class="comment">// 通用代码</span>
+<span class="keyword">var</span> observer = {
+    <span class="comment">// 订阅</span>
+    addSubscriber: <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>{
+        <span class="keyword">this</span>.subscribers[<span class="keyword">this</span>.subscribers.length] = callback;
+    },
+    <span class="comment">// 退订</span>
+    removeSubscriber: <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>{
+        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.subscribers.length; i++) {
+            <span class="keyword">if</span> (<span class="keyword">this</span>.subscribers[i] === callback) {
+                <span class="keyword">delete</span> (<span class="keyword">this</span>.subscribers[i]);
+            }
+        }
+    },
+    <span class="comment">// 发布</span>
+    publish: <span class="function"><span class="keyword">function</span> (<span class="params">what</span>) </span>{
+        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.subscribers.length; i++) {
+            <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span>.subscribers[i] === <span class="string">'function'</span>) {
+                <span class="keyword">this</span>.subscribers[i](what);
+            }
+        }
+    },
+    <span class="comment">// 将对象o具有观察者功能</span>
+    make: <span class="function"><span class="keyword">function</span> (<span class="params">o</span>) </span>{
+        <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> <span class="keyword">this</span>) {
+            o[i] = <span class="keyword">this</span>[i];
+            o.subscribers = [];
+        }
+    }
+};
+<span class="keyword">var</span> blogger = {
+    recommend: <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>{
+        <span class="keyword">var</span> msg = { userID: obj.userID, bloggerID: obj.bloggerID }
+        <span class="keyword">this</span>.publish(msg);
+    }
+};
+
+observer.make(blogger);
+<span class="keyword">var</span> updateUI = <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>{
+    <span class="built_in">console</span>.log(<span class="string">"第二步：更新界面，id为["</span> + obj.userID + <span class="string">"]的用户推荐了id为["</span> + obj.bloggerID + <span class="string">"]的博客！"</span>);
+}
+
+<span class="keyword">var</span> updateData = <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>{
+    <span class="built_in">console</span>.log(<span class="string">"第一步：更新后台数据，id为["</span> + obj.userID + <span class="string">"]的用户推荐了id为["</span> + obj.bloggerID + <span class="string">"]的博客！"</span>);
+}
+<span class="comment">// 订阅</span>
+blogger.addSubscriber(updateData);
+blogger.addSubscriber(updateUI);
+blogger.recommend({
+    userID: <span class="string">"65412365"</span>,
+    bloggerID: <span class="string">"65412369"</span>
+}); <span class="comment">// 调用发布</span>
+
+<span class="comment">// 退订</span>
+blogger.removeSubscriber(updateUI);
+blogger.removeSubscriber(updateData);
+blogger.recommend({
+    userID: <span class="string">"65412365"</span>,
+    bloggerID: <span class="string">"65412369"</span>
+}); <span class="comment">// 测试退订调用发布</span>
+</code></pre>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
       
       <div class="clearfix"></div>
     </div>
@@ -762,76 +937,6 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
       
         <p class="article-more-link">
           <a  href="/2016/04/08/pix2rem-with-gulp-sass/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-ruby-gem-install-sass" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/08/ruby-gem-install-sass/" class="article-date">
-  	<time datetime="2016-04-08T01:38:45.000Z" itemprop="datePublished">2016-04-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/08/ruby-gem-install-sass/">windows中ruby环境下用gem安装sass</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>上一篇文章中windows配置gulp时用到gulp-ruby-sass来编译sass/scss文件，其实也可以用gulp-sass来编译sass/scss文件，两者安装时依赖的环境不一样。  </p>
-<ul>
-<li>gulp-ruby-sass 要先安装Ruby，再用其包环境gem安装sass</li>
-<li>gulp-sass 要安装完成不容易，其依赖于node-sass，要先安装python2，再安装visual studio 2015 express，然后配置vs2015，最后执行 <code>npm install gulp-sass --save-dev</code> 来完成安装</li>
-</ul>
-<h3 id="安装gulp-ruby-sass"><a href="#安装gulp-ruby-sass" class="headerlink" title="安装gulp-ruby-sass"></a>安装gulp-ruby-sass</h3><p>由于Gulp-sass过于麻烦，最后选择了gulp-ruby-sass  </p>
-<ol>
-<li><p>Ruby安装<br>到官网 <a href="http://rubyinstaller.org/">http://rubyinstaller.org/</a> 下载安装包直接安装。注意，要打勾上环境变量路径，如下图：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/20160408095701.png" alt="ruby安装图"> </p>
-</li>
-<li><p>Ruby China - RubyGems Mirror镜像安装 sass
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ruby/">ruby</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scss/">scss</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/08/ruby-gem-install-sass/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
