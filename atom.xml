@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-06-21T10:27:03.503Z</updated>
+  <updated>2016-06-21T10:30:37.169Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -20,14 +20,13 @@
     <link href="http://www.kuangzen.com/2016/06/21/js-observer/"/>
     <id>http://www.kuangzen.com/2016/06/21/js-observer/</id>
     <published>2016-06-21T07:47:05.000Z</published>
-    <updated>2016-06-21T10:27:03.503Z</updated>
+    <updated>2016-06-21T10:30:37.169Z</updated>
     
     <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   &lt;/p&gt;
 &lt;h3 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h3&gt;&lt;p&gt;观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   &lt;/p&gt;
 &lt;p&gt;当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   &lt;/p&gt;
 &lt;p&gt;这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   &lt;/p&gt;
-&lt;h3 id=&quot;图表&quot;&gt;&lt;a href=&quot;#图表&quot; class=&quot;headerlink&quot; title=&quot;图表&quot;&gt;&lt;/a&gt;图表&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg&quot; alt=&quot;观察者模式&quot;&gt;    &lt;/p&gt;
-&lt;p&gt;以click事件为例:&lt;br&gt;&lt;strong&gt;主题&lt;/strong&gt;可以是click，维护一系列的观察者，提供一个接口给观察者订阅或者退订，当状态改变时向观察都发送通知。&lt;br&gt;而各&lt;strong&gt;观察者&lt;/strong&gt;是各clickHandler，是一系列的函数，当主题状态改变时将被通知触发。   &lt;/p&gt;
+&lt;h3 id=&quot;图表&quot;&gt;&lt;a href=&quot;#图表&quot; class=&quot;headerlink&quot; title=&quot;图表&quot;&gt;&lt;/a&gt;图表&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg&quot; alt=&quot;观察者模式&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;以click事件为例:&lt;br&gt;&lt;strong&gt;主题&lt;/strong&gt;可以是click，维护一系列的观察者，提供一个接口给观察者订阅或者退订，当状态改变时向观察都发送通知。&lt;br&gt;而各&lt;strong&gt;观察者&lt;/strong&gt;是各clickHandler，是一系列的函数，当主题状态改变时将被通知触发。   &lt;/p&gt;
 &lt;h3 id=&quot;代码样版&quot;&gt;&lt;a href=&quot;#代码样版&quot; class=&quot;headerlink&quot; title=&quot;代码样版&quot;&gt;&lt;/a&gt;代码样版&lt;/h3&gt;&lt;p&gt;代码来源于网络&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;
 &lt;span class=&quot;comment&quot;&gt;// 方式一 &lt;/span&gt;
@@ -144,7 +143,10 @@ blogger.recommend({
     <summary type="html">
     
       &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   &lt;/p&gt;
-&lt;h3 id
+&lt;h3 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h3&gt;&lt;p&gt;观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   &lt;/p&gt;
+&lt;p&gt;当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   &lt;/p&gt;
+&lt;p&gt;这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   &lt;/p&gt;
+&lt;h3 id=&quot;图表&quot;&gt;&lt;a href=&quot;#图表&quot; class=&quot;headerlink&quot; title=&quot;图表&quot;&gt;&lt;/a&gt;图表&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg&quot; alt=&quot;观察者模式&quot;&gt;&lt;br&gt;
     
     </summary>
     

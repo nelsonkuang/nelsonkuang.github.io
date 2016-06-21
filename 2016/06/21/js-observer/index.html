@@ -17,7 +17,7 @@
 总结观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   
 当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被">
 <meta property="og:image" content="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg">
-<meta property="og:updated_time" content="2016-06-21T10:27:03.503Z">
+<meta property="og:updated_time" content="2016-06-21T10:30:37.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript设计模式 - 观察者模式">
 <meta name="twitter:description" content="定义观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   
@@ -259,8 +259,7 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
 <p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
 <p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
-<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式">    </p>
-<p>以click事件为例:<br><strong>主题</strong>可以是click，维护一系列的观察者，提供一个接口给观察者订阅或者退订，当状态改变时向观察都发送通知。<br>而各<strong>观察者</strong>是各clickHandler，是一系列的函数，当主题状态改变时将被通知触发。   </p>
+<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br><a id="more"></a><br>以click事件为例:<br><strong>主题</strong>可以是click，维护一系列的观察者，提供一个接口给观察者订阅或者退订，当状态改变时向观察都发送通知。<br>而各<strong>观察者</strong>是各clickHandler，是一系列的函数，当主题状态改变时将被通知触发。   </p>
 <h3 id="代码样版"><a href="#代码样版" class="headerlink" title="代码样版"></a>代码样版</h3><p>代码来源于网络</p>
 <pre><code class="javascript">
 <span class="comment">// 方式一 </span>
