@@ -123,7 +123,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/UI设计/" style="font-size: 13.33px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.67px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 11.67px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 13.33px;">node.js</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.67px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.67px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/scss/" style="font-size: 11.67px;">scss</a> <a href="/tags/一些事一些情/" style="font-size: 10px;">一些事一些情</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 11.67px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 13.33px;">网页兼容性</a>
+						<a href="/tags/UI设计/" style="font-size: 13.33px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.67px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 13.33px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 13.33px;">node.js</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.67px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.67px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/scss/" style="font-size: 11.67px;">scss</a> <a href="/tags/一些事一些情/" style="font-size: 10px;">一些事一些情</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 11.67px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 13.33px;">网页兼容性</a>
 					</div>
 				</section>
 				
@@ -276,10 +276,10 @@
 
 
   
-    <article id="post-js-injector" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-defineProperty" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/21/js-injector/" class="article-date">
+      <a href="/2016/06/21/js-defineProperty/" class="article-date">
   	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
 </a>
     </div>
@@ -293,7 +293,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-injector/">javascript设计模式 - 依赖注入</a>
+      <a class="article-title" href="/2016/06/21/js-defineProperty/">javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</a>
     </h1>
   
 
@@ -303,17 +303,9 @@
     <div class="article-entry" itemprop="articleBody">
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   </p>
-<h3 id="依赖注入好处"><a href="#依赖注入好处" class="headerlink" title="依赖注入好处"></a>依赖注入好处</h3><p>减小对象与依赖之间的藕合关系。   </p>
-<p>不需要对原代码进行修改，直接可以应用到当前代码。   </p>
-<p>有助于把客户与设计隔离开，减小设计改变带来的影响。   </p>
-<p>让系统不用修改当前代码就可以重新配置。   </p>
-<p>可以进行并行或者独立开发。   </p>
-<p>让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   </p>
-<h3 id="依赖注入缺点"><a href="#依赖注入缺点" class="headerlink" title="依赖注入缺点"></a>依赖注入缺点</h3><p>当要实例化一种类型，你必须要知道要用什么依赖。   </p>
-<p>隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   </p>
-<p>要求你要写更多的代码。   </p>
-<p>可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      </p>
+      
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中<code>Object.defineProperty(obj, prop, descriptor)</code>也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     </p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><figcaption><span>prop, descriptor)````   </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 参数说明   </span><br><span class="line">obj   </span><br><span class="line">即将被定义新属性的对象   </span><br><span class="line"></span><br><span class="line">prop   </span><br><span class="line">即将定义的新属性   </span><br><span class="line"></span><br><span class="line">descriptor   </span><br><span class="line">对新属性的定义或者修改权限设设置的说明词     </span><br><span class="line"></span><br><span class="line">### descriptor参数描述  </span><br><span class="line">configurable   </span><br><span class="line">如果是true的话，这属性的类型是可以更改或者这属性可以被删除。   </span><br><span class="line">默认是false。   </span><br><span class="line"></span><br><span class="line">enumerable   </span><br><span class="line">如果是true，这属性在枚兴举时是可见的。   </span><br><span class="line">默认是false。   </span><br><span class="line"></span><br><span class="line">descriptor还有下面这些可选的参数:</span><br><span class="line"></span><br><span class="line">value   </span><br><span class="line">值可以是任意javascript值(如：number, object, function等等)。   </span><br><span class="line">默认是undefined。   </span><br><span class="line"></span><br><span class="line">writable   </span><br><span class="line">如果是true的话，就是可写的。   </span><br><span class="line">默认是false。   </span><br><span class="line"></span><br><span class="line">一个可访问的的descriptor还有下面这些参数:   </span><br><span class="line"></span><br><span class="line">get   </span><br><span class="line">一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。   </span><br><span class="line">默认是undefined。   </span><br><span class="line"></span><br><span class="line">set   </span><br><span class="line">一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。     </span><br><span class="line">默认是undefined。   </span><br><span class="line">   </span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">### 简单的defineProperty事例代码   </span><br><span class="line"></span><br><span class="line">```javascript </span><br><span class="line"></span><br><span class="line">        var newLine = &quot;&lt;br /&gt;&quot;;</span><br><span class="line"></span><br><span class="line">        //创建一个user-defined对象</span><br><span class="line">        var obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">        //给对象增加一个可访问的属性</span><br><span class="line">        Object.defineProperty(obj, &quot;newAccessorProperty&quot;, &#123;</span><br><span class="line">            set: function (x) &#123;</span><br><span class="line">                if (x !== this.oldPropValue) &#123;</span><br><span class="line">                    document.write(&quot;in property set accessor&quot; + newLine);</span><br><span class="line">                    this.oldPropValue = x;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    document.write(&quot;值没变！&quot; + newLine);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            get: function () &#123;</span><br><span class="line">                document.write(&quot;in property get accessor&quot; + newLine);</span><br><span class="line">                return this.oldPropValue;</span><br><span class="line">            &#125;,</span><br><span class="line">            enumerable: true,</span><br><span class="line">            configurable: true</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        //设置属性值－Set the property value.</span><br><span class="line">        obj.newAccessorProperty = 30;//将触发set函数</span><br><span class="line">        document.write(&quot;Property value: &quot; + obj.newAccessorProperty + newLine + newLine);</span><br><span class="line"></span><br><span class="line">        obj.oldPropValue=100;//将不触发set函数－will not trigger func set</span><br><span class="line">        document.write(&quot;Property value: &quot; + obj.newAccessorProperty + newLine + newLine);//将触发get函数</span><br><span class="line"></span><br><span class="line">        document.write(&quot;Property value: &quot; + obj.oldPropValue + newLine);//将不触发get函数</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -326,10 +318,6 @@
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/21/js-injector/#more">阅读全文 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -394,6 +382,77 @@
       
         <p class="article-more-link">
           <a  href="/2016/06/21/js-observer/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js-injector" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/21/js-injector/" class="article-date">
+  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/21/js-injector/">javascript设计模式 - 依赖注入</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   </p>
+<h3 id="依赖注入好处"><a href="#依赖注入好处" class="headerlink" title="依赖注入好处"></a>依赖注入好处</h3><p>减小对象与依赖之间的藕合关系。   </p>
+<p>不需要对原代码进行修改，直接可以应用到当前代码。   </p>
+<p>有助于把客户与设计隔离开，减小设计改变带来的影响。   </p>
+<p>让系统不用修改当前代码就可以重新配置。   </p>
+<p>可以进行并行或者独立开发。   </p>
+<p>让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   </p>
+<h3 id="依赖注入缺点"><a href="#依赖注入缺点" class="headerlink" title="依赖注入缺点"></a>依赖注入缺点</h3><p>当要实例化一种类型，你必须要知道要用什么依赖。   </p>
+<p>隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   </p>
+<p>要求你要写更多的代码。   </p>
+<p>可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      </p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/21/js-injector/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -777,66 +836,6 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
         <p class="article-more-link">
           <a  href="/2016/04/18/useful-wechat-code-interactive/#more">阅读全文 >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-useful-map-interactive" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/18/useful-map-interactive/" class="article-date">
-  	<time datetime="2016-04-18T01:11:15.000Z" itemprop="datePublished">2016-04-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/18/useful-map-interactive/">一个有用的地图方面的UI设计-地图形象展示</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在UI设计时，要求一些在地图上的一些特定地点上加上鼠标经过或者点击就提示相应的信息，但遇到地图上有个比较偏远的小岛屿，若要按比例展示地图却不可能展示出来。</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>可以把岛屿缩小放到主图旁边，再把局部放大叠加在岛屿上方展示，如下图：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/map_id.jpg" alt="地图形象展示"> </p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI设计/">UI设计</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
       
       <div class="clearfix"></div>
     </div>
