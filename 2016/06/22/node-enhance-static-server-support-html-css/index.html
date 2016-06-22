@@ -4,17 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: 后端 | KUANG ZEN&#39;s HOME</title>
+  <title>Node.js 简单优化静态文件服务器处理函数支持css、html文件加载 | KUANG ZEN&#39;s HOME</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="KUANG ZEN's HOME">
-<meta property="og:url" content="http://www.kuangzen.com/tags/后端/index.html">
+  <meta name="description" content="思路紧跟着上一篇Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）简单优化静态文件服务器处理函数支持css、html文件加载，根据请求文件的后缀名不同来按不同方式输出文件。只作简单处理供学习，实际应用时应更加严谨处理。   
+requestHandlers.js 文件修改static处理函数代码，如下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js 简单优化静态文件服务器处理函数支持css、html文件加载">
+<meta property="og:url" content="http://www.kuangzen.com/2016/06/22/node-enhance-static-server-support-html-css/index.html">
 <meta property="og:site_name" content="KUANG ZEN's HOME">
-<meta property="og:description">
+<meta property="og:description" content="思路紧跟着上一篇Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）简单优化静态文件服务器处理函数支持css、html文件加载，根据请求文件的后缀名不同来按不同方式输出文件。只作简单处理供学习，实际应用时应更加严谨处理。   
+requestHandlers.js 文件修改static处理函数代码，如下">
+<meta property="og:updated_time" content="2016-06-22T10:45:32.553Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KUANG ZEN's HOME">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Node.js 简单优化静态文件服务器处理函数支持css、html文件加载">
+<meta name="twitter:description" content="思路紧跟着上一篇Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）简单优化静态文件服务器处理函数支持css、html文件加载，根据请求文件的后缀名不同来按不同方式输出文件。只作简单处理供学习，实际应用时应更加严谨处理。   
+requestHandlers.js 文件修改static处理函数代码，如下">
   
     <link rel="alternative" href="/atom.xml" title="KUANG ZEN&#39;s HOME" type="application/atom+xml">
   
@@ -205,146 +209,143 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-node-enhance-static-server-support-html-css" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2016/06/22/node-enhance-static-server-support-html-css/" class="article-date">
+  	<time datetime="2016-06-22T10:59:51.000Z" itemprop="datePublished">2016-06-22</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Node.js 简单优化静态文件服务器处理函数支持css、html文件加载
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <div style="color: #aaa;font-size: 12px;margin-top: -20px;">阅读 <span id="busuanzi_value_page_pv"></span> | 本站总访问 <span id="busuanzi_value_site_pv"></span> | 本站访客 <span id="busuanzi_value_site_uv"></span></div>
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
+      
+        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>紧跟着上一篇<a href="http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/">Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）</a>简单优化静态文件服务器处理函数支持css、html文件加载，根据请求文件的后缀名不同来按不同方式输出文件。只作简单处理供学习，实际应用时应更加严谨处理。   </p>
+<h3 id="requestHandlers-js-文件修改static处理函数代码，如下"><a href="#requestHandlers-js-文件修改static处理函数代码，如下" class="headerlink" title="requestHandlers.js 文件修改static处理函数代码，如下"></a>requestHandlers.js 文件修改static处理函数代码，如下</h3><a id="more"></a>
+<pre><code class="javascript">
+exports.static = (response, request) =&gt; {
+  <span class="built_in">console</span>.log(<span class="string">"Request handler 'static' was called."</span>)
+  <span class="keyword">const</span> pathname = url.parse(request.url).pathname
+  <span class="keyword">const</span> filepath = path.join(<span class="string">'./tmp'</span>, <span class="string">'wwwroot'</span>, pathname)
+  <span class="keyword">var</span> stream = fs.createReadStream(filepath, { flags: <span class="string">'r'</span>, encoding: <span class="literal">null</span> })
+  stream.on(<span class="string">'error'</span>, () =&gt; {
+    response.writeHead(<span class="number">404</span>, { <span class="string">'Content-Type'</span>: <span class="string">'text/html'</span> })
+    response.write(<span class="string">'404 Not found'</span>)
+    response.end()
+  })
+  <span class="keyword">if</span> (pathname.indexOf(<span class="string">'.html'</span>) &gt; <span class="number">0</span> || pathname.indexOf(<span class="string">'.css'</span>) &gt; <span class="number">0</span> || pathname.indexOf(<span class="string">'.js'</span>) &gt; <span class="number">0</span>) {
+    <span class="keyword">var</span> html = <span class="string">''</span>
+    <span class="keyword">var</span> contentType = pathname.indexOf(<span class="string">'.css'</span>) &gt; <span class="number">0</span> ? <span class="string">'text/css'</span> : <span class="string">'text/html'</span> <span class="comment">// 针对css文件特别处理</span>
+    stream.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>) </span>{
+      html += chunk;
+    });
+
+    stream.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+      response.writeHead(<span class="number">200</span>, { <span class="string">'Content-Type'</span>: contentType })
+      response.write(html)
+      response.end()
+    });
+
+  } <span class="keyword">else</span> {<span class="comment">// 其他图片文件等则按流输出</span>
+    stream.pipe(response)
+  }
+}
+</code></pre>
+
+      
+    </div>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/22/node-enhance-static-server-support-html-css/" class="archive-article-date">
-  	<time datetime="2016-06-22T10:59:51.000Z" itemprop="datePublished">Jun 22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/22/node-enhance-static-server-support-html-css/">Node.js 简单优化静态文件服务器处理函数支持css、html文件加载</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/22/node-get-stock-csv-data-output-to-json/" class="archive-article-date">
-  	<time datetime="2016-06-22T10:59:50.000Z" itemprop="datePublished">Jun 22</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/22/node-get-stock-csv-data-output-to-json/">Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据</a>
-    </h1>
   
+    <a href="/2016/06/22/node-get-stock-csv-data-output-to-json/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/" class="archive-article-date">
-  	<time datetime="2016-04-22T05:35:40.000Z" itemprop="datePublished">Apr 22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/">用node.js向百度推送hexo博客所有链接</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/20/node-learning-chapter-1/" class="archive-article-date">
-  	<time datetime="2016-04-20T00:59:50.000Z" itemprop="datePublished">Apr 20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/20/node-learning-chapter-1/">Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="node-enhance-static-server-support-html-css" data-title="Node.js 简单优化静态文件服务器处理函数支持css、html文件加载" data-url="http://www.kuangzen.com/2016/06/22/node-enhance-static-server-support-html-css/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"kuangzen"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
 
 </div>
       <footer id="footer">
@@ -368,9 +369,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-06-22T05:52:06.102Z</updated>
+  <updated>2016-06-22T10:45:32.553Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Node.js 简单优化静态文件服务器处理函数支持css、html文件加载</title>
+    <link href="http://www.kuangzen.com/2016/06/22/node-enhance-static-server-support-html-css/"/>
+    <id>http://www.kuangzen.com/2016/06/22/node-enhance-static-server-support-html-css/</id>
+    <published>2016-06-22T10:59:51.000Z</published>
+    <updated>2016-06-22T10:45:32.553Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h3&gt;&lt;p&gt;紧跟着上一篇&lt;a href=&quot;http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/&quot;&gt;Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）&lt;/a&gt;简单优化静态文件服务器处理函数支持css、html文件加载，根据请求文件的后缀名不同来按不同方式输出文件。只作简单处理供学习，实际应用时应更加严谨处理。   &lt;/p&gt;
+&lt;h3 id=&quot;requestHandlers-js-文件修改static处理函数代码，如下&quot;&gt;&lt;a href=&quot;#requestHandlers-js-文件修改static处理函数代码，如下&quot; class=&quot;headerlink&quot; title=&quot;requestHandlers.js 文件修改static处理函数代码，如下&quot;&gt;&lt;/a&gt;requestHandlers.js 文件修改static处理函数代码，如下&lt;/h3&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;
+exports.static = (response, request) =&amp;gt; {
+  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Request handler &#39;static&#39; was called.&quot;&lt;/span&gt;)
+  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; pathname = url.parse(request.url).pathname
+  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; filepath = path.join(&lt;span class=&quot;string&quot;&gt;&#39;./tmp&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;wwwroot&#39;&lt;/span&gt;, pathname)
+  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; stream = fs.createReadStream(filepath, { flags: &lt;span class=&quot;string&quot;&gt;&#39;r&#39;&lt;/span&gt;, encoding: &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt; })
+  stream.on(&lt;span class=&quot;string&quot;&gt;&#39;error&#39;&lt;/span&gt;, () =&amp;gt; {
+    response.writeHead(&lt;span class=&quot;number&quot;&gt;404&lt;/span&gt;, { &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt; })
+    response.write(&lt;span class=&quot;string&quot;&gt;&#39;404 Not found&#39;&lt;/span&gt;)
+    response.end()
+  })
+  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (pathname.indexOf(&lt;span class=&quot;string&quot;&gt;&#39;.html&#39;&lt;/span&gt;) &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; || pathname.indexOf(&lt;span class=&quot;string&quot;&gt;&#39;.css&#39;&lt;/span&gt;) &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; || pathname.indexOf(&lt;span class=&quot;string&quot;&gt;&#39;.js&#39;&lt;/span&gt;) &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) {
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; html = &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; contentType = pathname.indexOf(&lt;span class=&quot;string&quot;&gt;&#39;.css&#39;&lt;/span&gt;) &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; ? &lt;span class=&quot;string&quot;&gt;&#39;text/css&#39;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;// 针对css文件特别处理&lt;/span&gt;
+    stream.on(&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;chunk&lt;/span&gt;) &lt;/span&gt;{
+      html += chunk;
+    });
+
+    stream.on(&lt;span class=&quot;string&quot;&gt;&#39;end&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+      response.writeHead(&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, { &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: contentType })
+      response.write(html)
+      response.end()
+    });
+
+  } &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {&lt;span class=&quot;comment&quot;&gt;// 其他图片文件等则按流输出&lt;/span&gt;
+    stream.pipe(response)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h3&gt;&lt;p&gt;紧跟着上一篇&lt;a href=&quot;http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/&quot;&gt;Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）&lt;/a&gt;简单优化静态文件服务器处理函数支持css、html文件加载，根据请求文件的后缀名不同来按不同方式输出文件。只作简单处理供学习，实际应用时应更加严谨处理。   &lt;/p&gt;
+&lt;h3 id=&quot;requestHandlers-js-文件修改static处理函数代码，如下&quot;&gt;&lt;a href=&quot;#requestHandlers-js-文件修改static处理函数代码，如下&quot; class=&quot;headerlink&quot; title=&quot;requestHandlers.js 文件修改static处理函数代码，如下&quot;&gt;&lt;/a&gt;requestHandlers.js 文件修改static处理函数代码，如下&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
+    
+      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据</title>
+    <link href="http://www.kuangzen.com/2016/06/22/node-get-stock-csv-data-output-to-json/"/>
+    <id>http://www.kuangzen.com/2016/06/22/node-get-stock-csv-data-output-to-json/</id>
+    <published>2016-06-22T10:59:50.000Z</published>
+    <updated>2016-06-22T10:45:41.689Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h3&gt;&lt;p&gt;紧跟着上一篇&lt;a href=&quot;http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/&quot;&gt;Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）&lt;/a&gt;添加多一个路由为/stock和相应的处理函数，先从yahoo接口获取数据，再转化成为json输出   &lt;/p&gt;
+&lt;h3 id=&quot;requestHandlers-js-文件添加处理函数代码，如下&quot;&gt;&lt;a href=&quot;#requestHandlers-js-文件添加处理函数代码，如下&quot; class=&quot;headerlink&quot; title=&quot;requestHandlers.js 文件添加处理函数代码，如下&quot;&gt;&lt;/a&gt;requestHandlers.js 文件添加处理函数代码，如下&lt;/h3&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;exports.stock = (res, req) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; arg = url.parse(req.url, &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;).query&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; stockName = arg.stockname&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; startDateArr = arg.startdate.split(&lt;span class=&quot;string&quot;&gt;&#39;-&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; endDateArr = arg.enddate.split(&lt;span class=&quot;string&quot;&gt;&#39;-&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; startY = startDateArr[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; startM = startDateArr[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; startD = startDateArr[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; endY = endDateArr[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; endM = endDateArr[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; endD = endDateArr[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; stockAPI = &lt;span class=&quot;string&quot;&gt;&#39;http://table.finance.yahoo.com/table.csv?s=&#39;&lt;/span&gt; + stockName + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;f=&#39;&lt;/span&gt; + endY + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;d=&#39;&lt;/span&gt; + endM + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;e=&#39;&lt;/span&gt; + endD + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;c=&#39;&lt;/span&gt; + startY + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;a=&#39;&lt;/span&gt; + startM + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;b=&#39;&lt;/span&gt; + startD + &lt;span class=&quot;string&quot;&gt;&#39;&amp;amp;g=d&amp;amp;ignore=.csv&#39;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;// 定义stock api的url&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; resultStr = &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  http.get(stockAPI, response =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    response.on(&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;, data =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      resultStr += data&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    response.on(&lt;span class=&quot;string&quot;&gt;&#39;end&#39;&lt;/span&gt;, () =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      res.writeHead(&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, &amp;#123; &lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;application:json&#39;&lt;/span&gt; &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      res.write(&lt;span class=&quot;built_in&quot;&gt;JSON&lt;/span&gt;.stringify(csv2json(resultStr)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      res.end()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;).on(&lt;span class=&quot;string&quot;&gt;&#39;error&#39;&lt;/span&gt;, e =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.error(e)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;trim&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;)&lt;/span&gt;&amp;#123; &lt;span class=&quot;comment&quot;&gt;//删除左右两端的空格&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; str.replace(&lt;span class=&quot;regexp&quot;&gt;/(^\s*)|(\s*$)/g&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;csv2json&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; jsonArr = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  str = trim(str)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; lines = str.split(&lt;span class=&quot;string&quot;&gt;&#39;\n&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(lines.length &amp;gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; heads = lines[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].split(&lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt; lines.length; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; temArr = lines[i].split(&lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; j=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; j &amp;lt; heads.length; j++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        obj[heads[j]] = temArr[j];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      jsonArr.push(obj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; jsonArr&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;`  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;### index.js添加路由代码：如下     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;javascript&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;handle[&lt;span class=&quot;string&quot;&gt;&#39;/stock&#39;&lt;/span&gt;] = requestHandlers.stock&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h3&gt;&lt;p&gt;紧跟着上一篇&lt;a href=&quot;http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/&quot;&gt;Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）&lt;/a&gt;添加多一个路由为/stock和相应的处理函数，先从yahoo接口获取数据，再转化成为json输出   &lt;/p&gt;
+&lt;h3 id=&quot;requestHandlers-js-文件添加处理函数代码，如下&quot;&gt;&lt;a href=&quot;#requestHandlers-js-文件添加处理函数代码，如下&quot; class=&quot;headerlink&quot; title=&quot;requestHandlers.js 文件添加处理函数代码，如下&quot;&gt;&lt;/a&gt;requestHandlers.js 文件添加处理函数代码，如下&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
+    
+      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</title>
@@ -1169,82 +1248,6 @@ gem install sass
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jquery-scroll-cascade-select</title>
-    <link href="http://www.kuangzen.com/2016/03/21/jquery-scroll-cascade-select/"/>
-    <id>http://www.kuangzen.com/2016/03/21/jquery-scroll-cascade-select/</id>
-    <published>2016-03-21T06:57:45.000Z</published>
-    <updated>2016-05-17T09:04:53.063Z</updated>
-    
-    <content type="html">&lt;p&gt;Scroll Cascade Select, a light-weight flexible Scroll Picker similiar to Mobiscroll. &lt;/p&gt;
-&lt;p&gt;Support swipping up / down, mouse dragging up / down are supported too&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/nelsonkuang/jquery-scroll-cascade-select&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;how-to-use-it&quot;&gt;&lt;a href=&quot;#how-to-use-it&quot; class=&quot;headerlink&quot; title=&quot;how to use it?&quot;&gt;&lt;/a&gt;how to use it?&lt;/h2&gt;&lt;p&gt;check the address.html example.&lt;/p&gt;
-&lt;p&gt;or&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://sandbox.runjs.cn/show/zmqwsarf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;live Demo&lt;/a&gt;, please use mobile phone mode to view the demo!&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;License&quot;&gt;&lt;a href=&quot;#License&quot; class=&quot;headerlink&quot; title=&quot;License:&quot;&gt;&lt;/a&gt;License:&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/nelsonkuang/jquery-scroll-cascade-select/blob/master/LICENSE&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MIT&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Todo&quot;&gt;&lt;a href=&quot;#Todo&quot; class=&quot;headerlink&quot; title=&quot;Todo:&quot;&gt;&lt;/a&gt;Todo:&lt;/h2&gt;&lt;p&gt;&lt;del&gt;Add mouse dragging effect.&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;Add more examples.&lt;/p&gt;
-&lt;p&gt;Add scroll triggering options changing.&lt;/p&gt;
-&lt;h3 id=&quot;实现原理&quot;&gt;&lt;a href=&quot;#实现原理&quot; class=&quot;headerlink&quot; title=&quot;实现原理:&quot;&gt;&lt;/a&gt;实现原理:&lt;/h3&gt;&lt;p&gt;每一个滑轮用flex流式布局以保证都在同一行排列各各滑轮，用css3的transform3D来实现划动效果，滑屏放开时，计算当时的速度，然后滑轮以当时的速度进行匀减速运动一直到停止，因为每个选择框的高度都是固定40像数，停止的位置要按40的倍数计算而成。&lt;/p&gt;
-&lt;p&gt;如果是支持触屏就绑定touch事件，如果不支持就绑定mouse事件。&lt;/p&gt;
-&lt;p&gt;每个滑轮的滑动变化都可以绑定一个回调函数用来触发级联变化。&lt;/p&gt;
-&lt;p&gt;每个滑轮都可以根据输入的固定格式的数组数据进行重新渲染。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Scroll Cascade Select, a light-weight flexible Scroll Picker similiar to Mobiscroll. &lt;/p&gt;
-&lt;p&gt;Support swipping up / down, mouse dragging up / down are supported too&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/nelsonkuang/jquery-scroll-cascade-select&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;how-to-use-it&quot;&gt;&lt;a href=&quot;#how-to-use-it&quot; class=&quot;headerlink&quot; title=&quot;how to use it?&quot;&gt;&lt;/a&gt;how to use it?&lt;/h2&gt;&lt;p&gt;check the address.html example.&lt;/p&gt;
-&lt;p&gt;or&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://sandbox.runjs.cn/show/zmqwsarf&quot;&gt;live Demo&lt;/a&gt;, please use mobile phone mode to view the demo!&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
-    
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>react-cascading-address-selector</title>
-    <link href="http://www.kuangzen.com/2016/03/04/react-cascading-address-selector/"/>
-    <id>http://www.kuangzen.com/2016/03/04/react-cascading-address-selector/</id>
-    <published>2016-03-04T06:57:45.000Z</published>
-    <updated>2016-05-17T09:06:54.916Z</updated>
-    
-    <content type="html">&lt;p&gt;React级联地址选择器组件纯前端实现 地址数组的检索充分运用了以空间换时间的思路&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/nelsonkuang/react-cascading-address-selector&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;使用方式&quot;&gt;&lt;a href=&quot;#使用方式&quot; class=&quot;headerlink&quot; title=&quot;使用方式&quot;&gt;&lt;/a&gt;使用方式&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git clone https://github.com/nelsonkuang/react-cascading-address-selector.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd react-cascading-address-selector&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;好！OK！&lt;br&gt;现在可以通过&lt;a href=&quot;http://localhost:8080/webpack-dev-server/index.html打开页面&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:8080/webpack-dev-server/index.html打开页面&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://runjs.cn/detail/wyreqgtd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;在线查看Demo效果&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;React级联地址选择器组件纯前端实现 地址数组的检索充分运用了以空间换时间的思路&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/nelsonkuang/react-cascading-address-selector&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;使用方式&quot;&gt;&lt;a href=&quot;#使用方式&quot; class=&quot;headerlink&quot; title=&quot;使用方式&quot;&gt;&lt;/a&gt;使用方式&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git clone https://github.com/nelsonkuang/react-cascading-address-selector.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd react-cascading-address-selector&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
-      <category term="react" scheme="http://www.kuangzen.com/tags/react/"/>
     
   </entry>
   

@@ -4,24 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>微信网页里面同时出现2个二维码长按时不能准确识别问题 | KUANG ZEN&#39;s HOME</title>
+  <title>Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据 | KUANG ZEN&#39;s HOME</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背景在微信网页里面如果同时放了2个或者多个二维码时，长按二维码图片时只能识别到其中一个二维码，原因是其识别机制问题，其运行方式是先判断有没有按到图片(img)，有则提示识别二维码菜单，当按下菜单时，截取屏幕然后由上而下，由左而右识别，所以只能识别到靠左/上的那个二维码。
-解决方案可以把几个二维码做成可点击或者绑定按下">
+  <meta name="description" content="思路紧跟着上一篇Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）添加多一个路由为/stock和相应的处理函数，先从yahoo接口获取数据，再转化成为json输出   
+requestHandlers.js 文件添加处理函数代码，如下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信网页里面同时出现2个二维码长按时不能准确识别问题">
-<meta property="og:url" content="http://www.kuangzen.com/2016/04/18/useful-wechat-code-interactive/index.html">
+<meta property="og:title" content="Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据">
+<meta property="og:url" content="http://www.kuangzen.com/2016/06/22/node-get-stock-csv-data-output-to-json/index.html">
 <meta property="og:site_name" content="KUANG ZEN's HOME">
-<meta property="og:description" content="背景在微信网页里面如果同时放了2个或者多个二维码时，长按二维码图片时只能识别到其中一个二维码，原因是其识别机制问题，其运行方式是先判断有没有按到图片(img)，有则提示识别二维码菜单，当按下菜单时，截取屏幕然后由上而下，由左而右识别，所以只能识别到靠左/上的那个二维码。
-解决方案可以把几个二维码做成可点击或者绑定按下">
-<meta property="og:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/code_normal.png">
-<meta property="og:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/code_press.png">
-<meta property="og:updated_time" content="2016-05-17T09:07:36.566Z">
+<meta property="og:description" content="思路紧跟着上一篇Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）添加多一个路由为/stock和相应的处理函数，先从yahoo接口获取数据，再转化成为json输出   
+requestHandlers.js 文件添加处理函数代码，如下">
+<meta property="og:updated_time" content="2016-06-22T10:45:41.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信网页里面同时出现2个二维码长按时不能准确识别问题">
-<meta name="twitter:description" content="背景在微信网页里面如果同时放了2个或者多个二维码时，长按二维码图片时只能识别到其中一个二维码，原因是其识别机制问题，其运行方式是先判断有没有按到图片(img)，有则提示识别二维码菜单，当按下菜单时，截取屏幕然后由上而下，由左而右识别，所以只能识别到靠左/上的那个二维码。
-解决方案可以把几个二维码做成可点击或者绑定按下">
-<meta name="twitter:image" content="http://7xsj8c.com2.z0.glb.clouddn.com/img/code_normal.png">
+<meta name="twitter:title" content="Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据">
+<meta name="twitter:description" content="思路紧跟着上一篇Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）添加多一个路由为/stock和相应的处理函数，先从yahoo接口获取数据，再转化成为json输出   
+requestHandlers.js 文件添加处理函数代码，如下">
   
     <link rel="alternative" href="/atom.xml" title="KUANG ZEN&#39;s HOME" type="application/atom+xml">
   
@@ -212,11 +209,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-useful-wechat-code-interactive" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-node-get-stock-csv-data-output-to-json" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/18/useful-wechat-code-interactive/" class="article-date">
-  	<time datetime="2016-04-18T01:12:45.000Z" itemprop="datePublished">2016-04-18</time>
+      <a href="/2016/06/22/node-get-stock-csv-data-output-to-json/" class="article-date">
+  	<time datetime="2016-06-22T10:59:50.000Z" itemprop="datePublished">2016-06-22</time>
 </a>
     </div>
   
@@ -229,7 +226,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      微信网页里面同时出现2个二维码长按时不能准确识别问题
+      Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据
     </h1>
   
 
@@ -238,7 +235,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI设计/">UI设计</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
 	</div>
 
         
@@ -253,9 +250,9 @@
       
       
       
-        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在微信网页里面如果同时放了2个或者多个二维码时，长按二维码图片时只能识别到其中一个二维码，原因是其识别机制问题，其运行方式是先判断有没有按到图片(img)，有则提示识别二维码菜单，当按下菜单时，截取屏幕然后由上而下，由左而右识别，所以只能识别到靠左/上的那个二维码。</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>可以把几个二维码做成<strong>可点击</strong>或者<strong>绑定按下</strong><a id="more"></a>弹出对话框的形式把相应的二维码以图片的形式放大显示，这样再按着就可以正确显示与识别相应的二维码了。如下图：<br><strong>没按下</strong>：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/code_normal.png" alt="地图形象展示"><br><strong>按下屏幕</strong>：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/code_press.png" alt="地图形象展示">   </p>
-
+        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>紧跟着上一篇<a href="http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/">Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）</a>添加多一个路由为/stock和相应的处理函数，先从yahoo接口获取数据，再转化成为json输出   </p>
+<h3 id="requestHandlers-js-文件添加处理函数代码，如下"><a href="#requestHandlers-js-文件添加处理函数代码，如下" class="headerlink" title="requestHandlers.js 文件添加处理函数代码，如下"></a>requestHandlers.js 文件添加处理函数代码，如下</h3><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">exports.stock = (res, req) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> arg = url.parse(req.url, <span class="literal">true</span>).query</span><br><span class="line">  <span class="keyword">const</span> stockName = arg.stockname</span><br><span class="line">  <span class="keyword">const</span> startDateArr = arg.startdate.split(<span class="string">'-'</span>)</span><br><span class="line">  <span class="keyword">const</span> endDateArr = arg.enddate.split(<span class="string">'-'</span>)</span><br><span class="line">  <span class="keyword">const</span> startY = startDateArr[<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">const</span> startM = startDateArr[<span class="number">1</span>] - <span class="number">1</span></span><br><span class="line">  <span class="keyword">const</span> startD = startDateArr[<span class="number">2</span>]</span><br><span class="line">  <span class="keyword">const</span> endY = endDateArr[<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">const</span> endM = endDateArr[<span class="number">1</span>] - <span class="number">1</span></span><br><span class="line">  <span class="keyword">const</span> endD = endDateArr[<span class="number">2</span>]</span><br><span class="line">  <span class="keyword">const</span> stockAPI = <span class="string">'http://table.finance.yahoo.com/table.csv?s='</span> + stockName + <span class="string">'&amp;f='</span> + endY + <span class="string">'&amp;d='</span> + endM + <span class="string">'&amp;e='</span> + endD + <span class="string">'&amp;c='</span> + startY + <span class="string">'&amp;a='</span> + startM + <span class="string">'&amp;b='</span> + startD + <span class="string">'&amp;g=d&amp;ignore=.csv'</span> <span class="comment">// 定义stock api的url</span></span><br><span class="line">  <span class="keyword">var</span> resultStr = <span class="string">''</span></span><br><span class="line">  http.get(stockAPI, response =&gt; &#123;</span><br><span class="line">    response.on(<span class="string">'data'</span>, data =&gt; &#123;</span><br><span class="line">      resultStr += data</span><br><span class="line">    &#125;)</span><br><span class="line">    response.on(<span class="string">'end'</span>, () =&gt; &#123;</span><br><span class="line">      res.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'application:json'</span> &#125;)</span><br><span class="line">      res.write(<span class="built_in">JSON</span>.stringify(csv2json(resultStr)))</span><br><span class="line">      res.end()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;).on(<span class="string">'error'</span>, e =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.error(e)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trim</span>(<span class="params">str</span>)</span>&#123; <span class="comment">//删除左右两端的空格</span></span><br><span class="line">　<span class="keyword">return</span> str.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>, <span class="string">''</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">csv2json</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> jsonArr = []</span><br><span class="line">  str = trim(str)</span><br><span class="line">  <span class="keyword">const</span> lines = str.split(<span class="string">'\n'</span>)</span><br><span class="line">  <span class="keyword">if</span>(lines.length &gt; <span class="number">1</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> heads = lines[<span class="number">0</span>].split(<span class="string">','</span>)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>; i &lt; lines.length; i++)&#123;</span><br><span class="line">      <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">      <span class="keyword">var</span> temArr = lines[i].split(<span class="string">','</span>)</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>; j &lt; heads.length; j++)&#123;</span><br><span class="line">        obj[heads[j]] = temArr[j];</span><br><span class="line">      &#125;</span><br><span class="line">      jsonArr.push(obj);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> jsonArr</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">``</span><span class="string">`  </span><br><span class="line"></span><br><span class="line">### index.js添加路由代码：如下     </span><br><span class="line">`</span><span class="string">``</span>javascript</span><br><span class="line"></span><br><span class="line">handle[<span class="string">'/stock'</span>] = requestHandlers.stock</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -264,18 +261,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/20/node-learning-chapter-1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/06/22/node-enhance-static-server-support-html-css/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）
+          Node.js 简单优化静态文件服务器处理函数支持css、html文件加载
         
       </div>
     </a>
   
   
-    <a href="/2016/04/18/useful-map-interactive/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">一个有用的地图方面的UI设计-地图形象展示</div>
+    <a href="/2016/06/21/js-defineProperty/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -310,7 +307,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="useful-wechat-code-interactive" data-title="微信网页里面同时出现2个二维码长按时不能准确识别问题" data-url="http://www.kuangzen.com/2016/04/18/useful-wechat-code-interactive/"></div>
+	<div class="ds-thread" data-thread-key="node-get-stock-csv-data-output-to-json" data-title="Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据" data-url="http://www.kuangzen.com/2016/06/22/node-get-stock-csv-data-output-to-json/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
