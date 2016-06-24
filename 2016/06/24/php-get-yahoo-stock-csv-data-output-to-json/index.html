@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>忙忙碌碌几个月，随便写写 | KUANG ZEN&#39;s HOME</title>
+  <title>php 获取yahoo股票csv数据并封闭成为接口输出json数据 | KUANG ZEN&#39;s HOME</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="忙忙碌碌了几个月，总得写写总结吧？以前总是非常热衷于写些技术文档分享之类的，但慢慢的热情似乎有些冷却；根本没有什么头绪，可能是因为技术无止境，知道得越多；觉得自己懂得的东西越少。偶尔更新一下github算是技术积累吧。   
-今天捣鼓一下react.js，明天折腾一下vue.js，后天再瞎搞几下node.js后端。项目中大量使用的还是jQuery，顶多加个require.js搞成模块化。希望下版上">
+  <meta name="description" content="思路先从yahoo接口获取数据，再转化成为json输出   
+stock.php 文件添加处理函数代码，如下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="忙忙碌碌几个月，随便写写">
-<meta property="og:url" content="http://www.kuangzen.com/2016/06/13/what-s-up-2016-6-13/index.html">
+<meta property="og:title" content="php 获取yahoo股票csv数据并封闭成为接口输出json数据">
+<meta property="og:url" content="http://www.kuangzen.com/2016/06/24/php-get-yahoo-stock-csv-data-output-to-json/index.html">
 <meta property="og:site_name" content="KUANG ZEN's HOME">
-<meta property="og:description" content="忙忙碌碌了几个月，总得写写总结吧？以前总是非常热衷于写些技术文档分享之类的，但慢慢的热情似乎有些冷却；根本没有什么头绪，可能是因为技术无止境，知道得越多；觉得自己懂得的东西越少。偶尔更新一下github算是技术积累吧。   
-今天捣鼓一下react.js，明天折腾一下vue.js，后天再瞎搞几下node.js后端。项目中大量使用的还是jQuery，顶多加个require.js搞成模块化。希望下版上">
-<meta property="og:updated_time" content="2016-06-13T08:32:03.349Z">
+<meta property="og:description" content="思路先从yahoo接口获取数据，再转化成为json输出   
+stock.php 文件添加处理函数代码，如下">
+<meta property="og:updated_time" content="2016-06-24T03:06:38.927Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="忙忙碌碌几个月，随便写写">
-<meta name="twitter:description" content="忙忙碌碌了几个月，总得写写总结吧？以前总是非常热衷于写些技术文档分享之类的，但慢慢的热情似乎有些冷却；根本没有什么头绪，可能是因为技术无止境，知道得越多；觉得自己懂得的东西越少。偶尔更新一下github算是技术积累吧。   
-今天捣鼓一下react.js，明天折腾一下vue.js，后天再瞎搞几下node.js后端。项目中大量使用的还是jQuery，顶多加个require.js搞成模块化。希望下版上">
+<meta name="twitter:title" content="php 获取yahoo股票csv数据并封闭成为接口输出json数据">
+<meta name="twitter:description" content="思路先从yahoo接口获取数据，再转化成为json输出   
+stock.php 文件添加处理函数代码，如下">
   
     <link rel="alternative" href="/atom.xml" title="KUANG ZEN&#39;s HOME" type="application/atom+xml">
   
@@ -209,11 +209,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-what-s-up-2016-6-13" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-php-get-yahoo-stock-csv-data-output-to-json" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/13/what-s-up-2016-6-13/" class="article-date">
-  	<time datetime="2016-06-13T02:17:58.000Z" itemprop="datePublished">2016-06-13</time>
+      <a href="/2016/06/24/php-get-yahoo-stock-csv-data-output-to-json/" class="article-date">
+  	<time datetime="2016-06-24T03:02:17.000Z" itemprop="datePublished">2016-06-24</time>
 </a>
     </div>
   
@@ -226,7 +226,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      忙忙碌碌几个月，随便写写
+      php 获取yahoo股票csv数据并封闭成为接口输出json数据
     </h1>
   
 
@@ -235,7 +235,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/一些事一些情/">一些事一些情</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
 	</div>
 
         
@@ -250,9 +250,9 @@
       
       
       
-        <p>忙忙碌碌了几个月，总得写写总结吧？以前总是非常热衷于写些技术文档分享之类的，但慢慢的热情似乎有些冷却；根本没有什么头绪，可能是因为技术无止境，知道得越多；觉得自己懂得的东西越少。偶尔更新一下github算是技术积累吧。   </p>
-<p>今天捣鼓一下react.js，明天折腾一下vue.js，后天再瞎搞几下node.js后端。项目中大量使用的还是jQuery，顶多加个require.js搞成模块化。希望下版上require.js推进一切顺利吧。   </p>
-<p>近期平台公众号运营风格大变，变得越来越没有底线咯呵呵，贞操碎得一起，黄段子、肉图满天飞；但感觉吸粉效果不明显、转发率也不高，不知道掉粉情况严不严重。太多无厘头的东西有时会不会过于庸俗，走专业化的笔风会不会更好，毕竟定了女性目标群体的方向，就不能发太多男性化的文章，典型的就是黄段子这类的只有男性群体比较接受。   </p>
+        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>先从yahoo接口获取数据，再转化成为json输出   </p>
+<h3 id="stock-php-文件添加处理函数代码，如下"><a href="#stock-php-文件添加处理函数代码，如下" class="headerlink" title="stock.php 文件添加处理函数代码，如下"></a>stock.php 文件添加处理函数代码，如下</h3><a id="more"></a>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">header(<span class="string">"Content-Type: application:json;charset=utf-8"</span>);</span><br><span class="line">header(<span class="string">'Access-Control-Allow-Origin:http://www.checkcool.com'</span>);  <span class="comment">//只允许checkcool.com这域名进行跨域get访问</span></span><br><span class="line">header(<span class="string">'Access-Control-Allow-Methods:GET'</span>);  </span><br><span class="line">header(<span class="string">'Access-Control-Allow-Headers:x-requested-with,content-type'</span>);  </span><br><span class="line"></span><br><span class="line">$StockName=$_REQUEST[<span class="string">'stockname'</span>];</span><br><span class="line">$StartDateArr=explode(<span class="string">"-"</span>,$_REQUEST[<span class="string">'startdate'</span>]);</span><br><span class="line">$EndDateArr=explode(<span class="string">"-"</span>,$_REQUEST[<span class="string">'enddate'</span>]);</span><br><span class="line"></span><br><span class="line">$StartMonth=$StartDateArr[<span class="number">1</span>] - <span class="number">1</span>;</span><br><span class="line">$StartDay=$StartDateArr[<span class="number">2</span>];</span><br><span class="line">$StartYear=$StartDateArr[<span class="number">0</span>];</span><br><span class="line">$EndMonth=$EndDateArr[<span class="number">1</span>] - <span class="number">1</span>;</span><br><span class="line">$EndDay=$EndDateArr[<span class="number">2</span>];</span><br><span class="line">$EndYear=$EndDateArr[<span class="number">0</span>];</span><br><span class="line">$StockAPI = <span class="string">'http://table.finance.yahoo.com/table.csv?s='</span>.$StockName.<span class="string">'&amp;f='</span>.$EndYear.<span class="string">'&amp;d='</span>.$EndMonth.<span class="string">'&amp;e='</span>.$EndDay.<span class="string">'&amp;c='</span>.$StartYear.<span class="string">'&amp;a='</span>.$StartMonth.<span class="string">'&amp;b='</span>.$StartDay.<span class="string">'&amp;g=d&amp;ignore=.csv'</span>;<span class="comment">//定义stock api的url</span></span><br><span class="line">$StockData = json_encode(csv_in_array($StockAPI,<span class="string">","</span>,<span class="string">""</span>,<span class="keyword">true</span>));<span class="comment">//定义值为读取到的Stock信息</span></span><br><span class="line"><span class="comment">// echo '&lt;pre&gt;';//输出原文本格式</span></span><br><span class="line"><span class="keyword">echo</span> $StockData;<span class="comment">//输出获取到的stock信息文本</span></span><br><span class="line"><span class="comment">// echo "&lt;/pre&gt;";//输出原文本格式</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">csv_in_array</span><span class="params">($url,$delm=<span class="string">","</span>,$encl=<span class="string">""</span>,$head=true)</span> </span>&#123; </span><br><span class="line">    </span><br><span class="line">    $csvxrow = file($url);   <span class="comment">// ---- csv rows to array ----</span></span><br><span class="line">    </span><br><span class="line">    $csvxrow[<span class="number">0</span>] = chop($csvxrow[<span class="number">0</span>]); </span><br><span class="line">    $csvxrow[<span class="number">0</span>] = str_replace($encl,<span class="string">''</span>,$csvxrow[<span class="number">0</span>]); </span><br><span class="line">    $keydata = explode($delm,$csvxrow[<span class="number">0</span>]); </span><br><span class="line">    $keynumb = count($keydata); </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> ($head === <span class="keyword">true</span>) &#123; </span><br><span class="line">    $anzdata = count($csvxrow); </span><br><span class="line">    $z=<span class="number">0</span>; </span><br><span class="line">    <span class="keyword">for</span>($x=<span class="number">1</span>; $x&lt;$anzdata; $x++) &#123; </span><br><span class="line">        $csvxrow[$x] = chop($csvxrow[$x]); </span><br><span class="line">        $csvxrow[$x] = str_replace($encl,<span class="string">''</span>,$csvxrow[$x]); </span><br><span class="line">        $csv_data[$x] = explode($delm,$csvxrow[$x]); </span><br><span class="line">        $i=<span class="number">0</span>; </span><br><span class="line">        <span class="keyword">foreach</span>($keydata <span class="keyword">as</span> $key) &#123; </span><br><span class="line">            $out[$z][$key] = $csv_data[$x][$i]; </span><br><span class="line">            $i++;</span><br><span class="line">            &#125;    </span><br><span class="line">        $z++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123; </span><br><span class="line">        $i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">foreach</span>($csvxrow <span class="keyword">as</span> $item) &#123; </span><br><span class="line">            $item = chop($item); </span><br><span class="line">            $item = str_replace($encl,<span class="string">''</span>,$item); </span><br><span class="line">            $csv_data = explode($delm,$item); </span><br><span class="line">            <span class="keyword">for</span> ($y=<span class="number">0</span>; $y&lt;$keynumb; $y++) &#123; </span><br><span class="line">               $out[$i][$y] = $csv_data[$y]; </span><br><span class="line">            &#125;</span><br><span class="line">        $i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> $out; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -262,18 +262,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/21/js-defineProperty/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/17/web-front-end-awesome/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">web前端实用集锦导航</div>
+    <a href="/2016/06/22/node-enhance-static-server-support-html-css/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node.js 简单优化静态文件服务器处理函数支持css、html文件加载</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -308,7 +299,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="what-s-up-2016-6-13" data-title="忙忙碌碌几个月，随便写写" data-url="http://www.kuangzen.com/2016/06/13/what-s-up-2016-6-13/"></div>
+	<div class="ds-thread" data-thread-key="php-get-yahoo-stock-csv-data-output-to-json" data-title="php 获取yahoo股票csv数据并封闭成为接口输出json数据" data-url="http://www.kuangzen.com/2016/06/24/php-get-yahoo-stock-csv-data-output-to-json/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
