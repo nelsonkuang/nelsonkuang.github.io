@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>http://www.kuangzen.com/2016/07/15/Vuex-And-Vue-router-Tabs/</loc>
+    <lastmod>2016-07-15T08:13:43.487Z</lastmod>
+    <data>
+        <display>
+        <title>vuex + vue-router实战之简单Tabs开发</title>
+        <pubTime>2016-07-15T06:54:11.000Z</pubTime>
+        
+        <tag>vue.js</tag>
+         
+        <tag>javascript</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kuangzen.com/2016/06/24/php-get-yahoo-stock-csv-data-output-to-json/</loc>
     <lastmod>2016-06-24T03:06:38.927Z</lastmod>
     <data>
@@ -68,9 +89,9 @@
         <title>javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</title>
         <pubTime>2016-06-21T07:47:05.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>javascript设计模式</tag>
          
@@ -89,9 +110,9 @@
         <title>javascript设计模式 - 依赖注入</title>
         <pubTime>2016-06-21T07:47:05.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>javascript设计模式</tag>
          
@@ -110,9 +131,9 @@
         <title>javascript设计模式 - 观察者模式</title>
         <pubTime>2016-06-21T07:47:05.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>javascript设计模式</tag>
          
@@ -148,9 +169,9 @@
         <title>一个有用的地图方面的UI设计-地图形象展示</title>
         <pubTime>2016-04-18T01:11:15.000Z</pubTime>
         
-        <tag>UI设计</tag>
-         
         <tag>前端</tag>
+         
+        <tag>UI设计</tag>
          
          
            
@@ -167,13 +188,13 @@
         <title>web前端实用集锦导航</title>
         <pubTime>2016-05-17T01:26:15.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
          
-        <tag>jQuery</tag>
+        <tag>前端</tag>
          
         <tag>css3</tag>
+         
+        <tag>jQuery</tag>
          
         <tag>css</tag>
          
@@ -193,11 +214,11 @@
         <title>安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug</title>
         <pubTime>2016-05-03T01:09:32.000Z</pubTime>
         
-        <tag>网页兼容性</tag>
-         
         <tag>前端</tag>
          
         <tag>jQuery</tag>
+         
+        <tag>网页兼容性</tag>
          
          
            
@@ -214,9 +235,9 @@
         <title>微信网页里面同时出现2个二维码长按时不能准确识别问题</title>
         <pubTime>2016-04-18T01:12:45.000Z</pubTime>
         
-        <tag>UI设计</tag>
-         
         <tag>前端</tag>
+         
+        <tag>UI设计</tag>
          
          
            
@@ -235,9 +256,9 @@
         
         <tag>前端</tag>
          
-        <tag>jQuery</tag>
-         
         <tag>css3</tag>
+         
+        <tag>jQuery</tag>
          
          
            
@@ -277,9 +298,9 @@
         <title>react-cascading-address-selector</title>
         <pubTime>2016-03-04T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>react</tag>
          
@@ -298,9 +319,9 @@
         <title>random.js</title>
         <pubTime>2015-04-14T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>random</tag>
          
@@ -338,9 +359,9 @@
         <title>pix2remjs</title>
         <pubTime>2015-12-31T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>rem</tag>
          
@@ -361,9 +382,9 @@
         <title>pix2rem-with-gulp-sass</title>
         <pubTime>2016-04-08T05:40:00.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>gulp</tag>
          
@@ -409,9 +430,9 @@
         
         <tag>前端</tag>
          
-        <tag>jQuery</tag>
-         
         <tag>css3</tag>
+         
+        <tag>jQuery</tag>
          
          
            
@@ -430,9 +451,9 @@
         
         <tag>前端</tag>
          
-        <tag>jQuery</tag>
-         
         <tag>css3</tag>
+         
+        <tag>jQuery</tag>
          
          
            
@@ -493,11 +514,11 @@
         <title>新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时，导致遮挡住fixed在底部输入框问题</title>
         <pubTime>2016-05-05T10:30:11.000Z</pubTime>
         
+        <tag>前端</tag>
+         
         <tag>网页兼容性</tag>
          
         <tag>UI设计</tag>
-         
-        <tag>前端</tag>
          
          
            
@@ -514,13 +535,13 @@
         <title>新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时不会触发resize动作，导致遮挡住输入框问题</title>
         <pubTime>2016-04-06T08:04:30.000Z</pubTime>
         
-        <tag>网页兼容性</tag>
+        <tag>javascript</tag>
          
         <tag>前端</tag>
          
-        <tag>javascript</tag>
-         
         <tag>jQuery</tag>
+         
+        <tag>网页兼容性</tag>
          
          
            
@@ -537,9 +558,9 @@
         <title>css3clock.js</title>
         <pubTime>2015-05-17T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>css3</tag>
          
@@ -558,9 +579,9 @@
         <title>simplepen.js</title>
         <pubTime>2015-11-11T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>canvas</tag>
          

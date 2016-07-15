@@ -123,7 +123,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/UI设计/" style="font-size: 13.33px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.67px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 13.33px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.67px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.67px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/scss/" style="font-size: 11.67px;">scss</a> <a href="/tags/一些事一些情/" style="font-size: 10px;">一些事一些情</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 15px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 13.33px;">网页兼容性</a>
+						<a href="/tags/UI设计/" style="font-size: 13.33px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.67px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 13.33px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.67px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.67px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/scss/" style="font-size: 11.67px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/一些事一些情/" style="font-size: 10px;">一些事一些情</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 15px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 13.33px;">网页兼容性</a>
 					</div>
 				</section>
 				
@@ -208,6 +208,73 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-wechat-readonly-input-virtual-keyboard-bug" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/" class="article-date">
+  	<time datetime="2016-05-03T01:09:32.000Z" itemprop="datePublished">2016-05-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/">安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
+<li>使用mobicroll时，对input已经设置了readonly</li>
+<li>其他input用作组件时，不需要输入，设置了readonly</li>
+</ol>
+<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><p>只需要给input绑定一个click后设置为blur事件就可以了   </p>
+<pre><code class="javascript">$($input).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{<span class="comment">//fixed 虚拟键盘弹出</span>
+    $(<span class="keyword">this</span>).blur();
+});
+</code></pre>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网页兼容性/">网页兼容性</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-push-urls-to-baidu-with-nodejs-in-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -771,71 +838,6 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-jQuery-sDialog" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/05/jQuery-sDialog/" class="article-date">
-  	<time datetime="2016-04-05T02:32:38.000Z" itemprop="datePublished">2016-04-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/05/jQuery-sDialog/">jQuery.sDialog</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-        <p>A dialog jquery-plugin for mobile site, easy, simple.</p>
-<p><a href="https://github.com/hiooyUI/jQuery.sDialog" target="_blank" rel="external">Github</a></p>
-<h2 id="how-to-use-it"><a href="#how-to-use-it" class="headerlink" title="how to use it?"></a>how to use it?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;sdialog.min.css&quot; /&gt;</span><br><span class="line">&lt;script src=&quot;your path/jquery.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;sdialog.min.js&quot;&gt;&lt;/script&gt;&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">//1、open a OK/Cancel Dialog</span><br><span class="line">     $.sDialog(&#123;</span><br><span class="line">         skin: "block",</span><br><span class="line">         content: "添加购物车成功！",</span><br><span class="line">         okBtnText: "再逛逛",</span><br><span class="line">         cancelBtnText: "去购物车",</span><br><span class="line">         width: 250,</span><br><span class="line">         okFn: function () &#123;</span><br><span class="line">             console.log("click 去购物车!");</span><br><span class="line">         &#125;,</span><br><span class="line">         cancelFn: function () &#123;</span><br><span class="line">             console.log("click 再逛逛!");</span><br><span class="line">         &#125;,</span><br><span class="line">         onDestroy: function () &#123;</span><br><span class="line">             console.log("destroy!");</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;);</span><br><span class="line">//2、open a success Dialog</span><br><span class="line">     $.sDialog(&#123;</span><br><span class="line">         skin: "green",</span><br><span class="line">         content: "添加购物车成功！",</span><br><span class="line">         "okBtn": false, //是否显示确定按钮</span><br><span class="line">         "cancelBtn": false, //是否显示确定按钮</span><br><span class="line">         width: 250,</span><br><span class="line">         onDestroy: function () &#123;</span><br><span class="line">             console.log("destroy!");</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;);</span><br><span class="line"></span><br><span class="line">//3、open a warning Dialog</span><br><span class="line">     $.sDialog(&#123;</span><br><span class="line">         skin: "red",</span><br><span class="line">         content: "你输入的东西有误！",</span><br><span class="line">         "okBtn": false, //是否显示确定按钮</span><br><span class="line">         "cancelBtn": false, //是否显示确定按钮</span><br><span class="line">         width: 250,</span><br><span class="line">         onDestroy: function () &#123;</span><br><span class="line">             console.log("destroy!");</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;);</span><br><span class="line">//4、open a window Dialog</span><br><span class="line">     $.sWindow(&#123;</span><br><span class="line">         title: "我的标题",//弹出框标题</span><br><span class="line">         content: '我的内容', //弹出框里面的内容，支持html标签</span><br><span class="line">         height: 330,//内容部分高度，不是整个对话框高度</span><br><span class="line">         callback: function () &#123;</span><br><span class="line">             //加载完成后执行回调函数</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;)</span><br><span class="line">//5、slide up a Menu Dialog</span><br><span class="line">     $.sMenu(&#123;</span><br><span class="line">         "menus": [</span><br><span class="line">         &#123;</span><br><span class="line">             name: "退款", class: "rf", onclick: function () &#123;</span><br><span class="line">                 console.log("点击了退款");</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">             name: "退款退货", class: "rg", onclick: function () &#123;</span><br><span class="line">                 console.log("点击了退款退货");</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         ],</span><br><span class="line">         "okBtn": false, //是否显示确定按钮</span><br><span class="line">         "cancelBtnText": "取消", //取消按钮的文字</span><br><span class="line">         "cancelFn": function () &#123;</span><br><span class="line">             console.log("点击了取消");</span><br><span class="line">         &#125;//点击取消按钮执行的函数</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
-<p>check out the example/example.html demo.</p>
-<p>or</p>
-<p><a href="http://sandbox.runjs.cn/show/fkq0n7jy" target="_blank" rel="external">live Demo</a>, you can use mobile phone mode to view the demo for better experience!</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
 	</div>
 
       
