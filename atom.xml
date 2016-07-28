@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-07-28T00:11:50.261Z</updated>
+  <updated>2016-07-28T01:38:12.110Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.kuangzen.com/2016/07/27/js-promise/"/>
     <id>http://www.kuangzen.com/2016/07/27/js-promise/</id>
     <published>2016-07-27T02:21:18.000Z</published>
-    <updated>2016-07-28T00:11:50.261Z</updated>
+    <updated>2016-07-28T01:38:12.110Z</updated>
     
     <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;顾名思义，&lt;strong&gt;Promise&lt;/strong&gt;是承诺的意思，就是承诺将会发生某个操作，但操作结果有可能是成功的，也有可能是失败的；但无论如何，操作一但完成，立马会返回结果并把结果作为参数去执行相应被绑定的回调函数。&lt;em&gt;Promise&lt;/em&gt;对象主要是用来做异步计算的，一个&lt;em&gt;Promise&lt;/em&gt;对象代表一个未完成，但即将完成的操作。   &lt;/p&gt;
 &lt;h3 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Promise&lt;/span&gt;( &lt;span class=&quot;comment&quot;&gt;/* executor */&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;resolve, reject&lt;/span&gt;) &lt;/span&gt;&amp;#123; ... &amp;#125; );&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -36,7 +36,8 @@
 &lt;li&gt;&lt;em&gt;rejected&lt;/em&gt;，被拒绝了:表示操作失败了。   &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;一个被挂起的promise可以成为要么带值的被履行状态或者带原因(错误)而被拒绝的状态。当其中一个发生，关联的事件处理器队列中的promise的then方法将被调用。(如果promise已经被履行或者被拒绝当相应的事件处理器被关联，这个事件处理器将被调用，所以异步操作完成和它的事件处理器被关联之间就没有竞争条件，解耦了)。   &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;正因为 &lt;code&gt;Promise.prototype.then()&lt;/code&gt; 和 &lt;code&gt;Promise.prototype.catch()&lt;/code&gt; 方法返回的是Promise，所以他们可以被链起来被一起结合操作。使用使得异步嵌套变得更加简单。&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com1.z0.glb.clouddn.com/img/QQ%E6%88%AA%E5%9B%BE20160727184459.jpg&quot; alt=&quot;流程图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;正因为 &lt;code&gt;Promise.prototype.then()&lt;/code&gt; 和 &lt;code&gt;Promise.prototype.catch()&lt;/code&gt; 方法返回的是Promise，所以他们可以被链起来被一起结合操作。使用使得异步嵌套变得更加简单。&lt;br&gt;使用Promise进行异步的流程：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com1.z0.glb.clouddn.com/img/QQ%E6%88%AA%E5%9B%BE20160727184459.jpg&quot; alt=&quot;Promise流程图&quot;&gt;&lt;br&gt;不使用Promise的普通ajax异步的流程：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com1.z0.glb.clouddn.com/img/QQ%E6%88%AA%E5%9B%BE20160728093401.jpg&quot; alt=&quot;Ajax流程图&quot;&gt;   &lt;/p&gt;
+&lt;p&gt;两者明显的区别执行顺序不一样；前者是串行并且可以进行链式操作，后者是并行执行不能进行链式操作。   &lt;/p&gt;
 &lt;h3 id=&quot;方法&quot;&gt;&lt;a href=&quot;#方法&quot; class=&quot;headerlink&quot; title=&quot;方法&quot;&gt;&lt;/a&gt;方法&lt;/h3&gt;&lt;p&gt;Promise.all(iterable)   &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;iterable是&lt;em&gt;Promise&lt;/em&gt;数组，接受一个&lt;em&gt;Promise&lt;/em&gt;数组，一连串的异步执行完成后，就返回一个Thenable的Promise。   &lt;/p&gt;
