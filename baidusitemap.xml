@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://www.kuangzen.com/2016/08/01/self-motivated-2016-08-01/</loc>
+    <lastmod>2016-08-01T03:30:00.509Z</lastmod>
+    <data>
+        <display>
+        <title>来碗汤自我激励</title>
+        <pubTime>2016-08-01T03:08:34.000Z</pubTime>
+        
+        <tag>一些事一些情</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kuangzen.com/2016/07/27/js-promise/</loc>
     <lastmod>2016-07-28T01:38:12.110Z</lastmod>
     <data>
@@ -11,9 +28,9 @@
         <title>Javascript Promise让异步操作代码更加灵活</title>
         <pubTime>2016-07-27T02:21:18.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>javascript设计模式</tag>
          
@@ -49,9 +66,9 @@
         <title>vuex + vue-router实战之简单Tabs开发</title>
         <pubTime>2016-07-15T06:54:11.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>vue.js</tag>
          
@@ -89,9 +106,9 @@
         <title>Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据</title>
         <pubTime>2016-06-22T10:59:50.000Z</pubTime>
         
-        <tag>node.js</tag>
-         
         <tag>后端</tag>
+         
+        <tag>node.js</tag>
          
          
            
@@ -108,9 +125,9 @@
         <title>Node.js 简单优化静态文件服务器处理函数支持css、html文件加载</title>
         <pubTime>2016-06-22T10:59:51.000Z</pubTime>
         
-        <tag>node.js</tag>
-         
         <tag>后端</tag>
+         
+        <tag>node.js</tag>
          
          
            
@@ -127,9 +144,9 @@
         <title>javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</title>
         <pubTime>2016-06-21T07:47:05.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>javascript设计模式</tag>
          
@@ -148,9 +165,9 @@
         <title>javascript设计模式 - 依赖注入</title>
         <pubTime>2016-06-21T07:47:05.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>javascript设计模式</tag>
          
@@ -169,9 +186,9 @@
         <title>javascript设计模式 - 观察者模式</title>
         <pubTime>2016-06-21T07:47:05.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>javascript设计模式</tag>
          
@@ -207,9 +224,9 @@
         <title>一个有用的地图方面的UI设计-地图形象展示</title>
         <pubTime>2016-04-18T01:11:15.000Z</pubTime>
         
-        <tag>UI设计</tag>
-         
         <tag>前端</tag>
+         
+        <tag>UI设计</tag>
          
          
            
@@ -226,13 +243,13 @@
         <title>web前端实用集锦导航</title>
         <pubTime>2016-05-17T01:26:15.000Z</pubTime>
         
-        <tag>前端</tag>
-         
-        <tag>css3</tag>
-         
         <tag>javascript</tag>
          
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>css3</tag>
          
         <tag>css</tag>
          
@@ -254,9 +271,9 @@
         
         <tag>网页兼容性</tag>
          
-        <tag>前端</tag>
-         
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
          
            
@@ -273,9 +290,9 @@
         <title>微信网页里面同时出现2个二维码长按时不能准确识别问题</title>
         <pubTime>2016-04-18T01:12:45.000Z</pubTime>
         
-        <tag>UI设计</tag>
-         
         <tag>前端</tag>
+         
+        <tag>UI设计</tag>
          
          
            
@@ -292,11 +309,11 @@
         <title>simple-switch</title>
         <pubTime>2016-03-30T06:57:45.000Z</pubTime>
         
+        <tag>jQuery</tag>
+         
         <tag>前端</tag>
          
         <tag>css3</tag>
-         
-        <tag>jQuery</tag>
          
          
            
@@ -336,9 +353,9 @@
         <title>react-cascading-address-selector</title>
         <pubTime>2016-03-04T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>react</tag>
          
@@ -357,9 +374,9 @@
         <title>random.js</title>
         <pubTime>2015-04-14T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>random</tag>
          
@@ -378,9 +395,9 @@
         <title>用node.js向百度推送hexo博客所有链接</title>
         <pubTime>2016-04-22T05:35:40.000Z</pubTime>
         
-        <tag>node.js</tag>
-         
         <tag>后端</tag>
+         
+        <tag>node.js</tag>
          
          
            
@@ -397,9 +414,9 @@
         <title>pix2remjs</title>
         <pubTime>2015-12-31T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>rem</tag>
          
@@ -420,9 +437,9 @@
         <title>pix2rem-with-gulp-sass</title>
         <pubTime>2016-04-08T05:40:00.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>gulp</tag>
          
@@ -447,9 +464,9 @@
         <title>Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）</title>
         <pubTime>2016-04-20T00:59:50.000Z</pubTime>
         
-        <tag>node.js</tag>
-         
         <tag>后端</tag>
+         
+        <tag>node.js</tag>
          
          
            
@@ -466,11 +483,11 @@
         <title>jQuery.sDialog</title>
         <pubTime>2016-04-05T02:32:38.000Z</pubTime>
         
+        <tag>jQuery</tag>
+         
         <tag>前端</tag>
          
         <tag>css3</tag>
-         
-        <tag>jQuery</tag>
          
          
            
@@ -487,11 +504,11 @@
         <title>jquery-scroll-cascade-select</title>
         <pubTime>2016-03-21T06:57:45.000Z</pubTime>
         
+        <tag>jQuery</tag>
+         
         <tag>前端</tag>
          
         <tag>css3</tag>
-         
-        <tag>jQuery</tag>
          
          
            
@@ -508,9 +525,9 @@
         <title>jQuery.countdown</title>
         <pubTime>2016-04-05T02:52:16.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
          
            
@@ -529,13 +546,13 @@
         
         <tag>前端</tag>
          
+        <tag>node.js</tag>
+         
         <tag>gulp</tag>
          
         <tag>sass</tag>
          
         <tag>scss</tag>
-         
-        <tag>node.js</tag>
          
          
            
@@ -554,9 +571,9 @@
         
         <tag>网页兼容性</tag>
          
-        <tag>UI设计</tag>
-         
         <tag>前端</tag>
+         
+        <tag>UI设计</tag>
          
          
            
@@ -575,11 +592,11 @@
         
         <tag>网页兼容性</tag>
          
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
          
         <tag>jQuery</tag>
+         
+        <tag>前端</tag>
          
          
            
@@ -596,11 +613,11 @@
         <title>css3clock.js</title>
         <pubTime>2015-05-17T06:57:45.000Z</pubTime>
         
+        <tag>javascript</tag>
+         
         <tag>前端</tag>
          
         <tag>css3</tag>
-         
-        <tag>javascript</tag>
          
          
            
@@ -617,9 +634,9 @@
         <title>simplepen.js</title>
         <pubTime>2015-11-11T06:57:45.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>javascript</tag>
+         
+        <tag>前端</tag>
          
         <tag>canvas</tag>
          

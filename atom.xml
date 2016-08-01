@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-07-28T01:38:12.110Z</updated>
+  <updated>2016-08-01T03:30:00.509Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>来碗汤自我激励</title>
+    <link href="http://www.kuangzen.com/2016/08/01/self-motivated-2016-08-01/"/>
+    <id>http://www.kuangzen.com/2016/08/01/self-motivated-2016-08-01/</id>
+    <published>2016-08-01T03:08:34.000Z</published>
+    <updated>2016-08-01T03:30:00.509Z</updated>
+    
+    <content type="html">&lt;p&gt;自我激励有点阿Ｑ精神，让自己保持一种轻松愉悦的心情，更加自信勇敢地去面对生活中的挑战，让自自己内心强大起来。当然，经常煲点鸡汤必不可少。废话少说，马上上汤，呵呵！   &lt;/p&gt;
+&lt;p&gt;“If you always do what you always did, you will always get what you always got.”&lt;br&gt;－ ALBERT EINSTEIN   &lt;/p&gt;
+&lt;p&gt;作为一个理工男，爱神汤是我的最爱，哈哈！&lt;br&gt;这碗汤，比较好理解，如果你总是做的事或者做事方式一成不变，那么你的收获或者取得的成就也就一直是那样，没啥改变。   &lt;/p&gt;
+&lt;p&gt;话说回来，虽然觉得很对，变变变，创新，不是一直都被大家挂在嘴边吗？那就对了，要变真的不容易，是要付出代价嘀。   &lt;/p&gt;
+&lt;p&gt;作为资深码农的我也有深刻的理解，当你习惯了写css样式的时候，觉得各种样式预处理工具比较麻烦不愿意去接受，不愿意去改变。可逼了自己一把，强制上了grunt用起Less时，那种酸爽，跟本停不下来；入门之后，一下子又玩起Gulp、Sass。那种解脱感无法言达。   &lt;/p&gt;
+&lt;p&gt;后期目标是强行推Vue吧，希望再能找到初恋的感觉！呵呵!   &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;自我激励有点阿Ｑ精神，让自己保持一种轻松愉悦的心情，更加自信勇敢地去面对生活中的挑战，让自自己内心强大起来。当然，经常煲点鸡汤必不可少。废话少说，马上上汤，呵呵！   &lt;/p&gt;
+&lt;p&gt;“If you always do what you always did, you wi
+    
+    </summary>
+    
+    
+      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/%E4%B8%80%E4%BA%9B%E4%BA%8B%E4%B8%80%E4%BA%9B%E6%83%85/"/>
+    
+  </entry>
   
   <entry>
     <title>Javascript Promise让异步操作代码更加灵活</title>
@@ -84,9 +111,9 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
@@ -154,9 +181,9 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="vue.js" scheme="http://www.kuangzen.com/tags/vue-js/"/>
     
@@ -236,9 +263,9 @@ exports.static = (response, request) =&amp;gt; {
     </summary>
     
     
-      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
-    
       <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
   </entry>
   
@@ -262,9 +289,9 @@ exports.static = (response, request) =&amp;gt; {
     </summary>
     
     
-      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
-    
       <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
   </entry>
   
@@ -404,9 +431,9 @@ blogger.recommend({
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
@@ -454,9 +481,9 @@ blogger.recommend({
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
@@ -502,9 +529,9 @@ blogger.recommend({
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
@@ -573,13 +600,13 @@ blogger.recommend({
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
       <category term="css" scheme="http://www.kuangzen.com/tags/css/"/>
     
@@ -606,9 +633,9 @@ blogger.recommend({
     
       <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     
-      <category term="UI设计" scheme="http://www.kuangzen.com/tags/UI%E8%AE%BE%E8%AE%A1/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="UI设计" scheme="http://www.kuangzen.com/tags/UI%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
@@ -641,9 +668,9 @@ blogger.recommend({
     
       <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -724,9 +751,9 @@ fs.readFile(&lt;span class=&quot;string&quot;&gt;&#39;./public/baidusitemap.xml&
     </summary>
     
     
-      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
-    
       <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
   </entry>
   
@@ -1071,9 +1098,9 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
     </summary>
     
     
-      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
-    
       <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
   </entry>
   
@@ -1096,9 +1123,9 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
     </summary>
     
     
-      <category term="UI设计" scheme="http://www.kuangzen.com/tags/UI%E8%AE%BE%E8%AE%A1/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="UI设计" scheme="http://www.kuangzen.com/tags/UI%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
@@ -1120,9 +1147,9 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
     </summary>
     
     
-      <category term="UI设计" scheme="http://www.kuangzen.com/tags/UI%E8%AE%BE%E8%AE%A1/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="UI设计" scheme="http://www.kuangzen.com/tags/UI%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
@@ -1148,9 +1175,9 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
     
@@ -1217,75 +1244,6 @@ gem install sass
       <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
     
       <category term="ruby" scheme="http://www.kuangzen.com/tags/ruby/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用Gulp配置前端自动化</title>
-    <link href="http://www.kuangzen.com/2016/04/08/getting-started-with-gulp/"/>
-    <id>http://www.kuangzen.com/2016/04/08/getting-started-with-gulp/</id>
-    <published>2016-04-08T00:39:49.000Z</published>
-    <updated>2016-05-17T09:04:23.570Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;平时习惯用Grunt管理前端项目，由于近期项目需要，开始转向了Gulp，用起来给我最大的感受是流程更加清晰，链式的配置流程,用 &lt;code&gt;.pipe()&lt;/code&gt; 把所有的流程串联起来，更加方便；而用Grunt，平时习惯是按每个task来配置流程，但总体上都差不多，基本上两者都可以满足日常项目需求。&lt;/p&gt;
-&lt;h3 id=&quot;项目中的出现使用场景&quot;&gt;&lt;a href=&quot;#项目中的出现使用场景&quot; class=&quot;headerlink&quot; title=&quot;项目中的出现使用场景&quot;&gt;&lt;/a&gt;项目中的出现使用场景&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;js语法检查&lt;/li&gt;
-&lt;li&gt;编译Sass/Scss&lt;/li&gt;
-&lt;li&gt;压缩js文件&lt;/li&gt;
-&lt;li&gt;合并js文件&lt;/li&gt;
-&lt;li&gt;清空样式、js&lt;/li&gt;
-&lt;li&gt;监听文件变化,自动执行上面指定的任务  &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;Window环境下Gulp安装&quot;&gt;&lt;a href=&quot;#Window环境下Gulp安装&quot; class=&quot;headerlink&quot; title=&quot;Window环境下Gulp安装&quot;&gt;&lt;/a&gt;Window环境下Gulp安装&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;确保已经安装了node.js环境并配置好npm全局环境，并在项目所在的目录创建了package.json (可以用 &lt;code&gt;npm init&lt;/code&gt; 创建) 项目文档  &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;全局环境安装Gulp&lt;br&gt;&lt;code&gt;npm install -g gulp&lt;/code&gt;&lt;br&gt;为了确保是否安装完成可以输入 &lt;code&gt;gulp -v&lt;/code&gt; 查看Gulp的版本  &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;把Gulp安装到项目本地&lt;br&gt;&lt;code&gt;npm install --save-dev gulp&lt;/code&gt;&lt;br&gt;要先在命令行定位到项目当前目录再执行命令安装， &lt;code&gt;--save-dev&lt;/code&gt; 是用来更新到package.json文件中的devDependencies值，用来定义项目依赖关系的，以后方便项目移植 (在package.json文件中定义好项目依赖关系的好处是，别人拿到项目文件夹后，只需要执行 &lt;code&gt;npm install&lt;/code&gt; 即可自动从npm环境中加载好所需的依赖包，可以立即使用) 。  &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;安需安装项目依赖包  &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;npm install gulp-jshint gulp-ruby-sass gulp-minify-css gulp-autoprefixer gulp-concat gulp-uglify gulp-rename gulp-clean --save-dev&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;其中各包的作用如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;gulp-jshint   检查js脚本&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;gulp-ruby-sass   编译Sass&lt;/strong&gt; ( 注意：安装后需要ruby环境下安装sass才可以正常运行，详细请看下一篇&lt;a href=&quot;http://www.kuangzen.com/2016/04/08/ruby-gem-install-sass/&quot; title=&quot;windows中ruby环境下用gem安装sass&quot;&gt;windows中ruby环境下用gem安装sass&lt;/a&gt; )&lt;/li&gt;
-&lt;li&gt;gulp-minify-css   css压缩&lt;/li&gt;
-&lt;li&gt;gulp-autoprefixer   自动添加兼容各内核浏览器的css3前缀&lt;/li&gt;
-&lt;li&gt;gulp-concat    文件合并&lt;/li&gt;
-&lt;li&gt;gulp-uglify js压缩混淆&lt;/li&gt;
-&lt;li&gt;gulp-clean 清空文件夹&lt;/li&gt;
-&lt;li&gt;gulp-rename 重命名  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;新建gulpfile-js文件，配置如下&quot;&gt;&lt;a href=&quot;#新建gulpfile-js文件，配置如下&quot; class=&quot;headerlink&quot; title=&quot;新建gulpfile.js文件，配置如下:&quot;&gt;&lt;/a&gt;新建gulpfile.js文件，配置如下:&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 引入 gulp&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; gulp = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 引入组件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; jshint = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-jshint&#39;&lt;/span&gt;),            &lt;span class=&quot;comment&quot;&gt;// 检查脚本&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    sass = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-ruby-sass&#39;&lt;/span&gt;),           &lt;span class=&quot;comment&quot;&gt;// 编译Sass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    minifycss = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-minify-css&#39;&lt;/span&gt;),     &lt;span class=&quot;comment&quot;&gt;// css压缩&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    autoprefixer = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-autoprefixer&#39;&lt;/span&gt;),&lt;span class=&quot;comment&quot;&gt;// 自动添加css3前缀&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    concat = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-concat&#39;&lt;/span&gt;),            &lt;span class=&quot;comment&quot;&gt;// 合并&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    uglify = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-uglify&#39;&lt;/span&gt;),            &lt;span class=&quot;comment&quot;&gt;// js压缩&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    clean = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-clean&#39;&lt;/span&gt;),              &lt;span class=&quot;comment&quot;&gt;// 清空文件夹&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    rename = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-rename&#39;&lt;/span&gt;);            &lt;span class=&quot;comment&quot;&gt;// 重命名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 检查脚本&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;jshint&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; jsSrc = &lt;span class=&quot;string&quot;&gt;&#39;./src/js/*.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        jsDst = &lt;span class=&quot;string&quot;&gt;&#39;./dist/js&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    gulp.src(jsSrc)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(jshint(&lt;span class=&quot;string&quot;&gt;&#39;.jshintrc&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(jshint.reporter(&lt;span class=&quot;string&quot;&gt;&#39;default&#39;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 编译Sass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;sass&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; cssSrc = &lt;span class=&quot;string&quot;&gt;&#39;./src/scss/*.scss&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cssDst = &lt;span class=&quot;string&quot;&gt;&#39;./dist/css&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; sass(cssSrc, &amp;#123; style: &lt;span class=&quot;string&quot;&gt;&#39;expanded&#39;&lt;/span&gt; &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(autoprefixer(&lt;span class=&quot;string&quot;&gt;&#39;last 2 version&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;safari 5&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;ie 8&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;ie 9&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;opera 12.1&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;ios 6&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;android 4&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(gulp.dest(cssDst))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(rename(&amp;#123; suffix: &lt;span class=&quot;string&quot;&gt;&#39;.min&#39;&lt;/span&gt; &amp;#125;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(minifycss())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(gulp.dest(cssDst));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 压缩js文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;jsuglify&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; jsSrc = &lt;span class=&quot;string&quot;&gt;&#39;./src/js/*.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        jsDst = &lt;span class=&quot;string&quot;&gt;&#39;./dist/js&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    gulp.src(jsSrc)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(rename(&amp;#123; suffix: &lt;span class=&quot;string&quot;&gt;&#39;.min&#39;&lt;/span&gt; &amp;#125;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(uglify())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(gulp.dest(jsDst));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 合并,压缩js文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;jsconcat&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; jsSrc = &lt;span class=&quot;string&quot;&gt;&#39;./src/js/*.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        jsDst = &lt;span class=&quot;string&quot;&gt;&#39;./dist/js&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    gulp.src(jsSrc)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(concat(&lt;span class=&quot;string&quot;&gt;&#39;all.js&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(gulp.dest(jsDst))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(rename(&lt;span class=&quot;string&quot;&gt;&#39;all.min.js&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(uglify())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(gulp.dest(jsDst));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 清空样式、js&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;clean&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    gulp.src([&lt;span class=&quot;string&quot;&gt;&#39;./dist/css&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;./dist/js&#39;&lt;/span&gt;], &amp;#123; read: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt; &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        .pipe(clean());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 默认任务&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;default&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    gulp.run(&lt;span class=&quot;string&quot;&gt;&#39;jshint&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;sass&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;jsuglify&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 监听文件变化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; jsSrc = &lt;span class=&quot;string&quot;&gt;&#39;./src/js/*.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cssSrc = &lt;span class=&quot;string&quot;&gt;&#39;./src/scss/*.scss&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    gulp.watch([jsSrc, cssSrc], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        gulp.run(&lt;span class=&quot;string&quot;&gt;&#39;jshint&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;sass&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;jsuglify&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;配置完成，命令行下执行-gulp-命令开始使用！&quot;&gt;&lt;a href=&quot;#配置完成，命令行下执行-gulp-命令开始使用！&quot; class=&quot;headerlink&quot; title=&quot;配置完成，命令行下执行 gulp 命令开始使用！&quot;&gt;&lt;/a&gt;配置完成，命令行下执行 &lt;code&gt;gulp&lt;/code&gt; 命令开始使用！&lt;/h3&gt;&lt;p&gt; &lt;code&gt;gulp&lt;/code&gt; &lt;/p&gt;
-&lt;h3 id=&quot;目录结构如下：&quot;&gt;&lt;a href=&quot;#目录结构如下：&quot; class=&quot;headerlink&quot; title=&quot;目录结构如下：&quot;&gt;&lt;/a&gt;目录结构如下：&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/20160408110023.png&quot; alt=&quot;目录结构&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;平时习惯用Grunt管理前端项目，由于近期项目需要，开始转向了Gulp，用起来给我最大的感受是流程更加清晰，链式的配置流程,用 &lt;code&gt;.pipe()&lt;/code&gt; 把所有的流程串联起来，更加方便；而用Grunt，平时习惯是按每个task来配置流程，但总体上都差不多，基本上两者都可以满足日常项目需求。&lt;/p&gt;
-&lt;h3 id=&quot;项目中的出现使用场景&quot;&gt;&lt;a href=&quot;#项目中的出现使用场景&quot; class=&quot;headerlink&quot; title=&quot;项目中的出现使用场景&quot;&gt;&lt;/a&gt;项目中的出现使用场景&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;js语法检查&lt;/li&gt;
-&lt;li&gt;编译Sass/Scss&lt;/li&gt;
-&lt;li&gt;压缩js文件&lt;/li&gt;
-&lt;li&gt;合并js文件&lt;/li&gt;
-&lt;li&gt;清空样式、js&lt;/li&gt;
-&lt;li&gt;监听文件变化,自动执行上面指定的任务
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="gulp" scheme="http://www.kuangzen.com/tags/gulp/"/>
-    
-      <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
-    
-      <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
-    
-      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
   </entry>
   

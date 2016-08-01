@@ -123,7 +123,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/UI设计/" style="font-size: 12.86px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15.71px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.43px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 17.14px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 14.29px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15.71px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.43px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.43px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 12.86px;">sass</a> <a href="/tags/scss/" style="font-size: 11.43px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/一些事一些情/" style="font-size: 11.43px;">一些事一些情</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 15.71px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 12.86px;">网页兼容性</a>
+						<a href="/tags/UI设计/" style="font-size: 12.86px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15.71px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.43px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 17.14px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 14.29px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15.71px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.43px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.43px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 12.86px;">sass</a> <a href="/tags/scss/" style="font-size: 11.43px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/一些事一些情/" style="font-size: 12.86px;">一些事一些情</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 15.71px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 12.86px;">网页兼容性</a>
 					</div>
 				</section>
 				
@@ -208,6 +208,79 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-js-defineProperty" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/21/js-defineProperty/" class="article-date">
+  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/21/js-defineProperty/">javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中<code>Object.defineProperty(obj, prop, descriptor)</code>也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     </p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor)</span><br></pre></td></tr></table></figure>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>obj<br>即将被定义新属性的对象   </p>
+<p>prop<br>即将定义的新属性   </p>
+<p>descriptor<br>对新属性的定义或者修改权限设设置的说明词     </p>
+<h3 id="descriptor参数描述"><a href="#descriptor参数描述" class="headerlink" title="descriptor参数描述"></a>descriptor参数描述</h3><p>configurable<br>如果是true的话，这属性的类型是可以更改或者这属性可以被删除。<br>默认是false。   </p>
+<p>enumerable<br>如果是true，这属性在枚兴举时是可见的。<br>默认是false。   </p>
+<p>descriptor还有下面这些可选的参数:</p>
+<p>value<br>值可以是任意javascript值(如：number, object, function等等)。<br>默认是undefined。   </p>
+<p>writable<br>如果是true的话，就是可写的。<br>默认是false。   </p>
+<p>一个可访问的的descriptor还有下面这些参数:   </p>
+<p>get<br>一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。<br>默认是undefined。   </p>
+<p>set<br>一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。<br>默认是undefined。   </p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/21/js-defineProperty/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-what-s-up-2016-6-13" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -783,77 +856,9 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
 
 
   
-    <article id="post-getting-started-with-gulp" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/08/getting-started-with-gulp/" class="article-date">
-  	<time datetime="2016-04-08T00:39:49.000Z" itemprop="datePublished">2016-04-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/08/getting-started-with-gulp/">用Gulp配置前端自动化</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>平时习惯用Grunt管理前端项目，由于近期项目需要，开始转向了Gulp，用起来给我最大的感受是流程更加清晰，链式的配置流程,用 <code>.pipe()</code> 把所有的流程串联起来，更加方便；而用Grunt，平时习惯是按每个task来配置流程，但总体上都差不多，基本上两者都可以满足日常项目需求。</p>
-<h3 id="项目中的出现使用场景"><a href="#项目中的出现使用场景" class="headerlink" title="项目中的出现使用场景"></a>项目中的出现使用场景</h3><ol>
-<li>js语法检查</li>
-<li>编译Sass/Scss</li>
-<li>压缩js文件</li>
-<li>合并js文件</li>
-<li>清空样式、js</li>
-<li>监听文件变化,自动执行上面指定的任务
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scss/">scss</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/08/getting-started-with-gulp/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
