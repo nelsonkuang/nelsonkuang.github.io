@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-08-08T02:49:08.329Z</updated>
+  <updated>2016-08-08T02:54:17.849Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -16,25 +16,21 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>前端其中的酱油工作，为ios及android APP客户端切图及标注</title>
+    <title>前端的酱油工作，为ios及android APP客户端切图及标注</title>
     <link href="http://www.kuangzen.com/2016/08/08/crop-pictures-for-app/"/>
     <id>http://www.kuangzen.com/2016/08/08/crop-pictures-for-app/</id>
     <published>2016-08-08T02:21:01.000Z</published>
-    <updated>2016-08-08T02:49:08.329Z</updated>
+    <updated>2016-08-08T02:54:17.849Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;切图输出原则&quot;&gt;&lt;a href=&quot;#切图输出原则&quot; class=&quot;headerlink&quot; title=&quot;切图输出原则&quot;&gt;&lt;/a&gt;切图输出原则&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;IOS客户端切图：&lt;/strong&gt;   &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;前端偶尔要打打酱油帮app客户端切切图，为什么iphone app上面看到的界面好像都非常高清，因为ios比较矫情，要图时要切三套，1倍图、2倍图和3倍图,如果按UI出的750px的mockup，则1倍图是按375px来出，2倍图是不变原样输出750px，最后三倍图是1125px。&lt;br&gt;切的时候也还好啦，在PS上面录好一个连续导出3种图的动作，因为是750px的UI图，顺序：导出1x图 -&amp;gt; 图层缩小到50% -&amp;gt; 导出2x图 -&amp;gt; 放大300% -&amp;gt; 导出3x图。然后以后就播放这动作直接导3种图就行了。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;IOS客户端切图：&lt;/strong&gt;&lt;br&gt;    android端切图就没那么讲究，一套输出按720px的UI Mockup来输出，直接搞定。&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;切图输出原则&quot;&gt;&lt;a href=&quot;#切图输出原则&quot; class=&quot;headerlink&quot; title=&quot;切图输出原则&quot;&gt;&lt;/a&gt;切图输出原则&lt;/h3&gt;&lt;p&gt;IOS客户端切图：&lt;br&gt;前端偶尔要打打酱油帮app客户端切切图，为什么iphone app上面看到的界面好像都非常高清，因为ios比较矫情，要图时要切三套，1倍图、2倍图和3倍图,如果按UI出的750px的mockup，则1倍图是按375px来出，2倍图是不变原样输出750px，最后三倍图是1125px。   &lt;/p&gt;
+&lt;p&gt;切的时候也还好啦，在PS上面录好一个连续导出3种图的动作，因为是750px的UI图，顺序：导出1x图 -&amp;gt; 图层缩小到50% -&amp;gt; 导出2x图 -&amp;gt; 放大300% -&amp;gt; 导出3x图。然后以后就播放这动作直接导3种图就行了。&lt;/p&gt;
+&lt;p&gt;Android客户端切图：&lt;br&gt;android端切图就没那么讲究，一套输出按720px的UI Mockup来输出，直接搞定。&lt;/p&gt;
 &lt;h3 id=&quot;给app-UI图标注尺寸&quot;&gt;&lt;a href=&quot;#给app-UI图标注尺寸&quot; class=&quot;headerlink&quot; title=&quot;给app UI图标注尺寸&quot;&gt;&lt;/a&gt;给app UI图标注尺寸&lt;/h3&gt;&lt;p&gt;以前是用PxCook或者Mark Man这样的工具去拉线或者拖块标啊标，现在？标你妹啊，直接上传到&lt;a href=&quot;http://www.biaonimeia.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;标你妹~啊&lt;/a&gt; 网址：www.biaonimeia.com 自动生成标注，在线或者导出给app客户端的小伙伴们就可以了呵呵。   &lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;切图输出原则&quot;&gt;&lt;a href=&quot;#切图输出原则&quot; class=&quot;headerlink&quot; title=&quot;切图输出原则&quot;&gt;&lt;/a&gt;切图输出原则&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;IOS客户端切图：&lt;/strong&gt;   &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;前端偶尔
+      &lt;h3 id=&quot;切图输出原则&quot;&gt;&lt;a href=&quot;#切图输出原则&quot; class=&quot;headerlink&quot; title=&quot;切图输出原则&quot;&gt;&lt;/a&gt;切图输出原则&lt;/h3&gt;&lt;p&gt;IOS客户端切图：&lt;br&gt;前端偶尔要打打酱油帮app客户端切切图，为什么iphone app上面看到的界面好
     
     </summary>
     
