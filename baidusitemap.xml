@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://www.kuangzen.com/2016/08/08/crop-pictures-for-app/</loc>
+    <lastmod>2016-08-08T02:49:08.329Z</lastmod>
+    <data>
+        <display>
+        <title>前端其中的酱油工作，为ios及android APP客户端切图及标注</title>
+        <pubTime>2016-08-08T02:21:01.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>切图</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kuangzen.com/2016/08/01/self-motivated-2016-08-01/</loc>
     <lastmod>2016-08-01T03:30:00.509Z</lastmod>
     <data>
@@ -66,11 +85,11 @@
         <title>vuex + vue-router实战之简单Tabs开发</title>
         <pubTime>2016-07-15T06:54:11.000Z</pubTime>
         
+        <tag>vue.js</tag>
+         
         <tag>javascript</tag>
          
         <tag>前端</tag>
-         
-        <tag>vue.js</tag>
          
          
            
@@ -106,9 +125,9 @@
         <title>Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据</title>
         <pubTime>2016-06-22T10:59:50.000Z</pubTime>
         
-        <tag>后端</tag>
-         
         <tag>node.js</tag>
+         
+        <tag>后端</tag>
          
          
            
@@ -125,9 +144,9 @@
         <title>Node.js 简单优化静态文件服务器处理函数支持css、html文件加载</title>
         <pubTime>2016-06-22T10:59:51.000Z</pubTime>
         
-        <tag>后端</tag>
-         
         <tag>node.js</tag>
+         
+        <tag>后端</tag>
          
          
            
@@ -245,9 +264,9 @@
         
         <tag>javascript</tag>
          
-        <tag>jQuery</tag>
-         
         <tag>前端</tag>
+         
+        <tag>jQuery</tag>
          
         <tag>css3</tag>
          
@@ -269,11 +288,11 @@
         <title>安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug</title>
         <pubTime>2016-05-03T01:09:32.000Z</pubTime>
         
+        <tag>前端</tag>
+         
         <tag>网页兼容性</tag>
          
         <tag>jQuery</tag>
-         
-        <tag>前端</tag>
          
          
            
@@ -309,9 +328,9 @@
         <title>simple-switch</title>
         <pubTime>2016-03-30T06:57:45.000Z</pubTime>
         
-        <tag>jQuery</tag>
-         
         <tag>前端</tag>
+         
+        <tag>jQuery</tag>
          
         <tag>css3</tag>
          
@@ -395,9 +414,9 @@
         <title>用node.js向百度推送hexo博客所有链接</title>
         <pubTime>2016-04-22T05:35:40.000Z</pubTime>
         
-        <tag>后端</tag>
-         
         <tag>node.js</tag>
+         
+        <tag>后端</tag>
          
          
            
@@ -464,9 +483,9 @@
         <title>Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）</title>
         <pubTime>2016-04-20T00:59:50.000Z</pubTime>
         
-        <tag>后端</tag>
-         
         <tag>node.js</tag>
+         
+        <tag>后端</tag>
          
          
            
@@ -483,9 +502,9 @@
         <title>jQuery.sDialog</title>
         <pubTime>2016-04-05T02:32:38.000Z</pubTime>
         
-        <tag>jQuery</tag>
-         
         <tag>前端</tag>
+         
+        <tag>jQuery</tag>
          
         <tag>css3</tag>
          
@@ -504,9 +523,9 @@
         <title>jquery-scroll-cascade-select</title>
         <pubTime>2016-03-21T06:57:45.000Z</pubTime>
         
-        <tag>jQuery</tag>
-         
         <tag>前端</tag>
+         
+        <tag>jQuery</tag>
          
         <tag>css3</tag>
          
@@ -525,9 +544,9 @@
         <title>jQuery.countdown</title>
         <pubTime>2016-04-05T02:52:16.000Z</pubTime>
         
-        <tag>jQuery</tag>
-         
         <tag>前端</tag>
+         
+        <tag>jQuery</tag>
          
          
            
@@ -546,13 +565,13 @@
         
         <tag>前端</tag>
          
-        <tag>node.js</tag>
-         
         <tag>gulp</tag>
          
         <tag>sass</tag>
          
         <tag>scss</tag>
+         
+        <tag>node.js</tag>
          
          
            
@@ -569,9 +588,9 @@
         <title>新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时，导致遮挡住fixed在底部输入框问题</title>
         <pubTime>2016-05-05T10:30:11.000Z</pubTime>
         
-        <tag>网页兼容性</tag>
-         
         <tag>前端</tag>
+         
+        <tag>网页兼容性</tag>
          
         <tag>UI设计</tag>
          
@@ -590,13 +609,13 @@
         <title>新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时不会触发resize动作，导致遮挡住输入框问题</title>
         <pubTime>2016-04-06T08:04:30.000Z</pubTime>
         
-        <tag>网页兼容性</tag>
-         
         <tag>javascript</tag>
          
-        <tag>jQuery</tag>
-         
         <tag>前端</tag>
+         
+        <tag>网页兼容性</tag>
+         
+        <tag>jQuery</tag>
          
          
            

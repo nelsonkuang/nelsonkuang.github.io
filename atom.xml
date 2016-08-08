@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-08-01T03:30:00.509Z</updated>
+  <updated>2016-08-08T02:49:08.329Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端其中的酱油工作，为ios及android APP客户端切图及标注</title>
+    <link href="http://www.kuangzen.com/2016/08/08/crop-pictures-for-app/"/>
+    <id>http://www.kuangzen.com/2016/08/08/crop-pictures-for-app/</id>
+    <published>2016-08-08T02:21:01.000Z</published>
+    <updated>2016-08-08T02:49:08.329Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;切图输出原则&quot;&gt;&lt;a href=&quot;#切图输出原则&quot; class=&quot;headerlink&quot; title=&quot;切图输出原则&quot;&gt;&lt;/a&gt;切图输出原则&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;IOS客户端切图：&lt;/strong&gt;   &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前端偶尔要打打酱油帮app客户端切切图，为什么iphone app上面看到的界面好像都非常高清，因为ios比较矫情，要图时要切三套，1倍图、2倍图和3倍图,如果按UI出的750px的mockup，则1倍图是按375px来出，2倍图是不变原样输出750px，最后三倍图是1125px。&lt;br&gt;切的时候也还好啦，在PS上面录好一个连续导出3种图的动作，因为是750px的UI图，顺序：导出1x图 -&amp;gt; 图层缩小到50% -&amp;gt; 导出2x图 -&amp;gt; 放大300% -&amp;gt; 导出3x图。然后以后就播放这动作直接导3种图就行了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;IOS客户端切图：&lt;/strong&gt;&lt;br&gt;    android端切图就没那么讲究，一套输出按720px的UI Mockup来输出，直接搞定。&lt;/p&gt;
+&lt;h3 id=&quot;给app-UI图标注尺寸&quot;&gt;&lt;a href=&quot;#给app-UI图标注尺寸&quot; class=&quot;headerlink&quot; title=&quot;给app UI图标注尺寸&quot;&gt;&lt;/a&gt;给app UI图标注尺寸&lt;/h3&gt;&lt;p&gt;以前是用PxCook或者Mark Man这样的工具去拉线或者拖块标啊标，现在？标你妹啊，直接上传到&lt;a href=&quot;http://www.biaonimeia.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;标你妹~啊&lt;/a&gt; 网址：www.biaonimeia.com 自动生成标注，在线或者导出给app客户端的小伙伴们就可以了呵呵。   &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;切图输出原则&quot;&gt;&lt;a href=&quot;#切图输出原则&quot; class=&quot;headerlink&quot; title=&quot;切图输出原则&quot;&gt;&lt;/a&gt;切图输出原则&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;IOS客户端切图：&lt;/strong&gt;   &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前端偶尔
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="切图" scheme="http://www.kuangzen.com/tags/%E5%88%87%E5%9B%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>来碗汤自我激励</title>
@@ -181,11 +211,11 @@
     </summary>
     
     
+      <category term="vue.js" scheme="http://www.kuangzen.com/tags/vue-js/"/>
+    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="vue.js" scheme="http://www.kuangzen.com/tags/vue-js/"/>
     
   </entry>
   
@@ -263,9 +293,9 @@ exports.static = (response, request) =&amp;gt; {
     </summary>
     
     
-      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
-    
       <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
+    
+      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
@@ -289,9 +319,107 @@ exports.static = (response, request) =&amp;gt; {
     </summary>
     
     
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
+    
       <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
     
-      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
+  </entry>
+  
+  <entry>
+    <title>javascript设计模式 - 依赖注入</title>
+    <link href="http://www.kuangzen.com/2016/06/21/js-injector/"/>
+    <id>http://www.kuangzen.com/2016/06/21/js-injector/</id>
+    <published>2016-06-21T07:47:05.000Z</published>
+    <updated>2016-06-22T03:58:15.246Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   &lt;/p&gt;
+&lt;h3 id=&quot;依赖注入好处&quot;&gt;&lt;a href=&quot;#依赖注入好处&quot; class=&quot;headerlink&quot; title=&quot;依赖注入好处&quot;&gt;&lt;/a&gt;依赖注入好处&lt;/h3&gt;&lt;p&gt;减小对象与依赖之间的藕合关系。   &lt;/p&gt;
+&lt;p&gt;不需要对原代码进行修改，直接可以应用到当前代码。   &lt;/p&gt;
+&lt;p&gt;有助于把客户与设计隔离开，减小设计改变带来的影响。   &lt;/p&gt;
+&lt;p&gt;让系统不用修改当前代码就可以重新配置。   &lt;/p&gt;
+&lt;p&gt;可以进行并行或者独立开发。   &lt;/p&gt;
+&lt;p&gt;让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   &lt;/p&gt;
+&lt;h3 id=&quot;依赖注入缺点&quot;&gt;&lt;a href=&quot;#依赖注入缺点&quot; class=&quot;headerlink&quot; title=&quot;依赖注入缺点&quot;&gt;&lt;/a&gt;依赖注入缺点&lt;/h3&gt;&lt;p&gt;当要实例化一种类型，你必须要知道要用什么依赖。   &lt;/p&gt;
+&lt;p&gt;隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   &lt;/p&gt;
+&lt;p&gt;要求你要写更多的代码。   &lt;/p&gt;
+&lt;p&gt;可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      &lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;简单的依赖注入实现代码&quot;&gt;&lt;a href=&quot;#简单的依赖注入实现代码&quot; class=&quot;headerlink&quot; title=&quot;简单的依赖注入实现代码&quot;&gt;&lt;/a&gt;简单的依赖注入实现代码&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Injector&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Injector.prototype.register = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;key, value&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//注册依赖&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies[key] = value;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Injector.prototype.resolve = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;deps, func, scope&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//创建并解释注入依赖后的函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; args = [];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        scope = scope || &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; deps.length, d = deps[i]; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies[d]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                scope[d] = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies[d];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Error&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;Can\&#39;t resolve &#39;&lt;/span&gt; + d);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            func.apply(scope || &amp;#123;&amp;#125;, &lt;span class=&quot;built_in&quot;&gt;Array&lt;/span&gt;.prototype.slice.call(&lt;span class=&quot;built_in&quot;&gt;arguments&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//另一种写法，类require.js&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Injector.prototype.define = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;deps, callback&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//创建并解释注入依赖&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; args = [];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; deps.length, d = deps[i]; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies[d]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                args.push(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies[d]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Error&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;Can\&#39;t resolve &#39;&lt;/span&gt; + d);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; (callback)===&lt;span class=&quot;string&quot;&gt;&#39;function&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            callback.apply(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, args);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; myInjector = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Injector();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; buy = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//一个buy模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name=&lt;span class=&quot;string&quot;&gt;&quot;Nelson&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.start = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name + &lt;span class=&quot;string&quot;&gt;&quot; bought some thing&quot;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sell = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//一个sell模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name=&lt;span class=&quot;string&quot;&gt;&quot;Jim&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.start = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name + &lt;span class=&quot;string&quot;&gt;&quot; sold some thing&quot;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;					&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    myInjector.register(&lt;span class=&quot;string&quot;&gt;&quot;buy&quot;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; buy());&lt;span class=&quot;comment&quot;&gt;//注册依赖模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    myInjector.register(&lt;span class=&quot;string&quot;&gt;&quot;sell&quot;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; sell());&lt;span class=&quot;comment&quot;&gt;//注册依赖模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; deal = myInjector.resolve([&lt;span class=&quot;string&quot;&gt;&#39;buy&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;sell&#39;&lt;/span&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;deal&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//创建并解释注入依赖buy和sell后的函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.buy.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.buy.start();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.sell.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.sell.start();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(deal + &lt;span class=&quot;string&quot;&gt;&quot; relies on both &quot;&lt;/span&gt; + &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.buy.name + &lt;span class=&quot;string&quot;&gt;&quot; and &quot;&lt;/span&gt; + &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.sell.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.buy.name = &lt;span class=&quot;string&quot;&gt;&quot;Han Meimei&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.sell.name = &lt;span class=&quot;string&quot;&gt;&quot;Li Lei&quot;&lt;/span&gt;;					&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    deal(&lt;span class=&quot;string&quot;&gt;&quot;Deal&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(myInjector);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//另一种写法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    myInjector.define([&lt;span class=&quot;string&quot;&gt;&#39;buy&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;sell&#39;&lt;/span&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;b, s&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//注入依赖buy和sell&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;string&quot;&gt;&#39;New Name: &#39;&lt;/span&gt; + b.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  b.start();				&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;string&quot;&gt;&#39;New Name: &#39;&lt;/span&gt; + s.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  s.start();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;string&quot;&gt;&quot;A deal relies on both &quot;&lt;/span&gt; + b.name + &lt;span class=&quot;string&quot;&gt;&quot; and &quot;&lt;/span&gt; + s.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;以简单的买卖为例:&lt;br&gt;一单买卖，必须有买方和卖方参与   &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   &lt;/p&gt;
+&lt;h3 id=&quot;依赖注入好处&quot;&gt;&lt;a href=&quot;#依赖注入好处&quot; class=&quot;headerlink&quot; title=&quot;依赖注入好处&quot;&gt;&lt;/a&gt;依赖注入好处&lt;/h3&gt;&lt;p&gt;减小对象与依赖之间的藕合关系。   &lt;/p&gt;
+&lt;p&gt;不需要对原代码进行修改，直接可以应用到当前代码。   &lt;/p&gt;
+&lt;p&gt;有助于把客户与设计隔离开，减小设计改变带来的影响。   &lt;/p&gt;
+&lt;p&gt;让系统不用修改当前代码就可以重新配置。   &lt;/p&gt;
+&lt;p&gt;可以进行并行或者独立开发。   &lt;/p&gt;
+&lt;p&gt;让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   &lt;/p&gt;
+&lt;h3 id=&quot;依赖注入缺点&quot;&gt;&lt;a href=&quot;#依赖注入缺点&quot; class=&quot;headerlink&quot; title=&quot;依赖注入缺点&quot;&gt;&lt;/a&gt;依赖注入缺点&lt;/h3&gt;&lt;p&gt;当要实例化一种类型，你必须要知道要用什么依赖。   &lt;/p&gt;
+&lt;p&gt;隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   &lt;/p&gt;
+&lt;p&gt;要求你要写更多的代码。   &lt;/p&gt;
+&lt;p&gt;可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</title>
+    <link href="http://www.kuangzen.com/2016/06/21/js-defineProperty/"/>
+    <id>http://www.kuangzen.com/2016/06/21/js-defineProperty/</id>
+    <published>2016-06-21T07:47:05.000Z</published>
+    <updated>2016-06-22T05:52:06.102Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中&lt;code&gt;Object.defineProperty(obj, prop, descriptor)&lt;/code&gt;也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     &lt;/p&gt;
+&lt;h3 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, prop, descriptor)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;参数说明&quot;&gt;&lt;a href=&quot;#参数说明&quot; class=&quot;headerlink&quot; title=&quot;参数说明&quot;&gt;&lt;/a&gt;参数说明&lt;/h3&gt;&lt;p&gt;obj&lt;br&gt;即将被定义新属性的对象   &lt;/p&gt;
+&lt;p&gt;prop&lt;br&gt;即将定义的新属性   &lt;/p&gt;
+&lt;p&gt;descriptor&lt;br&gt;对新属性的定义或者修改权限设设置的说明词     &lt;/p&gt;
+&lt;h3 id=&quot;descriptor参数描述&quot;&gt;&lt;a href=&quot;#descriptor参数描述&quot; class=&quot;headerlink&quot; title=&quot;descriptor参数描述&quot;&gt;&lt;/a&gt;descriptor参数描述&lt;/h3&gt;&lt;p&gt;configurable&lt;br&gt;如果是true的话，这属性的类型是可以更改或者这属性可以被删除。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;enumerable&lt;br&gt;如果是true，这属性在枚兴举时是可见的。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;descriptor还有下面这些可选的参数:&lt;/p&gt;
+&lt;p&gt;value&lt;br&gt;值可以是任意javascript值(如：number, object, function等等)。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+&lt;p&gt;writable&lt;br&gt;如果是true的话，就是可写的。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;一个可访问的的descriptor还有下面这些参数:   &lt;/p&gt;
+&lt;p&gt;get&lt;br&gt;一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+&lt;p&gt;set&lt;br&gt;一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;简单的defineProperty事例代码&quot;&gt;&lt;a href=&quot;#简单的defineProperty事例代码&quot; class=&quot;headerlink&quot; title=&quot;简单的defineProperty事例代码&quot;&gt;&lt;/a&gt;简单的defineProperty事例代码&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; newLine = &lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;br /&amp;gt;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//创建一个user-defined对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//给对象增加一个可访问的属性&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, &lt;span class=&quot;string&quot;&gt;&quot;newAccessorProperty&quot;&lt;/span&gt;, &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    set: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (x !== &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;in property set accessor&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue = x;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;值没变！&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    get: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;in property get accessor&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    enumerable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    configurable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//设置属性值－Set the property value.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.newAccessorProperty = &lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//将触发set函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.newAccessorProperty + newLine + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.oldPropValue=&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//将不触发set函数－will not trigger func set&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.newAccessorProperty + newLine + newLine);&lt;span class=&quot;comment&quot;&gt;//将触发get函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.oldPropValue + newLine);&lt;span class=&quot;comment&quot;&gt;//将不触发get函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中&lt;code&gt;Object.defineProperty(obj, prop, descriptor)&lt;/code&gt;也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     &lt;/p&gt;
+&lt;h3 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, prop, descriptor)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;参数说明&quot;&gt;&lt;a href=&quot;#参数说明&quot; class=&quot;headerlink&quot; title=&quot;参数说明&quot;&gt;&lt;/a&gt;参数说明&lt;/h3&gt;&lt;p&gt;obj&lt;br&gt;即将被定义新属性的对象   &lt;/p&gt;
+&lt;p&gt;prop&lt;br&gt;即将定义的新属性   &lt;/p&gt;
+&lt;p&gt;descriptor&lt;br&gt;对新属性的定义或者修改权限设设置的说明词     &lt;/p&gt;
+&lt;h3 id=&quot;descriptor参数描述&quot;&gt;&lt;a href=&quot;#descriptor参数描述&quot; class=&quot;headerlink&quot; title=&quot;descriptor参数描述&quot;&gt;&lt;/a&gt;descriptor参数描述&lt;/h3&gt;&lt;p&gt;configurable&lt;br&gt;如果是true的话，这属性的类型是可以更改或者这属性可以被删除。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;enumerable&lt;br&gt;如果是true，这属性在枚兴举时是可见的。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;descriptor还有下面这些可选的参数:&lt;/p&gt;
+&lt;p&gt;value&lt;br&gt;值可以是任意javascript值(如：number, object, function等等)。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+&lt;p&gt;writable&lt;br&gt;如果是true的话，就是可写的。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;一个可访问的的descriptor还有下面这些参数:   &lt;/p&gt;
+&lt;p&gt;get&lt;br&gt;一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+&lt;p&gt;set&lt;br&gt;一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -440,104 +568,6 @@ blogger.recommend({
   </entry>
   
   <entry>
-    <title>javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</title>
-    <link href="http://www.kuangzen.com/2016/06/21/js-defineProperty/"/>
-    <id>http://www.kuangzen.com/2016/06/21/js-defineProperty/</id>
-    <published>2016-06-21T07:47:05.000Z</published>
-    <updated>2016-06-22T05:52:06.102Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中&lt;code&gt;Object.defineProperty(obj, prop, descriptor)&lt;/code&gt;也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     &lt;/p&gt;
-&lt;h3 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, prop, descriptor)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;参数说明&quot;&gt;&lt;a href=&quot;#参数说明&quot; class=&quot;headerlink&quot; title=&quot;参数说明&quot;&gt;&lt;/a&gt;参数说明&lt;/h3&gt;&lt;p&gt;obj&lt;br&gt;即将被定义新属性的对象   &lt;/p&gt;
-&lt;p&gt;prop&lt;br&gt;即将定义的新属性   &lt;/p&gt;
-&lt;p&gt;descriptor&lt;br&gt;对新属性的定义或者修改权限设设置的说明词     &lt;/p&gt;
-&lt;h3 id=&quot;descriptor参数描述&quot;&gt;&lt;a href=&quot;#descriptor参数描述&quot; class=&quot;headerlink&quot; title=&quot;descriptor参数描述&quot;&gt;&lt;/a&gt;descriptor参数描述&lt;/h3&gt;&lt;p&gt;configurable&lt;br&gt;如果是true的话，这属性的类型是可以更改或者这属性可以被删除。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;enumerable&lt;br&gt;如果是true，这属性在枚兴举时是可见的。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;descriptor还有下面这些可选的参数:&lt;/p&gt;
-&lt;p&gt;value&lt;br&gt;值可以是任意javascript值(如：number, object, function等等)。&lt;br&gt;默认是undefined。   &lt;/p&gt;
-&lt;p&gt;writable&lt;br&gt;如果是true的话，就是可写的。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;一个可访问的的descriptor还有下面这些参数:   &lt;/p&gt;
-&lt;p&gt;get&lt;br&gt;一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。&lt;br&gt;默认是undefined。   &lt;/p&gt;
-&lt;p&gt;set&lt;br&gt;一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。&lt;br&gt;默认是undefined。   &lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;简单的defineProperty事例代码&quot;&gt;&lt;a href=&quot;#简单的defineProperty事例代码&quot; class=&quot;headerlink&quot; title=&quot;简单的defineProperty事例代码&quot;&gt;&lt;/a&gt;简单的defineProperty事例代码&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; newLine = &lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;br /&amp;gt;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//创建一个user-defined对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//给对象增加一个可访问的属性&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, &lt;span class=&quot;string&quot;&gt;&quot;newAccessorProperty&quot;&lt;/span&gt;, &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    set: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (x !== &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;in property set accessor&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue = x;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;值没变！&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    get: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;in property get accessor&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    enumerable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    configurable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//设置属性值－Set the property value.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.newAccessorProperty = &lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//将触发set函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.newAccessorProperty + newLine + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.oldPropValue=&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//将不触发set函数－will not trigger func set&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.newAccessorProperty + newLine + newLine);&lt;span class=&quot;comment&quot;&gt;//将触发get函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.oldPropValue + newLine);&lt;span class=&quot;comment&quot;&gt;//将不触发get函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中&lt;code&gt;Object.defineProperty(obj, prop, descriptor)&lt;/code&gt;也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     &lt;/p&gt;
-&lt;h3 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, prop, descriptor)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;参数说明&quot;&gt;&lt;a href=&quot;#参数说明&quot; class=&quot;headerlink&quot; title=&quot;参数说明&quot;&gt;&lt;/a&gt;参数说明&lt;/h3&gt;&lt;p&gt;obj&lt;br&gt;即将被定义新属性的对象   &lt;/p&gt;
-&lt;p&gt;prop&lt;br&gt;即将定义的新属性   &lt;/p&gt;
-&lt;p&gt;descriptor&lt;br&gt;对新属性的定义或者修改权限设设置的说明词     &lt;/p&gt;
-&lt;h3 id=&quot;descriptor参数描述&quot;&gt;&lt;a href=&quot;#descriptor参数描述&quot; class=&quot;headerlink&quot; title=&quot;descriptor参数描述&quot;&gt;&lt;/a&gt;descriptor参数描述&lt;/h3&gt;&lt;p&gt;configurable&lt;br&gt;如果是true的话，这属性的类型是可以更改或者这属性可以被删除。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;enumerable&lt;br&gt;如果是true，这属性在枚兴举时是可见的。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;descriptor还有下面这些可选的参数:&lt;/p&gt;
-&lt;p&gt;value&lt;br&gt;值可以是任意javascript值(如：number, object, function等等)。&lt;br&gt;默认是undefined。   &lt;/p&gt;
-&lt;p&gt;writable&lt;br&gt;如果是true的话，就是可写的。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;一个可访问的的descriptor还有下面这些参数:   &lt;/p&gt;
-&lt;p&gt;get&lt;br&gt;一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。&lt;br&gt;默认是undefined。   &lt;/p&gt;
-&lt;p&gt;set&lt;br&gt;一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。&lt;br&gt;默认是undefined。   &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript设计模式 - 依赖注入</title>
-    <link href="http://www.kuangzen.com/2016/06/21/js-injector/"/>
-    <id>http://www.kuangzen.com/2016/06/21/js-injector/</id>
-    <published>2016-06-21T07:47:05.000Z</published>
-    <updated>2016-06-22T03:58:15.246Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   &lt;/p&gt;
-&lt;h3 id=&quot;依赖注入好处&quot;&gt;&lt;a href=&quot;#依赖注入好处&quot; class=&quot;headerlink&quot; title=&quot;依赖注入好处&quot;&gt;&lt;/a&gt;依赖注入好处&lt;/h3&gt;&lt;p&gt;减小对象与依赖之间的藕合关系。   &lt;/p&gt;
-&lt;p&gt;不需要对原代码进行修改，直接可以应用到当前代码。   &lt;/p&gt;
-&lt;p&gt;有助于把客户与设计隔离开，减小设计改变带来的影响。   &lt;/p&gt;
-&lt;p&gt;让系统不用修改当前代码就可以重新配置。   &lt;/p&gt;
-&lt;p&gt;可以进行并行或者独立开发。   &lt;/p&gt;
-&lt;p&gt;让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   &lt;/p&gt;
-&lt;h3 id=&quot;依赖注入缺点&quot;&gt;&lt;a href=&quot;#依赖注入缺点&quot; class=&quot;headerlink&quot; title=&quot;依赖注入缺点&quot;&gt;&lt;/a&gt;依赖注入缺点&lt;/h3&gt;&lt;p&gt;当要实例化一种类型，你必须要知道要用什么依赖。   &lt;/p&gt;
-&lt;p&gt;隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   &lt;/p&gt;
-&lt;p&gt;要求你要写更多的代码。   &lt;/p&gt;
-&lt;p&gt;可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      &lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;简单的依赖注入实现代码&quot;&gt;&lt;a href=&quot;#简单的依赖注入实现代码&quot; class=&quot;headerlink&quot; title=&quot;简单的依赖注入实现代码&quot;&gt;&lt;/a&gt;简单的依赖注入实现代码&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Injector&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Injector.prototype.register = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;key, value&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//注册依赖&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies[key] = value;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Injector.prototype.resolve = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;deps, func, scope&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//创建并解释注入依赖后的函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; args = [];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        scope = scope || &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; deps.length, d = deps[i]; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies[d]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                scope[d] = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies[d];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Error&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;Can\&#39;t resolve &#39;&lt;/span&gt; + d);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            func.apply(scope || &amp;#123;&amp;#125;, &lt;span class=&quot;built_in&quot;&gt;Array&lt;/span&gt;.prototype.slice.call(&lt;span class=&quot;built_in&quot;&gt;arguments&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//另一种写法，类require.js&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Injector.prototype.define = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;deps, callback&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//创建并解释注入依赖&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; args = [];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; deps.length, d = deps[i]; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies[d]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                args.push(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dependencies[d]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Error&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;Can\&#39;t resolve &#39;&lt;/span&gt; + d);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; (callback)===&lt;span class=&quot;string&quot;&gt;&#39;function&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            callback.apply(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, args);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; myInjector = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Injector();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; buy = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//一个buy模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name=&lt;span class=&quot;string&quot;&gt;&quot;Nelson&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.start = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name + &lt;span class=&quot;string&quot;&gt;&quot; bought some thing&quot;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sell = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//一个sell模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name=&lt;span class=&quot;string&quot;&gt;&quot;Jim&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.start = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name + &lt;span class=&quot;string&quot;&gt;&quot; sold some thing&quot;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;					&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    myInjector.register(&lt;span class=&quot;string&quot;&gt;&quot;buy&quot;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; buy());&lt;span class=&quot;comment&quot;&gt;//注册依赖模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    myInjector.register(&lt;span class=&quot;string&quot;&gt;&quot;sell&quot;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; sell());&lt;span class=&quot;comment&quot;&gt;//注册依赖模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; deal = myInjector.resolve([&lt;span class=&quot;string&quot;&gt;&#39;buy&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;sell&#39;&lt;/span&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;deal&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//创建并解释注入依赖buy和sell后的函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.buy.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.buy.start();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.sell.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.sell.start();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(deal + &lt;span class=&quot;string&quot;&gt;&quot; relies on both &quot;&lt;/span&gt; + &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.buy.name + &lt;span class=&quot;string&quot;&gt;&quot; and &quot;&lt;/span&gt; + &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.sell.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.buy.name = &lt;span class=&quot;string&quot;&gt;&quot;Han Meimei&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.sell.name = &lt;span class=&quot;string&quot;&gt;&quot;Li Lei&quot;&lt;/span&gt;;					&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    deal(&lt;span class=&quot;string&quot;&gt;&quot;Deal&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(myInjector);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//另一种写法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    myInjector.define([&lt;span class=&quot;string&quot;&gt;&#39;buy&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;sell&#39;&lt;/span&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;b, s&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;span class=&quot;comment&quot;&gt;//注入依赖buy和sell&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;string&quot;&gt;&#39;New Name: &#39;&lt;/span&gt; + b.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  b.start();				&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;string&quot;&gt;&#39;New Name: &#39;&lt;/span&gt; + s.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	  s.start();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.writeln(&lt;span class=&quot;string&quot;&gt;&quot;A deal relies on both &quot;&lt;/span&gt; + b.name + &lt;span class=&quot;string&quot;&gt;&quot; and &quot;&lt;/span&gt; + s.name + &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;br&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;以简单的买卖为例:&lt;br&gt;一单买卖，必须有买方和卖方参与   &lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   &lt;/p&gt;
-&lt;h3 id=&quot;依赖注入好处&quot;&gt;&lt;a href=&quot;#依赖注入好处&quot; class=&quot;headerlink&quot; title=&quot;依赖注入好处&quot;&gt;&lt;/a&gt;依赖注入好处&lt;/h3&gt;&lt;p&gt;减小对象与依赖之间的藕合关系。   &lt;/p&gt;
-&lt;p&gt;不需要对原代码进行修改，直接可以应用到当前代码。   &lt;/p&gt;
-&lt;p&gt;有助于把客户与设计隔离开，减小设计改变带来的影响。   &lt;/p&gt;
-&lt;p&gt;让系统不用修改当前代码就可以重新配置。   &lt;/p&gt;
-&lt;p&gt;可以进行并行或者独立开发。   &lt;/p&gt;
-&lt;p&gt;让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   &lt;/p&gt;
-&lt;h3 id=&quot;依赖注入缺点&quot;&gt;&lt;a href=&quot;#依赖注入缺点&quot; class=&quot;headerlink&quot; title=&quot;依赖注入缺点&quot;&gt;&lt;/a&gt;依赖注入缺点&lt;/h3&gt;&lt;p&gt;当要实例化一种类型，你必须要知道要用什么依赖。   &lt;/p&gt;
-&lt;p&gt;隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   &lt;/p&gt;
-&lt;p&gt;要求你要写更多的代码。   &lt;/p&gt;
-&lt;p&gt;可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>忙忙碌碌几个月，随便写写</title>
     <link href="http://www.kuangzen.com/2016/06/13/what-s-up-2016-6-13/"/>
     <id>http://www.kuangzen.com/2016/06/13/what-s-up-2016-6-13/</id>
@@ -602,9 +632,9 @@ blogger.recommend({
     
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
-      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
     
       <category term="css3" scheme="http://www.kuangzen.com/tags/css3/"/>
     
@@ -631,9 +661,9 @@ blogger.recommend({
     </summary>
     
     
-      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
-    
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     
       <category term="UI设计" scheme="http://www.kuangzen.com/tags/UI%E8%AE%BE%E8%AE%A1/"/>
     
@@ -666,11 +696,11 @@ blogger.recommend({
     </summary>
     
     
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
       <category term="网页兼容性" scheme="http://www.kuangzen.com/tags/%E7%BD%91%E9%A1%B5%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     
       <category term="jQuery" scheme="http://www.kuangzen.com/tags/jQuery/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -751,9 +781,9 @@ fs.readFile(&lt;span class=&quot;string&quot;&gt;&#39;./public/baidusitemap.xml&
     </summary>
     
     
-      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
-    
       <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
+    
+      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
@@ -1098,9 +1128,9 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
     </summary>
     
     
-      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
-    
       <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
+    
+      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
@@ -1186,64 +1216,6 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
       <category term="rem" scheme="http://www.kuangzen.com/tags/rem/"/>
     
       <category term="responsive design" scheme="http://www.kuangzen.com/tags/responsive-design/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>windows中ruby环境下用gem安装sass</title>
-    <link href="http://www.kuangzen.com/2016/04/08/ruby-gem-install-sass/"/>
-    <id>http://www.kuangzen.com/2016/04/08/ruby-gem-install-sass/</id>
-    <published>2016-04-08T01:38:45.000Z</published>
-    <updated>2016-05-17T09:07:00.719Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;上一篇文章中windows配置gulp时用到gulp-ruby-sass来编译sass/scss文件，其实也可以用gulp-sass来编译sass/scss文件，两者安装时依赖的环境不一样。  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;gulp-ruby-sass 要先安装Ruby，再用其包环境gem安装sass&lt;/li&gt;
-&lt;li&gt;gulp-sass 要安装完成不容易，其依赖于node-sass，要先安装python2，再安装visual studio 2015 express，然后配置vs2015，最后执行 &lt;code&gt;npm install gulp-sass --save-dev&lt;/code&gt; 来完成安装&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;安装gulp-ruby-sass&quot;&gt;&lt;a href=&quot;#安装gulp-ruby-sass&quot; class=&quot;headerlink&quot; title=&quot;安装gulp-ruby-sass&quot;&gt;&lt;/a&gt;安装gulp-ruby-sass&lt;/h3&gt;&lt;p&gt;由于Gulp-sass过于麻烦，最后选择了gulp-ruby-sass  &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Ruby安装&lt;br&gt;到官网 &lt;a href=&quot;http://rubyinstaller.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://rubyinstaller.org/&lt;/a&gt; 下载安装包直接安装。注意，要打勾上环境变量路径，如下图：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/20160408095701.png&quot; alt=&quot;ruby安装图&quot;&gt; &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Ruby China - RubyGems Mirror镜像安装 sass  &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;由于国内网络原因，导致 rubygems.org 的gem 源连接不上，可以通过配置gem sources来修改gem 源。 打开命令行：   &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;gem sources --remove https://rubygems.org/   
-
-gem sources -a https://gems.ruby-china.org/  
-
-gem sources -l  
-
-*** CURRENT SOURCES ***  
-https://gems.ruby-china.org/
-
-gem install sass
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果gem sources添加失败可以把 &lt;a href=&quot;https://gems.ruby-china.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gems.ruby-china.org/&lt;/a&gt; 中的 &lt;strong&gt;https&lt;/strong&gt; 改为 &lt;strong&gt;http&lt;/strong&gt; 试试。 &lt;code&gt;gem sources --remove https://rubygems.org/&lt;/code&gt; 是移除官方源 &lt;a href=&quot;https://rubygems.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://rubygems.org/&lt;/a&gt; ； &lt;code&gt;gem sources -a https://gems.ruby-china.org/&lt;/code&gt; 是添加 &lt;a href=&quot;https://gems.ruby-china.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gems.ruby-china.org/&lt;/a&gt; 国内源； &lt;code&gt;gem sources -l&lt;/code&gt; 是查看当前源；最后关键的一步 &lt;code&gt;gem install sass&lt;/code&gt; 就是安装sass！&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;上一篇文章中windows配置gulp时用到gulp-ruby-sass来编译sass/scss文件，其实也可以用gulp-sass来编译sass/scss文件，两者安装时依赖的环境不一样。  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;gulp-ruby-sass 要先安装Ruby，再用其包环境gem安装sass&lt;/li&gt;
-&lt;li&gt;gulp-sass 要安装完成不容易，其依赖于node-sass，要先安装python2，再安装visual studio 2015 express，然后配置vs2015，最后执行 &lt;code&gt;npm install gulp-sass --save-dev&lt;/code&gt; 来完成安装&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;安装gulp-ruby-sass&quot;&gt;&lt;a href=&quot;#安装gulp-ruby-sass&quot; class=&quot;headerlink&quot; title=&quot;安装gulp-ruby-sass&quot;&gt;&lt;/a&gt;安装gulp-ruby-sass&lt;/h3&gt;&lt;p&gt;由于Gulp-sass过于麻烦，最后选择了gulp-ruby-sass  &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Ruby安装&lt;br&gt;到官网 &lt;a href=&quot;http://rubyinstaller.org/&quot;&gt;http://rubyinstaller.org/&lt;/a&gt; 下载安装包直接安装。注意，要打勾上环境变量路径，如下图：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com2.z0.glb.clouddn.com/img/20160408095701.png&quot; alt=&quot;ruby安装图&quot;&gt; &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Ruby China - RubyGems Mirror镜像安装 sass
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="sass" scheme="http://www.kuangzen.com/tags/sass/"/>
-    
-      <category term="scss" scheme="http://www.kuangzen.com/tags/scss/"/>
-    
-      <category term="ruby" scheme="http://www.kuangzen.com/tags/ruby/"/>
     
   </entry>
   
