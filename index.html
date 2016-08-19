@@ -282,6 +282,87 @@
 
 
   
+    <article id="post-js-setTimeout-to-delay" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/19/js-setTimeout-to-delay/" class="article-date">
+  	<time datetime="2016-08-19T09:40:49.000Z" itemprop="datePublished">2016-08-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/19/js-setTimeout-to-delay/">Javascript 把setTimeout改成delay，延时执行</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>用<strong>setTimeout</strong>多了，总是觉得这函数就差那么一点点，不是很顺手，就萌生了要改造一下此函数的念头；改成可以链式编程的，名字也更加接地气点的，就叫<strong>delay</strong>吧。   </p>
+<h3 id="直接挂原型链代码如下："><a href="#直接挂原型链代码如下：" class="headerlink" title="直接挂原型链代码如下："></a>直接挂原型链代码如下：</h3><pre><code class="javascript"><span class="comment">/**
+ * 让目标(Object)延时执行，可以链式使用
+ * 
+ * @param {Number} time
+ * @param {Function} doSomething - 
+ *                               - @param {Object} self -- 作为参数回调使用
+ *                               - @param {Number} startTime -- 作为参数回调使用
+ * @return {Object} 
+ */</span>
+<span class="built_in">Object</span>.prototype.delay = <span class="function"><span class="keyword">function</span> (<span class="params">time, doSomething</span>) </span>{
+    <span class="keyword">var</span> self = <span class="keyword">this</span>,
+        startTime = time;
+    <span class="keyword">if</span> (self) {
+        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+            doSomething(self, startTime);
+        }, time);
+    }
+    <span class="keyword">return</span> <span class="keyword">this</span>;
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/19/js-setTimeout-to-delay/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-crop-pictures-for-app" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -782,77 +863,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/06/22/node-get-stock-csv-data-output-to-json/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js-injector" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/21/js-injector/" class="article-date">
-  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-injector/">javascript设计模式 - 依赖注入</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   </p>
-<h3 id="依赖注入好处"><a href="#依赖注入好处" class="headerlink" title="依赖注入好处"></a>依赖注入好处</h3><p>减小对象与依赖之间的藕合关系。   </p>
-<p>不需要对原代码进行修改，直接可以应用到当前代码。   </p>
-<p>有助于把客户与设计隔离开，减小设计改变带来的影响。   </p>
-<p>让系统不用修改当前代码就可以重新配置。   </p>
-<p>可以进行并行或者独立开发。   </p>
-<p>让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   </p>
-<h3 id="依赖注入缺点"><a href="#依赖注入缺点" class="headerlink" title="依赖注入缺点"></a>依赖注入缺点</h3><p>当要实例化一种类型，你必须要知道要用什么依赖。   </p>
-<p>隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   </p>
-<p>要求你要写更多的代码。   </p>
-<p>可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      </p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/21/js-injector/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

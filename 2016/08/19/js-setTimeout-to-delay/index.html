@@ -4,17 +4,36 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2016/6 | KUANG ZEN&#39;s HOME</title>
+  <title>Javascript 把setTimeout改成delay，延时执行 | KUANG ZEN&#39;s HOME</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="KUANG ZEN's HOME">
-<meta property="og:url" content="http://www.kuangzen.com/archives/2016/06/index.html">
+  <meta name="description" content="前言用setTimeout多了，总是觉得这函数就差那么一点点，不是很顺手，就萌生了要改造一下此函数的念头；改成可以链式编程的，名字也更加接地气点的，就叫delay吧。   
+直接挂原型链代码如下：/**
+ * 让目标(Object)延时执行，可以链式使用
+ * 
+ * @param {Number} time
+ * @param {Function} doSomething - 
+ *">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 把setTimeout改成delay，延时执行">
+<meta property="og:url" content="http://www.kuangzen.com/2016/08/19/js-setTimeout-to-delay/index.html">
 <meta property="og:site_name" content="KUANG ZEN's HOME">
-<meta property="og:description">
+<meta property="og:description" content="前言用setTimeout多了，总是觉得这函数就差那么一点点，不是很顺手，就萌生了要改造一下此函数的念头；改成可以链式编程的，名字也更加接地气点的，就叫delay吧。   
+直接挂原型链代码如下：/**
+ * 让目标(Object)延时执行，可以链式使用
+ * 
+ * @param {Number} time
+ * @param {Function} doSomething - 
+ *">
+<meta property="og:updated_time" content="2016-08-19T10:02:42.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KUANG ZEN's HOME">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Javascript 把setTimeout改成delay，延时执行">
+<meta name="twitter:description" content="前言用setTimeout多了，总是觉得这函数就差那么一点点，不是很顺手，就萌生了要改造一下此函数的念头；改成可以链式编程的，名字也更加接地气点的，就叫delay吧。   
+直接挂原型链代码如下：/**
+ * 让目标(Object)延时执行，可以链式使用
+ * 
+ * @param {Number} time
+ * @param {Function} doSomething - 
+ *">
   
     <link rel="alternative" href="/atom.xml" title="KUANG ZEN&#39;s HOME" type="application/atom+xml">
   
@@ -207,239 +226,149 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-js-setTimeout-to-delay" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2016/08/19/js-setTimeout-to-delay/" class="article-date">
+  	<time datetime="2016-08-19T09:40:49.000Z" itemprop="datePublished">2016-08-19</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript 把setTimeout改成delay，延时执行
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <div style="color: #aaa;font-size: 12px;margin-top: -20px;">阅读 <span id="busuanzi_value_page_pv"></span> | 本站总访问 <span id="busuanzi_value_site_pv"></span> | 本站访客 <span id="busuanzi_value_site_uv"></span></div>
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>用<strong>setTimeout</strong>多了，总是觉得这函数就差那么一点点，不是很顺手，就萌生了要改造一下此函数的念头；改成可以链式编程的，名字也更加接地气点的，就叫<strong>delay</strong>吧。   </p>
+<h3 id="直接挂原型链代码如下："><a href="#直接挂原型链代码如下：" class="headerlink" title="直接挂原型链代码如下："></a>直接挂原型链代码如下：</h3><pre><code class="javascript"><span class="comment">/**
+ * 让目标(Object)延时执行，可以链式使用
+ * 
+ * @param {Number} time
+ * @param {Function} doSomething - 
+ *                               - @param {Object} self -- 作为参数回调使用
+ *                               - @param {Number} startTime -- 作为参数回调使用
+ * @return {Object} 
+ */</span>
+<span class="built_in">Object</span>.prototype.delay = <span class="function"><span class="keyword">function</span> (<span class="params">time, doSomething</span>) </span>{
+    <span class="keyword">var</span> self = <span class="keyword">this</span>,
+        startTime = time;
+    <span class="keyword">if</span> (self) {
+        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+            doSomething(self, startTime);
+        }, time);
+    }
+    <span class="keyword">return</span> <span class="keyword">this</span>;
+}
+</code></pre>
+   <a id="more"></a>
+<h3 id="链式使用例子代码如下："><a href="#链式使用例子代码如下：" class="headerlink" title="链式使用例子代码如下："></a>链式使用例子代码如下：</h3><pre><code class="javascript"><span class="built_in">document</span>.querySelector(<span class="string">'#retarder'</span>)
+    .delay(<span class="number">1000</span>, <span class="function"><span class="keyword">function</span> (<span class="params">self</span>) </span>{
+        self.innerHTML = <span class="string">'FUCK'</span>;
+    })
+    .delay(<span class="number">1500</span>, <span class="function"><span class="keyword">function</span> (<span class="params">self</span>) </span>{
+        self.innerHTML = <span class="string">'YOU'</span>;
+    });
+</code></pre>
+<h3 id="非链式使用，由10到0倒计时例子代码如下："><a href="#非链式使用，由10到0倒计时例子代码如下：" class="headerlink" title="非链式使用，由10到0倒计时例子代码如下："></a>非链式使用，由10到0倒计时例子代码如下：</h3><pre><code class="javascript"><span class="keyword">var</span> el = <span class="built_in">document</span>.querySelector(<span class="string">'#retarder'</span>);
+<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;= <span class="number">10</span>; i++) {
+    el.delay(i * <span class="number">1000</span>, <span class="function"><span class="keyword">function</span> (<span class="params">self, startTime</span>) </span>{
+        self.innerHTML = <span class="number">10</span> - startTime / <span class="number">1000</span>;
+    })
+}
+</code></pre>
+
+      
+    </div>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/24/php-get-yahoo-stock-csv-data-output-to-json/" class="archive-article-date">
-  	<time datetime="2016-06-24T03:02:17.000Z" itemprop="datePublished">Jun 24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/24/php-get-yahoo-stock-csv-data-output-to-json/">php 获取yahoo股票csv数据并封闭成为接口输出json数据</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/22/node-enhance-static-server-support-html-css/" class="archive-article-date">
-  	<time datetime="2016-06-22T10:59:51.000Z" itemprop="datePublished">Jun 22</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/22/node-enhance-static-server-support-html-css/">Node.js 简单优化静态文件服务器处理函数支持css、html文件加载</a>
-    </h1>
   
+    <a href="/2016/08/08/crop-pictures-for-app/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端的酱油工作，为ios及android APP客户端切图及标注</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/22/node-get-stock-csv-data-output-to-json/" class="archive-article-date">
-  	<time datetime="2016-06-22T10:59:50.000Z" itemprop="datePublished">Jun 22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/22/node-get-stock-csv-data-output-to-json/">Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/21/js-defineProperty/" class="archive-article-date">
-  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">Jun 21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/21/js-defineProperty/">javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js-setTimeout-to-delay" data-title="Javascript 把setTimeout改成delay，延时执行" data-url="http://www.kuangzen.com/2016/08/19/js-setTimeout-to-delay/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"kuangzen"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/21/js-observer/" class="archive-article-date">
-  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">Jun 21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/21/js-injector/" class="archive-article-date">
-  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">Jun 21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/21/js-injector/">javascript设计模式 - 依赖注入</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/13/what-s-up-2016-6-13/" class="archive-article-date">
-  	<time datetime="2016-06-13T02:17:58.000Z" itemprop="datePublished">Jun 13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/13/what-s-up-2016-6-13/">忙忙碌碌几个月，随便写写</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/一些事一些情/">一些事一些情</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 </div>
       <footer id="footer">
@@ -463,8 +392,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false

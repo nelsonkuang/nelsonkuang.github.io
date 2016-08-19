@@ -209,6 +209,77 @@
 
       <div class="body-wrap">
   
+    <article id="post-js-injector" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/21/js-injector/" class="article-date">
+  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/21/js-injector/">javascript设计模式 - 依赖注入</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   </p>
+<h3 id="依赖注入好处"><a href="#依赖注入好处" class="headerlink" title="依赖注入好处"></a>依赖注入好处</h3><p>减小对象与依赖之间的藕合关系。   </p>
+<p>不需要对原代码进行修改，直接可以应用到当前代码。   </p>
+<p>有助于把客户与设计隔离开，减小设计改变带来的影响。   </p>
+<p>让系统不用修改当前代码就可以重新配置。   </p>
+<p>可以进行并行或者独立开发。   </p>
+<p>让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   </p>
+<h3 id="依赖注入缺点"><a href="#依赖注入缺点" class="headerlink" title="依赖注入缺点"></a>依赖注入缺点</h3><p>当要实例化一种类型，你必须要知道要用什么依赖。   </p>
+<p>隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   </p>
+<p>要求你要写更多的代码。   </p>
+<p>可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      </p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/21/js-injector/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-js-defineProperty" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -772,68 +843,6 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
 
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-pix2rem-with-gulp-sass" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/08/pix2rem-with-gulp-sass/" class="article-date">
-  	<time datetime="2016-04-08T05:40:00.000Z" itemprop="datePublished">2016-04-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/08/pix2rem-with-gulp-sass/">pix2rem-with-gulp-sass</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <p>Use Gulp + Sass instead of Grunt + less, check the repos - <a href="https://github.com/hiooyUI/pix2remjs">hiooyUI/pix2remjs</a>, both are the same.<br>a responsive design soluction for mobile web page [be compatible with all popular mobile / appwebview browsers], meanwhile REM lives harmony with Pixel that means you can use ‘px’ and ‘rem’ at the same time.    </p>
-<p>与<a href="https://github.com/hiooyUI/pix2remjs">hiooyUI/pix2remjs</a>项目一样，只是实现方式不一样，这里用Gulp + Sass实现，而前者用Grunt + less实现。<br>一个几乎能适配所有手机端的非常简单易用的h5响应式设计解决方案[兼容所有流行的移动浏览器或者app内置浏览器], 移动端Rem解决方案， 与此同时，最方便之处是你可以同时使用REM单位或者px像素单位互不冲突，非常和谐，[不好意思，这里忽略了1像素问题，个人觉得这问题不是问题]
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rem/">rem</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/responsive-design/">responsive design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/08/pix2rem-with-gulp-sass/#more">阅读全文 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
