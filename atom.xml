@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-08-25T08:02:35.447Z</updated>
+  <updated>2016-08-25T08:05:08.227Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>a-new-way-to-calculate-number-domain-names-count</title>
+    <title>计算6数字含0、不含4的.COM域名总数</title>
     <link href="http://www.kuangzen.com/2016/08/25/a-new-way-to-calculate-number-domain-names-count/"/>
     <id>http://www.kuangzen.com/2016/08/25/a-new-way-to-calculate-number-domain-names-count/</id>
     <published>2016-08-25T07:46:31.000Z</published>
-    <updated>2016-08-25T08:02:35.447Z</updated>
+    <updated>2016-08-25T08:05:08.227Z</updated>
     
     <content type="html">&lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;今天在群里跟人家讨论6数字含0、不含4的.COM域名总共有多少。码农思维，写个代码输出一下不就知道了吗。然后就捣鼓起来，一开始，以为遍历1000,000就可以得出结果，但这样会忽略了0开头的那批，稍作修改，由1000,000到2000,000就可以了，果然如此。   &lt;/p&gt;
 &lt;h3 id=&quot;代码如下：&quot;&gt;&lt;a href=&quot;#代码如下：&quot; class=&quot;headerlink&quot; title=&quot;代码如下：&quot;&gt;&lt;/a&gt;代码如下：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c = &lt;span class=&quot;number&quot;&gt;2000000&lt;/span&gt;,
