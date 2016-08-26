@@ -123,7 +123,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/UI设计/" style="font-size: 12.86px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15.71px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.43px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 17.14px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 14.29px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15.71px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.43px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.43px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 12.86px;">sass</a> <a href="/tags/scss/" style="font-size: 11.43px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/一些事一些情/" style="font-size: 14.29px;">一些事一些情</a> <a href="/tags/切图/" style="font-size: 10px;">切图</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 15.71px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 12.86px;">网页兼容性</a>
+						<a href="/tags/UI设计/" style="font-size: 12.86px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15.71px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.43px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 17.14px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 14.29px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15.71px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.43px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.43px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 12.86px;">sass</a> <a href="/tags/scss/" style="font-size: 11.43px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/一些事一些情/" style="font-size: 15.71px;">一些事一些情</a> <a href="/tags/切图/" style="font-size: 10px;">切图</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 15.71px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 12.86px;">网页兼容性</a>
 					</div>
 				</section>
 				
@@ -208,6 +208,68 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-useful-wechat-code-interactive" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/18/useful-wechat-code-interactive/" class="article-date">
+  	<time datetime="2016-04-18T01:12:45.000Z" itemprop="datePublished">2016-04-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/18/useful-wechat-code-interactive/">微信网页里面同时出现2个二维码长按时不能准确识别问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在微信网页里面如果同时放了2个或者多个二维码时，长按二维码图片时只能识别到其中一个二维码，原因是其识别机制问题，其运行方式是先判断有没有按到图片(img)，有则提示识别二维码菜单，当按下菜单时，截取屏幕然后由上而下，由左而右识别，所以只能识别到靠左/上的那个二维码。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>可以把几个二维码做成<strong>可点击</strong>或者<strong>绑定按下</strong>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI设计/">UI设计</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/18/useful-wechat-code-interactive/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-useful-map-interactive" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -779,70 +841,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/21/jquery-scroll-cascade-select/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-react-cascading-address-selector" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/04/react-cascading-address-selector/" class="article-date">
-  	<time datetime="2016-03-04T06:57:45.000Z" itemprop="datePublished">2016-03-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/04/react-cascading-address-selector/">react-cascading-address-selector</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <p>React级联地址选择器组件纯前端实现 地址数组的检索充分运用了以空间换时间的思路</p>
-<p><a href="https://github.com/nelsonkuang/react-cascading-address-selector">Github</a></p>
-<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/nelsonkuang/react-cascading-address-selector.git</span><br><span class="line">cd react-cascading-address-selector</span><br><span class="line">npm install</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/04/react-cascading-address-selector/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
