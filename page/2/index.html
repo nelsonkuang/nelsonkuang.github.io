@@ -333,10 +333,10 @@
 
 
   
-    <article id="post-js-defineProperty" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/21/js-defineProperty/" class="article-date">
+      <a href="/2016/06/21/js-observer/" class="article-date">
   	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
 </a>
     </div>
@@ -350,7 +350,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-defineProperty/">javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</a>
+      <a class="article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
     </h1>
   
 
@@ -360,19 +360,11 @@
     <div class="article-entry" itemprop="articleBody">
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中<code>Object.defineProperty(obj, prop, descriptor)</code>也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     </p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor)</span><br></pre></td></tr></table></figure>
-<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>obj<br>即将被定义新属性的对象   </p>
-<p>prop<br>即将定义的新属性   </p>
-<p>descriptor<br>对新属性的定义或者修改权限设设置的说明词     </p>
-<h3 id="descriptor参数描述"><a href="#descriptor参数描述" class="headerlink" title="descriptor参数描述"></a>descriptor参数描述</h3><p>configurable<br>如果是true的话，这属性的类型是可以更改或者这属性可以被删除。<br>默认是false。   </p>
-<p>enumerable<br>如果是true，这属性在枚兴举时是可见的。<br>默认是false。   </p>
-<p>descriptor还有下面这些可选的参数:</p>
-<p>value<br>值可以是任意javascript值(如：number, object, function等等)。<br>默认是undefined。   </p>
-<p>writable<br>如果是true的话，就是可写的。<br>默认是false。   </p>
-<p>一个可访问的的descriptor还有下面这些参数:   </p>
-<p>get<br>一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。<br>默认是undefined。   </p>
-<p>set<br>一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。<br>默认是undefined。   </p>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
+<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
+<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
+<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br>
       
     </div>
     
@@ -387,7 +379,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/21/js-defineProperty/#more">阅读全文 >></a>
+          <a  href="/2016/06/21/js-observer/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -477,10 +469,10 @@
 
 
   
-    <article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-defineProperty" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/21/js-observer/" class="article-date">
+      <a href="/2016/06/21/js-defineProperty/" class="article-date">
   	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
 </a>
     </div>
@@ -494,7 +486,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
+      <a class="article-title" href="/2016/06/21/js-defineProperty/">javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</a>
     </h1>
   
 
@@ -504,11 +496,19 @@
     <div class="article-entry" itemprop="articleBody">
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
-<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
-<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
-<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中<code>Object.defineProperty(obj, prop, descriptor)</code>也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     </p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor)</span><br></pre></td></tr></table></figure>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>obj<br>即将被定义新属性的对象   </p>
+<p>prop<br>即将定义的新属性   </p>
+<p>descriptor<br>对新属性的定义或者修改权限设设置的说明词     </p>
+<h3 id="descriptor参数描述"><a href="#descriptor参数描述" class="headerlink" title="descriptor参数描述"></a>descriptor参数描述</h3><p>configurable<br>如果是true的话，这属性的类型是可以更改或者这属性可以被删除。<br>默认是false。   </p>
+<p>enumerable<br>如果是true，这属性在枚兴举时是可见的。<br>默认是false。   </p>
+<p>descriptor还有下面这些可选的参数:</p>
+<p>value<br>值可以是任意javascript值(如：number, object, function等等)。<br>默认是undefined。   </p>
+<p>writable<br>如果是true的话，就是可写的。<br>默认是false。   </p>
+<p>一个可访问的的descriptor还有下面这些参数:   </p>
+<p>get<br>一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。<br>默认是undefined。   </p>
+<p>set<br>一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。<br>默认是undefined。   </p>
       
     </div>
     
@@ -523,7 +523,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/21/js-observer/#more">阅读全文 >></a>
+          <a  href="/2016/06/21/js-defineProperty/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
