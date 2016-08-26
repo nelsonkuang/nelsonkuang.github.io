@@ -1243,10 +1243,15 @@ a {
 #google-search {
   display: block;
   z-index: 10000;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 300px;
+}
+@media screen and (max-width: 800px) {
+  #google-search {
+    position: absolute;
+  }
 }
 .gsc-control-cse {
   border-color: transparent !important;
