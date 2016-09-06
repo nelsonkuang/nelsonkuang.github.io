@@ -147,6 +147,7 @@ h1,
 h2,
 h3 {
   display: block;
+  font-family: "PingFang SC", Verdana, "Helvetica Neue", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans-serif;
 }
 h1 {
   font-size: 1.5em;
