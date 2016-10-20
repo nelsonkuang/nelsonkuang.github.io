@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://www.kuangzen.com/2016/10/20/pm-awesome/</loc>
+    <lastmod>2016-10-20T03:56:09.280Z</lastmod>
+    <data>
+        <display>
+        <title>产品设计实用集锦[收集于网络]</title>
+        <pubTime>2016-10-20T02:55:05.000Z</pubTime>
+        
+        <tag>一些事一些情</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kuangzen.com/2016/10/08/self-motivated-2016-10-08/</loc>
     <lastmod>2016-10-09T00:54:12.968Z</lastmod>
     <data>
@@ -188,11 +205,11 @@
         <title>vuex + vue-router实战之简单Tabs开发</title>
         <pubTime>2016-07-15T06:54:11.000Z</pubTime>
         
-        <tag>vue.js</tag>
-         
         <tag>javascript</tag>
          
         <tag>前端</tag>
+         
+        <tag>vue.js</tag>
          
          
            

@@ -123,7 +123,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/UI设计/" style="font-size: 12.5px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.25px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 17.5px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.75px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 13.75px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.25px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.25px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 12.5px;">sass</a> <a href="/tags/scss/" style="font-size: 11.25px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/一些事一些情/" style="font-size: 16.25px;">一些事一些情</a> <a href="/tags/切图/" style="font-size: 10px;">切图</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 15px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 12.5px;">网页兼容性</a>
+						<a href="/tags/UI设计/" style="font-size: 12.86px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 15.71px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.43px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 17.14px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 14.29px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15.71px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.43px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.43px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 12.86px;">sass</a> <a href="/tags/scss/" style="font-size: 11.43px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/一些事一些情/" style="font-size: 17.14px;">一些事一些情</a> <a href="/tags/切图/" style="font-size: 10px;">切图</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 15.71px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 12.86px;">网页兼容性</a>
 					</div>
 				</section>
 				
@@ -208,6 +208,72 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-Vuex-And-Vue-router-Tabs" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/15/Vuex-And-Vue-router-Tabs/" class="article-date">
+  	<time datetime="2016-07-15T06:54:11.000Z" itemprop="datePublished">2016-07-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/15/Vuex-And-Vue-router-Tabs/">vuex + vue-router实战之简单Tabs开发</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>　　唠叨几句，前端框架何其多，明星级的就那么几个，能冲出国门风靡全球的国产框架，目前只有大牛尤雨溪Evan You出的vue.js，必须顶力支持。<br>　　之前自己捣鼓写了两个vue组件,　觉得用起来非常顺手，感觉编程思想有点像react但比react更加易用。<br>　　问题来了，之前一直是孤立的来玩单个组件，那么如果一个复杂的单面程序里面有很多组件，并且需要切换不同的视图的时候该如果处理呢？   </p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ul>
+<li>用vue-router来分别咱由页面不同的视图，根据hash值的不同实现</li>
+<li>用vuex来管理不同组件的状态，以保证视图的切换时不会丢失状态　　　</li>
+</ul>
+<h3 id="vuex-vue-router实现一个简单的Tabs应用"><a href="#vuex-vue-router实现一个简单的Tabs应用" class="headerlink" title="vuex + vue-router实现一个简单的Tabs应用"></a>vuex + vue-router实现一个简单的Tabs应用</h3><p>先看程序主入口文件main.js，在这里要注入store和安装路由
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-js/">vue.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/15/Vuex-And-Vue-router-Tabs/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-php-get-yahoo-stock-csv-data-output-to-json" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -395,10 +461,10 @@
 
 
   
-    <article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-defineProperty" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/21/js-observer/" class="article-date">
+      <a href="/2016/06/21/js-defineProperty/" class="article-date">
   	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
 </a>
     </div>
@@ -412,7 +478,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
+      <a class="article-title" href="/2016/06/21/js-defineProperty/">javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</a>
     </h1>
   
 
@@ -422,11 +488,19 @@
     <div class="article-entry" itemprop="articleBody">
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
-<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
-<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
-<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中<code>Object.defineProperty(obj, prop, descriptor)</code>也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     </p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor)</span><br></pre></td></tr></table></figure>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>obj<br>即将被定义新属性的对象   </p>
+<p>prop<br>即将定义的新属性   </p>
+<p>descriptor<br>对新属性的定义或者修改权限设设置的说明词     </p>
+<h3 id="descriptor参数描述"><a href="#descriptor参数描述" class="headerlink" title="descriptor参数描述"></a>descriptor参数描述</h3><p>configurable<br>如果是true的话，这属性的类型是可以更改或者这属性可以被删除。<br>默认是false。   </p>
+<p>enumerable<br>如果是true，这属性在枚兴举时是可见的。<br>默认是false。   </p>
+<p>descriptor还有下面这些可选的参数:</p>
+<p>value<br>值可以是任意javascript值(如：number, object, function等等)。<br>默认是undefined。   </p>
+<p>writable<br>如果是true的话，就是可写的。<br>默认是false。   </p>
+<p>一个可访问的的descriptor还有下面这些参数:   </p>
+<p>get<br>一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。<br>默认是undefined。   </p>
+<p>set<br>一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。<br>默认是undefined。   </p>
       
     </div>
     
@@ -441,7 +515,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/21/js-observer/#more">阅读全文 >></a>
+          <a  href="/2016/06/21/js-defineProperty/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -531,10 +605,10 @@
 
 
   
-    <article id="post-js-defineProperty" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/21/js-defineProperty/" class="article-date">
+      <a href="/2016/06/21/js-observer/" class="article-date">
   	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
 </a>
     </div>
@@ -548,7 +622,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-defineProperty/">javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</a>
+      <a class="article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
     </h1>
   
 
@@ -558,19 +632,11 @@
     <div class="article-entry" itemprop="articleBody">
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中<code>Object.defineProperty(obj, prop, descriptor)</code>也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     </p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor)</span><br></pre></td></tr></table></figure>
-<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>obj<br>即将被定义新属性的对象   </p>
-<p>prop<br>即将定义的新属性   </p>
-<p>descriptor<br>对新属性的定义或者修改权限设设置的说明词     </p>
-<h3 id="descriptor参数描述"><a href="#descriptor参数描述" class="headerlink" title="descriptor参数描述"></a>descriptor参数描述</h3><p>configurable<br>如果是true的话，这属性的类型是可以更改或者这属性可以被删除。<br>默认是false。   </p>
-<p>enumerable<br>如果是true，这属性在枚兴举时是可见的。<br>默认是false。   </p>
-<p>descriptor还有下面这些可选的参数:</p>
-<p>value<br>值可以是任意javascript值(如：number, object, function等等)。<br>默认是undefined。   </p>
-<p>writable<br>如果是true的话，就是可写的。<br>默认是false。   </p>
-<p>一个可访问的的descriptor还有下面这些参数:   </p>
-<p>get<br>一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。<br>默认是undefined。   </p>
-<p>set<br>一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。<br>默认是undefined。   </p>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
+<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
+<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
+<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br>
       
     </div>
     
@@ -585,7 +651,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/21/js-defineProperty/#more">阅读全文 >></a>
+          <a  href="/2016/06/21/js-observer/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -777,69 +843,6 @@
 
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-push-urls-to-baidu-with-nodejs-in-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/" class="article-date">
-  	<time datetime="2016-04-22T05:35:40.000Z" itemprop="datePublished">2016-04-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/">用node.js向百度推送hexo博客所有链接</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>百度提供了4种方式用于提交网站链接，分别是主动推送(实时)，自动推送，sitemap和手动提交，其中主动推送是最快的。自动摧送是加js在页面上，但要打开页面才能执行推送，sitemap没爬到时也没有执行推送，手动提交还要登陆到百度网站上面去提交效率太低。  </p>
-<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>读取blog自动生成的baidusitemap.xml文件里面所有的url并post到baidu</p>
-<h3 id="用node-js执行推送"><a href="#用node-js执行推送" class="headerlink" title="用node.js执行推送"></a>用node.js执行推送</h3><p><strong>先按装依赖包</strong><br>两个sitemap文件装了后会每次deploy会自动生成sitemap.xml与baidusitemap.xml文件。<br>xml2js用于把xml转化成为json。
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/#more">阅读全文 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
