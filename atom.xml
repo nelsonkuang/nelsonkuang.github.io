@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-11-14T02:35:59.550Z</updated>
+  <updated>2016-11-14T02:38:52.654Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://www.kuangzen.com/2016/11/14/what-s-up-2016-11-14/"/>
     <id>http://www.kuangzen.com/2016/11/14/what-s-up-2016-11-14/</id>
     <published>2016-11-14T02:22:12.000Z</published>
-    <updated>2016-11-14T02:35:59.550Z</updated>
+    <updated>2016-11-14T02:38:52.654Z</updated>
     
     <content type="html">&lt;p&gt;呵呵，本次项目一波三折。   &lt;/p&gt;
 &lt;p&gt;流量峰值越界了，找CDN扩容。   &lt;/p&gt;
 &lt;p&gt;好吧，My SQL服务器卡爆了，做索引优化了，外加缓存分压。   &lt;/p&gt;
 &lt;p&gt;短信服务器撑不住挂了，骂骂骂。   &lt;/p&gt;
 &lt;p&gt;好不容易，活动页面涉及诱导分享，被微信封了，无止境的修改和申诉。   &lt;/p&gt;
-&lt;p&gt;百度的地址库不准，三大运营商的网络IP不准，只好用GPS定位，或者调微信定位API再转地址。   &lt;/p&gt;
+&lt;p&gt;百度的IP地址库不准，三大运营商的网络IP不准，只好用GPS定位，或者调微信定位API再转地址。   &lt;/p&gt;
 &lt;p&gt;还有各种需求的改改改！   &lt;/p&gt;
 </content>
     
