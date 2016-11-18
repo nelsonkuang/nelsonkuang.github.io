@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-11-18T04:35:21.313Z</updated>
+  <updated>2016-11-18T06:35:45.363Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.kuangzen.com/2016/11/18/web-front-end-opt/"/>
     <id>http://www.kuangzen.com/2016/11/18/web-front-end-opt/</id>
     <published>2016-11-18T03:09:08.000Z</published>
-    <updated>2016-11-18T04:35:21.313Z</updated>
+    <updated>2016-11-18T06:35:45.363Z</updated>
     
     <content type="html">&lt;h3 id=&quot;一、页面级优化&quot;&gt;&lt;a href=&quot;#一、页面级优化&quot; class=&quot;headerlink&quot; title=&quot;一、页面级优化　　　&quot;&gt;&lt;/a&gt;一、页面级优化　　　&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;减少 HTTP请求数&lt;br&gt;(1). 从设计实现层面简化页面&lt;br&gt;(2). 合理设置 HTTP缓存&lt;br&gt;(3). 资源合并与压缩&lt;br&gt;(4). CSS Sprites&lt;br&gt;(5). Inline Images,如base64&lt;br&gt;(6). Lazy Load Images,如使用jQuery.lazyload.js&lt;/li&gt;
@@ -89,9 +89,13 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&quot;三、参考优秀解决方式&quot;&gt;&lt;a href=&quot;#三、参考优秀解决方式&quot; class=&quot;headerlink&quot; title=&quot;三、参考优秀解决方式&quot;&gt;&lt;/a&gt;三、参考优秀解决方式&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&quot;三、优秀解决方案&quot;&gt;&lt;a href=&quot;#三、优秀解决方案&quot; class=&quot;headerlink&quot; title=&quot;三、优秀解决方案&quot;&gt;&lt;/a&gt;三、优秀解决方案&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/articles/Jingdong-three-list-page-continuous-structure-optimization&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;京东前端：三级列表页持续架构优化&lt;/a&gt; &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://tmallfe.github.io/%E5%8F%8C11/2016/03/08/tmall-1111.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;天猫前端的双11&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/amfe/article/issues/21&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;15年双11手淘前端技术巡演 - H5性能最佳实践&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/amfe/article/issues/26&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何为用户省电&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/amfe/article/issues/24&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vue+webpack在“双十一”导购产品的技术实践&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/amfe/article&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;2015年手机淘宝前端团队article&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     
