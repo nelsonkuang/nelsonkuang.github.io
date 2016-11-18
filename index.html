@@ -286,6 +286,75 @@
 
 
   
+    <article id="post-web-front-end-opt" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/18/web-front-end-opt/" class="article-date">
+  	<time datetime="2016-11-18T03:09:08.194Z" itemprop="datePublished">2016-11-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <hr>
+<p>title: web前端优化实用集锦<br>date: 2016-11-18 11:09:08<br>top: 11<br>tags:</p>
+<h2 id="前端"><a href="#前端" class="headerlink" title="  - 前端"></a>  - 前端</h2><h3 id="一、页面级优化"><a href="#一、页面级优化" class="headerlink" title="一、页面级优化　　　"></a>一、页面级优化　　　</h3><ol>
+<li>减少 HTTP请求数<br>(1). 从设计实现层面简化页面<br>(2). 合理设置 HTTP缓存<br>(3). 资源合并与压缩<br>(4). CSS Sprites<br>(5). Inline Images,如base64<br>(6). Lazy Load Images,如使用jQuery.lazyload.js</li>
+<li>将外部脚本置底</li>
+<li>异步执行 inline脚本(其实原理和上面是一样，保证脚本在页面内容后面加载。)</li>
+<li>Lazy Load Javascript（如使用requirejs/seajs）</li>
+<li>将 CSS放在 HEAD中</li>
+<li>异步请求 Callback（如果时效性允许的话，可以考虑在 DOMLoaded事件触发的时候加载，或者使用 setTimeout方式来灵活的控制加载的时机。）</li>
+<li>减少不必要的 HTTP跳转（很多人都会忽略链接最后是否带 ’/‘，假如你的服务器对此是区别对待的话，那么你也需要注意，这其中很可能隐藏了 301跳转，增加了多余请求。）</li>
+<li>避免重复的资源请求<h3 id="二、代码级优化"><a href="#二、代码级优化" class="headerlink" title="二、代码级优化"></a>二、代码级优化</h3></li>
+<li>Javascript<ul>
+<li>DOM<br>a. HTML Collection（HTML收集器，返回的是一个数组内容信息）<br>HTMLCollection类型的集合，在平时使用的时候大多将它作为数组来使用，因为它有 length属性，也可以使用索引访问每一个元素。不过在访问性能上则比数组要差很多。<br>b. Reflow &amp; Repaint</li>
+<li>慎用 with</li>
+<li>避免使用 eval和 Function</li>
+<li>减少作用域链查找（如用局部变量缓存全局变量 ）</li>
+<li>数据访问（Javascript中的数据访问包括直接量(字符串、正则表达式) 、变量、对象属性以及数组，其中对直接量和局部变量的访问是最快的，对对象属性以及数组的访问需要更大的开销。）</li>
+<li>字符串拼接（在 Javascript中使用”+” 号来拼接字符串效率是比较低的，因为每次运行都会开辟新的内存并生成新的字符串变量，然后将拼接结果赋值给新变量。与之相比更为高效的做法是使用数组的 join方法，即将需要拼接的字符串放在数组中最后调用其 join方法得到结果。不过由于使用数组也有一定的开销，因此当需要拼接的字符串较多的时候可以考虑用此方法。）</li>
+</ul>
+</li>
+<li>CSS选择器   <ul>
+<li>class样式的命名方式</li>
+<li>使用权重排名，如id &gt; class &gt; tagName</li>
+<li>浏览器对选择符的解析是从右往左进行的
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/11/18/web-front-end-opt/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-what-s-up-2016-11-14" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -834,80 +903,6 @@
 
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js-promise" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/27/js-promise/" class="article-date">
-  	<time datetime="2016-07-27T02:21:18.000Z" itemprop="datePublished">2016-07-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/27/js-promise/">Javascript Promise让异步操作代码更加灵活</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>顾名思义，<strong>Promise</strong>是承诺的意思，就是承诺将会发生某个操作，但操作结果有可能是成功的，也有可能是失败的；但无论如何，操作一但完成，立马会返回结果并把结果作为参数去执行相应被绑定的回调函数。<em>Promise</em>对象主要是用来做异步计算的，一个<em>Promise</em>对象代表一个未完成，但即将完成的操作。   </p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>( <span class="comment">/* executor */</span> <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123; ... &#125; );</span><br></pre></td></tr></table></figure>
-<p><strong>参数说明</strong><br>executor   </p>
-<blockquote>
-<p>通过参数<em>resolve</em>和<em>reject</em>，一个函数可以被传递到其他函数。executor函数将被提供<em>resolve</em>和<em>reject</em>函数的Promise履行者立即执行(executor在Promise构造函数之前执行，甚至返回创建的对象)。<em>Resolve</em>和<em>reject</em>函数是绑定到了promise对象和单独调用他们履行或者拒绝promise对象。Executor预期会初始化一些异步工作和完成后要么调用<em>resolve</em>或者<em>reject</em>函数去解决promise的最后值或者拒绝它如果有错误发生。   </p>
-</blockquote>
-<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>一个<strong>Promise</strong>代表一个值的代理，我们没必要知道promise是什么时候被创建的。它允许你去关联事件处理器到一个异步的动作的最后的成功值或者失败原理。这样使得异步方法像同步方法那样返回值：代替最后值，异步方法返回一个未来的在某个时间点的带值的promise。   </p>
-<p>一个Promise对象是在下面其中一个状态：   </p>
-<ul>
-<li><em>pending</em>，挂起状态：初始状态，未履行或者被拒绝   </li>
-<li><em>fulfilled</em>，被履行了:意味着操作成功完成。   </li>
-<li><em>rejected</em>，被拒绝了:表示操作失败了。   </li>
-</ul>
-<p>一个被挂起的promise可以成为要么带值的被履行状态或者带原因(错误)而被拒绝的状态。当其中一个发生，关联的事件处理器队列中的promise的then方法将被调用。(如果promise已经被履行或者被拒绝当相应的事件处理器被关联，这个事件处理器将被调用，所以异步操作完成和它的事件处理器被关联之间就没有竞争条件，解耦了)。
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/27/js-promise/#more">阅读全文 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>

@@ -4,21 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>忙忙碌碌几个月，随便写写 | KUANG ZEN&#39;s HOME</title>
+  <title>KUANG ZEN&#39;s HOME</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="忙忙碌碌了几个月，总得写写总结吧？以前总是非常热衷于写些技术文档分享之类的，但慢慢的热情似乎有些冷却；根本没有什么头绪，可能是因为技术无止境，知道得越多；觉得自己懂得的东西越少。偶尔更新一下github算是技术积累吧。   
-今天捣鼓一下react.js，明天折腾一下vue.js，后天再瞎搞几下node.js后端。项目中大量使用的还是jQuery，顶多加个require.js搞成模块化。希望下版上">
+  <meta name="description" content="title: web前端优化实用集锦date: 2016-11-18 11:09:08top: 11tags:
+  - 前端一、页面级优化　　　
+减少 HTTP请求数(1). 从设计实现层面简化页面(2). 合理设置 HTTP缓存(3). 资源合并与压缩(4). CSS Sprites(5). Inline Images,如base64(6). Lazy Load Images,如使用jQuer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="忙忙碌碌几个月，随便写写">
-<meta property="og:url" content="http://www.kuangzen.com/2016/06/13/what-s-up-2016-6-13/index.html">
+<meta property="og:title" content="KUANG ZEN's HOME">
+<meta property="og:url" content="http://www.kuangzen.com/2016/11/18/web-front-end-opt/index.html">
 <meta property="og:site_name" content="KUANG ZEN's HOME">
-<meta property="og:description" content="忙忙碌碌了几个月，总得写写总结吧？以前总是非常热衷于写些技术文档分享之类的，但慢慢的热情似乎有些冷却；根本没有什么头绪，可能是因为技术无止境，知道得越多；觉得自己懂得的东西越少。偶尔更新一下github算是技术积累吧。   
-今天捣鼓一下react.js，明天折腾一下vue.js，后天再瞎搞几下node.js后端。项目中大量使用的还是jQuery，顶多加个require.js搞成模块化。希望下版上">
-<meta property="og:updated_time" content="2016-06-13T08:32:03.349Z">
+<meta property="og:description" content="title: web前端优化实用集锦date: 2016-11-18 11:09:08top: 11tags:
+  - 前端一、页面级优化　　　
+减少 HTTP请求数(1). 从设计实现层面简化页面(2). 合理设置 HTTP缓存(3). 资源合并与压缩(4). CSS Sprites(5). Inline Images,如base64(6). Lazy Load Images,如使用jQuer">
+<meta property="og:updated_time" content="2016-11-18T04:21:55.419Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="忙忙碌碌几个月，随便写写">
-<meta name="twitter:description" content="忙忙碌碌了几个月，总得写写总结吧？以前总是非常热衷于写些技术文档分享之类的，但慢慢的热情似乎有些冷却；根本没有什么头绪，可能是因为技术无止境，知道得越多；觉得自己懂得的东西越少。偶尔更新一下github算是技术积累吧。   
-今天捣鼓一下react.js，明天折腾一下vue.js，后天再瞎搞几下node.js后端。项目中大量使用的还是jQuery，顶多加个require.js搞成模块化。希望下版上">
+<meta name="twitter:title" content="KUANG ZEN's HOME">
+<meta name="twitter:description" content="title: web前端优化实用集锦date: 2016-11-18 11:09:08top: 11tags:
+  - 前端一、页面级优化　　　
+减少 HTTP请求数(1). 从设计实现层面简化页面(2). 合理设置 HTTP缓存(3). 资源合并与压缩(4). CSS Sprites(5). Inline Images,如base64(6). Lazy Load Images,如使用jQuer">
   
     <link rel="alternative" href="/atom.xml" title="KUANG ZEN&#39;s HOME" type="application/atom+xml">
   
@@ -215,11 +218,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-what-s-up-2016-6-13" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-web-front-end-opt" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/13/what-s-up-2016-6-13/" class="article-date">
-  	<time datetime="2016-06-13T02:17:58.000Z" itemprop="datePublished">2016-06-13</time>
+      <a href="/2016/11/18/web-front-end-opt/" class="article-date">
+  	<time datetime="2016-11-18T03:09:08.194Z" itemprop="datePublished">2016-11-18</time>
 </a>
     </div>
   
@@ -228,37 +231,83 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      忙忙碌碌几个月，随便写写
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/一些事一些情/">一些事一些情</a></li></ul>
-	</div>
-
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
       <div style="color: #aaa;font-size: 12px;margin-top: -20px;">阅读 <span id="busuanzi_value_page_pv"></span> | 本站总访问 <span id="busuanzi_value_site_pv"></span> | 本站访客 <span id="busuanzi_value_site_uv"></span></div>
       
       
       
-        <p>忙忙碌碌了几个月，总得写写总结吧？以前总是非常热衷于写些技术文档分享之类的，但慢慢的热情似乎有些冷却；根本没有什么头绪，可能是因为技术无止境，知道得越多；觉得自己懂得的东西越少。偶尔更新一下github算是技术积累吧。   </p>
-<p>今天捣鼓一下react.js，明天折腾一下vue.js，后天再瞎搞几下node.js后端。项目中大量使用的还是jQuery，顶多加个require.js搞成模块化。希望下版上require.js推进一切顺利吧。   </p>
-<p>近期平台公众号运营风格大变，变得越来越没有底线咯呵呵，贞操碎得一起，黄段子、肉图满天飞；但感觉吸粉效果不明显、转发率也不高，不知道掉粉情况严不严重。太多无厘头的东西有时会不会过于庸俗，走专业化的笔风会不会更好，毕竟定了女性目标群体的方向，就不能发太多男性化的文章，典型的就是黄段子这类的只有男性群体比较接受。   </p>
+        <hr>
+<p>title: web前端优化实用集锦<br>date: 2016-11-18 11:09:08<br>top: 11<br>tags:</p>
+<h2 id="前端"><a href="#前端" class="headerlink" title="  - 前端"></a>  - 前端</h2><h3 id="一、页面级优化"><a href="#一、页面级优化" class="headerlink" title="一、页面级优化　　　"></a>一、页面级优化　　　</h3><ol>
+<li>减少 HTTP请求数<br>(1). 从设计实现层面简化页面<br>(2). 合理设置 HTTP缓存<br>(3). 资源合并与压缩<br>(4). CSS Sprites<br>(5). Inline Images,如base64<br>(6). Lazy Load Images,如使用jQuery.lazyload.js</li>
+<li>将外部脚本置底</li>
+<li>异步执行 inline脚本(其实原理和上面是一样，保证脚本在页面内容后面加载。)</li>
+<li>Lazy Load Javascript（如使用requirejs/seajs）</li>
+<li>将 CSS放在 HEAD中</li>
+<li>异步请求 Callback（如果时效性允许的话，可以考虑在 DOMLoaded事件触发的时候加载，或者使用 setTimeout方式来灵活的控制加载的时机。）</li>
+<li>减少不必要的 HTTP跳转（很多人都会忽略链接最后是否带 ’/‘，假如你的服务器对此是区别对待的话，那么你也需要注意，这其中很可能隐藏了 301跳转，增加了多余请求。）</li>
+<li>避免重复的资源请求<h3 id="二、代码级优化"><a href="#二、代码级优化" class="headerlink" title="二、代码级优化"></a>二、代码级优化</h3></li>
+<li>Javascript<ul>
+<li>DOM<br>a. HTML Collection（HTML收集器，返回的是一个数组内容信息）<br>HTMLCollection类型的集合，在平时使用的时候大多将它作为数组来使用，因为它有 length属性，也可以使用索引访问每一个元素。不过在访问性能上则比数组要差很多。<br>b. Reflow &amp; Repaint</li>
+<li>慎用 with</li>
+<li>避免使用 eval和 Function</li>
+<li>减少作用域链查找（如用局部变量缓存全局变量 ）</li>
+<li>数据访问（Javascript中的数据访问包括直接量(字符串、正则表达式) 、变量、对象属性以及数组，其中对直接量和局部变量的访问是最快的，对对象属性以及数组的访问需要更大的开销。）</li>
+<li>字符串拼接（在 Javascript中使用”+” 号来拼接字符串效率是比较低的，因为每次运行都会开辟新的内存并生成新的字符串变量，然后将拼接结果赋值给新变量。与之相比更为高效的做法是使用数组的 join方法，即将需要拼接的字符串放在数组中最后调用其 join方法得到结果。不过由于使用数组也有一定的开销，因此当需要拼接的字符串较多的时候可以考虑用此方法。）</li>
+</ul>
+</li>
+<li>CSS选择器   <ul>
+<li>class样式的命名方式</li>
+<li>使用权重排名，如id &gt; class &gt; tagName</li>
+<li>浏览器对选择符的解析是从右往左进行的<a id="more"></a></li>
+</ul>
+</li>
+<li>HTML<ul>
+<li>布局<ul>
+<li>使用<p>元素修饰文本，而不是布局；默认</p><p>是自动提供边缘，而且其他样式也是浏览器默认提供的。</p></li>
+<li>避免使用<br>分行，可以使用block元素或CSS显示属性来代替。</li>
+<li>避免使用<hr>来添加水平线，可使用CSS的border-bottom 来代替。</li>
+<li>不到关键时刻不要使用div标签。</li>
+<li>尽量少用Tables来布局。</li>
+<li>可以多使用Flex Box</li>
+<li>使用CSS 来调整边距等。</li>
+</ul>
+</li>
+<li>验证<ul>
+<li>在工作流中添加验证功能：使用验证插件如HTMLHint或SublineLinter帮助你检测代码错误。</li>
+<li>使用HTML5文档类型</li>
+<li>确保HTML的层次结构易于维护，要避免元素嵌套处于左开状态。</li>
+<li>保证添加各元素的结束标签。</li>
+<li>删除不必要的代码 ；没有必要为自关闭的元素添加结束标签；Boolean 属性不需要赋值，如果存在则为True;</li>
+</ul>
+</li>
+<li>代码格式<ul>
+<li>格式一致性使得HTML代码易于阅读，理解，优化，调试。</li>
+</ul>
+</li>
+<li>语义标记<ul>
+<li>使用<h1>(<h2>,<h3>…)表示标题，<ul>或<ol>实现列表</ol></ul></h3></h2></h1></li>
+<li>注意使用<article> 标签之前应添加<h1>标签；</h1></article></li>
+<li>选择合适的HTML5语义元素如<header>，<footer>,<nav>,<aside>;</aside></nav></footer></header></li>
+<li>使用<p>描述Body 文本，HTML5 语义元素可以形成内容，反之不成立。</p></li>
+<li>使用<em>和<strong>标签替代<i>和<b>标签。</b></i></strong></em></li>
+<li>使用<label>元素，输入类型，占位符及其他属性来强制验证。</label></li>
+<li>将文本和元素混合，并作为另一元素的子元素，会导致布局错误</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Image压缩<ul>
+<li>如使用webp图片格式</li>
+<li>动态加载不同尺寸图片<h3 id="三、参考优秀解决方式"><a href="#三、参考优秀解决方式" class="headerlink" title="三、参考优秀解决方式"></a>三、参考优秀解决方式</h3><ul>
+<li><a href="http://www.infoq.com/cn/articles/Jingdong-three-list-page-continuous-structure-optimization" target="_blank" rel="external">京东前端：三级列表页持续架构优化</a> </li>
+<li><a href="http://tmallfe.github.io/%E5%8F%8C11/2016/03/08/tmall-1111.html" target="_blank" rel="external">天猫前端的双11</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 
       
     </div>
@@ -268,18 +317,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/21/js-defineProperty/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/17/web-front-end-awesome/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">web前端实用集锦导航</div>
+    <a href="/2016/11/14/what-s-up-2016-11-14/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Experience</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -314,7 +354,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="what-s-up-2016-6-13" data-title="忙忙碌碌几个月，随便写写" data-url="http://www.kuangzen.com/2016/06/13/what-s-up-2016-6-13/"></div>
+	<div class="ds-thread" data-thread-key="web-front-end-opt" data-title="" data-url="http://www.kuangzen.com/2016/11/18/web-front-end-opt/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
