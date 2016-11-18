@@ -18,7 +18,7 @@
 减少 HTTP请求数(1). 从设计实现层面简化页面(2). 合理设置 HTTP缓存(3). 资源合并与压缩(4). CSS Sprites(5). Inline Images,如base64(6). Lazy Load Images,如使用jQuery.lazyload.js
 将外部脚本置底
 异步执行 inline脚本(其实原理和上面是一样，保证脚本在页面内容后面加载。)">
-<meta property="og:updated_time" content="2016-11-18T04:25:32.811Z">
+<meta property="og:updated_time" content="2016-11-18T04:35:21.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web前端优化实用集锦">
 <meta name="twitter:description" content="一、页面级优化　　　
@@ -270,7 +270,9 @@
 <li>将 CSS放在 HEAD中</li>
 <li>异步请求 Callback（如果时效性允许的话，可以考虑在 DOMLoaded事件触发的时候加载，或者使用 setTimeout方式来灵活的控制加载的时机。）</li>
 <li>减少不必要的 HTTP跳转（很多人都会忽略链接最后是否带 ’/‘，假如你的服务器对此是区别对待的话，那么你也需要注意，这其中很可能隐藏了 301跳转，增加了多余请求。）</li>
-<li>避免重复的资源请求<h3 id="二、代码级优化"><a href="#二、代码级优化" class="headerlink" title="二、代码级优化"></a>二、代码级优化</h3></li>
+<li>避免重复的资源请求   </li>
+</ol>
+<h3 id="二、代码级优化"><a href="#二、代码级优化" class="headerlink" title="二、代码级优化"></a>二、代码级优化</h3><ol>
 <li>Javascript<ul>
 <li>DOM<br>a. HTML Collection（HTML收集器，返回的是一个数组内容信息）<br>HTMLCollection类型的集合，在平时使用的时候大多将它作为数组来使用，因为它有 length属性，也可以使用索引访问每一个元素。不过在访问性能上则比数组要差很多。<br>b. Reflow &amp; Repaint</li>
 <li>慎用 with</li>
@@ -282,15 +284,15 @@
 </li>
 <li>CSS选择器   <ul>
 <li>class样式的命名方式</li>
-<li>使用权重排名，如id &gt; class &gt; tagName</li>
-<li>浏览器对选择符的解析是从右往左进行的<a id="more"></a></li>
+<li>使用权重排名，如id  class  tagName</li>
+<li>浏览器对选择符的解析是从右往左进行的!<a id="more"></a></li>
 </ul>
 </li>
 <li>HTML<ul>
 <li>布局<ul>
-<li>使用<p>元素修饰文本，而不是布局；默认</p><p>是自动提供边缘，而且其他样式也是浏览器默认提供的。</p></li>
-<li>避免使用<br>分行，可以使用block元素或CSS显示属性来代替。</li>
-<li>避免使用<hr>来添加水平线，可使用CSS的border-bottom 来代替。</li>
+<li>使用p元素修饰文本，而不是布局；默认p是自动提供边缘，而且其他样式也是浏览器默认提供的。</li>
+<li>避免使用br分行，可以使用block元素或CSS显示属性来代替。</li>
+<li>避免使用hr来添加水平线，可使用CSS的border-bottom 来代替。</li>
 <li>不到关键时刻不要使用div标签。</li>
 <li>尽量少用Tables来布局。</li>
 <li>可以多使用Flex Box</li>
@@ -310,12 +312,12 @@
 </ul>
 </li>
 <li>语义标记<ul>
-<li>使用<h1>(<h2>,<h3>…)表示标题，<ul>或<ol>实现列表</ol></ul></h3></h2></h1></li>
-<li>注意使用<article> 标签之前应添加<h1>标签；</h1></article></li>
-<li>选择合适的HTML5语义元素如<header>，<footer>,<nav>,<aside>;</aside></nav></footer></header></li>
-<li>使用<p>描述Body 文本，HTML5 语义元素可以形成内容，反之不成立。</p></li>
-<li>使用<em>和<strong>标签替代<i>和<b>标签。</b></i></strong></em></li>
-<li>使用<label>元素，输入类型，占位符及其他属性来强制验证。</label></li>
+<li>使用h1(h2,h3…)表示标题，ul或ol实现列表</li>
+<li>注意使用article 标签之前应添加h1标签；</li>
+<li>选择合适的HTML5语义元素如header，footer,nav,aside;</li>
+<li>使用p描述Body 文本，HTML5 语义元素可以形成内容，反之不成立。</li>
+<li>使用em和strong标签替代i和b标签。</li>
+<li>使用label元素，输入类型，占位符及其他属性来强制验证。</li>
 <li>将文本和元素混合，并作为另一元素的子元素，会导致布局错误</li>
 </ul>
 </li>
@@ -323,14 +325,14 @@
 </li>
 <li>Image压缩<ul>
 <li>如使用webp图片格式</li>
-<li>动态加载不同尺寸图片<h3 id="三、参考优秀解决方式"><a href="#三、参考优秀解决方式" class="headerlink" title="三、参考优秀解决方式"></a>三、参考优秀解决方式</h3><ul>
-<li><a href="http://www.infoq.com/cn/articles/Jingdong-three-list-page-continuous-structure-optimization" target="_blank" rel="external">京东前端：三级列表页持续架构优化</a> </li>
-<li><a href="http://tmallfe.github.io/%E5%8F%8C11/2016/03/08/tmall-1111.html" target="_blank" rel="external">天猫前端的双11</a></li>
-</ul>
-</li>
+<li>动态加载不同尺寸图片   </li>
 </ul>
 </li>
 </ol>
+<h3 id="三、参考优秀解决方式"><a href="#三、参考优秀解决方式" class="headerlink" title="三、参考优秀解决方式"></a>三、参考优秀解决方式</h3><ul>
+<li><a href="http://www.infoq.com/cn/articles/Jingdong-three-list-page-continuous-structure-optimization" target="_blank" rel="external">京东前端：三级列表页持续架构优化</a> </li>
+<li><a href="http://tmallfe.github.io/%E5%8F%8C11/2016/03/08/tmall-1111.html" target="_blank" rel="external">天猫前端的双11</a></li>
+</ul>
 
       
     </div>

@@ -321,7 +321,9 @@
 <li>将 CSS放在 HEAD中</li>
 <li>异步请求 Callback（如果时效性允许的话，可以考虑在 DOMLoaded事件触发的时候加载，或者使用 setTimeout方式来灵活的控制加载的时机。）</li>
 <li>减少不必要的 HTTP跳转（很多人都会忽略链接最后是否带 ’/‘，假如你的服务器对此是区别对待的话，那么你也需要注意，这其中很可能隐藏了 301跳转，增加了多余请求。）</li>
-<li>避免重复的资源请求<h3 id="二、代码级优化"><a href="#二、代码级优化" class="headerlink" title="二、代码级优化"></a>二、代码级优化</h3></li>
+<li>避免重复的资源请求   </li>
+</ol>
+<h3 id="二、代码级优化"><a href="#二、代码级优化" class="headerlink" title="二、代码级优化"></a>二、代码级优化</h3><ol>
 <li>Javascript<ul>
 <li>DOM<br>a. HTML Collection（HTML收集器，返回的是一个数组内容信息）<br>HTMLCollection类型的集合，在平时使用的时候大多将它作为数组来使用，因为它有 length属性，也可以使用索引访问每一个元素。不过在访问性能上则比数组要差很多。<br>b. Reflow &amp; Repaint</li>
 <li>慎用 with</li>
@@ -333,8 +335,8 @@
 </li>
 <li>CSS选择器   <ul>
 <li>class样式的命名方式</li>
-<li>使用权重排名，如id &gt; class &gt; tagName</li>
-<li>浏览器对选择符的解析是从右往左进行的
+<li>使用权重排名，如id  class  tagName</li>
+<li>浏览器对选择符的解析是从右往左进行的!
       
     </div>
     
