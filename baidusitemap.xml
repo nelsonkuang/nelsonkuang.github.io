@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://www.kuangzen.com/2016/12/16/node-tool-for-kaomang-cn/</loc>
+    <lastmod>2016-12-16T10:37:44.961Z</lastmod>
+    <data>
+        <display>
+        <title>node工具用于为 烤芒网kaomang.cng 命令行一建创建新的页面，并生成相应的依赖页</title>
+        <pubTime>2016-12-16T09:54:17.000Z</pubTime>
+        
+        <tag>后端</tag>
+         
+        <tag>node.js</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kuangzen.com/2016/11/18/web-front-end-opt/</loc>
     <lastmod>2016-11-18T06:35:45.363Z</lastmod>
     <data>
@@ -283,9 +302,9 @@
         <title>Node.js 获取yahoo股票csv数据并封闭成为接口输出json数据</title>
         <pubTime>2016-06-22T10:59:50.000Z</pubTime>
         
-        <tag>node.js</tag>
-         
         <tag>后端</tag>
+         
+        <tag>node.js</tag>
          
          
            
@@ -302,9 +321,9 @@
         <title>Node.js 简单优化静态文件服务器处理函数支持css、html文件加载</title>
         <pubTime>2016-06-22T10:59:51.000Z</pubTime>
         
-        <tag>node.js</tag>
-         
         <tag>后端</tag>
+         
+        <tag>node.js</tag>
          
          
            
@@ -547,9 +566,9 @@
         <title>用node.js向百度推送hexo博客所有链接</title>
         <pubTime>2016-04-22T05:35:40.000Z</pubTime>
         
-        <tag>node.js</tag>
-         
         <tag>后端</tag>
+         
+        <tag>node.js</tag>
          
          
            
@@ -616,9 +635,9 @@
         <title>Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）</title>
         <pubTime>2016-04-20T00:59:50.000Z</pubTime>
         
-        <tag>node.js</tag>
-         
         <tag>后端</tag>
+         
+        <tag>node.js</tag>
          
          
            
@@ -698,13 +717,13 @@
         
         <tag>前端</tag>
          
+        <tag>node.js</tag>
+         
         <tag>gulp</tag>
          
         <tag>sass</tag>
          
         <tag>scss</tag>
-         
-        <tag>node.js</tag>
          
          
            
