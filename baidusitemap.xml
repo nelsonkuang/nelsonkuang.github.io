@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://www.kuangzen.com/2016/12/16/node-tool-for-kaomang-cn/</loc>
-    <lastmod>2016-12-16T10:37:44.961Z</lastmod>
+    <lastmod>2016-12-16T10:42:24.591Z</lastmod>
     <data>
         <display>
-        <title>node工具用于为 烤芒网kaomang.cng 命令行一建创建新的页面，并生成相应的依赖页</title>
+        <title>node开发自动化生成页面工具，用于为 烤芒网kaomang.cng 自动生成新文章页面，并生成相应的依赖页</title>
         <pubTime>2016-12-16T09:54:17.000Z</pubTime>
         
         <tag>后端</tag>

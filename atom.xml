@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2016-12-16T10:37:44.961Z</updated>
+  <updated>2016-12-16T10:42:24.591Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>node工具用于为 烤芒网kaomang.cng 命令行一建创建新的页面，并生成相应的依赖页</title>
+    <title>node开发自动化生成页面工具，用于为 烤芒网kaomang.cng 自动生成新文章页面，并生成相应的依赖页</title>
     <link href="http://www.kuangzen.com/2016/12/16/node-tool-for-kaomang-cn/"/>
     <id>http://www.kuangzen.com/2016/12/16/node-tool-for-kaomang-cn/</id>
     <published>2016-12-16T09:54:17.000Z</published>
-    <updated>2016-12-16T10:37:44.961Z</updated>
+    <updated>2016-12-16T10:42:24.591Z</updated>
     
     <content type="html">&lt;h3 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://kaomang.cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;烤芒网&lt;/a&gt;因为是全静态的网站，但要实现类似CMS系统的功能，要发布文章。所以每次要创建一个新静态文章页面，然后要修改主页文章列表，把新增的文章加上；或者要在左侧快捷菜单列表加上新的文章。   &lt;/p&gt;
 &lt;p&gt;如果每次都要手功创建的话，非常麻烦，现用node实现发布自动化。   &lt;/p&gt;
