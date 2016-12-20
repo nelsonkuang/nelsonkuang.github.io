@@ -125,7 +125,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/UI设计/" style="font-size: 12.22px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 14.44px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.11px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.89px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 13.33px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15.56px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.11px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.11px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 12.22px;">sass</a> <a href="/tags/scss/" style="font-size: 11.11px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/一些事一些情/" style="font-size: 17.78px;">一些事一些情</a> <a href="/tags/产品设计/" style="font-size: 10px;">产品设计</a> <a href="/tags/切图/" style="font-size: 10px;">切图</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 16.67px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 12.22px;">网页兼容性</a>
+						<a href="/tags/UI设计/" style="font-size: 12.22px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 14.44px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.11px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.89px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 13.33px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15.56px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.11px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.11px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 12.22px;">sass</a> <a href="/tags/scss/" style="font-size: 11.11px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/一些事一些情/" style="font-size: 17.78px;">一些事一些情</a> <a href="/tags/产品设计/" style="font-size: 11.11px;">产品设计</a> <a href="/tags/切图/" style="font-size: 10px;">切图</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 16.67px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 12.22px;">网页兼容性</a>
 					</div>
 				</section>
 				
@@ -212,6 +212,68 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-crop-pictures-for-app" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/08/crop-pictures-for-app/" class="article-date">
+  	<time datetime="2016-08-08T02:21:01.000Z" itemprop="datePublished">2016-08-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/08/crop-pictures-for-app/">前端的酱油工作，为ios及android APP客户端切图及标注</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h3 id="切图输出原则"><a href="#切图输出原则" class="headerlink" title="切图输出原则"></a>切图输出原则</h3><p>IOS客户端切图：<br>前端偶尔要打打酱油帮app客户端切切图，为什么iphone app上面看到的界面好像都非常高清，因为ios比较矫情，要图时要切三套，1倍图、2倍图和3倍图,如果按UI出的750px的mockup，则1倍图是按375px来出，2倍图是不变原样输出750px，最后三倍图是1125px。   </p>
+<p>切的时候也还好啦，在PS上面录好一个连续导出3种图的动作，因为是750px的UI图，顺序：导出1x图 -&gt; 图层缩小到50% -&gt; 导出2x图 -&gt; 放大300% -&gt; 导出3x图。然后以后就播放这动作直接导3种图就行了。</p>
+<p>Android客户端切图：<br>android端切图就没那么讲究，一套输出按720px的UI Mockup来输出，直接搞定。</p>
+<h3 id="给app-UI图标注尺寸"><a href="#给app-UI图标注尺寸" class="headerlink" title="给app UI图标注尺寸"></a>给app UI图标注尺寸</h3><p>以前是用PxCook或者Mark Man这样的工具去拉线或者拖块标啊标，现在？标你妹啊，直接上传到<a href="http://www.biaonimeia.com" target="_blank" rel="external">标你妹~啊</a> 网址：www.biaonimeia.com 自动生成标注，在线或者导出给app客户端的小伙伴们就可以了呵呵。   </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/切图/">切图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-self-motivated-2016-08-01" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -669,10 +731,10 @@
 
 
   
-    <article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-injector" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/21/js-observer/" class="article-date">
+      <a href="/2016/06/21/js-injector/" class="article-date">
   	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
 </a>
     </div>
@@ -686,7 +748,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
+      <a class="article-title" href="/2016/06/21/js-injector/">javascript设计模式 - 依赖注入</a>
     </h1>
   
 
@@ -696,11 +758,17 @@
     <div class="article-entry" itemprop="articleBody">
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
-<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
-<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
-<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   </p>
+<h3 id="依赖注入好处"><a href="#依赖注入好处" class="headerlink" title="依赖注入好处"></a>依赖注入好处</h3><p>减小对象与依赖之间的藕合关系。   </p>
+<p>不需要对原代码进行修改，直接可以应用到当前代码。   </p>
+<p>有助于把客户与设计隔离开，减小设计改变带来的影响。   </p>
+<p>让系统不用修改当前代码就可以重新配置。   </p>
+<p>可以进行并行或者独立开发。   </p>
+<p>让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   </p>
+<h3 id="依赖注入缺点"><a href="#依赖注入缺点" class="headerlink" title="依赖注入缺点"></a>依赖注入缺点</h3><p>当要实例化一种类型，你必须要知道要用什么依赖。   </p>
+<p>隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   </p>
+<p>要求你要写更多的代码。   </p>
+<p>可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      </p>
       
     </div>
     
@@ -715,7 +783,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/21/js-observer/#more">阅读全文 >></a>
+          <a  href="/2016/06/21/js-injector/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -807,80 +875,9 @@
 
 
   
-    <article id="post-js-injector" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/21/js-injector/" class="article-date">
-  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-injector/">javascript设计模式 - 依赖注入</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   </p>
-<h3 id="依赖注入好处"><a href="#依赖注入好处" class="headerlink" title="依赖注入好处"></a>依赖注入好处</h3><p>减小对象与依赖之间的藕合关系。   </p>
-<p>不需要对原代码进行修改，直接可以应用到当前代码。   </p>
-<p>有助于把客户与设计隔离开，减小设计改变带来的影响。   </p>
-<p>让系统不用修改当前代码就可以重新配置。   </p>
-<p>可以进行并行或者独立开发。   </p>
-<p>让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   </p>
-<h3 id="依赖注入缺点"><a href="#依赖注入缺点" class="headerlink" title="依赖注入缺点"></a>依赖注入缺点</h3><p>当要实例化一种类型，你必须要知道要用什么依赖。   </p>
-<p>隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   </p>
-<p>要求你要写更多的代码。   </p>
-<p>可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      </p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/21/js-injector/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
