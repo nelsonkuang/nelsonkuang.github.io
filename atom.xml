@@ -126,7 +126,7 @@
     <link href="http://www.kuangzen.com/2016/11/18/web-front-end-opt/"/>
     <id>http://www.kuangzen.com/2016/11/18/web-front-end-opt/</id>
     <published>2016-11-18T03:09:08.000Z</published>
-    <updated>2016-11-18T06:35:45.363Z</updated>
+    <updated>2017-01-03T07:27:22.352Z</updated>
     
     <content type="html">&lt;h3 id=&quot;一、页面级优化&quot;&gt;&lt;a href=&quot;#一、页面级优化&quot; class=&quot;headerlink&quot; title=&quot;一、页面级优化　　　&quot;&gt;&lt;/a&gt;一、页面级优化　　　&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;减少 HTTP请求数&lt;br&gt;(1). 从设计实现层面简化页面&lt;br&gt;(2). 合理设置 HTTP缓存&lt;br&gt;(3). 资源合并与压缩&lt;br&gt;(4). CSS Sprites&lt;br&gt;(5). Inline Images,如base64&lt;br&gt;(6). Lazy Load Images,如使用jQuery.lazyload.js&lt;/li&gt;
@@ -196,6 +196,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&quot;三、优秀解决方案&quot;&gt;&lt;a href=&quot;#三、优秀解决方案&quot; class=&quot;headerlink&quot; title=&quot;三、优秀解决方案&quot;&gt;&lt;/a&gt;三、优秀解决方案&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://aotu.io/notes/2016/12/26/jd-index-2016-summary/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;京东2016版首页改版前端总结&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/articles/Jingdong-three-list-page-continuous-structure-optimization&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;京东前端：三级列表页持续架构优化&lt;/a&gt; &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://tmallfe.github.io/%E5%8F%8C11/2016/03/08/tmall-1111.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;天猫前端的双11&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/amfe/article/issues/21&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;15年双11手淘前端技术巡演 - H5性能最佳实践&lt;/a&gt;&lt;/li&gt;
@@ -744,11 +745,11 @@
     </summary>
     
     
-      <category term="vue.js" scheme="http://www.kuangzen.com/tags/vue-js/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
       <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="vue.js" scheme="http://www.kuangzen.com/tags/vue-js/"/>
     
   </entry>
   
@@ -855,6 +856,56 @@ exports.static = (response, request) =&amp;gt; {
       <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
       <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</title>
+    <link href="http://www.kuangzen.com/2016/06/21/js-defineProperty/"/>
+    <id>http://www.kuangzen.com/2016/06/21/js-defineProperty/</id>
+    <published>2016-06-21T07:47:05.000Z</published>
+    <updated>2016-06-22T05:52:06.102Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中&lt;code&gt;Object.defineProperty(obj, prop, descriptor)&lt;/code&gt;也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     &lt;/p&gt;
+&lt;h3 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, prop, descriptor)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;参数说明&quot;&gt;&lt;a href=&quot;#参数说明&quot; class=&quot;headerlink&quot; title=&quot;参数说明&quot;&gt;&lt;/a&gt;参数说明&lt;/h3&gt;&lt;p&gt;obj&lt;br&gt;即将被定义新属性的对象   &lt;/p&gt;
+&lt;p&gt;prop&lt;br&gt;即将定义的新属性   &lt;/p&gt;
+&lt;p&gt;descriptor&lt;br&gt;对新属性的定义或者修改权限设设置的说明词     &lt;/p&gt;
+&lt;h3 id=&quot;descriptor参数描述&quot;&gt;&lt;a href=&quot;#descriptor参数描述&quot; class=&quot;headerlink&quot; title=&quot;descriptor参数描述&quot;&gt;&lt;/a&gt;descriptor参数描述&lt;/h3&gt;&lt;p&gt;configurable&lt;br&gt;如果是true的话，这属性的类型是可以更改或者这属性可以被删除。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;enumerable&lt;br&gt;如果是true，这属性在枚兴举时是可见的。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;descriptor还有下面这些可选的参数:&lt;/p&gt;
+&lt;p&gt;value&lt;br&gt;值可以是任意javascript值(如：number, object, function等等)。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+&lt;p&gt;writable&lt;br&gt;如果是true的话，就是可写的。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;一个可访问的的descriptor还有下面这些参数:   &lt;/p&gt;
+&lt;p&gt;get&lt;br&gt;一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+&lt;p&gt;set&lt;br&gt;一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;简单的defineProperty事例代码&quot;&gt;&lt;a href=&quot;#简单的defineProperty事例代码&quot; class=&quot;headerlink&quot; title=&quot;简单的defineProperty事例代码&quot;&gt;&lt;/a&gt;简单的defineProperty事例代码&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; newLine = &lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;br /&amp;gt;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//创建一个user-defined对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//给对象增加一个可访问的属性&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, &lt;span class=&quot;string&quot;&gt;&quot;newAccessorProperty&quot;&lt;/span&gt;, &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    set: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (x !== &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;in property set accessor&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue = x;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;值没变！&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    get: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;in property get accessor&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    enumerable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    configurable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//设置属性值－Set the property value.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.newAccessorProperty = &lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//将触发set函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.newAccessorProperty + newLine + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.oldPropValue=&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//将不触发set函数－will not trigger func set&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.newAccessorProperty + newLine + newLine);&lt;span class=&quot;comment&quot;&gt;//将触发get函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.oldPropValue + newLine);&lt;span class=&quot;comment&quot;&gt;//将不触发get函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中&lt;code&gt;Object.defineProperty(obj, prop, descriptor)&lt;/code&gt;也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     &lt;/p&gt;
+&lt;h3 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, prop, descriptor)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;参数说明&quot;&gt;&lt;a href=&quot;#参数说明&quot; class=&quot;headerlink&quot; title=&quot;参数说明&quot;&gt;&lt;/a&gt;参数说明&lt;/h3&gt;&lt;p&gt;obj&lt;br&gt;即将被定义新属性的对象   &lt;/p&gt;
+&lt;p&gt;prop&lt;br&gt;即将定义的新属性   &lt;/p&gt;
+&lt;p&gt;descriptor&lt;br&gt;对新属性的定义或者修改权限设设置的说明词     &lt;/p&gt;
+&lt;h3 id=&quot;descriptor参数描述&quot;&gt;&lt;a href=&quot;#descriptor参数描述&quot; class=&quot;headerlink&quot; title=&quot;descriptor参数描述&quot;&gt;&lt;/a&gt;descriptor参数描述&lt;/h3&gt;&lt;p&gt;configurable&lt;br&gt;如果是true的话，这属性的类型是可以更改或者这属性可以被删除。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;enumerable&lt;br&gt;如果是true，这属性在枚兴举时是可见的。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;descriptor还有下面这些可选的参数:&lt;/p&gt;
+&lt;p&gt;value&lt;br&gt;值可以是任意javascript值(如：number, object, function等等)。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+&lt;p&gt;writable&lt;br&gt;如果是true的话，就是可写的。&lt;br&gt;默认是false。   &lt;/p&gt;
+&lt;p&gt;一个可访问的的descriptor还有下面这些参数:   &lt;/p&gt;
+&lt;p&gt;get&lt;br&gt;一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+&lt;p&gt;set&lt;br&gt;一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。&lt;br&gt;默认是undefined。   &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -990,56 +1041,6 @@ blogger.recommend({
 &lt;p&gt;当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   &lt;/p&gt;
 &lt;p&gt;这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   &lt;/p&gt;
 &lt;h3 id=&quot;图表&quot;&gt;&lt;a href=&quot;#图表&quot; class=&quot;headerlink&quot; title=&quot;图表&quot;&gt;&lt;/a&gt;图表&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg&quot; alt=&quot;观察者模式&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</title>
-    <link href="http://www.kuangzen.com/2016/06/21/js-defineProperty/"/>
-    <id>http://www.kuangzen.com/2016/06/21/js-defineProperty/</id>
-    <published>2016-06-21T07:47:05.000Z</published>
-    <updated>2016-06-22T05:52:06.102Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中&lt;code&gt;Object.defineProperty(obj, prop, descriptor)&lt;/code&gt;也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     &lt;/p&gt;
-&lt;h3 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, prop, descriptor)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;参数说明&quot;&gt;&lt;a href=&quot;#参数说明&quot; class=&quot;headerlink&quot; title=&quot;参数说明&quot;&gt;&lt;/a&gt;参数说明&lt;/h3&gt;&lt;p&gt;obj&lt;br&gt;即将被定义新属性的对象   &lt;/p&gt;
-&lt;p&gt;prop&lt;br&gt;即将定义的新属性   &lt;/p&gt;
-&lt;p&gt;descriptor&lt;br&gt;对新属性的定义或者修改权限设设置的说明词     &lt;/p&gt;
-&lt;h3 id=&quot;descriptor参数描述&quot;&gt;&lt;a href=&quot;#descriptor参数描述&quot; class=&quot;headerlink&quot; title=&quot;descriptor参数描述&quot;&gt;&lt;/a&gt;descriptor参数描述&lt;/h3&gt;&lt;p&gt;configurable&lt;br&gt;如果是true的话，这属性的类型是可以更改或者这属性可以被删除。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;enumerable&lt;br&gt;如果是true，这属性在枚兴举时是可见的。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;descriptor还有下面这些可选的参数:&lt;/p&gt;
-&lt;p&gt;value&lt;br&gt;值可以是任意javascript值(如：number, object, function等等)。&lt;br&gt;默认是undefined。   &lt;/p&gt;
-&lt;p&gt;writable&lt;br&gt;如果是true的话，就是可写的。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;一个可访问的的descriptor还有下面这些参数:   &lt;/p&gt;
-&lt;p&gt;get&lt;br&gt;一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。&lt;br&gt;默认是undefined。   &lt;/p&gt;
-&lt;p&gt;set&lt;br&gt;一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。&lt;br&gt;默认是undefined。   &lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;简单的defineProperty事例代码&quot;&gt;&lt;a href=&quot;#简单的defineProperty事例代码&quot; class=&quot;headerlink&quot; title=&quot;简单的defineProperty事例代码&quot;&gt;&lt;/a&gt;简单的defineProperty事例代码&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; newLine = &lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;br /&amp;gt;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//创建一个user-defined对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//给对象增加一个可访问的属性&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, &lt;span class=&quot;string&quot;&gt;&quot;newAccessorProperty&quot;&lt;/span&gt;, &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    set: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (x !== &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;in property set accessor&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue = x;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;值没变！&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    get: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;in property get accessor&quot;&lt;/span&gt; + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.oldPropValue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    enumerable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    configurable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//设置属性值－Set the property value.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.newAccessorProperty = &lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//将触发set函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.newAccessorProperty + newLine + newLine);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.oldPropValue=&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//将不触发set函数－will not trigger func set&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.newAccessorProperty + newLine + newLine);&lt;span class=&quot;comment&quot;&gt;//将触发get函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.write(&lt;span class=&quot;string&quot;&gt;&quot;Property value: &quot;&lt;/span&gt; + obj.oldPropValue + newLine);&lt;span class=&quot;comment&quot;&gt;//将不触发get函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中&lt;code&gt;Object.defineProperty(obj, prop, descriptor)&lt;/code&gt;也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     &lt;/p&gt;
-&lt;h3 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.defineProperty(obj, prop, descriptor)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;参数说明&quot;&gt;&lt;a href=&quot;#参数说明&quot; class=&quot;headerlink&quot; title=&quot;参数说明&quot;&gt;&lt;/a&gt;参数说明&lt;/h3&gt;&lt;p&gt;obj&lt;br&gt;即将被定义新属性的对象   &lt;/p&gt;
-&lt;p&gt;prop&lt;br&gt;即将定义的新属性   &lt;/p&gt;
-&lt;p&gt;descriptor&lt;br&gt;对新属性的定义或者修改权限设设置的说明词     &lt;/p&gt;
-&lt;h3 id=&quot;descriptor参数描述&quot;&gt;&lt;a href=&quot;#descriptor参数描述&quot; class=&quot;headerlink&quot; title=&quot;descriptor参数描述&quot;&gt;&lt;/a&gt;descriptor参数描述&lt;/h3&gt;&lt;p&gt;configurable&lt;br&gt;如果是true的话，这属性的类型是可以更改或者这属性可以被删除。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;enumerable&lt;br&gt;如果是true，这属性在枚兴举时是可见的。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;descriptor还有下面这些可选的参数:&lt;/p&gt;
-&lt;p&gt;value&lt;br&gt;值可以是任意javascript值(如：number, object, function等等)。&lt;br&gt;默认是undefined。   &lt;/p&gt;
-&lt;p&gt;writable&lt;br&gt;如果是true的话，就是可写的。&lt;br&gt;默认是false。   &lt;/p&gt;
-&lt;p&gt;一个可访问的的descriptor还有下面这些参数:   &lt;/p&gt;
-&lt;p&gt;get&lt;br&gt;一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。&lt;br&gt;默认是undefined。   &lt;/p&gt;
-&lt;p&gt;set&lt;br&gt;一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。&lt;br&gt;默认是undefined。   &lt;/p&gt;
     
     </summary>
     
