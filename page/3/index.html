@@ -125,7 +125,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/UI设计/" style="font-size: 12.22px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 14.44px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.11px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.89px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 13.33px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15.56px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.11px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.11px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 12.22px;">sass</a> <a href="/tags/scss/" style="font-size: 11.11px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/一些事一些情/" style="font-size: 17.78px;">一些事一些情</a> <a href="/tags/产品设计/" style="font-size: 11.11px;">产品设计</a> <a href="/tags/切图/" style="font-size: 10px;">切图</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 16.67px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 12.22px;">网页兼容性</a>
+						<a href="/tags/FreeCodeCamp/" style="font-size: 11.11px;">FreeCodeCamp</a> <a href="/tags/UI设计/" style="font-size: 12.22px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 14.44px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.11px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.89px;">javascript</a> <a href="/tags/javascript设计模式/" style="font-size: 13.33px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15.56px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.11px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.11px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 12.22px;">sass</a> <a href="/tags/scss/" style="font-size: 11.11px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/一些事一些情/" style="font-size: 17.78px;">一些事一些情</a> <a href="/tags/产品设计/" style="font-size: 11.11px;">产品设计</a> <a href="/tags/切图/" style="font-size: 10px;">切图</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/后端/" style="font-size: 16.67px;">后端</a> <a href="/tags/网页兼容性/" style="font-size: 12.22px;">网页兼容性</a>
 					</div>
 				</section>
 				
@@ -272,6 +272,71 @@
       
         <p class="article-more-link">
           <a  href="/2016/06/21/js-defineProperty/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/21/js-observer/" class="article-date">
+  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
+<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
+<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
+<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/21/js-observer/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -786,68 +851,6 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
 
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-pix2rem-with-gulp-sass" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/08/pix2rem-with-gulp-sass/" class="article-date">
-  	<time datetime="2016-04-08T05:40:00.000Z" itemprop="datePublished">2016-04-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/08/pix2rem-with-gulp-sass/">pix2rem-with-gulp-sass</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <p>Use Gulp + Sass instead of Grunt + less, check the repos - <a href="https://github.com/hiooyUI/pix2remjs">hiooyUI/pix2remjs</a>, both are the same.<br>a responsive design soluction for mobile web page [be compatible with all popular mobile / appwebview browsers], meanwhile REM lives harmony with Pixel that means you can use ‘px’ and ‘rem’ at the same time.    </p>
-<p>与<a href="https://github.com/hiooyUI/pix2remjs">hiooyUI/pix2remjs</a>项目一样，只是实现方式不一样，这里用Gulp + Sass实现，而前者用Grunt + less实现。<br>一个几乎能适配所有手机端的非常简单易用的h5响应式设计解决方案[兼容所有流行的移动浏览器或者app内置浏览器], 移动端Rem解决方案， 与此同时，最方便之处是你可以同时使用REM单位或者px像素单位互不冲突，非常和谐，[不好意思，这里忽略了1像素问题，个人觉得这问题不是问题]
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rem/">rem</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/responsive-design/">responsive design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/08/pix2rem-with-gulp-sass/#more">阅读全文 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
