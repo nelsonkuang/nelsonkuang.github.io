@@ -217,6 +217,87 @@
 
       <div class="body-wrap">
   
+    <article id="post-js-setTimeout-to-delay" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/19/js-setTimeout-to-delay/" class="article-date">
+  	<time datetime="2016-08-19T09:40:49.000Z" itemprop="datePublished">2016-08-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/19/js-setTimeout-to-delay/">Javascript 把setTimeout改成delay，延时执行</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>用<strong>setTimeout</strong>多了，总是觉得这函数就差那么一点点，不是很顺手，就萌生了要改造一下此函数的念头；改成可以链式编程的，名字也更加接地气点的，就叫<strong>delay</strong>吧。   </p>
+<h3 id="直接挂原型链代码如下："><a href="#直接挂原型链代码如下：" class="headerlink" title="直接挂原型链代码如下："></a>直接挂原型链代码如下：</h3><pre><code class="javascript"><span class="comment">/**
+ * 让目标(Object)延时执行，可以链式使用
+ * 
+ * @param {Number} time
+ * @param {Function} doSomething - 
+ *                               - @param {Object} self -- 作为参数回调使用
+ *                               - @param {Number} startTime -- 作为参数回调使用
+ * @return {Object} 
+ */</span>
+<span class="built_in">Object</span>.prototype.delay = <span class="function"><span class="keyword">function</span> (<span class="params">time, doSomething</span>) </span>{
+    <span class="keyword">var</span> self = <span class="keyword">this</span>,
+        startTime = time;
+    <span class="keyword">if</span> (self) {
+        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+            doSomething(self, startTime);
+        }, time);
+    }
+    <span class="keyword">return</span> <span class="keyword">this</span>;
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/19/js-setTimeout-to-delay/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-crop-pictures-for-app" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -717,79 +798,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/06/22/node-get-stock-csv-data-output-to-json/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js-defineProperty" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/21/js-defineProperty/" class="article-date">
-  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-defineProperty/">javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在各面向对象语言里面如java,C#等语言开发中，为了提高安全性，经常要对类里面的私有变量进行get、set封装后供外部使用。而在javascript中<code>Object.defineProperty(obj, prop, descriptor)</code>也有类似getter、setter。并且可以给getter和setter绑定相应的事件处理。这样，每当prop发生改变(set)s或者执行被读取值(get)时就自动执行已绑定的相应的事件处理函数或者方法。     </p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor)</span><br></pre></td></tr></table></figure>
-<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>obj<br>即将被定义新属性的对象   </p>
-<p>prop<br>即将定义的新属性   </p>
-<p>descriptor<br>对新属性的定义或者修改权限设设置的说明词     </p>
-<h3 id="descriptor参数描述"><a href="#descriptor参数描述" class="headerlink" title="descriptor参数描述"></a>descriptor参数描述</h3><p>configurable<br>如果是true的话，这属性的类型是可以更改或者这属性可以被删除。<br>默认是false。   </p>
-<p>enumerable<br>如果是true，这属性在枚兴举时是可见的。<br>默认是false。   </p>
-<p>descriptor还有下面这些可选的参数:</p>
-<p>value<br>值可以是任意javascript值(如：number, object, function等等)。<br>默认是undefined。   </p>
-<p>writable<br>如果是true的话，就是可写的。<br>默认是false。   </p>
-<p>一个可访问的的descriptor还有下面这些参数:   </p>
-<p>get<br>一个函数服务于属性的getter的函数，或者如果没有getter就是undefined。这函数的返回将用作属性的值。<br>默认是undefined。   </p>
-<p>set<br>一个函数服务于属性的setter的函数，或者如果没有setter就是undefined。函数将于属性被赋新值时被触发。<br>默认是undefined。   </p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript设计模式/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/21/js-defineProperty/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

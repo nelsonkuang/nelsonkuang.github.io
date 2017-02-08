@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://www.kuangzen.com/2017/02/08/basic-algorithm-scripting-1-6/</loc>
+    <lastmod>2017-02-08T07:08:48.786Z</lastmod>
+    <data>
+        <display>
+        <title>我完成的FreeCodeCamp中的js基础算法编码题1~6 [源码]</title>
+        <pubTime>2017-02-08T06:32:48.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kuangzen.com/2016/05/17/web-front-end-awesome/</loc>
     <lastmod>2017-01-05T10:19:57.312Z</lastmod>
     <data>
@@ -279,11 +298,11 @@
         <title>vuex + vue-router实战之简单Tabs开发</title>
         <pubTime>2016-07-15T06:54:11.000Z</pubTime>
         
+        <tag>vue.js</tag>
+         
         <tag>javascript</tag>
          
         <tag>前端</tag>
-         
-        <tag>vue.js</tag>
          
          
            

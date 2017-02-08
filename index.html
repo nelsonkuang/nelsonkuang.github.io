@@ -290,6 +290,67 @@
 
 
   
+    <article id="post-basic-algorithm-scripting-1-6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/08/basic-algorithm-scripting-1-6/" class="article-date">
+  	<time datetime="2017-02-08T06:32:48.000Z" itemprop="datePublished">2017-02-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/08/basic-algorithm-scripting-1-6/">我完成的FreeCodeCamp中的js基础算法编码题1~6 [源码]</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="一、Reverse-a-String-字符串倒序输出"><a href="#一、Reverse-a-String-字符串倒序输出" class="headerlink" title="一、Reverse a String 字符串倒序输出"></a>一、Reverse a String 字符串倒序输出</h3><p><strong>思路</strong>：<br>1、打散成为单字符数组<br>2、把数组反序<br>3、把反序后的数组合拼成为结果字符串<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/02/08/basic-algorithm-scripting-1-6/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-pm-awesome-yujun" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -859,87 +920,6 @@
 
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js-setTimeout-to-delay" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/19/js-setTimeout-to-delay/" class="article-date">
-  	<time datetime="2016-08-19T09:40:49.000Z" itemprop="datePublished">2016-08-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/19/js-setTimeout-to-delay/">Javascript 把setTimeout改成delay，延时执行</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>用<strong>setTimeout</strong>多了，总是觉得这函数就差那么一点点，不是很顺手，就萌生了要改造一下此函数的念头；改成可以链式编程的，名字也更加接地气点的，就叫<strong>delay</strong>吧。   </p>
-<h3 id="直接挂原型链代码如下："><a href="#直接挂原型链代码如下：" class="headerlink" title="直接挂原型链代码如下："></a>直接挂原型链代码如下：</h3><pre><code class="javascript"><span class="comment">/**
- * 让目标(Object)延时执行，可以链式使用
- * 
- * @param {Number} time
- * @param {Function} doSomething - 
- *                               - @param {Object} self -- 作为参数回调使用
- *                               - @param {Number} startTime -- 作为参数回调使用
- * @return {Object} 
- */</span>
-<span class="built_in">Object</span>.prototype.delay = <span class="function"><span class="keyword">function</span> (<span class="params">time, doSomething</span>) </span>{
-    <span class="keyword">var</span> self = <span class="keyword">this</span>,
-        startTime = time;
-    <span class="keyword">if</span> (self) {
-        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-            doSomething(self, startTime);
-        }, time);
-    }
-    <span class="keyword">return</span> <span class="keyword">this</span>;
-}
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/19/js-setTimeout-to-delay/#more">阅读全文 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
