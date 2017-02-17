@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2017-02-17T08:20:03.353Z</updated>
+  <updated>2017-02-17T08:25:30.306Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -20,15 +20,9 @@
     <link href="http://www.kuangzen.com/2017/02/17/advanced-algorithm-scripting/"/>
     <id>http://www.kuangzen.com/2017/02/17/advanced-algorithm-scripting/</id>
     <published>2017-02-17T07:56:51.000Z</published>
-    <updated>2017-02-17T08:20:03.353Z</updated>
+    <updated>2017-02-17T08:25:30.306Z</updated>
     
-    <content type="html">&lt;ul&gt;
-&lt;li&gt;javascript &lt;/li&gt;
-&lt;li&gt;前端&lt;/li&gt;
-&lt;li&gt;FreeCodeCamp&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;一、Validate-US-Telephone-Numbers-美国电话号码正则匹配&quot;&gt;&lt;a href=&quot;#一、Validate-US-Telephone-Numbers-美国电话号码正则匹配&quot; class=&quot;headerlink&quot; title=&quot;一、Validate US Telephone Numbers 美国电话号码正则匹配&quot;&gt;&lt;/a&gt;一、Validate US Telephone Numbers 美国电话号码正则匹配&lt;/h3&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+    <content type="html">&lt;h3 id=&quot;一、Validate-US-Telephone-Numbers-美国电话号码正则匹配&quot;&gt;&lt;a href=&quot;#一、Validate-US-Telephone-Numbers-美国电话号码正则匹配&quot; class=&quot;headerlink&quot; title=&quot;一、Validate US Telephone Numbers 美国电话号码正则匹配&quot;&gt;&lt;/a&gt;一、Validate US Telephone Numbers 美国电话号码正则匹配&lt;/h3&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;strong&gt;代码如下&lt;/strong&gt;:   &lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;telephoneCheck&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// Good luck!&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = str.match(&lt;span class=&quot;regexp&quot;&gt;/1?\s?\d&amp;#123;3&amp;#125;[\s-]?\d&amp;#123;3&amp;#125;[\s-]?\d&amp;#123;4&amp;#125;|1?\s?\(\d&amp;#123;3&amp;#125;\)[\s-]?\d&amp;#123;3&amp;#125;[\s-]?\d&amp;#123;4&amp;#125;/&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; arr!==&lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt; &amp;amp;&amp;amp; arr[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].length === str.length;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;telephoneCheck(&lt;span class=&quot;string&quot;&gt;&quot;555-555-5555&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;二、Record-Collection-更新对象记录集&quot;&gt;&lt;a href=&quot;#二、Record-Collection-更新对象记录集&quot; class=&quot;headerlink&quot; title=&quot;二、Record Collection 更新对象记录集&quot;&gt;&lt;/a&gt;二、Record Collection 更新对象记录集&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;代码如下&lt;/strong&gt;:   &lt;/p&gt;
@@ -52,16 +46,16 @@
     
     <summary type="html">
     
-      &lt;ul&gt;
-&lt;li&gt;javascript &lt;/li&gt;
-&lt;li&gt;前端&lt;/li&gt;
-&lt;li&gt;FreeCodeCamp&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;一、Validate-US-Telephone-Numbers-美国电话号码正则匹配&quot;&gt;&lt;a href=&quot;#一、Validate-US-Telephone-Numbers-美国电话号码正则匹配&quot; class=&quot;headerlink&quot; title=&quot;一、Validate US Telephone Numbers 美国电话号码正则匹配&quot;&gt;&lt;/a&gt;一、Validate US Telephone Numbers 美国电话号码正则匹配&lt;/h3&gt;
+      &lt;h3 id=&quot;一、Validate-US-Telephone-Numbers-美国电话号码正则匹配&quot;&gt;&lt;a href=&quot;#一、Validate-US-Telephone-Numbers-美国电话号码正则匹配&quot; class=&quot;headerlink&quot; title=&quot;一、Validate US Telephone Numbers 美国电话号码正则匹配&quot;&gt;&lt;/a&gt;一、Validate US Telephone Numbers 美国电话号码正则匹配&lt;/h3&gt;
     
     </summary>
     
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+      <category term="FreeCodeCamp" scheme="http://www.kuangzen.com/tags/FreeCodeCamp/"/>
     
   </entry>
   
@@ -70,15 +64,9 @@
     <link href="http://www.kuangzen.com/2017/02/17/intermediate-algorithm-scripting-13-21/"/>
     <id>http://www.kuangzen.com/2017/02/17/intermediate-algorithm-scripting-13-21/</id>
     <published>2017-02-17T07:39:17.000Z</published>
-    <updated>2017-02-17T07:58:31.241Z</updated>
+    <updated>2017-02-17T08:25:53.857Z</updated>
     
-    <content type="html">&lt;ul&gt;
-&lt;li&gt;javascript &lt;/li&gt;
-&lt;li&gt;前端&lt;/li&gt;
-&lt;li&gt;FreeCodeCamp&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;十三、Sum-All-Odd-Fibonacci-Numbers-斐波纳契数列求和&quot;&gt;&lt;a href=&quot;#十三、Sum-All-Odd-Fibonacci-Numbers-斐波纳契数列求和&quot; class=&quot;headerlink&quot; title=&quot;十三、Sum All Odd Fibonacci Numbers 斐波纳契数列求和　&quot;&gt;&lt;/a&gt;十三、Sum All Odd Fibonacci Numbers 斐波纳契数列求和　&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt;：&lt;br&gt;循环求和  &lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;十三、Sum-All-Odd-Fibonacci-Numbers-斐波纳契数列求和&quot;&gt;&lt;a href=&quot;#十三、Sum-All-Odd-Fibonacci-Numbers-斐波纳契数列求和&quot; class=&quot;headerlink&quot; title=&quot;十三、Sum All Odd Fibonacci Numbers 斐波纳契数列求和　&quot;&gt;&lt;/a&gt;十三、Sum All Odd Fibonacci Numbers 斐波纳契数列求和　&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt;：&lt;br&gt;循环求和  &lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;strong&gt;代码如下&lt;/strong&gt;:   &lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sumFibs&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;num&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; pre = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            now = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            next = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            r = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (pre &amp;lt;= num) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (pre % &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; === &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                r += pre;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (now &amp;lt;= num &amp;amp;&amp;amp; now % &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; === &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                r += now;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pre = next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            now = now + next;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            next = next + now;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; r;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sumFibs(&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -102,16 +90,16 @@
     
     <summary type="html">
     
-      &lt;ul&gt;
-&lt;li&gt;javascript &lt;/li&gt;
-&lt;li&gt;前端&lt;/li&gt;
-&lt;li&gt;FreeCodeCamp&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;十三、Sum-All-Odd-Fibonacci-Numbers-斐波纳契数列求和&quot;&gt;&lt;a href=&quot;#十三、Sum-All-Odd-Fibonacci-Numbers-斐波纳契数列求和&quot; class=&quot;headerlink&quot; title=&quot;十三、Sum All Odd Fibonacci Numbers 斐波纳契数列求和　&quot;&gt;&lt;/a&gt;十三、Sum All Odd Fibonacci Numbers 斐波纳契数列求和　&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt;：&lt;br&gt;循环求和  &lt;/p&gt;
+      &lt;h3 id=&quot;十三、Sum-All-Odd-Fibonacci-Numbers-斐波纳契数列求和&quot;&gt;&lt;a href=&quot;#十三、Sum-All-Odd-Fibonacci-Numbers-斐波纳契数列求和&quot; class=&quot;headerlink&quot; title=&quot;十三、Sum All Odd Fibonacci Numbers 斐波纳契数列求和　&quot;&gt;&lt;/a&gt;十三、Sum All Odd Fibonacci Numbers 斐波纳契数列求和　&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt;：&lt;br&gt;循环求和  &lt;/p&gt;
     
     </summary>
     
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+      <category term="FreeCodeCamp" scheme="http://www.kuangzen.com/tags/FreeCodeCamp/"/>
     
   </entry>
   
@@ -120,15 +108,9 @@
     <link href="http://www.kuangzen.com/2017/02/17/intermediate-algorithm-scripting-7-12/"/>
     <id>http://www.kuangzen.com/2017/02/17/intermediate-algorithm-scripting-7-12/</id>
     <published>2017-02-17T07:28:38.000Z</published>
-    <updated>2017-02-17T07:58:11.984Z</updated>
+    <updated>2017-02-17T08:26:47.914Z</updated>
     
-    <content type="html">&lt;ul&gt;
-&lt;li&gt;javascript &lt;/li&gt;
-&lt;li&gt;前端&lt;/li&gt;
-&lt;li&gt;FreeCodeCamp&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;七、DNA-Pairing-生成DNA配对&quot;&gt;&lt;a href=&quot;#七、DNA-Pairing-生成DNA配对&quot; class=&quot;headerlink&quot; title=&quot;七、DNA Pairing 生成DNA配对&quot;&gt;&lt;/a&gt;七、DNA Pairing 生成DNA配对&lt;/h3&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+    <content type="html">&lt;h3 id=&quot;七、DNA-Pairing-生成DNA配对&quot;&gt;&lt;a href=&quot;#七、DNA-Pairing-生成DNA配对&quot; class=&quot;headerlink&quot; title=&quot;七、DNA Pairing 生成DNA配对&quot;&gt;&lt;/a&gt;七、DNA Pairing 生成DNA配对&lt;/h3&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;strong&gt;代码如下&lt;/strong&gt;:   &lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;pairElement&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = str.split(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      rArr = [];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;arr.length;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;switch&lt;/span&gt;(arr[i])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;A&#39;&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        rArr.push([&lt;span class=&quot;string&quot;&gt;&quot;A&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;T&quot;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;T&#39;&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        rArr.push([&lt;span class=&quot;string&quot;&gt;&quot;T&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;A&quot;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;C&#39;&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        rArr.push([&lt;span class=&quot;string&quot;&gt;&quot;C&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;G&quot;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;G&#39;&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        rArr.push([&lt;span class=&quot;string&quot;&gt;&quot;G&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;C&quot;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; rArr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pairElement(&lt;span class=&quot;string&quot;&gt;&quot;GCG&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;八、Missing-letters-求出缺小的字母&quot;&gt;&lt;a href=&quot;#八、Missing-letters-求出缺小的字母&quot; class=&quot;headerlink&quot; title=&quot;八、Missing letters 求出缺小的字母&quot;&gt;&lt;/a&gt;八、Missing letters 求出缺小的字母&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;代码如下&lt;/strong&gt;:   &lt;/p&gt;
@@ -144,16 +126,16 @@
     
     <summary type="html">
     
-      &lt;ul&gt;
-&lt;li&gt;javascript &lt;/li&gt;
-&lt;li&gt;前端&lt;/li&gt;
-&lt;li&gt;FreeCodeCamp&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;七、DNA-Pairing-生成DNA配对&quot;&gt;&lt;a href=&quot;#七、DNA-Pairing-生成DNA配对&quot; class=&quot;headerlink&quot; title=&quot;七、DNA Pairing 生成DNA配对&quot;&gt;&lt;/a&gt;七、DNA Pairing 生成DNA配对&lt;/h3&gt;
+      &lt;h3 id=&quot;七、DNA-Pairing-生成DNA配对&quot;&gt;&lt;a href=&quot;#七、DNA-Pairing-生成DNA配对&quot; class=&quot;headerlink&quot; title=&quot;七、DNA Pairing 生成DNA配对&quot;&gt;&lt;/a&gt;七、DNA Pairing 生成DNA配对&lt;/h3&gt;
     
     </summary>
     
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+      <category term="FreeCodeCamp" scheme="http://www.kuangzen.com/tags/FreeCodeCamp/"/>
     
   </entry>
   
@@ -162,15 +144,9 @@
     <link href="http://www.kuangzen.com/2017/02/17/intermediate-algorithm-scripting-1-6/"/>
     <id>http://www.kuangzen.com/2017/02/17/intermediate-algorithm-scripting-1-6/</id>
     <published>2017-02-17T06:58:05.000Z</published>
-    <updated>2017-02-17T07:58:05.184Z</updated>
+    <updated>2017-02-17T08:25:39.354Z</updated>
     
-    <content type="html">&lt;ul&gt;
-&lt;li&gt;javascript &lt;/li&gt;
-&lt;li&gt;前端&lt;/li&gt;
-&lt;li&gt;FreeCodeCamp&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;一、Sum-All-Numbers-in-a-Range-求两数之间的所有数字的总和&quot;&gt;&lt;a href=&quot;#一、Sum-All-Numbers-in-a-Range-求两数之间的所有数字的总和&quot; class=&quot;headerlink&quot; title=&quot;一、Sum All Numbers in a Range 求两数之间的所有数字的总和&quot;&gt;&lt;/a&gt;一、Sum All Numbers in a Range 求两数之间的所有数字的总和&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt;：&lt;br&gt;1、求最大值&lt;br&gt;2、求最小值&lt;br&gt;3、循环求和&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;strong&gt;代码如下&lt;/strong&gt;:   &lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;一、Sum-All-Numbers-in-a-Range-求两数之间的所有数字的总和&quot;&gt;&lt;a href=&quot;#一、Sum-All-Numbers-in-a-Range-求两数之间的所有数字的总和&quot; class=&quot;headerlink&quot; title=&quot;一、Sum All Numbers in a Range 求两数之间的所有数字的总和&quot;&gt;&lt;/a&gt;一、Sum All Numbers in a Range 求两数之间的所有数字的总和&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt;：&lt;br&gt;1、求最大值&lt;br&gt;2、求最小值&lt;br&gt;3、循环求和&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;strong&gt;代码如下&lt;/strong&gt;:   &lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sumAll&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;arr&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; min = &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.min(arr[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;],arr[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      max =&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.max(arr[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;],arr[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      r = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i=min;i&amp;lt;=max;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    r+=i;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; r;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sumAll([&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;二、Diff-Two-Arrays-求两个数组的非共同元素&quot;&gt;&lt;a href=&quot;#二、Diff-Two-Arrays-求两个数组的非共同元素&quot; class=&quot;headerlink&quot; title=&quot;二、Diff Two Arrays 求两个数组的非共同元素&quot;&gt;&lt;/a&gt;二、Diff Two Arrays 求两个数组的非共同元素&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt;：&lt;br&gt;循环过滤出来   &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;代码如下&lt;/strong&gt;:   &lt;/p&gt;
@@ -188,16 +164,16 @@
     
     <summary type="html">
     
-      &lt;ul&gt;
-&lt;li&gt;javascript &lt;/li&gt;
-&lt;li&gt;前端&lt;/li&gt;
-&lt;li&gt;FreeCodeCamp&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;一、Sum-All-Numbers-in-a-Range-求两数之间的所有数字的总和&quot;&gt;&lt;a href=&quot;#一、Sum-All-Numbers-in-a-Range-求两数之间的所有数字的总和&quot; class=&quot;headerlink&quot; title=&quot;一、Sum All Numbers in a Range 求两数之间的所有数字的总和&quot;&gt;&lt;/a&gt;一、Sum All Numbers in a Range 求两数之间的所有数字的总和&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt;：&lt;br&gt;1、求最大值&lt;br&gt;2、求最小值&lt;br&gt;3、循环求和&lt;br&gt;
+      &lt;h3 id=&quot;一、Sum-All-Numbers-in-a-Range-求两数之间的所有数字的总和&quot;&gt;&lt;a href=&quot;#一、Sum-All-Numbers-in-a-Range-求两数之间的所有数字的总和&quot; class=&quot;headerlink&quot; title=&quot;一、Sum All Numbers in a Range 求两数之间的所有数字的总和&quot;&gt;&lt;/a&gt;一、Sum All Numbers in a Range 求两数之间的所有数字的总和&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt;：&lt;br&gt;1、求最大值&lt;br&gt;2、求最小值&lt;br&gt;3、循环求和&lt;br&gt;
     
     </summary>
     
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+      <category term="FreeCodeCamp" scheme="http://www.kuangzen.com/tags/FreeCodeCamp/"/>
     
   </entry>
   
@@ -232,9 +208,9 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
     
       <category term="FreeCodeCamp" scheme="http://www.kuangzen.com/tags/FreeCodeCamp/"/>
     
@@ -271,9 +247,9 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
     
       <category term="FreeCodeCamp" scheme="http://www.kuangzen.com/tags/FreeCodeCamp/"/>
     
@@ -311,9 +287,9 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
     
       <category term="FreeCodeCamp" scheme="http://www.kuangzen.com/tags/FreeCodeCamp/"/>
     
@@ -383,7 +359,7 @@
     </summary>
     
     
-      <category term="产品设计" scheme="http://www.kuangzen.com/tags/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/"/>
+      <category term="产品设计" scheme="http://www.kuangzen.com/tags/product-design/"/>
     
   </entry>
   
@@ -421,7 +397,7 @@
     
       <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
-      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
+      <category term="后端" scheme="http://www.kuangzen.com/tags/back-end/"/>
     
   </entry>
   
@@ -540,7 +516,7 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
     
   </entry>
   
@@ -571,9 +547,9 @@
     </summary>
     
     
-      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/%E4%B8%80%E4%BA%9B%E4%BA%8B%E4%B8%80%E4%BA%9B%E6%83%85/"/>
+      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
     
-      <category term="后端" scheme="http://www.kuangzen.com/tags/%E5%90%8E%E7%AB%AF/"/>
+      <category term="后端" scheme="http://www.kuangzen.com/tags/back-end/"/>
     
   </entry>
   
@@ -650,9 +626,9 @@
     </summary>
     
     
-      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/%E4%B8%80%E4%BA%9B%E4%BA%8B%E4%B8%80%E4%BA%9B%E6%83%85/"/>
+      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
     
-      <category term="产品设计" scheme="http://www.kuangzen.com/tags/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/"/>
+      <category term="产品设计" scheme="http://www.kuangzen.com/tags/product-design/"/>
     
   </entry>
   
@@ -679,7 +655,7 @@
     </summary>
     
     
-      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/%E4%B8%80%E4%BA%9B%E4%BA%8B%E4%B8%80%E4%BA%9B%E6%83%85/"/>
+      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
     
   </entry>
   
@@ -735,11 +711,11 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
-      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/%E4%B8%80%E4%BA%9B%E4%BA%8B%E4%B8%80%E4%BA%9B%E6%83%85/"/>
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
     
   </entry>
   
@@ -770,11 +746,11 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
-      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/%E4%B8%80%E4%BA%9B%E4%BA%8B%E4%B8%80%E4%BA%9B%E6%83%85/"/>
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
     
   </entry>
   
@@ -851,9 +827,9 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
     
   </entry>
   
@@ -877,9 +853,9 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
     
-      <category term="切图" scheme="http://www.kuangzen.com/tags/%E5%88%87%E5%9B%BE/"/>
+      <category term="切图" scheme="http://www.kuangzen.com/tags/crop/"/>
     
   </entry>
   
@@ -906,7 +882,7 @@
     </summary>
     
     
-      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/%E4%B8%80%E4%BA%9B%E4%BA%8B%E4%B8%80%E4%BA%9B%E6%83%85/"/>
+      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
     
   </entry>
   
@@ -979,11 +955,11 @@
     </summary>
     
     
-      <category term="前端" scheme="http://www.kuangzen.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
     
-      <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+      <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript-design-model/"/>
     
   </entry>
   
@@ -1012,7 +988,7 @@
     </summary>
     
     
-      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/%E4%B8%80%E4%BA%9B%E4%BA%8B%E4%B8%80%E4%BA%9B%E6%83%85/"/>
+      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
     
   </entry>
   
