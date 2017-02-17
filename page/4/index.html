@@ -217,6 +217,265 @@
 
       <div class="body-wrap">
   
+    <article id="post-wechat-readonly-input-virtual-keyboard-bug" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/" class="article-date">
+  	<time datetime="2016-05-03T01:09:32.000Z" itemprop="datePublished">2016-05-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/03/wechat-readonly-input-virtual-keyboard-bug/">安卓版微信内置浏览器input设置为readonly后，键盘仍然会弹出bug</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
+<li>使用mobicroll时，对input已经设置了readonly</li>
+<li>其他input用作组件时，不需要输入，设置了readonly</li>
+</ol>
+<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><p>只需要给input绑定一个click后设置为blur事件就可以了   </p>
+<pre><code class="javascript">$($input).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{<span class="comment">//fixed 虚拟键盘弹出</span>
+    $(<span class="keyword">this</span>).blur();
+});
+</code></pre>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网页兼容性/">网页兼容性</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-push-urls-to-baidu-with-nodejs-in-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/" class="article-date">
+  	<time datetime="2016-04-22T05:35:40.000Z" itemprop="datePublished">2016-04-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/">用node.js向百度推送hexo博客所有链接</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>百度提供了4种方式用于提交网站链接，分别是主动推送(实时)，自动推送，sitemap和手动提交，其中主动推送是最快的。自动摧送是加js在页面上，但要打开页面才能执行推送，sitemap没爬到时也没有执行推送，手动提交还要登陆到百度网站上面去提交效率太低。  </p>
+<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>读取blog自动生成的baidusitemap.xml文件里面所有的url并post到baidu</p>
+<h3 id="用node-js执行推送"><a href="#用node-js执行推送" class="headerlink" title="用node.js执行推送"></a>用node.js执行推送</h3><p><strong>先按装依赖包</strong><br>两个sitemap文件装了后会每次deploy会自动生成sitemap.xml与baidusitemap.xml文件。<br>xml2js用于把xml转化成为json。
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-node-learning-chapter-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/20/node-learning-chapter-1/" class="article-date">
+  	<time datetime="2016-04-20T00:59:50.000Z" itemprop="datePublished">2016-04-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/20/node-learning-chapter-1/">Node.js 入门到实践生成微信数字签名（用于前端调用微信js sdk接口）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>先学习node调试方法，用node搭建简单的web服务器  </p>
+<h3 id="使用node-inspector来调试node程序"><a href="#使用node-inspector来调试node程序" class="headerlink" title="使用node-inspector来调试node程序"></a>使用node-inspector来调试node程序</h3><ul>
+<li>npm全局安装node-inspector<br><code>npm install -g node-inspector</code></li>
+<li>检查是否安装成功，与此同时调试服务已经开启了<br><code>node-inspector</code><br>若成功应该出现下面提示  <pre><code>Node Inspector v0.12.8  
+info  - socket.io started  
+Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/20/node-learning-chapter-1/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-useful-wechat-code-interactive" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/18/useful-wechat-code-interactive/" class="article-date">
+  	<time datetime="2016-04-18T01:12:45.000Z" itemprop="datePublished">2016-04-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/18/useful-wechat-code-interactive/">微信网页里面同时出现2个二维码长按时不能准确识别问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在微信网页里面如果同时放了2个或者多个二维码时，长按二维码图片时只能识别到其中一个二维码，原因是其识别机制问题，其运行方式是先判断有没有按到图片(img)，有则提示识别二维码菜单，当按下菜单时，截取屏幕然后由上而下，由左而右识别，所以只能识别到靠左/上的那个二维码。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>可以把几个二维码做成<strong>可点击</strong>或者<strong>绑定按下</strong>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI设计/">UI设计</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/18/useful-wechat-code-interactive/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-useful-map-interactive" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -591,267 +850,6 @@
 
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-jQuery-sDialog" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/05/jQuery-sDialog/" class="article-date">
-  	<time datetime="2016-04-05T02:32:38.000Z" itemprop="datePublished">2016-04-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/05/jQuery-sDialog/">jQuery.sDialog</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-        <p>A dialog jquery-plugin for mobile site, easy, simple.</p>
-<p><a href="https://github.com/hiooyUI/jQuery.sDialog" target="_blank" rel="external">Github</a></p>
-<h2 id="how-to-use-it"><a href="#how-to-use-it" class="headerlink" title="how to use it?"></a>how to use it?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;sdialog.min.css&quot; /&gt;</span><br><span class="line">&lt;script src=&quot;your path/jquery.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;sdialog.min.js&quot;&gt;&lt;/script&gt;&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">//1、open a OK/Cancel Dialog</span><br><span class="line">     $.sDialog(&#123;</span><br><span class="line">         skin: "block",</span><br><span class="line">         content: "添加购物车成功！",</span><br><span class="line">         okBtnText: "再逛逛",</span><br><span class="line">         cancelBtnText: "去购物车",</span><br><span class="line">         width: 250,</span><br><span class="line">         okFn: function () &#123;</span><br><span class="line">             console.log("click 去购物车!");</span><br><span class="line">         &#125;,</span><br><span class="line">         cancelFn: function () &#123;</span><br><span class="line">             console.log("click 再逛逛!");</span><br><span class="line">         &#125;,</span><br><span class="line">         onDestroy: function () &#123;</span><br><span class="line">             console.log("destroy!");</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;);</span><br><span class="line">//2、open a success Dialog</span><br><span class="line">     $.sDialog(&#123;</span><br><span class="line">         skin: "green",</span><br><span class="line">         content: "添加购物车成功！",</span><br><span class="line">         "okBtn": false, //是否显示确定按钮</span><br><span class="line">         "cancelBtn": false, //是否显示确定按钮</span><br><span class="line">         width: 250,</span><br><span class="line">         onDestroy: function () &#123;</span><br><span class="line">             console.log("destroy!");</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;);</span><br><span class="line"></span><br><span class="line">//3、open a warning Dialog</span><br><span class="line">     $.sDialog(&#123;</span><br><span class="line">         skin: "red",</span><br><span class="line">         content: "你输入的东西有误！",</span><br><span class="line">         "okBtn": false, //是否显示确定按钮</span><br><span class="line">         "cancelBtn": false, //是否显示确定按钮</span><br><span class="line">         width: 250,</span><br><span class="line">         onDestroy: function () &#123;</span><br><span class="line">             console.log("destroy!");</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;);</span><br><span class="line">//4、open a window Dialog</span><br><span class="line">     $.sWindow(&#123;</span><br><span class="line">         title: "我的标题",//弹出框标题</span><br><span class="line">         content: '我的内容', //弹出框里面的内容，支持html标签</span><br><span class="line">         height: 330,//内容部分高度，不是整个对话框高度</span><br><span class="line">         callback: function () &#123;</span><br><span class="line">             //加载完成后执行回调函数</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;)</span><br><span class="line">//5、slide up a Menu Dialog</span><br><span class="line">     $.sMenu(&#123;</span><br><span class="line">         "menus": [</span><br><span class="line">         &#123;</span><br><span class="line">             name: "退款", class: "rf", onclick: function () &#123;</span><br><span class="line">                 console.log("点击了退款");</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">             name: "退款退货", class: "rg", onclick: function () &#123;</span><br><span class="line">                 console.log("点击了退款退货");</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         ],</span><br><span class="line">         "okBtn": false, //是否显示确定按钮</span><br><span class="line">         "cancelBtnText": "取消", //取消按钮的文字</span><br><span class="line">         "cancelFn": function () &#123;</span><br><span class="line">             console.log("点击了取消");</span><br><span class="line">         &#125;//点击取消按钮执行的函数</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
-<p>check out the example/example.html demo.</p>
-<p>or</p>
-<p><a href="http://sandbox.runjs.cn/show/fkq0n7jy" target="_blank" rel="external">live Demo</a>, you can use mobile phone mode to view the demo for better experience!</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-simple-switch" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/30/simple-switch/" class="article-date">
-  	<time datetime="2016-03-30T06:57:45.000Z" itemprop="datePublished">2016-03-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/30/simple-switch/">simple-switch</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-        <p>A simple switch jQuery plugin to beautify your checkbox</p>
-<p>Support swipping left / right</p>
-<p><a href="https://github.com/nelsonkuang/simple-switch" target="_blank" rel="external">Github</a></p>
-<p><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/20160330111443.png" alt="Demo"> </p>
-<h2 id="how-to-use-it"><a href="#how-to-use-it" class="headerlink" title="how to use it?"></a>how to use it?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;simple-switch.min.css&quot; /&gt;</span><br><span class="line">&lt;script src=&quot;your path/jquery.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;jquery.simpleswitch.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">```&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-<p>$(“yourcheckbox”).simpleSwitch();<br>```<br>check the demo.html example.</p>
-<p>or</p>
-<p><a href="http://sandbox.runjs.cn/show/iel8tvl4" target="_blank" rel="external">live Demo</a>, you can use mobile phone mode to view the demo for better experience!</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-jquery-scroll-cascade-select" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/21/jquery-scroll-cascade-select/" class="article-date">
-  	<time datetime="2016-03-21T06:57:45.000Z" itemprop="datePublished">2016-03-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/21/jquery-scroll-cascade-select/">jquery-scroll-cascade-select</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <p>Scroll Cascade Select, a light-weight flexible Scroll Picker similiar to Mobiscroll. </p>
-<p>Support swipping up / down, mouse dragging up / down are supported too</p>
-<p><a href="https://github.com/nelsonkuang/jquery-scroll-cascade-select">Github</a></p>
-<h2 id="how-to-use-it"><a href="#how-to-use-it" class="headerlink" title="how to use it?"></a>how to use it?</h2><p>check the address.html example.</p>
-<p>or</p>
-<p><a href="http://sandbox.runjs.cn/show/zmqwsarf">live Demo</a>, please use mobile phone mode to view the demo!</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/21/jquery-scroll-cascade-select/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-react-cascading-address-selector" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/04/react-cascading-address-selector/" class="article-date">
-  	<time datetime="2016-03-04T06:57:45.000Z" itemprop="datePublished">2016-03-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/04/react-cascading-address-selector/">react-cascading-address-selector</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <p>React级联地址选择器组件纯前端实现 地址数组的检索充分运用了以空间换时间的思路</p>
-<p><a href="https://github.com/nelsonkuang/react-cascading-address-selector">Github</a></p>
-<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/nelsonkuang/react-cascading-address-selector.git</span><br><span class="line">cd react-cascading-address-selector</span><br><span class="line">npm install</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/04/react-cascading-address-selector/#more">阅读全文 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
