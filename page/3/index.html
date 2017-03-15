@@ -533,10 +533,10 @@
 
 
   
-    <article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-injector" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/21/js-observer/" class="article-date">
+      <a href="/2016/06/21/js-injector/" class="article-date">
   	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
 </a>
     </div>
@@ -550,7 +550,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
+      <a class="article-title" href="/2016/06/21/js-injector/">javascript设计模式 - 依赖注入</a>
     </h1>
   
 
@@ -560,11 +560,17 @@
     <div class="article-entry" itemprop="articleBody">
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
-<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
-<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
-<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   </p>
+<h3 id="依赖注入好处"><a href="#依赖注入好处" class="headerlink" title="依赖注入好处"></a>依赖注入好处</h3><p>减小对象与依赖之间的藕合关系。   </p>
+<p>不需要对原代码进行修改，直接可以应用到当前代码。   </p>
+<p>有助于把客户与设计隔离开，减小设计改变带来的影响。   </p>
+<p>让系统不用修改当前代码就可以重新配置。   </p>
+<p>可以进行并行或者独立开发。   </p>
+<p>让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   </p>
+<h3 id="依赖注入缺点"><a href="#依赖注入缺点" class="headerlink" title="依赖注入缺点"></a>依赖注入缺点</h3><p>当要实例化一种类型，你必须要知道要用什么依赖。   </p>
+<p>隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   </p>
+<p>要求你要写更多的代码。   </p>
+<p>可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      </p>
       
     </div>
     
@@ -579,7 +585,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/21/js-observer/#more">阅读全文 >></a>
+          <a  href="/2016/06/21/js-injector/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -671,10 +677,10 @@
 
 
   
-    <article id="post-js-injector" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/21/js-injector/" class="article-date">
+      <a href="/2016/06/21/js-observer/" class="article-date">
   	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
 </a>
     </div>
@@ -688,7 +694,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-injector/">javascript设计模式 - 依赖注入</a>
+      <a class="article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
     </h1>
   
 
@@ -698,17 +704,11 @@
     <div class="article-entry" itemprop="articleBody">
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   </p>
-<h3 id="依赖注入好处"><a href="#依赖注入好处" class="headerlink" title="依赖注入好处"></a>依赖注入好处</h3><p>减小对象与依赖之间的藕合关系。   </p>
-<p>不需要对原代码进行修改，直接可以应用到当前代码。   </p>
-<p>有助于把客户与设计隔离开，减小设计改变带来的影响。   </p>
-<p>让系统不用修改当前代码就可以重新配置。   </p>
-<p>可以进行并行或者独立开发。   </p>
-<p>让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   </p>
-<h3 id="依赖注入缺点"><a href="#依赖注入缺点" class="headerlink" title="依赖注入缺点"></a>依赖注入缺点</h3><p>当要实例化一种类型，你必须要知道要用什么依赖。   </p>
-<p>隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   </p>
-<p>要求你要写更多的代码。   </p>
-<p>可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      </p>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
+<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
+<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
+<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br>
       
     </div>
     
@@ -723,7 +723,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/21/js-injector/#more">阅读全文 >></a>
+          <a  href="/2016/06/21/js-observer/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
