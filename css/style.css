@@ -416,8 +416,10 @@ a {
   #container .share {
     padding: 3px 10px;
   }
-  #container .duoshuo {
+  #container .duoshuo,
+  #container #sohucy {
     padding: 0 13px;
+    margin-top: 40px;
   }
   #container #disqus_thread {
     padding: 0 13px;
@@ -717,7 +719,8 @@ a {
   text-align: left;
   line-height: 30px;
 }
-.duoshuo {
+.duoshuo,
+#sohucy {
   padding: 0 40px;
 }
 #disqus_thread {
