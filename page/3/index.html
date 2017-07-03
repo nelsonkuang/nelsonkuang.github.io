@@ -213,6 +213,82 @@
 
       <div class="body-wrap">
   
+    <article id="post-js-promise" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/27/js-promise/" class="article-date">
+  	<time datetime="2016-07-27T02:21:18.000Z" itemprop="datePublished">2016-07-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/27/js-promise/">Javascript Promise让异步操作代码更加灵活</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>顾名思义，<strong>Promise</strong>是承诺的意思，就是承诺将会发生某个操作，但操作结果有可能是成功的，也有可能是失败的；但无论如何，操作一但完成，立马会返回结果并把结果作为参数去执行相应被绑定的回调函数。<em>Promise</em>对象主要是用来做异步计算的，一个<em>Promise</em>对象代表一个未完成，但即将完成的操作。   </p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>( <span class="comment">/* executor */</span> <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123; ... &#125; );</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明</strong><br>executor   </p>
+<blockquote>
+<p>通过参数<em>resolve</em>和<em>reject</em>，一个函数可以被传递到其他函数。executor函数将被提供<em>resolve</em>和<em>reject</em>函数的Promise履行者立即执行(executor在Promise构造函数之前执行，甚至返回创建的对象)。<em>Resolve</em>和<em>reject</em>函数是绑定到了promise对象和单独调用他们履行或者拒绝promise对象。Executor预期会初始化一些异步工作和完成后要么调用<em>resolve</em>或者<em>reject</em>函数去解决promise的最后值或者拒绝它如果有错误发生。   </p>
+</blockquote>
+<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>一个<strong>Promise</strong>代表一个值的代理，我们没必要知道promise是什么时候被创建的。它允许你去关联事件处理器到一个异步的动作的最后的成功值或者失败原理。这样使得异步方法像同步方法那样返回值：代替最后值，异步方法返回一个未来的在某个时间点的带值的promise。   </p>
+<p>一个Promise对象是在下面其中一个状态：   </p>
+<ul>
+<li><em>pending</em>，挂起状态：初始状态，未履行或者被拒绝   </li>
+<li><em>fulfilled</em>，被履行了:意味着操作成功完成。   </li>
+<li><em>rejected</em>，被拒绝了:表示操作失败了。   </li>
+</ul>
+<p>一个被挂起的promise可以成为要么带值的被履行状态或者带原因(错误)而被拒绝的状态。当其中一个发生，关联的事件处理器队列中的promise的then方法将被调用。(如果promise已经被履行或者被拒绝当相应的事件处理器被关联，这个事件处理器将被调用，所以异步操作完成和它的事件处理器被关联之间就没有竞争条件，解耦了)。
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-design-model/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/27/js-promise/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-self-motivated-2016-07-26" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -541,10 +617,10 @@
 
 
   
-    <article id="post-js-injector" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/21/js-injector/" class="article-date">
+      <a href="/2016/06/21/js-observer/" class="article-date">
   	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
 </a>
     </div>
@@ -558,7 +634,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-injector/">javascript设计模式 - 依赖注入</a>
+      <a class="article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
     </h1>
   
 
@@ -568,17 +644,11 @@
     <div class="article-entry" itemprop="articleBody">
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   </p>
-<h3 id="依赖注入好处"><a href="#依赖注入好处" class="headerlink" title="依赖注入好处"></a>依赖注入好处</h3><p>减小对象与依赖之间的藕合关系。   </p>
-<p>不需要对原代码进行修改，直接可以应用到当前代码。   </p>
-<p>有助于把客户与设计隔离开，减小设计改变带来的影响。   </p>
-<p>让系统不用修改当前代码就可以重新配置。   </p>
-<p>可以进行并行或者独立开发。   </p>
-<p>让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   </p>
-<h3 id="依赖注入缺点"><a href="#依赖注入缺点" class="headerlink" title="依赖注入缺点"></a>依赖注入缺点</h3><p>当要实例化一种类型，你必须要知道要用什么依赖。   </p>
-<p>隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   </p>
-<p>要求你要写更多的代码。   </p>
-<p>可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      </p>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
+<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
+<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
+<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br>
       
     </div>
     
@@ -593,7 +663,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/21/js-injector/#more">阅读全文 >></a>
+          <a  href="/2016/06/21/js-observer/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -689,10 +759,10 @@
 
 
   
-    <article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js-injector" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/21/js-observer/" class="article-date">
+      <a href="/2016/06/21/js-injector/" class="article-date">
   	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
 </a>
     </div>
@@ -706,7 +776,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/21/js-observer/">javascript设计模式 - 观察者模式</a>
+      <a class="article-title" href="/2016/06/21/js-injector/">javascript设计模式 - 依赖注入</a>
     </h1>
   
 
@@ -716,11 +786,17 @@
     <div class="article-entry" itemprop="articleBody">
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
-<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
-<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
-<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>所有做过.net、java或者php开发的人都应该听过依赖注入dependency injection(DI)或者inverse of control(IOC)控制反转，依赖注入是一种软件设计模式，它让人移除硬生生的写死的依赖关系，让人可以修改它们。依赖可以通过构造函数、定义方法或者设置属性来注入对象。   </p>
+<h3 id="依赖注入好处"><a href="#依赖注入好处" class="headerlink" title="依赖注入好处"></a>依赖注入好处</h3><p>减小对象与依赖之间的藕合关系。   </p>
+<p>不需要对原代码进行修改，直接可以应用到当前代码。   </p>
+<p>有助于把客户与设计隔离开，减小设计改变带来的影响。   </p>
+<p>让系统不用修改当前代码就可以重新配置。   </p>
+<p>可以进行并行或者独立开发。   </p>
+<p>让代码更好维护和测试，因为用其他依赖包或者模版代替的话依赖的影响可以被消除。   </p>
+<h3 id="依赖注入缺点"><a href="#依赖注入缺点" class="headerlink" title="依赖注入缺点"></a>依赖注入缺点</h3><p>当要实例化一种类型，你必须要知道要用什么依赖。   </p>
+<p>隐藏了类型的实例化和依赖关系解释逻辑后，如果发生错误比较难查找问题。   </p>
+<p>要求你要写更多的代码。   </p>
+<p>可能会运行得更慢，因为要以新的关键字来实例化一种类型，把必须要用的相关的关键字对应解释实例化。      </p>
       
     </div>
     
@@ -735,7 +811,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/21/js-observer/#more">阅读全文 >></a>
+          <a  href="/2016/06/21/js-injector/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -800,70 +876,6 @@
 
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-avoid-wechat-input-bug" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/05/avoid-wechat-input-bug/" class="article-date">
-  	<time datetime="2016-05-05T10:30:11.000Z" itemprop="datePublished">2016-05-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/05/avoid-wechat-input-bug/">新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时，导致遮挡住fixed在底部输入框问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>固定(Fixed)在底部的输入框的页面，如下图评论框<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/bottom_input.png" alt="Fixed在底部的评论框"> </p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>可以做成Popup弹出输入框，这样就可以解决所有的iphone和各种乱七八糟的安卓手机的适配问题，如下图：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/popup_input.png" alt="Popup弹出输入框">
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ui/">UI设计</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compatibility/">网页兼容性</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/05/avoid-wechat-input-bug/#more">阅读全文 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>

@@ -4,26 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>javascript设计模式 - 观察者模式 | KUANG ZEN&#39;s HOME</title>
+  <title>javascript 高阶函数 | KUANG ZEN&#39;s HOME</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="定义观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   
-总结观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   
-当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被">
+  <meta name="description" content="定义在js的世界里面，有一种函数，它可以接受另一个函数作为参数，这种函数，我为称之为高阶函数（Higher-order function）。我们日常使用过程中非常常见的一种形式就是回调函数，我们经常在写的带callback的函数，其实属于高阶函数；setTimeOut、setInterval可以接收函数进行异步操作；Array.sort也可以接收函数进行排序处理；进入ES6时代，Gruntjs、G">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript设计模式 - 观察者模式">
-<meta property="og:url" content="http://www.kuangzen.com/2016/06/21/js-observer/index.html">
+<meta property="og:title" content="javascript 高阶函数">
+<meta property="og:url" content="http://www.kuangzen.com/2017/07/03/higher-order-function/index.html">
 <meta property="og:site_name" content="KUANG ZEN's HOME">
-<meta property="og:description" content="定义观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   
-总结观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   
-当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被">
-<meta property="og:image" content="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg">
-<meta property="og:updated_time" content="2016-06-21T10:30:37.169Z">
+<meta property="og:description" content="定义在js的世界里面，有一种函数，它可以接受另一个函数作为参数，这种函数，我为称之为高阶函数（Higher-order function）。我们日常使用过程中非常常见的一种形式就是回调函数，我们经常在写的带callback的函数，其实属于高阶函数；setTimeOut、setInterval可以接收函数进行异步操作；Array.sort也可以接收函数进行排序处理；进入ES6时代，Gruntjs、G">
+<meta property="og:updated_time" content="2017-07-03T09:16:46.839Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript设计模式 - 观察者模式">
-<meta name="twitter:description" content="定义观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   
-总结观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   
-当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被">
-<meta name="twitter:image" content="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg">
+<meta name="twitter:title" content="javascript 高阶函数">
+<meta name="twitter:description" content="定义在js的世界里面，有一种函数，它可以接受另一个函数作为参数，这种函数，我为称之为高阶函数（Higher-order function）。我们日常使用过程中非常常见的一种形式就是回调函数，我们经常在写的带callback的函数，其实属于高阶函数；setTimeOut、setInterval可以接收函数进行异步操作；Array.sort也可以接收函数进行排序处理；进入ES6时代，Gruntjs、G">
   
     <link rel="alternative" href="/atom.xml" title="KUANG ZEN&#39;s HOME" type="application/atom+xml">
   
@@ -220,11 +212,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-js-observer" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-higher-order-function" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/21/js-observer/" class="article-date">
-  	<time datetime="2016-06-21T07:47:05.000Z" itemprop="datePublished">2016-06-21</time>
+      <a href="/2017/07/03/higher-order-function/" class="article-date">
+  	<time datetime="2017-07-03T08:19:35.000Z" itemprop="datePublished">2017-07-03</time>
 </a>
     </div>
   
@@ -237,7 +229,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      javascript设计模式 - 观察者模式
+      javascript 高阶函数
     </h1>
   
 
@@ -246,7 +238,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-design-model/">javascript设计模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
 	</div>
 
         
@@ -261,122 +253,29 @@
       
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>观察都模式定义了对象间的一对多依赖关系，因此当一个对象的状态发生改变，所有其他有依赖关系的对象将自动被通知和更新   </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>观察都模式提供了一个订阅模型，当对象订阅了一个事件后，当事件发生后将会被通知。这个模式是包括javascript在内的事件驱动编程的基石。观察都模式使用面向对象设计变得容易，也促进解藕。   </p>
-<p>当创建网页应用程序你可能要写很多事件处理函数，当发生特定的事件，这些函数将会被触发。这些通知有选择地接收一个关于这个事件的带明细的事件参数（比如：点击事件中将有鼠标的x和y的位置）。   </p>
-<p>这个javascript事件和事件处理函数范例就是一个观察都模式，它的另一个叫法是发布/订阅模式。   </p>
-<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p><img src="http://7xsj8c.com1.z0.glb.clouddn.com/img/observer.jpg" alt="观察者模式"><br><a id="more"></a><br>以click事件为例:<br><strong>主题</strong>可以是click，维护一系列的观察者，提供一个接口给观察者订阅或者退订，当状态改变时向观察都发送通知。<br>而各<strong>观察者</strong>是各clickHandler，是一系列的函数，当主题状态改变时将被通知触发。   </p>
-<h3 id="代码样版"><a href="#代码样版" class="headerlink" title="代码样版"></a>代码样版</h3><p>代码来源于网络</p>
-<pre><code class="javascript">
-<span class="comment">// 方式一 </span>
-<span class="function"><span class="keyword">function</span> <span class="title">Observer</span>(<span class="params"></span>) </span>{
-    <span class="keyword">this</span>.fns = [];
-}
-Observer.prototype = {
-    subscribe: <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>{
-        <span class="keyword">this</span>.fns.push(fn);
-    },
-    unsubscribe: <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>{
-        <span class="keyword">this</span>.fns = <span class="keyword">this</span>.fns.filter(
-                        <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>{
-                            <span class="keyword">if</span> (el !== fn) {
-                                <span class="keyword">return</span> el;
-                            }
-                        }
-                    );
-    },
-    update: <span class="function"><span class="keyword">function</span> (<span class="params">o, thisObj</span>) </span>{
-        <span class="keyword">var</span> scope = thisObj || <span class="built_in">window</span>;
-        <span class="keyword">this</span>.fns.forEach(
-                        <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>{
-                            el.call(scope, o);
-                        }
-                    );
-    }
-};
-
-<span class="comment">// 测试</span>
-<span class="keyword">var</span> o = <span class="keyword">new</span> Observer;
-<span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>{
-    <span class="built_in">console</span>.log(<span class="string">'Robbin: '</span> + data + <span class="string">', 赶紧干活了！'</span>);
-};
-
-<span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>{
-    <span class="built_in">console</span>.log(<span class="string">'Randall: '</span> + data + <span class="string">', 找他加点工资去！'</span>);
-};
-
-o.subscribe(f1);
-o.subscribe(f2);
-
-o.update(<span class="string">"Tom回来了！"</span>)
-
-<span class="comment">// 退订f1</span>
-o.unsubscribe(f1);
-<span class="comment">//再来验证</span>
-o.update(<span class="string">"Tom回来了！"</span>);
-
-<span class="comment">// 方式二</span>
-<span class="comment">// 通用代码</span>
-<span class="keyword">var</span> observer = {
-    <span class="comment">// 订阅</span>
-    addSubscriber: <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>{
-        <span class="keyword">this</span>.subscribers[<span class="keyword">this</span>.subscribers.length] = callback;
-    },
-    <span class="comment">// 退订</span>
-    removeSubscriber: <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>{
-        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.subscribers.length; i++) {
-            <span class="keyword">if</span> (<span class="keyword">this</span>.subscribers[i] === callback) {
-                <span class="keyword">delete</span> (<span class="keyword">this</span>.subscribers[i]);
-            }
-        }
-    },
-    <span class="comment">// 发布</span>
-    publish: <span class="function"><span class="keyword">function</span> (<span class="params">what</span>) </span>{
-        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.subscribers.length; i++) {
-            <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span>.subscribers[i] === <span class="string">'function'</span>) {
-                <span class="keyword">this</span>.subscribers[i](what);
-            }
-        }
-    },
-    <span class="comment">// 将对象o具有观察者功能</span>
-    make: <span class="function"><span class="keyword">function</span> (<span class="params">o</span>) </span>{
-        <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> <span class="keyword">this</span>) {
-            o[i] = <span class="keyword">this</span>[i];
-            o.subscribers = [];
-        }
-    }
-};
-<span class="keyword">var</span> blogger = {
-    recommend: <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>{
-        <span class="keyword">var</span> msg = { userID: obj.userID, bloggerID: obj.bloggerID }
-        <span class="keyword">this</span>.publish(msg);
-    }
-};
-
-observer.make(blogger);
-<span class="keyword">var</span> updateUI = <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>{
-    <span class="built_in">console</span>.log(<span class="string">"第二步：更新界面，id为["</span> + obj.userID + <span class="string">"]的用户推荐了id为["</span> + obj.bloggerID + <span class="string">"]的博客！"</span>);
-}
-
-<span class="keyword">var</span> updateData = <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>{
-    <span class="built_in">console</span>.log(<span class="string">"第一步：更新后台数据，id为["</span> + obj.userID + <span class="string">"]的用户推荐了id为["</span> + obj.bloggerID + <span class="string">"]的博客！"</span>);
-}
-<span class="comment">// 订阅</span>
-blogger.addSubscriber(updateData);
-blogger.addSubscriber(updateUI);
-blogger.recommend({
-    userID: <span class="string">"65412365"</span>,
-    bloggerID: <span class="string">"65412369"</span>
-}); <span class="comment">// 调用发布</span>
-
-<span class="comment">// 退订</span>
-blogger.removeSubscriber(updateUI);
-blogger.removeSubscriber(updateData);
-blogger.recommend({
-    userID: <span class="string">"65412365"</span>,
-    bloggerID: <span class="string">"65412369"</span>
-}); <span class="comment">// 测试退订调用发布</span>
-</code></pre>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在js的世界里面，有一种函数，它可以接受另一个函数作为参数，这种函数，我为称之为高阶函数（Higher-order function）。我们日常使用过程中非常常见的一种形式就是回调函数，我们经常在写的带callback的函数，其实属于高阶函数；setTimeOut、setInterval可以接收函数进行异步操作；Array.sort也可以接收函数进行排序处理；进入ES6时代，Gruntjs、Gulp和webpack等打包工具的出现，我们可以大胆使用ES6/ES7的一些新的函数，如map、reduce、filter等函数   </p>
+<h3 id="高阶函数好处"><a href="#高阶函数好处" class="headerlink" title="高阶函数好处"></a>高阶函数好处</h3><p>新入门的程序员通常都会疑惑将函数作为参数传递在哪些地方才有用呢？在很多程序中，都有一两个这种实例：<strong>有一些基本的算法会被编写多次，但是可能每次稍有不同</strong>。这就是发挥使用函数作为参数所长的地方。<br>您可以做的事情是<strong>将算法的基本结构编写到一个函数中</strong>。然后，<strong>对少许部分进行修改，并将其作为函数参数补充回来</strong>。这样<strong>可以在一个函数中增加很多可定制的因素</strong>。您还可以添加其他函数参数为将来进行扩展。<strong>这种组合函数可以减少编程的冗余，通过扩展，还可以减少在一个程序中反复编写相同的算法所引起的错误</strong>。</p>
+<a id="more"></a>
+<h3 id="高阶函数的一些应用例子"><a href="#高阶函数的一些应用例子" class="headerlink" title="高阶函数的一些应用例子"></a>高阶函数的一些应用例子</h3><ol>
+<li><p>jQuery ajax回调函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">'http://localhost:8000/api/v1/entry/1/'</span>,</span><br><span class="line">    type: <span class="string">'GET'</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span>,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123; <span class="comment">// success接收回调函数</span></span><br><span class="line">        <span class="built_in">console</span>.log(data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>setTimeout/setInterval计时器函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'我将会在一秒后输出！！！'</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">0</span>;</span><br><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    n++; <span class="comment">// 我每隔１秒加１</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'我现在的值是'</span> + n); <span class="comment">// =&gt; 1 , 2 , 3 ...</span></span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Arry.sort数组排序函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x - y; <span class="comment">// 升序</span></span><br><span class="line">&#125;); <span class="comment">// =&gt; [1, 2, 10, 20]</span></span><br><span class="line"></span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> y - x; <span class="comment">// 降序</span></span><br><span class="line">&#125;); <span class="comment">// =&gt; [20, 10, 2, 1]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Arry.map数组遍历函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line">arr.map(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123; <span class="comment">// 数组所有元素进行求平方得到新的数组</span></span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">Math</span>.pow(item, <span class="number">2</span>);</span><br><span class="line">&#125;); <span class="comment">// =&gt; [1, 4, 9, 16, 25, 36, 49, 64, 81]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Arry.reduce数组降阶简化函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>];</span><br><span class="line">arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123; <span class="comment">// 数组求和</span></span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;); <span class="comment">// =&gt; 25</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Arry.filter数组过虑函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">15</span>];</span><br><span class="line"><span class="keyword">var</span> r = arr.filter(<span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x % <span class="number">2</span> !== <span class="number">0</span>; <span class="comment">// 在一个Array中，过虑掉偶数，只保留奇数</span></span><br><span class="line">&#125;);</span><br><span class="line">r; <span class="comment">// =&gt; [1, 5, 9, 15]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -386,18 +285,9 @@ blogger.recommend({
     
 <nav id="article-nav">
   
-    <a href="/2016/06/21/js-injector/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          javascript设计模式 - 依赖注入
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/21/js-defineProperty/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript设计模式 - 给对象绑定一个可访问的属性(defineProperty 数据绑定)</div>
+    <a href="/2017/02/17/advanced-algorithm-scripting/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我完成的FreeCodeCamp中的高级算法编码题</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -432,7 +322,7 @@ blogger.recommend({
 
 <div id="sohucy">
 <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="js-observer" data-thread-key="js-observer" data-title="javascript设计模式 - 观察者模式" data-url="http://www.kuangzen.com/2016/06/21/js-observer/"></div> 
+<div id="SOHUCS" sid="higher-order-function" data-thread-key="higher-order-function" data-title="javascript 高阶函数" data-url="http://www.kuangzen.com/2017/07/03/higher-order-function/"></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = 'cysYxvqtD'; 

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2017-02-17T08:25:30.306Z</updated>
+  <updated>2017-07-03T09:16:46.839Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript 高阶函数</title>
+    <link href="http://www.kuangzen.com/2017/07/03/higher-order-function/"/>
+    <id>http://www.kuangzen.com/2017/07/03/higher-order-function/</id>
+    <published>2017-07-03T08:19:35.000Z</published>
+    <updated>2017-07-03T09:16:46.839Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在js的世界里面，有一种函数，它可以接受另一个函数作为参数，这种函数，我为称之为高阶函数（Higher-order function）。我们日常使用过程中非常常见的一种形式就是回调函数，我们经常在写的带callback的函数，其实属于高阶函数；setTimeOut、setInterval可以接收函数进行异步操作；Array.sort也可以接收函数进行排序处理；进入ES6时代，Gruntjs、Gulp和webpack等打包工具的出现，我们可以大胆使用ES6/ES7的一些新的函数，如map、reduce、filter等函数   &lt;/p&gt;
+&lt;h3 id=&quot;高阶函数好处&quot;&gt;&lt;a href=&quot;#高阶函数好处&quot; class=&quot;headerlink&quot; title=&quot;高阶函数好处&quot;&gt;&lt;/a&gt;高阶函数好处&lt;/h3&gt;&lt;p&gt;新入门的程序员通常都会疑惑将函数作为参数传递在哪些地方才有用呢？在很多程序中，都有一两个这种实例：&lt;strong&gt;有一些基本的算法会被编写多次，但是可能每次稍有不同&lt;/strong&gt;。这就是发挥使用函数作为参数所长的地方。&lt;br&gt;您可以做的事情是&lt;strong&gt;将算法的基本结构编写到一个函数中&lt;/strong&gt;。然后，&lt;strong&gt;对少许部分进行修改，并将其作为函数参数补充回来&lt;/strong&gt;。这样&lt;strong&gt;可以在一个函数中增加很多可定制的因素&lt;/strong&gt;。您还可以添加其他函数参数为将来进行扩展。&lt;strong&gt;这种组合函数可以减少编程的冗余，通过扩展，还可以减少在一个程序中反复编写相同的算法所引起的错误&lt;/strong&gt;。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;高阶函数的一些应用例子&quot;&gt;&lt;a href=&quot;#高阶函数的一些应用例子&quot; class=&quot;headerlink&quot; title=&quot;高阶函数的一些应用例子&quot;&gt;&lt;/a&gt;高阶函数的一些应用例子&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;jQuery ajax回调函数&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$.ajax(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    url: &lt;span class=&quot;string&quot;&gt;&#39;http://localhost:8000/api/v1/entry/1/&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    type: &lt;span class=&quot;string&quot;&gt;&#39;GET&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dataType: &lt;span class=&quot;string&quot;&gt;&#39;json&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    success: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;data&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;comment&quot;&gt;// success接收回调函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(data);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;setTimeout/setInterval计时器函数&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;setTimeout(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;我将会在一秒后输出！！！&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;, &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; n = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;setInterval(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n++; &lt;span class=&quot;comment&quot;&gt;// 我每隔１秒加１&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;我现在的值是&#39;&lt;/span&gt; + n); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 1 , 2 , 3 ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;, &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Arry.sort数组排序函数&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = [&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;arr.sort(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;x, y&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x - y; &lt;span class=&quot;comment&quot;&gt;// 升序&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; [1, 2, 10, 20]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;arr.sort(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;x, y&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; y - x; &lt;span class=&quot;comment&quot;&gt;// 降序&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; [20, 10, 2, 1]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Arry.map数组遍历函数&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;arr.map(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;item&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;comment&quot;&gt;// 数组所有元素进行求平方得到新的数组&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(item, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; [1, 4, 9, 16, 25, 36, 49, 64, 81]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Arry.reduce数组降阶简化函数&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;arr.reduce(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;x, y&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;comment&quot;&gt;// 数组求和&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x + y;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 25&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Arry.filter数组过虑函数&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; r = arr.filter(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x % &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; !== &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 在一个Array中，过虑掉偶数，只保留奇数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;r; &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; [1, 5, 9, 15]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在js的世界里面，有一种函数，它可以接受另一个函数作为参数，这种函数，我为称之为高阶函数（Higher-order function）。我们日常使用过程中非常常见的一种形式就是回调函数，我们经常在写的带callback的函数，其实属于高阶函数；setTimeOut、setInterval可以接收函数进行异步操作；Array.sort也可以接收函数进行排序处理；进入ES6时代，Gruntjs、Gulp和webpack等打包工具的出现，我们可以大胆使用ES6/ES7的一些新的函数，如map、reduce、filter等函数   &lt;/p&gt;
+&lt;h3 id=&quot;高阶函数好处&quot;&gt;&lt;a href=&quot;#高阶函数好处&quot; class=&quot;headerlink&quot; title=&quot;高阶函数好处&quot;&gt;&lt;/a&gt;高阶函数好处&lt;/h3&gt;&lt;p&gt;新入门的程序员通常都会疑惑将函数作为参数传递在哪些地方才有用呢？在很多程序中，都有一两个这种实例：&lt;strong&gt;有一些基本的算法会被编写多次，但是可能每次稍有不同&lt;/strong&gt;。这就是发挥使用函数作为参数所长的地方。&lt;br&gt;您可以做的事情是&lt;strong&gt;将算法的基本结构编写到一个函数中&lt;/strong&gt;。然后，&lt;strong&gt;对少许部分进行修改，并将其作为函数参数补充回来&lt;/strong&gt;。这样&lt;strong&gt;可以在一个函数中增加很多可定制的因素&lt;/strong&gt;。您还可以添加其他函数参数为将来进行扩展。&lt;strong&gt;这种组合函数可以减少编程的冗余，通过扩展，还可以减少在一个程序中反复编写相同的算法所引起的错误&lt;/strong&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+  </entry>
   
   <entry>
     <title>我完成的FreeCodeCamp中的高级算法编码题</title>
@@ -395,9 +441,9 @@
     </summary>
     
     
-      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
-    
       <category term="后端" scheme="http://www.kuangzen.com/tags/back-end/"/>
+    
+      <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
     
   </entry>
   
@@ -960,35 +1006,6 @@
       <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
     
       <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript-design-model/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>充充电、打打鸡血</title>
-    <link href="http://www.kuangzen.com/2016/07/26/self-motivated-2016-07-26/"/>
-    <id>http://www.kuangzen.com/2016/07/26/self-motivated-2016-07-26/</id>
-    <published>2016-07-26T08:17:05.000Z</published>
-    <updated>2016-07-27T01:11:50.275Z</updated>
-    
-    <content type="html">&lt;p&gt;今天打开firebase的登陆页面，顶部出来了爱因斯坦的名言   &lt;/p&gt;
-&lt;p&gt;“At least once a day, allow yourself the freedom to think and dream for yourself.”&lt;br&gt;－ ALBERT EINSTEIN   &lt;/p&gt;
-&lt;p&gt;满满的鸡血，每天至少要给自己一次去思考和寻找自己的梦想的自由！&lt;br&gt;感觉自己太过理性了，竟不知要写什么。   &lt;/p&gt;
-&lt;p&gt;“It’s the possibility of having a dream come true that makes life interesting. ”&lt;br&gt;－ PAULO COELHO, “THE ALCHEMIST”   &lt;/p&gt;
-&lt;p&gt;只因梦想成真是有可能的使得生活变得有趣。&lt;br&gt;我的梦想感觉尚且遥远，洗洗睡吧，呵呵。   &lt;/p&gt;
-&lt;p&gt;“Don’t let anyone steal your dream. It’s your dream, not theirs. ”&lt;br&gt;－ DAN ZADRA   &lt;/p&gt;
-&lt;p&gt;不要让别人偷走你的梦想。它是你的，不是他们的。&lt;br&gt;感觉梦想埋在心底太久了，都快要烂掉了，赶紧拿出来晒晒，不然真的要发霉啦哈哈哈！&lt;br&gt;那问题来了，梦想那么多，都有哪些呢？&lt;br&gt;儿时，看武侠片看多了，梦想会轻功，带我飞吧。&lt;br&gt;还有那些不好说出口的美梦，顺其自然吧，追求，但不强求。呵呵呵！   &lt;/p&gt;
-&lt;p&gt;为了写作而写作，就这样吧，啦啦啦~&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天打开firebase的登陆页面，顶部出来了爱因斯坦的名言   &lt;/p&gt;
-&lt;p&gt;“At least once a day, allow yourself the freedom to think and dream for yourself.”&lt;br&gt;－ ALBERT E
-    
-    </summary>
-    
-    
-      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
     
   </entry>
   

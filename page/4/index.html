@@ -213,6 +213,70 @@
 
       <div class="body-wrap">
   
+    <article id="post-avoid-wechat-input-bug" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/05/avoid-wechat-input-bug/" class="article-date">
+  	<time datetime="2016-05-05T10:30:11.000Z" itemprop="datePublished">2016-05-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/05/avoid-wechat-input-bug/">新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时，导致遮挡住fixed在底部输入框问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>固定(Fixed)在底部的输入框的页面，如下图评论框<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/bottom_input.png" alt="Fixed在底部的评论框"> </p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>可以做成Popup弹出输入框，这样就可以解决所有的iphone和各种乱七八糟的安卓手机的适配问题，如下图：<br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/popup_input.png" alt="Popup弹出输入框">
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ui/">UI设计</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compatibility/">网页兼容性</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/05/avoid-wechat-input-bug/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-wechat-readonly-input-virtual-keyboard-bug" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -798,72 +862,6 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
         <p class="article-more-link">
           <a  href="/2016/04/06/android-wechat6-3-15-browser-bug/#more">阅读全文 >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-jQuery-countdown" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/05/jQuery-countdown/" class="article-date">
-  	<time datetime="2016-04-05T02:52:16.000Z" itemprop="datePublished">2016-04-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/05/jQuery-countdown/">jQuery.countdown</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-        <p>a simple, yet easy to use jquery countdown plugin</p>
-<p><a href="https://github.com/hiooyUI/jQuery.countdown" target="_blank" rel="external">Github</a></p>
-<h2 id="how-to-use-it"><a href="#how-to-use-it" class="headerlink" title="how to use it?"></a>how to use it?</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;your path/jquery.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;jquery.countdown.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">```&lt;!-- more --&gt;</span><br><span class="line">```javascript</span><br><span class="line">    $(&quot;#container&quot;).countDown(&#123;</span><br><span class="line">        timeInSecond: 60 * 60,//要倒计时的时间，秒为单位</span><br><span class="line">        displayTpl: &quot;&#123;day&#125;天&#123;hour&#125;小时&#123;minute&#125;分&#123;second&#125;秒&quot;, //显示模版</span><br><span class="line">        callback: function () &#123;//倒计时完后执行的回调函数</span><br><span class="line">            alert(&quot;倒计时结束！&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-<p>check out the demo.html example.</p>
-<p>or</p>
-<p><a href="http://sandbox.runjs.cn/show/uvpedzwn" target="_blank" rel="external">live Demo</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
-	</div>
-
-      
-
       
       <div class="clearfix"></div>
     </div>
