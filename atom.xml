@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2017-07-05T07:53:32.374Z</updated>
+  <updated>2017-07-05T10:34:53.794Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript函数式编程之 柯里化（curry）</title>
+    <link href="http://www.kuangzen.com/2017/07/05/curry/"/>
+    <id>http://www.kuangzen.com/2017/07/05/curry/</id>
+    <published>2017-07-05T07:57:30.000Z</published>
+    <updated>2017-07-05T10:34:53.794Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;柯里化（curry）的概念其实可以简单理解为这样，本来有个已存在的函数需要接收多个参数的，现我想要根据需求由此函数打造成一个&lt;strong&gt;只有一个或者指定数量参数&lt;/strong&gt;的新的函数。这里我们引用&lt;code&gt;lodash&lt;/code&gt;库来举例，如下：&lt;br&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;https://cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 非curry化的replace函数如下：&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; myReplace = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;what, replacement, str&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; str.replace(what, replacement);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// curry化后的replace函数如下：&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; replace = _.curry(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;what, replacement, str&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;comment&quot;&gt;// 注意，此函数如果接收3个参数就会直接返回结果，如果接收2个或者1个参数就返回一个函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; str.replace(what, replacement);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// curry化后，我们可以按需定制咖喱套餐了：）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; replaceFuck = replace(&lt;span class=&quot;string&quot;&gt;&#39;Fuck&#39;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// replaceFuck是新的函数，非常灵活，可以接收1个(返回一个新函数)或者2个参数(返回结果)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; replaceFuckWithXxxx = replaceFuck(&lt;span class=&quot;string&quot;&gt;&#39;Xxxx&#39;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// 这里把三参数按自己需求定制转成只有１个参数的新函数，这样就可以结合前一篇文章的compose来使用了&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; replaceFuckWithXxxx(&lt;span class=&quot;string&quot;&gt;&#39;Fuck you&#39;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; Xxxx you&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 非curry化的add函数如下：&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; myAdd = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x, y&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x + y;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// curry化后的add函数如下：&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; add = _.curry(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x, y&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x + y;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// curry化后，我们可以按需定制咖喱套餐了：）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; addOne = add(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt;新函数 function(x)&amp;#123;return x+1;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; addTen = add(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt;新函数 function(x)&amp;#123;return x+10;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; minusOne = add(&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt;新函数 function(x)&amp;#123;return x-1;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;addOne(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 101 像数学公式f(x)一样的形式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;addTen(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 110&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;minusOne(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 99&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;代码柯里化（curry）的好处&quot;&gt;&lt;a href=&quot;#代码柯里化（curry）的好处&quot; class=&quot;headerlink&quot; title=&quot;代码柯里化（curry）的好处&quot;&gt;&lt;/a&gt;代码柯里化（curry）的好处&lt;/h3&gt;&lt;p&gt;通过简单地传递几个参数，就能&lt;strong&gt;动态创建实用的新函数&lt;/strong&gt;；&lt;br&gt;而且还能带来一个额外好处，那就是保留了&lt;strong&gt;数学的函数定义&lt;/strong&gt;，尽管参数不止一个；与数学函数贴近这也是函数式编程设计的初衷。    &lt;/p&gt;
+&lt;p&gt;参考引用自：&lt;a href=&quot;https://www.gitbook.com/book/llh911001/mostly-adequate-guide-chinese/details&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JS函数式编程指南&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;柯里化（curry）的概念其实可以简单理解为这样，本来有个已存在的函数需要接收多个参数的，现我想要根据需求由此函数打造成一个&lt;strong&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+  </entry>
   
   <entry>
     <title>javascript函数式编程之 代码组合（compose）</title>
@@ -929,33 +954,6 @@
       <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
     
       <category term="切图" scheme="http://www.kuangzen.com/tags/crop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>来碗汤自我激励</title>
-    <link href="http://www.kuangzen.com/2016/08/01/self-motivated-2016-08-01/"/>
-    <id>http://www.kuangzen.com/2016/08/01/self-motivated-2016-08-01/</id>
-    <published>2016-08-01T03:08:34.000Z</published>
-    <updated>2016-08-01T03:30:00.509Z</updated>
-    
-    <content type="html">&lt;p&gt;自我激励有点阿Ｑ精神，让自己保持一种轻松愉悦的心情，更加自信勇敢地去面对生活中的挑战，让自自己内心强大起来。当然，经常煲点鸡汤必不可少。废话少说，马上上汤，呵呵！   &lt;/p&gt;
-&lt;p&gt;“If you always do what you always did, you will always get what you always got.”&lt;br&gt;－ ALBERT EINSTEIN   &lt;/p&gt;
-&lt;p&gt;作为一个理工男，爱神汤是我的最爱，哈哈！&lt;br&gt;这碗汤，比较好理解，如果你总是做的事或者做事方式一成不变，那么你的收获或者取得的成就也就一直是那样，没啥改变。   &lt;/p&gt;
-&lt;p&gt;话说回来，虽然觉得很对，变变变，创新，不是一直都被大家挂在嘴边吗？那就对了，要变真的不容易，是要付出代价嘀。   &lt;/p&gt;
-&lt;p&gt;作为资深码农的我也有深刻的理解，当你习惯了写css样式的时候，觉得各种样式预处理工具比较麻烦不愿意去接受，不愿意去改变。可逼了自己一把，强制上了grunt用起Less时，那种酸爽，跟本停不下来；入门之后，一下子又玩起Gulp、Sass。那种解脱感无法言达。   &lt;/p&gt;
-&lt;p&gt;后期目标是强行推Vue吧，希望再能找到初恋的感觉！呵呵!   &lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;自我激励有点阿Ｑ精神，让自己保持一种轻松愉悦的心情，更加自信勇敢地去面对生活中的挑战，让自自己内心强大起来。当然，经常煲点鸡汤必不可少。废话少说，马上上汤，呵呵！   &lt;/p&gt;
-&lt;p&gt;“If you always do what you always did, you wi
-    
-    </summary>
-    
-    
-      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
     
   </entry>
   

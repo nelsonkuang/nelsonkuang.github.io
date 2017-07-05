@@ -213,6 +213,76 @@
 
       <div class="body-wrap">
   
+    <article id="post-getting-started-with-gulp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/08/getting-started-with-gulp/" class="article-date">
+  	<time datetime="2016-04-08T00:39:49.000Z" itemprop="datePublished">2016-04-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/08/getting-started-with-gulp/">用Gulp配置前端自动化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>平时习惯用Grunt管理前端项目，由于近期项目需要，开始转向了Gulp，用起来给我最大的感受是流程更加清晰，链式的配置流程,用 <code>.pipe()</code> 把所有的流程串联起来，更加方便；而用Grunt，平时习惯是按每个task来配置流程，但总体上都差不多，基本上两者都可以满足日常项目需求。</p>
+<h3 id="项目中的出现使用场景"><a href="#项目中的出现使用场景" class="headerlink" title="项目中的出现使用场景"></a>项目中的出现使用场景</h3><ol>
+<li>js语法检查</li>
+<li>编译Sass/Scss</li>
+<li>压缩js文件</li>
+<li>合并js文件</li>
+<li>清空样式、js</li>
+<li>监听文件变化,自动执行上面指定的任务
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scss/">scss</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/08/getting-started-with-gulp/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-android-wechat6-3-15-browser-bug" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -810,77 +880,9 @@
 
 
   
-    <article id="post-randomjs" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/04/14/randomjs/" class="article-date">
-  	<time datetime="2015-04-14T06:57:45.000Z" itemprop="datePublished">2015-04-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/14/randomjs/">random.js</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h5 id="This-is-a-general-purpose-random-data-number-char-string-array-datetime-dom-color-and-so-on-generates-library-Pull-requests-are-welcome"><a href="#This-is-a-general-purpose-random-data-number-char-string-array-datetime-dom-color-and-so-on-generates-library-Pull-requests-are-welcome" class="headerlink" title="This is a general-purpose random data(number,char,string,array,datetime,dom,color and so on) generates library, Pull requests are welcome!"></a>This is a general-purpose random data(number,char,string,array,datetime,dom,color and so on) generates library, Pull requests are welcome!</h5><ul>
-<li>No dependencies</li>
-<li>AMD, Node &amp; browser ready</li>
-</ul>
-<p><a href="https://github.com/nelsonkuang/random.js">Github</a></p>
-<h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage:"></a>Usage:</h1><h2 id="random-number-min-max-tofixed"><a href="#random-number-min-max-tofixed" class="headerlink" title="random.number(min, max, tofixed)"></a>random.number(min, max, tofixed)</h2><h5 id="Generate-a-random-float-number-from-Number-min-to-Number-max-and-use-Integer-tofixed-to-control-the-decimal-places"><a href="#Generate-a-random-float-number-from-Number-min-to-Number-max-and-use-Integer-tofixed-to-control-the-decimal-places" class="headerlink" title="Generate a random float number from Number:min to Number:max, and use Integer:tofixed to control the decimal places."></a>Generate a random float number from Number:min to Number:max, and use Integer:tofixed to control the decimal places.</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">random.number();</span><br><span class="line">=&gt; <span class="number">-1.383273644028584e+308</span></span><br><span class="line"></span><br><span class="line">random.number(<span class="number">100</span>);</span><br><span class="line">=&gt; <span class="number">97.1008624881506</span></span><br><span class="line"></span><br><span class="line">random.number(<span class="number">20</span>,<span class="number">80</span>)</span><br><span class="line">=&gt; <span class="number">38.68204082828015</span></span><br><span class="line"></span><br><span class="line">random.number(<span class="number">20</span>, <span class="number">80</span>, <span class="number">2</span>)</span><br><span class="line">=&gt; <span class="number">20.51</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/random/">random</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/04/14/randomjs/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 </div>
