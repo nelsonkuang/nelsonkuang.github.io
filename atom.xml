@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2017-07-03T09:16:46.839Z</updated>
+  <updated>2017-07-05T07:50:07.345Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -16,11 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>javascript函数式编程之 代码组合（compose）</title>
+    <link href="http://www.kuangzen.com/2017/07/05/compose/"/>
+    <id>http://www.kuangzen.com/2017/07/05/compose/</id>
+    <published>2017-07-05T01:27:22.000Z</published>
+    <updated>2017-07-05T07:50:07.345Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在函数式编程使用过程中，组合（compose）简单来说就是把两个你喜欢的接入参数一样(最好都是一参的形式，可能过柯里化&lt;code&gt;curry&lt;/code&gt;把多参转为一参)的函数把它们组合到一起，产生一个新的函数。如下：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; compose = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;f, g&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; f(g(x));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在这里，我们把&lt;code&gt;f&lt;/code&gt;和&lt;code&gt;g&lt;/code&gt;两个函数组合到一起，它们有共同的参数&lt;code&gt;x&lt;/code&gt;，显然在&lt;code&gt;compose&lt;/code&gt;组合时，函数的执行顺序是由右向左执行，先执行&lt;code&gt;g(x)&lt;/code&gt;再执行&lt;code&gt;f(g)&lt;/code&gt;，可称之为“左倾”。使用起来如下：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 使用组合&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; toUpperCase = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; str.toUpperCase(); &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; reverse = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; str.split(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;).reverse().join(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;); &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; toUpperCaseAndReverse = compose(reverse, toUpperCase); &lt;span class=&quot;comment&quot;&gt;// toUpperCaseAndReverse由右向左，先执行toUpperCase，再执行reverse&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;toUpperCaseAndReverse(&lt;span class=&quot;string&quot;&gt;&quot;abcd&quot;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; &quot;DCBA&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 不使用组合&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; toUpperCaseAndReverse = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;)&lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; reverse(toUpperCase(x));&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;代码组合的好处&quot;&gt;&lt;a href=&quot;#代码组合的好处&quot; class=&quot;headerlink&quot; title=&quot;代码组合的好处&quot;&gt;&lt;/a&gt;代码组合的好处&lt;/h3&gt;&lt;p&gt;代码组合的好处是可以大大的&lt;strong&gt;提高程序的可读性&lt;/strong&gt;，比一大堆函数嵌套调用更加简单明了。&lt;br&gt;从右向左执行&lt;strong&gt;更加能够反映数学上的含义&lt;/strong&gt;。函数式编程的目的和意义是为了让编码与数学函数更加相似，若能更好地贴近数学公式就完美了。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 结合律（associativity）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; associative = compose(f, compose(g, h)) == compose(compose(f, g), h);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这个特性就是数学意义上的&lt;strong&gt;结合律&lt;/strong&gt;，符合结合律意味着不管你是把 &lt;code&gt;g&lt;/code&gt; 和 &lt;code&gt;h&lt;/code&gt; 分到一组，还是把 &lt;code&gt;f&lt;/code&gt; 和 &lt;code&gt;g&lt;/code&gt; 分到一组都不重要。  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在函数式编程使用过程中，组合（compose）简单来说就是把两个你喜欢的接入参数一样(最好都是一参的形式，可能过柯里化&lt;code&gt;curry
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+  </entry>
+  
+  <entry>
     <title>javascript 高阶函数</title>
     <link href="http://www.kuangzen.com/2017/07/03/higher-order-function/"/>
     <id>http://www.kuangzen.com/2017/07/03/higher-order-function/</id>
     <published>2017-07-03T08:19:35.000Z</published>
-    <updated>2017-07-03T09:16:46.839Z</updated>
+    <updated>2017-07-05T02:04:08.368Z</updated>
     
     <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在js的世界里面，有一种函数，它可以接受另一个函数作为参数，这种函数，我为称之为高阶函数（Higher-order function）。我们日常使用过程中非常常见的一种形式就是回调函数，我们经常在写的带callback的函数，其实属于高阶函数；setTimeOut、setInterval可以接收函数进行异步操作；Array.sort也可以接收函数进行排序处理；进入ES6时代，Gruntjs、Gulp和webpack等打包工具的出现，我们可以大胆使用ES6/ES7的一些新的函数，如map、reduce、filter等函数   &lt;/p&gt;
 &lt;h3 id=&quot;高阶函数好处&quot;&gt;&lt;a href=&quot;#高阶函数好处&quot; class=&quot;headerlink&quot; title=&quot;高阶函数好处&quot;&gt;&lt;/a&gt;高阶函数好处&lt;/h3&gt;&lt;p&gt;新入门的程序员通常都会疑惑将函数作为参数传递在哪些地方才有用呢？在很多程序中，都有一两个这种实例：&lt;strong&gt;有一些基本的算法会被编写多次，但是可能每次稍有不同&lt;/strong&gt;。这就是发挥使用函数作为参数所长的地方。&lt;br&gt;您可以做的事情是&lt;strong&gt;将算法的基本结构编写到一个函数中&lt;/strong&gt;。然后，&lt;strong&gt;对少许部分进行修改，并将其作为函数参数补充回来&lt;/strong&gt;。这样&lt;strong&gt;可以在一个函数中增加很多可定制的因素&lt;/strong&gt;。您还可以添加其他函数参数为将来进行扩展。&lt;strong&gt;这种组合函数可以减少编程的冗余，通过扩展，还可以减少在一个程序中反复编写相同的算法所引起的错误&lt;/strong&gt;。&lt;/p&gt;
@@ -441,9 +467,9 @@
     </summary>
     
     
-      <category term="后端" scheme="http://www.kuangzen.com/tags/back-end/"/>
-    
       <category term="node.js" scheme="http://www.kuangzen.com/tags/node-js/"/>
+    
+      <category term="后端" scheme="http://www.kuangzen.com/tags/back-end/"/>
     
   </entry>
   
@@ -929,83 +955,6 @@
     
     
       <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript Promise让异步操作代码更加灵活</title>
-    <link href="http://www.kuangzen.com/2016/07/27/js-promise/"/>
-    <id>http://www.kuangzen.com/2016/07/27/js-promise/</id>
-    <published>2016-07-27T02:21:18.000Z</published>
-    <updated>2016-07-28T01:38:12.110Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;顾名思义，&lt;strong&gt;Promise&lt;/strong&gt;是承诺的意思，就是承诺将会发生某个操作，但操作结果有可能是成功的，也有可能是失败的；但无论如何，操作一但完成，立马会返回结果并把结果作为参数去执行相应被绑定的回调函数。&lt;em&gt;Promise&lt;/em&gt;对象主要是用来做异步计算的，一个&lt;em&gt;Promise&lt;/em&gt;对象代表一个未完成，但即将完成的操作。   &lt;/p&gt;
-&lt;h3 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Promise&lt;/span&gt;( &lt;span class=&quot;comment&quot;&gt;/* executor */&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;resolve, reject&lt;/span&gt;) &lt;/span&gt;&amp;#123; ... &amp;#125; );&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;参数说明&lt;/strong&gt;&lt;br&gt;executor   &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;通过参数&lt;em&gt;resolve&lt;/em&gt;和&lt;em&gt;reject&lt;/em&gt;，一个函数可以被传递到其他函数。executor函数将被提供&lt;em&gt;resolve&lt;/em&gt;和&lt;em&gt;reject&lt;/em&gt;函数的Promise履行者立即执行(executor在Promise构造函数之前执行，甚至返回创建的对象)。&lt;em&gt;Resolve&lt;/em&gt;和&lt;em&gt;reject&lt;/em&gt;函数是绑定到了promise对象和单独调用他们履行或者拒绝promise对象。Executor预期会初始化一些异步工作和完成后要么调用&lt;em&gt;resolve&lt;/em&gt;或者&lt;em&gt;reject&lt;/em&gt;函数去解决promise的最后值或者拒绝它如果有错误发生。   &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h3&gt;&lt;p&gt;一个&lt;strong&gt;Promise&lt;/strong&gt;代表一个值的代理，我们没必要知道promise是什么时候被创建的。它允许你去关联事件处理器到一个异步的动作的最后的成功值或者失败原理。这样使得异步方法像同步方法那样返回值：代替最后值，异步方法返回一个未来的在某个时间点的带值的promise。   &lt;/p&gt;
-&lt;p&gt;一个Promise对象是在下面其中一个状态：   &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;pending&lt;/em&gt;，挂起状态：初始状态，未履行或者被拒绝   &lt;/li&gt;
-&lt;li&gt;&lt;em&gt;fulfilled&lt;/em&gt;，被履行了:意味着操作成功完成。   &lt;/li&gt;
-&lt;li&gt;&lt;em&gt;rejected&lt;/em&gt;，被拒绝了:表示操作失败了。   &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;一个被挂起的promise可以成为要么带值的被履行状态或者带原因(错误)而被拒绝的状态。当其中一个发生，关联的事件处理器队列中的promise的then方法将被调用。(如果promise已经被履行或者被拒绝当相应的事件处理器被关联，这个事件处理器将被调用，所以异步操作完成和它的事件处理器被关联之间就没有竞争条件，解耦了)。   &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;正因为 &lt;code&gt;Promise.prototype.then()&lt;/code&gt; 和 &lt;code&gt;Promise.prototype.catch()&lt;/code&gt; 方法返回的是Promise，所以他们可以被链起来被一起结合操作。使用使得异步嵌套变得更加简单。&lt;br&gt;使用Promise进行异步的流程：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com1.z0.glb.clouddn.com/img/QQ%E6%88%AA%E5%9B%BE20160727184459.jpg&quot; alt=&quot;Promise流程图&quot;&gt;&lt;br&gt;不使用Promise的普通ajax异步的流程：&lt;br&gt;&lt;img src=&quot;http://7xsj8c.com1.z0.glb.clouddn.com/img/QQ%E6%88%AA%E5%9B%BE20160728093401.jpg&quot; alt=&quot;Ajax流程图&quot;&gt;   &lt;/p&gt;
-&lt;p&gt;两者明显的区别执行顺序不一样；前者是串行并且可以进行链式操作，后者是并行执行不能进行链式操作。   &lt;/p&gt;
-&lt;h3 id=&quot;方法&quot;&gt;&lt;a href=&quot;#方法&quot; class=&quot;headerlink&quot; title=&quot;方法&quot;&gt;&lt;/a&gt;方法&lt;/h3&gt;&lt;p&gt;Promise.all(iterable)   &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;iterable是&lt;em&gt;Promise&lt;/em&gt;数组，接受一个&lt;em&gt;Promise&lt;/em&gt;数组，一连串的异步执行完成后，就返回一个Thenable的Promise。   &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Promise.race(iterable)   &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;iterable是&lt;em&gt;Promise&lt;/em&gt;数组，接受一个&lt;em&gt;Promise&lt;/em&gt;数组，只要有一个异步执行完成后，就返回一个Thenable的Promise。   &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Promise.reject(reason)   &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;始终当作失败，执行reject，返回一个Thenable的Promise。   &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Promise.resolve(value)   &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;始终当作成功，执行resolve，返回一个Thenable的Promise。   &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;原型&quot;&gt;&lt;a href=&quot;#原型&quot; class=&quot;headerlink&quot; title=&quot;原型&quot;&gt;&lt;/a&gt;原型&lt;/h3&gt;&lt;p&gt;Promise.prototype.catch(onRejected)&lt;br&gt;使用方法看下面例子二&lt;br&gt;Promise.prototype.then(onFulfilled, onRejected)&lt;br&gt;使用方法看下面例子一   &lt;/p&gt;
-&lt;h3 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;p&gt;使用方式 一、&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; promise = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Promise&lt;/span&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;resolve, reject&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// 执行异步操作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;comment&quot;&gt;/* 成功 */&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    resolve(&lt;span class=&quot;string&quot;&gt;&quot;成功的数据&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    reject(&lt;span class=&quot;string&quot;&gt;&quot;失败信息&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;promise.then(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;result&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(result); &lt;span class=&quot;comment&quot;&gt;// &quot;成功的数据&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;err&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(err); &lt;span class=&quot;comment&quot;&gt;// &quot;失败信息&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;使用方式 二、&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; promise = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Promise&lt;/span&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;resolve, reject&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// 执行异步操作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;comment&quot;&gt;/* 成功 */&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    resolve(&lt;span class=&quot;string&quot;&gt;&quot;成功的数据&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    reject(&lt;span class=&quot;string&quot;&gt;&quot;失败信息&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;promise.then(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;result&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(result); &lt;span class=&quot;comment&quot;&gt;// &quot;成功的数据&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).catch(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;err&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(err); &lt;span class=&quot;comment&quot;&gt;// &quot;失败信息&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;三 链式调用、&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; promise = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Promise&lt;/span&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;resolve, reject&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  resolve(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;promise.then(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;val&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(val); &lt;span class=&quot;comment&quot;&gt;// 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; val + &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).then(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;val&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(val); &lt;span class=&quot;comment&quot;&gt;// 3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;四 接受一个 Promise 数组、&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Promise&lt;/span&gt;.all(promisesArr).then(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;resultsArr&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文参考引用：&lt;br&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/rubylouvre/p/3495286.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/rubylouvre/p/3495286.html&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;顾名思义，&lt;strong&gt;Promise&lt;/strong&gt;是承诺的意思，就是承诺将会发生某个操作，但操作结果有可能是成功的，也有可能是失败的；但无论如何，操作一但完成，立马会返回结果并把结果作为参数去执行相应被绑定的回调函数。&lt;em&gt;Promise&lt;/em&gt;对象主要是用来做异步计算的，一个&lt;em&gt;Promise&lt;/em&gt;对象代表一个未完成，但即将完成的操作。   &lt;/p&gt;
-&lt;h3 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Promise&lt;/span&gt;( &lt;span class=&quot;comment&quot;&gt;/* executor */&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;resolve, reject&lt;/span&gt;) &lt;/span&gt;&amp;#123; ... &amp;#125; );&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;参数说明&lt;/strong&gt;&lt;br&gt;executor   &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;通过参数&lt;em&gt;resolve&lt;/em&gt;和&lt;em&gt;reject&lt;/em&gt;，一个函数可以被传递到其他函数。executor函数将被提供&lt;em&gt;resolve&lt;/em&gt;和&lt;em&gt;reject&lt;/em&gt;函数的Promise履行者立即执行(executor在Promise构造函数之前执行，甚至返回创建的对象)。&lt;em&gt;Resolve&lt;/em&gt;和&lt;em&gt;reject&lt;/em&gt;函数是绑定到了promise对象和单独调用他们履行或者拒绝promise对象。Executor预期会初始化一些异步工作和完成后要么调用&lt;em&gt;resolve&lt;/em&gt;或者&lt;em&gt;reject&lt;/em&gt;函数去解决promise的最后值或者拒绝它如果有错误发生。   &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h3&gt;&lt;p&gt;一个&lt;strong&gt;Promise&lt;/strong&gt;代表一个值的代理，我们没必要知道promise是什么时候被创建的。它允许你去关联事件处理器到一个异步的动作的最后的成功值或者失败原理。这样使得异步方法像同步方法那样返回值：代替最后值，异步方法返回一个未来的在某个时间点的带值的promise。   &lt;/p&gt;
-&lt;p&gt;一个Promise对象是在下面其中一个状态：   &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;pending&lt;/em&gt;，挂起状态：初始状态，未履行或者被拒绝   &lt;/li&gt;
-&lt;li&gt;&lt;em&gt;fulfilled&lt;/em&gt;，被履行了:意味着操作成功完成。   &lt;/li&gt;
-&lt;li&gt;&lt;em&gt;rejected&lt;/em&gt;，被拒绝了:表示操作失败了。   &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;一个被挂起的promise可以成为要么带值的被履行状态或者带原因(错误)而被拒绝的状态。当其中一个发生，关联的事件处理器队列中的promise的then方法将被调用。(如果promise已经被履行或者被拒绝当相应的事件处理器被关联，这个事件处理器将被调用，所以异步操作完成和它的事件处理器被关联之间就没有竞争条件，解耦了)。
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
-    
-      <category term="javascript设计模式" scheme="http://www.kuangzen.com/tags/javascript-design-model/"/>
     
   </entry>
   

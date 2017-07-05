@@ -288,6 +288,70 @@
 
 
   
+    <article id="post-compose" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/05/compose/" class="article-date">
+  	<time datetime="2017-07-05T01:27:22.000Z" itemprop="datePublished">2017-07-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/05/compose/">javascript函数式编程之 代码组合（compose）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在函数式编程使用过程中，组合（compose）简单来说就是把两个你喜欢的接入参数一样(最好都是一参的形式，可能过柯里化<code>curry</code>把多参转为一参)的函数把它们组合到一起，产生一个新的函数。如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> compose = <span class="function"><span class="keyword">function</span>(<span class="params">f, g</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> f(g(x));</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在这里，我们把<code>f</code>和<code>g</code>两个函数组合到一起，它们有共同的参数<code>x</code>，显然在<code>compose</code>组合时，函数的执行顺序是由右向左执行，先执行<code>g(x)</code>再执行<code>f(g)</code>，可称之为“左倾”。使用起来如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用组合</span></span><br><span class="line"><span class="keyword">var</span> toUpperCase = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>) </span>&#123; <span class="keyword">return</span> str.toUpperCase(); &#125;;</span><br><span class="line"><span class="keyword">var</span> reverse = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>) </span>&#123; <span class="keyword">return</span> str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>); &#125;;</span><br><span class="line"><span class="keyword">var</span> toUpperCaseAndReverse = compose(reverse, toUpperCase); <span class="comment">// toUpperCaseAndReverse由右向左，先执行toUpperCase，再执行reverse</span></span><br><span class="line">toUpperCaseAndReverse(<span class="string">"abcd"</span>); <span class="comment">// =&gt; "DCBA"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不使用组合</span></span><br><span class="line"><span class="keyword">var</span> toUpperCaseAndReverse = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123; <span class="keyword">return</span> reverse(toUpperCase(x));&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="代码组合的好处"><a href="#代码组合的好处" class="headerlink" title="代码组合的好处"></a>代码组合的好处</h3><p>代码组合的好处是可以大大的<strong>提高程序的可读性</strong>，比一大堆函数嵌套调用更加简单明了。<br>从右向左执行<strong>更加能够反映数学上的含义</strong>。函数式编程的目的和意义是为了让编码与数学函数更加相似，若能更好地贴近数学公式就完美了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 结合律（associativity）</span></span><br><span class="line"><span class="keyword">var</span> associative = compose(f, compose(g, h)) == compose(compose(f, g), h);</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>这个特性就是数学意义上的<strong>结合律</strong>，符合结合律意味着不管你是把 <code>g</code> 和 <code>h</code> 分到一组，还是把 <code>f</code> 和 <code>g</code> 分到一组都不重要。  </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-higher-order-function" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -773,87 +837,6 @@
       
         <p class="article-more-link">
           <a  href="/2017/02/08/basic-algorithm-scripting-1-6/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-pm-awesome-yujun" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/12/20/pm-awesome-yujun/" class="article-date">
-  	<time datetime="2016-12-20T08:08:16.000Z" itemprop="datePublished">2016-12-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/20/pm-awesome-yujun/">俞军把12条产品军规压缩到3条</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <p>前言：俞军把12条产品军规压缩到3条<br>俞军为百度最早的产品经理、百度前副总裁、滴滴出行产品负责人   </p>
-<h3 id="俞军原来的12条“军规”："><a href="#俞军原来的12条“军规”：" class="headerlink" title="俞军原来的12条“军规”："></a>俞军原来的12条“军规”：</h3><ol>
-<li>PM首先是用户；</li>
-<li>站在用户角度看待问题；</li>
-<li>用户体验是一个完整的过程</li>
-<li>追求效果，不做没用的东西；</li>
-<li>发现需求，而不是创造需求；</li>
-<li>决定不做什么，往往比决定做什么更重要；</li>
-<li>用户是很难被教育的，要迎合用户，而不是改变用户；</li>
-<li>关注最大多数用户，在关键点上超越竞争对手，快速上线，在实践中不断改进；</li>
-<li>给用户稳定的体验预期；</li>
-<li>如果不确定该怎么做，就先学别人是怎么做的；</li>
-<li>把用户当作傻瓜，不要让用户思考和选择，替用户预先想好；</li>
-<li>不要给用户不想要的东西，任何没用的东西对用户都是一种伤害。</li>
-</ol>
-<h3 id="俞军新的军规"><a href="#俞军新的军规" class="headerlink" title="俞军新的军规"></a>俞军新的军规</h3><ul>
-<li>产品价值分析法：产品价值=(新体验-旧体验)-换用成本</li>
-<li>用户样本量：用户即需求，用户是自然人的某一类需求，用户不是自然人，随着内外部场景变化会发生变化。</li>
-<li>怀疑精神：自我迭代。
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/product-design/">产品设计</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/12/20/pm-awesome-yujun/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

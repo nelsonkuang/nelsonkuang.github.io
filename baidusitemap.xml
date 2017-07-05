@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset>
   <url>
+    <loc>http://www.kuangzen.com/2017/07/05/compose/</loc>
+    <lastmod>2017-07-05T07:50:07.345Z</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+    <data>
+        <display>
+        <title>javascript函数式编程之 代码组合（compose）</title>
+        <content><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在函数式编程使用过程中，组合（compose）简单来说就是把两个你喜欢的接入参数一样(最好都是一参的形式，可能过柯里化<code>curry</code>把多参转为一参)的函数把它们组合到一起，产生一个新的函数。如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> compose = <span class="function"><span class="keyword">function</span>(<span class="params">f, g</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> f(g(x));</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在这里，我们把<code>f</code>和<code>g</code>两个函数组合到一起，它们有共同的参数<code>x</code>，显然在<code>compose</code>组合时，函数的执行顺序是由右向左执行，先执行<code>g(x)</code>再执行<code>f(g)</code>，可称之为“左倾”。使用起来如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用组合</span></span><br><span class="line"><span class="keyword">var</span> toUpperCase = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>) </span>&#123; <span class="keyword">return</span> str.toUpperCase(); &#125;;</span><br><span class="line"><span class="keyword">var</span> reverse = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>) </span>&#123; <span class="keyword">return</span> str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>); &#125;;</span><br><span class="line"><span class="keyword">var</span> toUpperCaseAndReverse = compose(reverse, toUpperCase); <span class="comment">// toUpperCaseAndReverse由右向左，先执行toUpperCase，再执行reverse</span></span><br><span class="line">toUpperCaseAndReverse(<span class="string">"abcd"</span>); <span class="comment">// =&gt; "DCBA"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不使用组合</span></span><br><span class="line"><span class="keyword">var</span> toUpperCaseAndReverse = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123; <span class="keyword">return</span> reverse(toUpperCase(x));&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="代码组合的好处"><a href="#代码组合的好处" class="headerlink" title="代码组合的好处"></a>代码组合的好处</h3><p>代码组合的好处是可以大大的<strong>提高程序的可读性</strong>，比一大堆函数嵌套调用更加简单明了。<br>从右向左执行<strong>更加能够反映数学上的含义</strong>。函数式编程的目的和意义是为了让编码与数学函数更加相似，若能更好地贴近数学公式就完美了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 结合律（associativity）</span></span><br><span class="line"><span class="keyword">var</span> associative = compose(f, compose(g, h)) == compose(compose(f, g), h);</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>这个特性就是数学意义上的<strong>结合律</strong>，符合结合律意味着不管你是把 <code>g</code> 和 <code>h</code> 分到一组，还是把 <code>f</code> 和 <code>g</code> 分到一组都不重要。  </p>
+]]></content>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+         <pubTime>2017-07-05T01:27:22.000Z</pubTime>
+        </display>
+    </data>
+    </url>
+  <url>
     <loc>http://www.kuangzen.com/2017/07/03/higher-order-function/</loc>
-    <lastmod>2017-07-03T09:16:46.839Z</lastmod>
+    <lastmod>2017-07-05T02:04:08.368Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -465,8 +484,8 @@
 <li>当前目录下命令行执行<code>node new</code></li>
 </ul>
 ]]></content>
-        <tag>后端</tag>
         <tag>node.js</tag>
+        <tag>后端</tag>
          <pubTime>2016-12-16T09:54:17.000Z</pubTime>
         </display>
     </data>
@@ -847,9 +866,9 @@
 <p>动作处理文件actions.js，其实就是用于通知相应mutations处理<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> fooChange = (&#123; dispatch &#125;, foo) =&gt; &#123;</span><br><span class="line">  dispatch(<span class="string">'FOOCHANGE'</span>, foo)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> barChange = (&#123; dispatch &#125;, bar) =&gt; &#123;</span><br><span class="line">  dispatch(<span class="string">'BARCHANGE'</span>, bar)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> setState = (&#123; dispatch &#125;, foo, bar) =&gt; &#123;</span><br><span class="line">  dispatch(<span class="string">'SETSTATE'</span>, foo, bar)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>详细代码及使用说明请点击查看<a href="https://github.com/nelsonkuang/Vuex-And-Vue-router-Tabs" target="_blank" rel="external">Github上的源 码</a><br><a href="http://sandbox.runjs.cn/show/853qy1rr" target="_blank" rel="external">在线效果示例</a>   </p>
 ]]></content>
-        <tag>vue.js</tag>
         <tag>javascript</tag>
         <tag>前端</tag>
+        <tag>vue.js</tag>
          <pubTime>2016-07-15T06:54:11.000Z</pubTime>
         </display>
     </data>
@@ -884,8 +903,8 @@
 <h3 id="requestHandlers-js-文件添加处理函数代码，如下"><a href="#requestHandlers-js-文件添加处理函数代码，如下" class="headerlink" title="requestHandlers.js 文件添加处理函数代码，如下"></a>requestHandlers.js 文件添加处理函数代码，如下</h3><a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">exports.stock = (res, req) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> arg = url.parse(req.url, <span class="literal">true</span>).query</span><br><span class="line">  <span class="keyword">const</span> stockName = arg.stockname</span><br><span class="line">  <span class="keyword">const</span> startDateArr = arg.startdate.split(<span class="string">'-'</span>)</span><br><span class="line">  <span class="keyword">const</span> endDateArr = arg.enddate.split(<span class="string">'-'</span>)</span><br><span class="line">  <span class="keyword">const</span> startY = startDateArr[<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">const</span> startM = startDateArr[<span class="number">1</span>] - <span class="number">1</span></span><br><span class="line">  <span class="keyword">const</span> startD = startDateArr[<span class="number">2</span>]</span><br><span class="line">  <span class="keyword">const</span> endY = endDateArr[<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">const</span> endM = endDateArr[<span class="number">1</span>] - <span class="number">1</span></span><br><span class="line">  <span class="keyword">const</span> endD = endDateArr[<span class="number">2</span>]</span><br><span class="line">  <span class="keyword">const</span> stockAPI = <span class="string">'http://table.finance.yahoo.com/table.csv?s='</span> + stockName + <span class="string">'&amp;f='</span> + endY + <span class="string">'&amp;d='</span> + endM + <span class="string">'&amp;e='</span> + endD + <span class="string">'&amp;c='</span> + startY + <span class="string">'&amp;a='</span> + startM + <span class="string">'&amp;b='</span> + startD + <span class="string">'&amp;g=d&amp;ignore=.csv'</span> <span class="comment">// 定义stock api的url</span></span><br><span class="line">  <span class="keyword">var</span> resultStr = <span class="string">''</span></span><br><span class="line">  http.get(stockAPI, response =&gt; &#123;</span><br><span class="line">    response.on(<span class="string">'data'</span>, data =&gt; &#123;</span><br><span class="line">      resultStr += data</span><br><span class="line">    &#125;)</span><br><span class="line">    response.on(<span class="string">'end'</span>, () =&gt; &#123;</span><br><span class="line">      res.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'application:json'</span> &#125;)</span><br><span class="line">      res.write(<span class="built_in">JSON</span>.stringify(csv2json(resultStr)))</span><br><span class="line">      res.end()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;).on(<span class="string">'error'</span>, e =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.error(e)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trim</span>(<span class="params">str</span>)</span>&#123; <span class="comment">//删除左右两端的空格</span></span><br><span class="line">　<span class="keyword">return</span> str.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>, <span class="string">''</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">csv2json</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> jsonArr = []</span><br><span class="line">  str = trim(str)</span><br><span class="line">  <span class="keyword">const</span> lines = str.split(<span class="string">'\n'</span>)</span><br><span class="line">  <span class="keyword">if</span>(lines.length &gt; <span class="number">1</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> heads = lines[<span class="number">0</span>].split(<span class="string">','</span>)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>; i &lt; lines.length; i++)&#123;</span><br><span class="line">      <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">      <span class="keyword">var</span> temArr = lines[i].split(<span class="string">','</span>)</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>; j &lt; heads.length; j++)&#123;</span><br><span class="line">        obj[heads[j]] = temArr[j];</span><br><span class="line">      &#125;</span><br><span class="line">      jsonArr.push(obj);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> jsonArr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="index-js添加路由代码-如下"><a href="#index-js添加路由代码-如下" class="headerlink" title="index.js添加路由代码, 如下:"></a>index.js添加路由代码, 如下:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">handle[<span class="string">'/stock'</span>] = requestHandlers.stock</span><br></pre></td></tr></table></figure>]]></content>
-        <tag>后端</tag>
         <tag>node.js</tag>
+        <tag>后端</tag>
          <pubTime>2016-06-22T10:59:50.000Z</pubTime>
         </display>
     </data>
@@ -930,8 +949,8 @@ exports.static = (response, request) =&gt; {
 }
 </code></pre>
 ]]></content>
-        <tag>后端</tag>
         <tag>node.js</tag>
+        <tag>后端</tag>
          <pubTime>2016-06-22T10:59:51.000Z</pubTime>
         </display>
     </data>
@@ -1423,8 +1442,8 @@ fs.readFile(<span class="string">'./public/baidusitemap.xml'</span>, <span class
 <pre><code>node pushtobaidu
 </code></pre><p>结果：post data success!</p>
 ]]></content>
-        <tag>后端</tag>
         <tag>node.js</tag>
+        <tag>后端</tag>
          <pubTime>2016-04-22T05:35:40.000Z</pubTime>
         </display>
     </data>
@@ -1803,8 +1822,8 @@ wx.ready(<span class="function"><span class="keyword">function</span>(<span clas
 <p><strong>测试url</strong><br>命令行输入<code>node --debug index.js</code>启动程序并进行调试/测试<br><a href="http://127.0.0.1:8888/start" target="_blank" rel="external">http://127.0.0.1:8888/start</a><br><a href="http://127.0.0.1:8888/wcshare" target="_blank" rel="external">http://127.0.0.1:8888/wcshare</a><br><a href="http://127.0.0.1:8888/static/upload/test.png" target="_blank" rel="external">http://127.0.0.1:8888/static/upload/test.png</a><br>等等<br><strong>文件目录如下</strong><br><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/node-inspector-4.png" alt="文件目录结构">  </p>
 <p>参考资料如下<br>Node入门 <a href="http://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="external">http://www.nodebeginner.org/index-zh-cn.html</a><br>使用 node.js 进行服务器端 JavaScript 编程 <a href="http://www.ibm.com/developerworks/cn/web/1107_chengfu_nodejs/" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/web/1107_chengfu_nodejs/</a></p>
 ]]></content>
-        <tag>后端</tag>
         <tag>node.js</tag>
+        <tag>后端</tag>
          <pubTime>2016-04-20T00:59:50.000Z</pubTime>
         </display>
     </data>
@@ -1928,10 +1947,10 @@ wx.ready(<span class="function"><span class="keyword">function</span>(<span clas
 <h3 id="目录结构如下："><a href="#目录结构如下：" class="headerlink" title="目录结构如下："></a>目录结构如下：</h3><p><img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/20160408110023.png" alt="目录结构"></p>
 ]]></content>
         <tag>前端</tag>
-        <tag>node.js</tag>
         <tag>gulp</tag>
         <tag>sass</tag>
         <tag>scss</tag>
+        <tag>node.js</tag>
          <pubTime>2016-04-08T00:39:49.000Z</pubTime>
         </display>
     </data>

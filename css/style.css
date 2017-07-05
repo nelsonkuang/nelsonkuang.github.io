@@ -731,6 +731,9 @@ a {
   border-radius: 50% !important;
   overflow: hidden;
 }
+#SOHUCS #SOHU_MAIN .module-cmt-notice {
+  display: none;
+}
 .archives-wrap {
   position: relative;
   margin: 0 30px;

@@ -213,6 +213,69 @@
 
       <div class="body-wrap">
   
+    <article id="post-what-s-up-2016-6-13" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/13/what-s-up-2016-6-13/" class="article-date">
+  	<time datetime="2016-06-13T02:17:58.000Z" itemprop="datePublished">2016-06-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/13/what-s-up-2016-6-13/">忙忙碌碌几个月，随便写写</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <p>忙忙碌碌了几个月，总得写写总结吧？以前总是非常热衷于写些技术文档分享之类的，但慢慢的热情似乎有些冷却；根本没有什么头绪，可能是因为技术无止境，知道得越多；觉得自己懂得的东西越少。偶尔更新一下github算是技术积累吧。   </p>
+<p>今天捣鼓一下react.js，明天折腾一下vue.js，后天再瞎搞几下node.js后端。项目中大量使用的还是jQuery，顶多加个require.js搞成模块化。希望下版上require.js推进一切顺利吧。   </p>
+<p>近期平台公众号运营风格大变，变得越来越没有底线咯呵呵，贞操碎得一起，黄段子、肉图满天飞；但感觉吸粉效果不明显、转发率也不高，不知道掉粉情况严不严重。太多无厘头的东西有时会不会过于庸俗，走专业化的笔风会不会更好，毕竟定了女性目标群体的方向，就不能发太多男性化的文章，典型的就是黄段子这类的只有男性群体比较接受。   </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/others/">一些事一些情</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-avoid-wechat-input-bug" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -792,75 +855,6 @@ Visit http://127.0.0.1:8080/debug?port=5858 to start debugging
       
         <p class="article-more-link">
           <a  href="/2016/04/08/getting-started-with-gulp/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-android-wechat6-3-15-browser-bug" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/06/android-wechat6-3-15-browser-bug/" class="article-date">
-  	<time datetime="2016-04-06T08:04:30.000Z" itemprop="datePublished">2016-04-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/06/android-wechat6-3-15-browser-bug/">新版的安卓版微信内置浏览器(版本6.3.15+)在键盘弹出时不会触发resize动作，导致遮挡住输入框问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
-<li>填写表单页面</li>
-<li>固定(Fixed)在底部的输入框的页面，如评论框</li>
-</ol>
-<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><h5 id="针对第一种情况："><a href="#针对第一种情况：" class="headerlink" title="针对第一种情况："></a>针对第一种情况：</h5><p>先判断是否为新版的安卓版微信内置浏览器(版本6.3.15+), 当然经测试<strong>华为手机</strong>除外，用旧坑办法解决。  </p>
-<p>然后判断当手机键盘弹出时，用margin把可视区蹭高50%(即<code>$(window).height()/2</code>)的高度、如margin-top为-50%的你的元素的高度；收回键盘时再恢复margin为0。  </p>
-<p>如何判断当手机键盘有没有弹出？可以捕获focus和blur事件来确认，还可以绑定click点击事件来监听，如果效果不明显可以加上setTimeout来确保等键盘弹出或者收回后再执行focus或者blur的绑定事件。
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compatibility/">网页兼容性</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/06/android-wechat6-3-15-browser-bug/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
