@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.kuangzen.com/2016/05/17/web-front-end-awesome/</loc>
+    
+    <lastmod>2017-07-10T02:59:24.393Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.kuangzen.com/2017/07/05/compose/</loc>
     
     <lastmod>2017-07-05T10:36:20.802Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://www.kuangzen.com/2017/07/03/higher-order-function/</loc>
     
     <lastmod>2017-07-05T02:04:08.368Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.kuangzen.com/2016/05/17/web-front-end-awesome/</loc>
-    
-    <lastmod>2017-03-15T02:48:38.800Z</lastmod>
     
   </url>
   
