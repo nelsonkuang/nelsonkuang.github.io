@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.kuangzen.com/2017/07/12/functor/</loc>
+    
+    <lastmod>2017-07-12T10:50:27.722Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.kuangzen.com/2017/07/05/curry/</loc>
+    
+    <lastmod>2017-07-12T05:30:33.879Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.kuangzen.com/2017/07/12/declarative-programing/</loc>
     
     <lastmod>2017-07-12T03:14:46.001Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>http://www.kuangzen.com/2017/07/05/compose/</loc>
     
     <lastmod>2017-07-05T10:36:20.802Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.kuangzen.com/2017/07/05/curry/</loc>
-    
-    <lastmod>2017-07-05T10:34:53.794Z</lastmod>
     
   </url>
   

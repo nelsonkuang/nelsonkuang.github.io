@@ -288,6 +288,70 @@
 
 
   
+    <article id="post-functor" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/12/functor/" class="article-date">
+  	<time datetime="2017-07-12T07:35:56.000Z" itemprop="datePublished">2017-07-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/12/functor/">javascript函数式编程之 函子（functor）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="一个最简单的容器，一个最简单的函子"><a href="#一个最简单的容器，一个最简单的函子" class="headerlink" title="一个最简单的容器，一个最简单的函子"></a>一个最简单的容器，一个最简单的函子</h3><p>函子<code>functor</code> 是实现了 <code>map</code> 函数并遵守一些特定规则的容器类型。什么是容器？如下是一个最简单的容器。函子则是<code>Mappable</code>的容器。下面的容器实现了<code>map</code>，所以它也是<strong>一个最简单的函子</strong>。<br>引入数学概念范畴学中的函子是为了要处理一些比较复杂的情况。诸如：控制流（control flow）、异常处理（error handling）、异步操作（asynchronous actions）和状态（state），还有更棘手的副作用（effects）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Container = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.__value = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Container.of = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; </span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Container(x); </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Container.of(<span class="number">3</span>)</span><br><span class="line"><span class="comment">//=&gt; Container(3)</span></span><br><span class="line"></span><br><span class="line">Container.of(<span class="string">"hotdogs"</span>)</span><br><span class="line"><span class="comment">//=&gt; Container("hotdogs")</span></span><br><span class="line"></span><br><span class="line">Container.of(Container.of(&#123;name: <span class="string">"yoda"</span>&#125;))</span><br><span class="line"><span class="comment">//=&gt; Container(Container(&#123;name: "yoda" &#125;))</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 类型签名: (a -&gt; b) -&gt; Container a -&gt; Container b</span></span><br><span class="line">Container.prototype.map = <span class="function"><span class="keyword">function</span>(<span class="params">f</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> Container.of(f(<span class="keyword">this</span>.__value))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 7 行代码就实现了很炫的『链式调用』</span></span><br><span class="line">Container.of(<span class="number">3</span>)</span><br><span class="line">    .map(x =&gt; x + <span class="number">1</span>)                <span class="comment">//=&gt; Container(4)</span></span><br><span class="line">    .map(x =&gt; <span class="string">'Result is '</span> + x);    <span class="comment">//=&gt; Container('Result is 4')</span></span><br><span class="line"></span><br><span class="line">Container.of(<span class="number">2</span>).map(<span class="function"><span class="keyword">function</span>(<span class="params">two</span>)</span>&#123; <span class="keyword">return</span> two + <span class="number">2</span> &#125;)</span><br><span class="line"><span class="comment">//=&gt; Container(4)</span></span><br><span class="line"></span><br><span class="line">Container.of(<span class="string">"flamethrowers"</span>).map(<span class="function"><span class="keyword">function</span>(<span class="params">s</span>)</span>&#123; <span class="keyword">return</span> s.toUpperCase() &#125;)</span><br><span class="line"><span class="comment">//=&gt; Container("FLAMETHROWERS")</span></span><br><span class="line"></span><br><span class="line">Container.of(<span class="string">"bombs"</span>).map(concat(<span class="string">' away'</span>)).map(_.prop(<span class="string">'length'</span>))</span><br><span class="line"><span class="comment">//=&gt; Container(10)</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/07/12/functor/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-declarative-programing" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -446,7 +510,7 @@
       
       
       
-        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>柯里化（curry）的概念其实可以简单理解为这样，本来有个已存在的函数需要接收多个参数的，现我想要根据需求由此函数打造成一个<strong>只有一个或者指定数量参数</strong>的新的函数。这里我们引用<code>lodash</code>库来举例，如下：<br><code>&lt;script src=&quot;https://cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js&quot;&gt;&lt;/script&gt;</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 非curry化的replace函数如下：</span></span><br><span class="line"><span class="keyword">var</span> myReplace = <span class="function"><span class="keyword">function</span>(<span class="params">what, replacement, str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> str.replace(what, replacement);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// curry化后的replace函数如下：</span></span><br><span class="line"><span class="keyword">var</span> replace = _.curry(<span class="function"><span class="keyword">function</span>(<span class="params">what, replacement, str</span>) </span>&#123; <span class="comment">// 注意，此函数如果接收3个参数就会直接返回结果，如果接收2个或者1个参数就返回一个函数</span></span><br><span class="line">  <span class="keyword">return</span> str.replace(what, replacement);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// curry化后，我们可以按需定制咖喱套餐了：）</span></span><br><span class="line"><span class="keyword">var</span> replaceFuck = replace(<span class="string">'Fuck'</span>); <span class="comment">// replaceFuck是新的函数，非常灵活，可以接收1个(返回一个新函数)或者2个参数(返回结果)</span></span><br><span class="line"><span class="keyword">var</span> replaceFuckWithXxxx = replaceFuck(<span class="string">'Xxxx'</span>); <span class="comment">// 这里把三参数按自己需求定制转成只有１个参数的新函数，这样就可以结合前一篇文章的compose来使用了</span></span><br><span class="line"><span class="keyword">var</span> replaceFuckWithXxxx(<span class="string">'Fuck you'</span>); <span class="comment">// =&gt; Xxxx you</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 非curry化的add函数如下：</span></span><br><span class="line"><span class="keyword">var</span> myAdd = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// curry化后的add函数如下：</span></span><br><span class="line"><span class="keyword">var</span> add = _.curry(<span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123; </span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// curry化后，我们可以按需定制咖喱套餐了：）</span></span><br><span class="line"><span class="keyword">var</span> addOne = add(<span class="number">1</span>); <span class="comment">// =&gt;新函数 function(x)&#123;return x+1;&#125;</span></span><br><span class="line"><span class="keyword">var</span> addTen = add(<span class="number">10</span>); <span class="comment">// =&gt;新函数 function(x)&#123;return x+10;&#125;</span></span><br><span class="line"><span class="keyword">var</span> minusOne = add(<span class="number">-1</span>); <span class="comment">// =&gt;新函数 function(x)&#123;return x-1;&#125;</span></span><br><span class="line"></span><br><span class="line">addOne(<span class="number">100</span>); <span class="comment">// =&gt; 101 像数学公式f(x)一样的形式</span></span><br><span class="line">addTen(<span class="number">100</span>); <span class="comment">// =&gt; 110</span></span><br><span class="line">minusOne(<span class="number">100</span>); <span class="comment">// =&gt; 99</span></span><br></pre></td></tr></table></figure></p>
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>柯里化（curry）的概念其实可以简单理解为这样，本来有个已存在的函数需要接收多个参数的，现我想要根据需求由此函数打造成一个<strong>只有一个或者指定数量参数</strong>的新的函数。这里我们引用<code>lodash</code>库来举例，如下：<br><code>&lt;script src=&quot;https://cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js&quot;&gt;&lt;/script&gt;</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 非curry化的replace函数如下：</span></span><br><span class="line"><span class="keyword">var</span> myReplace = <span class="function"><span class="keyword">function</span>(<span class="params">what, replacement, str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> str.replace(what, replacement);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// curry化后的replace函数如下：</span></span><br><span class="line"><span class="keyword">var</span> replace = _.curry(<span class="function"><span class="keyword">function</span>(<span class="params">what, replacement, str</span>) </span>&#123; <span class="comment">// 注意，此函数如果接收3个参数就会直接返回结果，如果接收2个或者1个参数就返回一个函数</span></span><br><span class="line">  <span class="keyword">return</span> str.replace(what, replacement);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// curry化后，我们可以按需定制咖喱套餐了：），注意，这里是自左而右进行柯里化的</span></span><br><span class="line"><span class="keyword">var</span> replaceFuck = replace(<span class="string">'Fuck'</span>); <span class="comment">// replaceFuck是新的函数，非常灵活，可以接收1个(返回一个新函数)或者2个参数(返回结果)</span></span><br><span class="line"><span class="keyword">var</span> replaceFuckWithXxxx = replaceFuck(<span class="string">'Xxxx'</span>); <span class="comment">// 这里把三参数按自己需求定制转成只有１个参数的新函数，这样就可以结合前一篇文章的compose来使用了</span></span><br><span class="line"><span class="keyword">var</span> replaceFuckWithXxxx(<span class="string">'Fuck you'</span>); <span class="comment">// =&gt; Xxxx you</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 非curry化的add函数如下：</span></span><br><span class="line"><span class="keyword">var</span> myAdd = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// curry化后的add函数如下：</span></span><br><span class="line"><span class="keyword">var</span> add = _.curry(<span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123; </span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// curry化后，我们可以按需定制咖喱套餐了：）</span></span><br><span class="line"><span class="keyword">var</span> addOne = add(<span class="number">1</span>); <span class="comment">// =&gt;新函数 function(x)&#123;return x+1;&#125;</span></span><br><span class="line"><span class="keyword">var</span> addTen = add(<span class="number">10</span>); <span class="comment">// =&gt;新函数 function(x)&#123;return x+10;&#125;</span></span><br><span class="line"><span class="keyword">var</span> minusOne = add(<span class="number">-1</span>); <span class="comment">// =&gt;新函数 function(x)&#123;return x-1;&#125;</span></span><br><span class="line"></span><br><span class="line">addOne(<span class="number">100</span>); <span class="comment">// =&gt; 101 像数学公式f(x)一样的形式</span></span><br><span class="line">addTen(<span class="number">100</span>); <span class="comment">// =&gt; 110</span></span><br><span class="line">minusOne(<span class="number">100</span>); <span class="comment">// =&gt; 99</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="代码柯里化（curry）的好处"><a href="#代码柯里化（curry）的好处" class="headerlink" title="代码柯里化（curry）的好处"></a>代码柯里化（curry）的好处</h3><p>通过简单地传递几个参数，就能<strong>动态创建实用的新函数</strong>；<br>而且还能带来一个额外好处，那就是保留了<strong>数学的函数定义</strong>，尽管参数不止一个；与数学函数贴近这也是函数式编程设计的初衷。    </p>
 <p>参考引用自：<a href="https://www.gitbook.com/book/llh911001/mostly-adequate-guide-chinese/details" target="_blank" rel="external">JS函数式编程指南</a></p>
 
@@ -779,69 +843,6 @@
       
         <p class="article-more-link">
           <a  href="/2017/02/17/intermediate-algorithm-scripting-7-12/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-intermediate-algorithm-scripting-1-6" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/17/intermediate-algorithm-scripting-1-6/" class="article-date">
-  	<time datetime="2017-02-17T06:58:05.000Z" itemprop="datePublished">2017-02-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/17/intermediate-algorithm-scripting-1-6/">我完成的FreeCodeCamp中的中级算法编码题 3-6</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="一、Sum-All-Numbers-in-a-Range-求两数之间的所有数字的总和"><a href="#一、Sum-All-Numbers-in-a-Range-求两数之间的所有数字的总和" class="headerlink" title="一、Sum All Numbers in a Range 求两数之间的所有数字的总和"></a>一、Sum All Numbers in a Range 求两数之间的所有数字的总和</h3><p><strong>思路</strong>：<br>1、求最大值<br>2、求最小值<br>3、循环求和<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/02/17/intermediate-algorithm-scripting-1-6/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
