@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2017-07-12T03:01:52.479Z</updated>
+  <updated>2017-07-12T03:14:46.001Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -20,13 +20,12 @@
     <link href="http://www.kuangzen.com/2017/07/12/declarative-programing/"/>
     <id>http://www.kuangzen.com/2017/07/12/declarative-programing/</id>
     <published>2017-07-12T02:17:31.000Z</published>
-    <updated>2017-07-12T03:01:52.479Z</updated>
+    <updated>2017-07-12T03:14:46.001Z</updated>
     
     <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在计算机科学中，声明式编程是一种编程范式 - 构建计算机程序的结构和元素的一种风格 - 专注于表达计算逻辑，而不需要描述其控制流程。   &lt;/p&gt;
 &lt;p&gt;应用这种风格的许多语言尝试通过&lt;strong&gt;描述程序在问题领域中必须完成的内容来最大限度地减少或消除副作用&lt;/strong&gt;，而不是描述如何将其作为编程语言原函数的序列直到实现。这与&lt;strong&gt;命令式编程&lt;/strong&gt;相反，命令式编程在显式步骤中实现算法。   &lt;/p&gt;
 &lt;p&gt;声明式编程通常将程序视为&lt;strong&gt;形式逻辑的理论&lt;/strong&gt;，并将其计算为该逻辑空间中的扣除。声明式编程可以大大简化写入并行程序。   &lt;/p&gt;
-&lt;p&gt;通用声明性语言包括数据库查询语言（例如SQL，XQuery），还有js库D3.js也是声明式编程的代表。  &lt;/p&gt;
-&lt;p&gt;求一个list里所有值的和例子，如下：  &lt;/p&gt;
+&lt;p&gt;通用声明性语言包括数据库查询语言（例如SQL，XQuery），还有js库D3.js也是声明式编程的代表。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;求一个list里所有值的和例子，如下：  &lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 命令式编程：&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; numbers = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; total = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; numbers.length; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  total += numbers[i]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(total) &lt;span class=&quot;comment&quot;&gt;//=&amp;gt; 15&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 而在声明式编程方式里，我们使用 reduce 函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; numbers = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; total = numbers.reduce(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;sum, n&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; sum + n&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// 0是初始值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(total); &lt;span class=&quot;comment&quot;&gt;//=&amp;gt; 15&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;还有像下面的SQL语句也是非常声明式的，非常容易读懂，但复杂的检索操作交给了计算机去处理&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SELECT * from books&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;INNER JOIN authors&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;WHERE books.author_id = authors.id&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -36,7 +35,10 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在计算机科学中，声明式编程是一种编程范式 - 构建计算机程序的结构和元素的一种风格 - 专注于表达计算逻辑，而不需要描述其控制流程。   &lt;
+      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在计算机科学中，声明式编程是一种编程范式 - 构建计算机程序的结构和元素的一种风格 - 专注于表达计算逻辑，而不需要描述其控制流程。   &lt;/p&gt;
+&lt;p&gt;应用这种风格的许多语言尝试通过&lt;strong&gt;描述程序在问题领域中必须完成的内容来最大限度地减少或消除副作用&lt;/strong&gt;，而不是描述如何将其作为编程语言原函数的序列直到实现。这与&lt;strong&gt;命令式编程&lt;/strong&gt;相反，命令式编程在显式步骤中实现算法。   &lt;/p&gt;
+&lt;p&gt;声明式编程通常将程序视为&lt;strong&gt;形式逻辑的理论&lt;/strong&gt;，并将其计算为该逻辑空间中的扣除。声明式编程可以大大简化写入并行程序。   &lt;/p&gt;
+&lt;p&gt;通用声明性语言包括数据库查询语言（例如SQL，XQuery），还有js库D3.js也是声明式编程的代表。&lt;br&gt;
     
     </summary>
     
