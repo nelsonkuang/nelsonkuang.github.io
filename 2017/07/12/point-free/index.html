@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>javascript函数式编程之 无参风格（point-free style） | KUANG ZEN&#39;s HOME</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="定义无参风格是一种编程范例，其中函数定义不能识别它们所运行的参数（或“点”）。 相反，它只是组合(compose)其他函数，在其子函数中操纵参数的组合器。因为严格使用组合可以很好地适应等式推理的程序，它也是某些编程语言的自然风格，包括APL和诸如Forth之类的连接语言。例子如下：  
+12345678910// 比如，现成的函数如下：var toUpperCase = function(str)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript函数式编程之 无参风格（point-free style）">
+<meta property="og:url" content="http://www.kuangzen.com/2017/07/12/point-free/index.html">
+<meta property="og:site_name" content="KUANG ZEN's HOME">
+<meta property="og:description" content="定义无参风格是一种编程范例，其中函数定义不能识别它们所运行的参数（或“点”）。 相反，它只是组合(compose)其他函数，在其子函数中操纵参数的组合器。因为严格使用组合可以很好地适应等式推理的程序，它也是某些编程语言的自然风格，包括APL和诸如Forth之类的连接语言。例子如下：  
+12345678910// 比如，现成的函数如下：var toUpperCase = function(str)">
+<meta property="og:updated_time" content="2017-07-12T02:10:16.093Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript函数式编程之 无参风格（point-free style）">
+<meta name="twitter:description" content="定义无参风格是一种编程范例，其中函数定义不能识别它们所运行的参数（或“点”）。 相反，它只是组合(compose)其他函数，在其子函数中操纵参数的组合器。因为严格使用组合可以很好地适应等式推理的程序，它也是某些编程语言的自然风格，包括APL和诸如Forth之类的连接语言。例子如下：  
+12345678910// 比如，现成的函数如下：var toUpperCase = function(str)">
+  
+    <link rel="alternative" href="/atom.xml" title="KUANG ZEN&#39;s HOME" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="//fast.eager.io/J-dqZDyQWL.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xsj8c.com2.z0.glb.clouddn.com/img/7983722.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">KUANG ZEN&#39;s HOME</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">假如明天末日将至，今天该如何度过</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/front-end">前端</a></li>
+				        
+							<li><a href="/tags/back-end">后端</a></li>
+				        
+							<li><a href="/tags/product-design">产品设计</a></li>
+				        
+							<li><a href="/tags/others">一些事一些情</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/nelsonkuang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://www.weibo.com/nelsonkuang" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/nelsonkuang" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/FreeCodeCamp/" style="font-size: 16.67px;">FreeCodeCamp</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/ui/" style="font-size: 12.22px;">UI设计</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 14.44px;">css3</a> <a href="/tags/gulp/" style="font-size: 11.11px;">gulp</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 18.89px;">javascript</a> <a href="/tags/javascript-design-model/" style="font-size: 13.33px;">javascript设计模式</a> <a href="/tags/node-js/" style="font-size: 15.56px;">node.js</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/random/" style="font-size: 10px;">random</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/rem/" style="font-size: 11.11px;">rem</a> <a href="/tags/responsive-design/" style="font-size: 11.11px;">responsive design</a> <a href="/tags/ruby/" style="font-size: 10px;">ruby</a> <a href="/tags/sass/" style="font-size: 12.22px;">sass</a> <a href="/tags/scss/" style="font-size: 11.11px;">scss</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a> <a href="/tags/others/" style="font-size: 17.78px;">一些事一些情</a> <a href="/tags/product-design/" style="font-size: 11.11px;">产品设计</a> <a href="/tags/crop/" style="font-size: 10px;">切图</a> <a href="/tags/front-end/" style="font-size: 20px;">前端</a> <a href="/tags/back-end/" style="font-size: 16.67px;">后端</a> <a href="/tags/compatibility/" style="font-size: 12.22px;">网页兼容性</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/fastmover/">我的cnblog</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.checkcool.com/">查酷上网导航</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.iampua.com/">泡学达人</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">web前端从业者，爱好：外语、欧美歌、架子鼓和珍藏域名，联系邮箱 kbl_1794@qq.com</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Kuang Zen</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xsj8c.com2.z0.glb.clouddn.com/img/7983722.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">KUANG ZEN&#39;s HOME</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">假如明天末日将至，今天该如何度过</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/front-end">前端</a></li>
+		        
+					<li><a href="/tags/back-end">后端</a></li>
+		        
+					<li><a href="/tags/product-design">产品设计</a></li>
+		        
+					<li><a href="/tags/others">一些事一些情</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/nelsonkuang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://www.weibo.com/nelsonkuang" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/nelsonkuang" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-point-free" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/12/point-free/" class="article-date">
+  	<time datetime="2017-07-12T00:46:35.000Z" itemprop="datePublished">2017-07-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript函数式编程之 无参风格（point-free style）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <div style="color: #aaa;font-size: 12px;margin-top: -20px;">阅读 <span id="busuanzi_value_page_pv"></span> | 本站总访问 <span id="busuanzi_value_site_pv"></span> | 本站访客 <span id="busuanzi_value_site_uv"></span></div>
+      
+      
+      
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>无参风格是一种编程范例，其中函数定义<strong>不能识别它们所运行的参数（或“点”）</strong>。 相反，它只是组合(<code>compose</code>)其他函数，在其子函数中操纵参数的组合器。<br>因为严格使用组合可以很好地适应等式推理的程序，它也是某些编程语言的自然风格，包括APL和诸如Forth之类的连接语言。<br>例子如下：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比如，现成的函数如下：</span></span><br><span class="line"><span class="keyword">var</span> toUpperCase = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>) </span>&#123; <span class="keyword">return</span> str.toUpperCase(); &#125;;</span><br><span class="line"><span class="keyword">var</span> split = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>) </span>&#123; <span class="keyword">return</span> str.split(<span class="string">''</span>); &#125;;</span><br><span class="line"><span class="keyword">var</span> reverse = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123; <span class="keyword">return</span> arr.reverse(); &#125;;</span><br><span class="line"><span class="keyword">var</span> join = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123; <span class="keyword">return</span> arr.join(<span class="string">''</span>); &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 现要由现成的函数定义一个point-free函数toUpperCaseAndReverse</span></span><br><span class="line"><span class="keyword">var</span> toUpperCaseAndReverse = _.flowRight(join, reverse, split, toUpperCase); <span class="comment">// 自右向左流动执行</span></span><br><span class="line"><span class="comment">// toUpperCaseAndReverse是一个point-free函数，它定义时并无可识别参数。只是在其子函数中操纵参数。flowRight是引入了lodash库的组合函数，相当于compose组合函数</span></span><br><span class="line"><span class="built_in">console</span>.log(toUpperCaseAndReverse(<span class="string">'abcd'</span>)); <span class="comment">// =&gt; DCBA</span></span><br></pre></td></tr></table></figure>
+<h3 id="无参风格的好处"><a href="#无参风格的好处" class="headerlink" title="无参风格的好处"></a>无参风格的好处</h3><p>无参风格的好处就是不需要费心思去给它的参数进行命名，把一些现成的函数按需组合起来使用。<br>还可以让代码保持简结和通用，但需要注意的是，在使用时是<code>point-free</code>风格，但其子函数定义时必然就不那么<code>point-free</code>，这个要自己去权衡。   </p>
+<p>参考引用自：<a href="https://en.wikipedia.org/wiki/Tacit_programming" target="_blank" rel="external">Tacit programming</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/12/declarative-programing/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          javascript函数式编程之 声明式编程（declarative programing）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/05/curry/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript函数式编程之 柯里化（curry）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div id="sohucy">
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="point-free" data-thread-key="point-free" data-title="javascript函数式编程之 无参风格（point-free style）" data-url="http://www.kuangzen.com/2017/07/12/point-free/"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysYxvqtD'; 
+var conf = 'prod_32a65ceb5137a29139a3c445ba6846fd'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+</div>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+            友情链接：<a target="_blank" href="http://www.iampua.com/">泡学达人</a> | <a target="_blank" href="http://www.cnblogs.com/fastmover/">我的cnblog</a> | <a target="_blank" href="mailto:kbl_1794@qq.com">联系博主</a>
+    	    <br>
+    	    <br>    	
+    		Copyright &copy; 2015-2017 kuangzen.com | Hexo theme designed by Yilia.
+    	</div>
+    </div>
+  </div>         
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1fbda94e14e5f90e3f4f2be21399729d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>  
+<script>
+  (function() {
+    var cx = '017755499335037658257:gtrppqr330q';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>   
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-76238182-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+  <img src="http://7xsj8c.com2.z0.glb.clouddn.com/img/topbtn.png" style="position: fixed; bottom: 70px; right: 20px; z-index: 120; cursor: pointer; display: block; width: 70px; height: 70px; display:none;" id="return_to_top">
+  <div id="google-search"><gcse:search></gcse:search></div>
+</body>
+</html>

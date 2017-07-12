@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset>
   <url>
+    <loc>http://www.kuangzen.com/2017/07/12/declarative-programing/</loc>
+    <lastmod>2017-07-12T03:01:52.479Z</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+    <data>
+        <display>
+        <title>javascript函数式编程之 声明式编程（declarative programing）</title>
+        <content><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>在计算机科学中，声明式编程是一种编程范式 - 构建计算机程序的结构和元素的一种风格 - 专注于表达计算逻辑，而不需要描述其控制流程。   </p>
+<p>应用这种风格的许多语言尝试通过<strong>描述程序在问题领域中必须完成的内容来最大限度地减少或消除副作用</strong>，而不是描述如何将其作为编程语言原函数的序列直到实现。这与<strong>命令式编程</strong>相反，命令式编程在显式步骤中实现算法。   </p>
+<p>声明式编程通常将程序视为<strong>形式逻辑的理论</strong>，并将其计算为该逻辑空间中的扣除。声明式编程可以大大简化写入并行程序。   </p>
+<p>通用声明性语言包括数据库查询语言（例如SQL，XQuery），还有js库D3.js也是声明式编程的代表。  </p>
+<p>求一个list里所有值的和例子，如下：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 命令式编程：</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> total = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</span><br><span class="line">  total += numbers[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(total) <span class="comment">//=&gt; 15</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 而在声明式编程方式里，我们使用 reduce 函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> total = numbers.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">sum, n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> sum + n</span><br><span class="line">&#125;, <span class="number">0</span>); <span class="comment">// 0是初始值</span></span><br><span class="line"><span class="built_in">console</span>.log(total); <span class="comment">//=&gt; 15</span></span><br></pre></td></tr></table></figure>
+<p>还有像下面的SQL语句也是非常声明式的，非常容易读懂，但复杂的检索操作交给了计算机去处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT * from books</span><br><span class="line">INNER JOIN authors</span><br><span class="line"></span><br><span class="line">WHERE books.author_id = authors.id</span><br></pre></td></tr></table></figure>
+<h3 id="声明式编程的好处"><a href="#声明式编程的好处" class="headerlink" title="声明式编程的好处"></a>声明式编程的好处</h3><p>如果我们花时间去学习(或发现)声明式的可以归纳抽离的部分，它们能为我们的编程带来巨大的便捷。<br>我可以少写代码，这就是通往成功的捷径。而且它们能让我们站在更高的层面是思考。<br>我们可以专注于<strong>要做什么</strong>，让计算机来帮我们优化<strong>如何实现</strong>。</p>
+<p>参考引用自：<br><a href="https://en.wikipedia.org/wiki/Declarative_programming" target="_blank" rel="external">Declarative programming</a><br><a href="http://www.vaikan.com/imperative-vs-declarative/" target="_blank" rel="external">声明式编程和命令式编程的比较</a></p>
+]]></content>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>SQL</tag>
+         <pubTime>2017-07-12T02:17:31.000Z</pubTime>
+        </display>
+    </data>
+    </url>
+  <url>
+    <loc>http://www.kuangzen.com/2017/07/12/point-free/</loc>
+    <lastmod>2017-07-12T02:10:16.093Z</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+    <data>
+        <display>
+        <title>javascript函数式编程之 无参风格（point-free style）</title>
+        <content><![CDATA[<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>无参风格是一种编程范例，其中函数定义<strong>不能识别它们所运行的参数（或“点”）</strong>。 相反，它只是组合(<code>compose</code>)其他函数，在其子函数中操纵参数的组合器。<br>因为严格使用组合可以很好地适应等式推理的程序，它也是某些编程语言的自然风格，包括APL和诸如Forth之类的连接语言。<br>例子如下：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比如，现成的函数如下：</span></span><br><span class="line"><span class="keyword">var</span> toUpperCase = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>) </span>&#123; <span class="keyword">return</span> str.toUpperCase(); &#125;;</span><br><span class="line"><span class="keyword">var</span> split = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>) </span>&#123; <span class="keyword">return</span> str.split(<span class="string">''</span>); &#125;;</span><br><span class="line"><span class="keyword">var</span> reverse = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123; <span class="keyword">return</span> arr.reverse(); &#125;;</span><br><span class="line"><span class="keyword">var</span> join = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123; <span class="keyword">return</span> arr.join(<span class="string">''</span>); &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 现要由现成的函数定义一个point-free函数toUpperCaseAndReverse</span></span><br><span class="line"><span class="keyword">var</span> toUpperCaseAndReverse = _.flowRight(join, reverse, split, toUpperCase); <span class="comment">// 自右向左流动执行</span></span><br><span class="line"><span class="comment">// toUpperCaseAndReverse是一个point-free函数，它定义时并无可识别参数。只是在其子函数中操纵参数。flowRight是引入了lodash库的组合函数，相当于compose组合函数</span></span><br><span class="line"><span class="built_in">console</span>.log(toUpperCaseAndReverse(<span class="string">'abcd'</span>)); <span class="comment">// =&gt; DCBA</span></span><br></pre></td></tr></table></figure>
+<h3 id="无参风格的好处"><a href="#无参风格的好处" class="headerlink" title="无参风格的好处"></a>无参风格的好处</h3><p>无参风格的好处就是不需要费心思去给它的参数进行命名，把一些现成的函数按需组合起来使用。<br>还可以让代码保持简结和通用，但需要注意的是，在使用时是<code>point-free</code>风格，但其子函数定义时必然就不那么<code>point-free</code>，这个要自己去权衡。   </p>
+<p>参考引用自：<a href="https://en.wikipedia.org/wiki/Tacit_programming" target="_blank" rel="external">Tacit programming</a></p>
+]]></content>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+         <pubTime>2017-07-12T00:46:35.000Z</pubTime>
+        </display>
+    </data>
+    </url>
+  <url>
     <loc>http://www.kuangzen.com/2016/05/17/web-front-end-awesome/</loc>
     <lastmod>2017-07-10T03:05:24.402Z</lastmod>
     <changefreq>always</changefreq>
@@ -885,9 +930,9 @@
 <p>动作处理文件actions.js，其实就是用于通知相应mutations处理<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> fooChange = (&#123; dispatch &#125;, foo) =&gt; &#123;</span><br><span class="line">  dispatch(<span class="string">'FOOCHANGE'</span>, foo)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> barChange = (&#123; dispatch &#125;, bar) =&gt; &#123;</span><br><span class="line">  dispatch(<span class="string">'BARCHANGE'</span>, bar)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> setState = (&#123; dispatch &#125;, foo, bar) =&gt; &#123;</span><br><span class="line">  dispatch(<span class="string">'SETSTATE'</span>, foo, bar)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>详细代码及使用说明请点击查看<a href="https://github.com/nelsonkuang/Vuex-And-Vue-router-Tabs" target="_blank" rel="external">Github上的源 码</a><br><a href="http://sandbox.runjs.cn/show/853qy1rr" target="_blank" rel="external">在线效果示例</a>   </p>
 ]]></content>
-        <tag>vue.js</tag>
         <tag>javascript</tag>
         <tag>前端</tag>
+        <tag>vue.js</tag>
          <pubTime>2016-07-15T06:54:11.000Z</pubTime>
         </display>
     </data>

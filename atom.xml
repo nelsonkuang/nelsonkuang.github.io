@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2017-07-05T10:34:53.794Z</updated>
+  <updated>2017-07-12T03:01:52.479Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript函数式编程之 声明式编程（declarative programing）</title>
+    <link href="http://www.kuangzen.com/2017/07/12/declarative-programing/"/>
+    <id>http://www.kuangzen.com/2017/07/12/declarative-programing/</id>
+    <published>2017-07-12T02:17:31.000Z</published>
+    <updated>2017-07-12T03:01:52.479Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在计算机科学中，声明式编程是一种编程范式 - 构建计算机程序的结构和元素的一种风格 - 专注于表达计算逻辑，而不需要描述其控制流程。   &lt;/p&gt;
+&lt;p&gt;应用这种风格的许多语言尝试通过&lt;strong&gt;描述程序在问题领域中必须完成的内容来最大限度地减少或消除副作用&lt;/strong&gt;，而不是描述如何将其作为编程语言原函数的序列直到实现。这与&lt;strong&gt;命令式编程&lt;/strong&gt;相反，命令式编程在显式步骤中实现算法。   &lt;/p&gt;
+&lt;p&gt;声明式编程通常将程序视为&lt;strong&gt;形式逻辑的理论&lt;/strong&gt;，并将其计算为该逻辑空间中的扣除。声明式编程可以大大简化写入并行程序。   &lt;/p&gt;
+&lt;p&gt;通用声明性语言包括数据库查询语言（例如SQL，XQuery），还有js库D3.js也是声明式编程的代表。  &lt;/p&gt;
+&lt;p&gt;求一个list里所有值的和例子，如下：  &lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 命令式编程：&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; numbers = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; total = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; numbers.length; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  total += numbers[i]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(total) &lt;span class=&quot;comment&quot;&gt;//=&amp;gt; 15&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 而在声明式编程方式里，我们使用 reduce 函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; numbers = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; total = numbers.reduce(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;sum, n&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; sum + n&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// 0是初始值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(total); &lt;span class=&quot;comment&quot;&gt;//=&amp;gt; 15&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;还有像下面的SQL语句也是非常声明式的，非常容易读懂，但复杂的检索操作交给了计算机去处理&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SELECT * from books&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;INNER JOIN authors&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;WHERE books.author_id = authors.id&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;声明式编程的好处&quot;&gt;&lt;a href=&quot;#声明式编程的好处&quot; class=&quot;headerlink&quot; title=&quot;声明式编程的好处&quot;&gt;&lt;/a&gt;声明式编程的好处&lt;/h3&gt;&lt;p&gt;如果我们花时间去学习(或发现)声明式的可以归纳抽离的部分，它们能为我们的编程带来巨大的便捷。&lt;br&gt;我可以少写代码，这就是通往成功的捷径。而且它们能让我们站在更高的层面是思考。&lt;br&gt;我们可以专注于&lt;strong&gt;要做什么&lt;/strong&gt;，让计算机来帮我们优化&lt;strong&gt;如何实现&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;参考引用自：&lt;br&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Declarative_programming&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Declarative programming&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.vaikan.com/imperative-vs-declarative/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;声明式编程和命令式编程的比较&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;在计算机科学中，声明式编程是一种编程范式 - 构建计算机程序的结构和元素的一种风格 - 专注于表达计算逻辑，而不需要描述其控制流程。   &lt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+      <category term="SQL" scheme="http://www.kuangzen.com/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript函数式编程之 无参风格（point-free style）</title>
+    <link href="http://www.kuangzen.com/2017/07/12/point-free/"/>
+    <id>http://www.kuangzen.com/2017/07/12/point-free/</id>
+    <published>2017-07-12T00:46:35.000Z</published>
+    <updated>2017-07-12T02:10:16.093Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;无参风格是一种编程范例，其中函数定义&lt;strong&gt;不能识别它们所运行的参数（或“点”）&lt;/strong&gt;。 相反，它只是组合(&lt;code&gt;compose&lt;/code&gt;)其他函数，在其子函数中操纵参数的组合器。&lt;br&gt;因为严格使用组合可以很好地适应等式推理的程序，它也是某些编程语言的自然风格，包括APL和诸如Forth之类的连接语言。&lt;br&gt;例子如下：  &lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 比如，现成的函数如下：&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; toUpperCase = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; str.toUpperCase(); &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; split = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; str.split(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;); &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; reverse = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;arr&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; arr.reverse(); &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; join = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;arr&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; arr.join(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;); &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 现要由现成的函数定义一个point-free函数toUpperCaseAndReverse&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; toUpperCaseAndReverse = _.flowRight(join, reverse, split, toUpperCase); &lt;span class=&quot;comment&quot;&gt;// 自右向左流动执行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// toUpperCaseAndReverse是一个point-free函数，它定义时并无可识别参数。只是在其子函数中操纵参数。flowRight是引入了lodash库的组合函数，相当于compose组合函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(toUpperCaseAndReverse(&lt;span class=&quot;string&quot;&gt;&#39;abcd&#39;&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; DCBA&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;无参风格的好处&quot;&gt;&lt;a href=&quot;#无参风格的好处&quot; class=&quot;headerlink&quot; title=&quot;无参风格的好处&quot;&gt;&lt;/a&gt;无参风格的好处&lt;/h3&gt;&lt;p&gt;无参风格的好处就是不需要费心思去给它的参数进行命名，把一些现成的函数按需组合起来使用。&lt;br&gt;还可以让代码保持简结和通用，但需要注意的是，在使用时是&lt;code&gt;point-free&lt;/code&gt;风格，但其子函数定义时必然就不那么&lt;code&gt;point-free&lt;/code&gt;，这个要自己去权衡。   &lt;/p&gt;
+&lt;p&gt;参考引用自：&lt;a href=&quot;https://en.wikipedia.org/wiki/Tacit_programming&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tacit programming&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;无参风格是一种编程范例，其中函数定义&lt;strong&gt;不能识别它们所运行的参数（或“点”）&lt;/strong&gt;。 相反，它只是组合(&lt;code&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+  </entry>
   
   <entry>
     <title>javascript函数式编程之 柯里化（curry）</title>
@@ -849,111 +909,6 @@
       <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
     
       <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript 把setTimeout改成delay，延时执行</title>
-    <link href="http://www.kuangzen.com/2016/08/19/js-setTimeout-to-delay/"/>
-    <id>http://www.kuangzen.com/2016/08/19/js-setTimeout-to-delay/</id>
-    <published>2016-08-19T09:40:49.000Z</published>
-    <updated>2016-08-22T02:10:32.601Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;用&lt;strong&gt;setTimeout&lt;/strong&gt;多了，总是觉得这函数就差那么一点点，不是很顺手，就萌生了要改造一下此函数的念头；改成可以链式编程的，名字也更加接地气点的，就叫&lt;strong&gt;delay&lt;/strong&gt;吧。   &lt;/p&gt;
-&lt;h3 id=&quot;直接挂原型链代码如下：&quot;&gt;&lt;a href=&quot;#直接挂原型链代码如下：&quot; class=&quot;headerlink&quot; title=&quot;直接挂原型链代码如下：&quot;&gt;&lt;/a&gt;直接挂原型链代码如下：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**
- * 让目标(Object)延时执行，可以链式使用
- * 
- * @param {Number} time
- * @param {Function} doSomething - 
- *                               - @param {Object} self -- 作为参数回调使用
- *                               - @param {Number} startTime -- 作为参数回调使用
- * @return {Object} 
- */&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.prototype.delay = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;time, doSomething&lt;/span&gt;) &lt;/span&gt;{
-    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; self = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,
-        startTime = time;
-    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (self) {
-        setTimeout(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-            doSomething(self, startTime);
-        }, time);
-    }
-    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-   &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;链式使用例子代码如下：&quot;&gt;&lt;a href=&quot;#链式使用例子代码如下：&quot; class=&quot;headerlink&quot; title=&quot;链式使用例子代码如下：&quot;&gt;&lt;/a&gt;链式使用例子代码如下：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelector(&lt;span class=&quot;string&quot;&gt;&#39;#retarder&#39;&lt;/span&gt;)
-    .delay(&lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;self&lt;/span&gt;) &lt;/span&gt;{
-        self.innerHTML = &lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;;
-    })
-    .delay(&lt;span class=&quot;number&quot;&gt;1500&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;self&lt;/span&gt;) &lt;/span&gt;{
-        self.innerHTML = &lt;span class=&quot;string&quot;&gt;&#39;World&#39;&lt;/span&gt;;
-    });
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;非链式使用，由10到0倒计时例子代码如下：&quot;&gt;&lt;a href=&quot;#非链式使用，由10到0倒计时例子代码如下：&quot; class=&quot;headerlink&quot; title=&quot;非链式使用，由10到0倒计时例子代码如下：&quot;&gt;&lt;/a&gt;非链式使用，由10到0倒计时例子代码如下：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; el = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelector(&lt;span class=&quot;string&quot;&gt;&#39;#retarder&#39;&lt;/span&gt;);
-&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt;= &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;; i++) {
-    el.delay(i * &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;self, startTime&lt;/span&gt;) &lt;/span&gt;{
-        self.innerHTML = &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt; - startTime / &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;;
-    })
-}
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;用&lt;strong&gt;setTimeout&lt;/strong&gt;多了，总是觉得这函数就差那么一点点，不是很顺手，就萌生了要改造一下此函数的念头；改成可以链式编程的，名字也更加接地气点的，就叫&lt;strong&gt;delay&lt;/strong&gt;吧。   &lt;/p&gt;
-&lt;h3 id=&quot;直接挂原型链代码如下：&quot;&gt;&lt;a href=&quot;#直接挂原型链代码如下：&quot; class=&quot;headerlink&quot; title=&quot;直接挂原型链代码如下：&quot;&gt;&lt;/a&gt;直接挂原型链代码如下：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**
- * 让目标(Object)延时执行，可以链式使用
- * 
- * @param {Number} time
- * @param {Function} doSomething - 
- *                               - @param {Object} self -- 作为参数回调使用
- *                               - @param {Number} startTime -- 作为参数回调使用
- * @return {Object} 
- */&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.prototype.delay = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;time, doSomething&lt;/span&gt;) &lt;/span&gt;{
-    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; self = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;,
-        startTime = time;
-    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (self) {
-        setTimeout(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-            doSomething(self, startTime);
-        }, time);
-    }
-    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端的酱油工作，为ios及android APP客户端切图及标注</title>
-    <link href="http://www.kuangzen.com/2016/08/08/crop-pictures-for-app/"/>
-    <id>http://www.kuangzen.com/2016/08/08/crop-pictures-for-app/</id>
-    <published>2016-08-08T02:21:01.000Z</published>
-    <updated>2016-08-08T02:54:17.849Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;切图输出原则&quot;&gt;&lt;a href=&quot;#切图输出原则&quot; class=&quot;headerlink&quot; title=&quot;切图输出原则&quot;&gt;&lt;/a&gt;切图输出原则&lt;/h3&gt;&lt;p&gt;IOS客户端切图：&lt;br&gt;前端偶尔要打打酱油帮app客户端切切图，为什么iphone app上面看到的界面好像都非常高清，因为ios比较矫情，要图时要切三套，1倍图、2倍图和3倍图,如果按UI出的750px的mockup，则1倍图是按375px来出，2倍图是不变原样输出750px，最后三倍图是1125px。   &lt;/p&gt;
-&lt;p&gt;切的时候也还好啦，在PS上面录好一个连续导出3种图的动作，因为是750px的UI图，顺序：导出1x图 -&amp;gt; 图层缩小到50% -&amp;gt; 导出2x图 -&amp;gt; 放大300% -&amp;gt; 导出3x图。然后以后就播放这动作直接导3种图就行了。&lt;/p&gt;
-&lt;p&gt;Android客户端切图：&lt;br&gt;android端切图就没那么讲究，一套输出按720px的UI Mockup来输出，直接搞定。&lt;/p&gt;
-&lt;h3 id=&quot;给app-UI图标注尺寸&quot;&gt;&lt;a href=&quot;#给app-UI图标注尺寸&quot; class=&quot;headerlink&quot; title=&quot;给app UI图标注尺寸&quot;&gt;&lt;/a&gt;给app UI图标注尺寸&lt;/h3&gt;&lt;p&gt;以前是用PxCook或者Mark Man这样的工具去拉线或者拖块标啊标，现在？标你妹啊，直接上传到&lt;a href=&quot;http://www.biaonimeia.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;标你妹~啊&lt;/a&gt; 网址：www.biaonimeia.com 自动生成标注，在线或者导出给app客户端的小伙伴们就可以了呵呵。   &lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;切图输出原则&quot;&gt;&lt;a href=&quot;#切图输出原则&quot; class=&quot;headerlink&quot; title=&quot;切图输出原则&quot;&gt;&lt;/a&gt;切图输出原则&lt;/h3&gt;&lt;p&gt;IOS客户端切图：&lt;br&gt;前端偶尔要打打酱油帮app客户端切切图，为什么iphone app上面看到的界面好
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
-    
-      <category term="切图" scheme="http://www.kuangzen.com/tags/crop/"/>
     
   </entry>
   
