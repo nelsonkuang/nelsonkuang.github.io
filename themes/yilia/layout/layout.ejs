@@ -1,0 +1,17 @@
+<%- partial('_partial/head') %>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
+    </div>
+    <div class="mid-col">
+      <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+      <div class="body-wrap"><%- body %></div>
+      <%- partial('_partial/footer') %>
+    </div>
+    <%- partial('_partial/after-footer') %>
+  </div>
+  <img src="<%=theme.return_to_top_img%>" style="position: fixed; bottom: 70px; right: 20px; z-index: 120; cursor: pointer; display: block; width: 70px; height: 70px; display:none;" id="return_to_top">
+  <div id="google-search"><gcse:search></gcse:search></div>
+</body>
+</html>
