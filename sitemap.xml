@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.kuangzen.com/2018/01/31/prototype-chain-inherite/</loc>
+    
+    <lastmod>2018-01-31T02:44:19.963Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.kuangzen.com/2016/05/17/web-front-end-awesome/</loc>
     
     <lastmod>2017-09-11T01:14:29.370Z</lastmod>
@@ -32,7 +39,7 @@
   <url>
     <loc>http://www.kuangzen.com/2017/07/12/point-free/</loc>
     
-    <lastmod>2017-07-12T02:10:16.093Z</lastmod>
+    <lastmod>2017-07-12T02:10:16.094Z</lastmod>
     
   </url>
   
@@ -74,7 +81,7 @@
   <url>
     <loc>http://www.kuangzen.com/2017/02/17/advanced-algorithm-scripting/</loc>
     
-    <lastmod>2017-02-17T08:25:30.306Z</lastmod>
+    <lastmod>2017-02-17T08:25:30.307Z</lastmod>
     
   </url>
   
@@ -116,7 +123,7 @@
   <url>
     <loc>http://www.kuangzen.com/2016/12/16/node-tool-for-kaomang-cn/</loc>
     
-    <lastmod>2016-12-16T10:42:24.591Z</lastmod>
+    <lastmod>2016-12-16T10:42:24.592Z</lastmod>
     
   </url>
   
@@ -144,7 +151,7 @@
   <url>
     <loc>http://www.kuangzen.com/2016/08/26/statistic-of-domain-name-s-count/</loc>
     
-    <lastmod>2016-08-26T06:29:50.932Z</lastmod>
+    <lastmod>2016-08-26T06:29:50.933Z</lastmod>
     
   </url>
   
@@ -158,14 +165,14 @@
   <url>
     <loc>http://www.kuangzen.com/2016/08/19/js-setTimeout-to-delay/</loc>
     
-    <lastmod>2016-08-22T02:10:32.601Z</lastmod>
+    <lastmod>2016-08-22T02:10:32.602Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.kuangzen.com/2016/08/08/crop-pictures-for-app/</loc>
     
-    <lastmod>2016-08-08T02:54:17.849Z</lastmod>
+    <lastmod>2016-08-08T02:54:17.850Z</lastmod>
     
   </url>
   
@@ -200,14 +207,14 @@
   <url>
     <loc>http://www.kuangzen.com/2016/06/24/php-get-yahoo-stock-csv-data-output-to-json/</loc>
     
-    <lastmod>2016-06-24T03:06:38.927Z</lastmod>
+    <lastmod>2016-06-24T03:06:38.928Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.kuangzen.com/2016/06/22/node-get-stock-csv-data-output-to-json/</loc>
     
-    <lastmod>2016-06-22T10:47:58.217Z</lastmod>
+    <lastmod>2016-06-22T10:47:58.218Z</lastmod>
     
   </url>
   
@@ -235,21 +242,21 @@
   <url>
     <loc>http://www.kuangzen.com/2016/06/21/js-observer/</loc>
     
-    <lastmod>2016-06-21T10:30:37.169Z</lastmod>
+    <lastmod>2016-06-21T10:30:37.170Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.kuangzen.com/2016/06/13/what-s-up-2016-6-13/</loc>
     
-    <lastmod>2016-06-13T08:32:03.349Z</lastmod>
+    <lastmod>2016-06-13T08:32:03.350Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.kuangzen.com/2016/04/18/useful-map-interactive/</loc>
     
-    <lastmod>2016-06-13T02:26:12.207Z</lastmod>
+    <lastmod>2016-06-13T02:26:12.208Z</lastmod>
     
   </url>
   
@@ -270,7 +277,7 @@
   <url>
     <loc>http://www.kuangzen.com/2016/04/18/useful-wechat-code-interactive/</loc>
     
-    <lastmod>2016-05-17T09:07:36.566Z</lastmod>
+    <lastmod>2016-05-17T09:07:36.567Z</lastmod>
     
   </url>
   
@@ -298,14 +305,14 @@
   <url>
     <loc>http://www.kuangzen.com/2015/04/14/randomjs/</loc>
     
-    <lastmod>2016-05-17T09:05:46.246Z</lastmod>
+    <lastmod>2016-05-17T09:05:46.247Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.kuangzen.com/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/</loc>
     
-    <lastmod>2016-05-17T09:05:37.165Z</lastmod>
+    <lastmod>2016-05-17T09:05:37.166Z</lastmod>
     
   </url>
   
@@ -326,7 +333,7 @@
   <url>
     <loc>http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/</loc>
     
-    <lastmod>2016-05-17T09:05:18.047Z</lastmod>
+    <lastmod>2016-05-17T09:05:18.048Z</lastmod>
     
   </url>
   
@@ -340,7 +347,7 @@
   <url>
     <loc>http://www.kuangzen.com/2016/03/21/jquery-scroll-cascade-select/</loc>
     
-    <lastmod>2016-05-17T09:04:53.063Z</lastmod>
+    <lastmod>2016-05-17T09:04:53.064Z</lastmod>
     
   </url>
   
@@ -354,7 +361,7 @@
   <url>
     <loc>http://www.kuangzen.com/2016/04/08/getting-started-with-gulp/</loc>
     
-    <lastmod>2016-05-17T09:04:23.570Z</lastmod>
+    <lastmod>2016-05-17T09:04:23.571Z</lastmod>
     
   </url>
   
@@ -368,7 +375,7 @@
   <url>
     <loc>http://www.kuangzen.com/2016/04/06/android-wechat6-3-15-browser-bug/</loc>
     
-    <lastmod>2016-05-17T09:03:54.203Z</lastmod>
+    <lastmod>2016-05-17T09:03:54.204Z</lastmod>
     
   </url>
   

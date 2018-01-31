@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset>
   <url>
+    <loc>http://www.kuangzen.com/2018/01/31/prototype-chain-inherite/</loc>
+    <lastmod>2018-01-31T02:44:19.963Z</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+    <data>
+        <display>
+        <title>javascript原型链继承</title>
+        <content><![CDATA[<h3 id="代码样版"><a href="#代码样版" class="headerlink" title="代码样版"></a>代码样版</h3><pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">Base</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.name=<span class="string">'Base'</span>;
+}
+Base.prototype = {
+    <span class="keyword">constructor</span>: Base,
+    getName: function() {
+        <span class="keyword">return</span> <span class="keyword">this</span>.name;
+    }
+}
+
+<span class="comment">// Sub1 inherited from Base through prototype chain</span>
+<span class="function"><span class="keyword">function</span> <span class="title">Sub1</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.name=<span class="string">'Sub1'</span>;
+}
+Sub1.prototype = <span class="keyword">new</span> Base(); <span class="comment">// 原型链继承</span>
+Sub1.prototype.constructor = Sub1; <span class="comment">// 继承完后定义好构造函数, 可选</span>
+Sub1.superclass = Base.prototype; <span class="comment">// 继承完后定义好基类, 可选</span>
+
+<span class="keyword">var</span> b = <span class="keyword">new</span> Sub1(); <span class="comment">// 使用</span>
+<span class="comment">// =&gt; Sub1 {name: "Sub1"}</span>
+b.getName(); <span class="comment">// 使用继承自Base原型链上的getName函数</span>
+<span class="comment">// =&gt;"Sub1"</span>
+Sub1.prototype;
+<span class="comment">// =&gt; Base {name: "Base", constructor: ƒ}</span>
+</code></pre>
+]]></content>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+         <pubTime>2018-01-31T02:01:13.000Z</pubTime>
+        </display>
+    </data>
+    </url>
+  <url>
     <loc>http://www.kuangzen.com/2016/05/17/web-front-end-awesome/</loc>
     <lastmod>2017-09-11T01:14:29.370Z</lastmod>
     <changefreq>always</changefreq>
@@ -156,7 +196,7 @@
     </url>
   <url>
     <loc>http://www.kuangzen.com/2017/07/12/point-free/</loc>
-    <lastmod>2017-07-12T02:10:16.093Z</lastmod>
+    <lastmod>2017-07-12T02:10:16.094Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -327,7 +367,7 @@
     </url>
   <url>
     <loc>http://www.kuangzen.com/2017/02/17/advanced-algorithm-scripting/</loc>
-    <lastmod>2017-02-17T08:25:30.306Z</lastmod>
+    <lastmod>2017-02-17T08:25:30.307Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -591,7 +631,7 @@
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/12/16/node-tool-for-kaomang-cn/</loc>
-    <lastmod>2016-12-16T10:42:24.591Z</lastmod>
+    <lastmod>2016-12-16T10:42:24.592Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -726,7 +766,7 @@
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/08/26/statistic-of-domain-name-s-count/</loc>
-    <lastmod>2016-08-26T06:29:50.932Z</lastmod>
+    <lastmod>2016-08-26T06:29:50.933Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -804,7 +844,7 @@
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/08/19/js-setTimeout-to-delay/</loc>
-    <lastmod>2016-08-22T02:10:32.601Z</lastmod>
+    <lastmod>2016-08-22T02:10:32.602Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -856,7 +896,7 @@
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/08/08/crop-pictures-for-app/</loc>
-    <lastmod>2016-08-08T02:54:17.849Z</lastmod>
+    <lastmod>2016-08-08T02:54:17.850Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -1001,7 +1041,7 @@
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/06/24/php-get-yahoo-stock-csv-data-output-to-json/</loc>
-    <lastmod>2016-06-24T03:06:38.927Z</lastmod>
+    <lastmod>2016-06-24T03:06:38.928Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -1019,7 +1059,7 @@
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/06/22/node-get-stock-csv-data-output-to-json/</loc>
-    <lastmod>2016-06-22T10:47:58.217Z</lastmod>
+    <lastmod>2016-06-22T10:47:58.218Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -1143,7 +1183,7 @@ exports.static = (response, request) =&gt; {
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/06/21/js-observer/</loc>
-    <lastmod>2016-06-21T10:30:37.169Z</lastmod>
+    <lastmod>2016-06-21T10:30:37.170Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -1275,7 +1315,7 @@ blogger.recommend({
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/06/13/what-s-up-2016-6-13/</loc>
-    <lastmod>2016-06-13T08:32:03.349Z</lastmod>
+    <lastmod>2016-06-13T08:32:03.350Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -1292,7 +1332,7 @@ blogger.recommend({
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/04/18/useful-map-interactive/</loc>
-    <lastmod>2016-06-13T02:26:12.207Z</lastmod>
+    <lastmod>2016-06-13T02:26:12.208Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -1334,7 +1374,7 @@ blogger.recommend({
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/04/18/useful-wechat-code-interactive/</loc>
-    <lastmod>2016-05-17T09:07:36.566Z</lastmod>
+    <lastmod>2016-05-17T09:07:36.567Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -1436,7 +1476,7 @@ gem install sass
     </url>
   <url>
     <loc>http://www.kuangzen.com/2015/04/14/randomjs/</loc>
-    <lastmod>2016-05-17T09:05:46.246Z</lastmod>
+    <lastmod>2016-05-17T09:05:46.247Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -1502,7 +1542,7 @@ gem install sass
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/04/22/push-urls-to-baidu-with-nodejs-in-hexo-blog/</loc>
-    <lastmod>2016-05-17T09:05:37.165Z</lastmod>
+    <lastmod>2016-05-17T09:05:37.166Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -1622,7 +1662,7 @@ fs.readFile(<span class="string">'./public/baidusitemap.xml'</span>, <span class
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/04/20/node-learning-chapter-1/</loc>
-    <lastmod>2016-05-17T09:05:18.047Z</lastmod>
+    <lastmod>2016-05-17T09:05:18.048Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -1979,7 +2019,7 @@ wx.ready(<span class="function"><span class="keyword">function</span>(<span clas
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/03/21/jquery-scroll-cascade-select/</loc>
-    <lastmod>2016-05-17T09:04:53.063Z</lastmod>
+    <lastmod>2016-05-17T09:04:53.064Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -2031,7 +2071,7 @@ wx.ready(<span class="function"><span class="keyword">function</span>(<span clas
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/04/08/getting-started-with-gulp/</loc>
-    <lastmod>2016-05-17T09:04:23.570Z</lastmod>
+    <lastmod>2016-05-17T09:04:23.571Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>
@@ -2101,7 +2141,7 @@ wx.ready(<span class="function"><span class="keyword">function</span>(<span clas
     </url>
   <url>
     <loc>http://www.kuangzen.com/2016/04/06/android-wechat6-3-15-browser-bug/</loc>
-    <lastmod>2016-05-17T09:03:54.203Z</lastmod>
+    <lastmod>2016-05-17T09:03:54.204Z</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
     <data>

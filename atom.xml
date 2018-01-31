@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kuangzen.com/"/>
-  <updated>2017-07-12T10:50:27.722Z</updated>
+  <updated>2018-01-31T02:44:19.963Z</updated>
   <id>http://www.kuangzen.com/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript原型链继承</title>
+    <link href="http://www.kuangzen.com/2018/01/31/prototype-chain-inherite/"/>
+    <id>http://www.kuangzen.com/2018/01/31/prototype-chain-inherite/</id>
+    <published>2018-01-31T02:01:13.000Z</published>
+    <updated>2018-01-31T02:44:19.963Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;代码样版&quot;&gt;&lt;a href=&quot;#代码样版&quot; class=&quot;headerlink&quot; title=&quot;代码样版&quot;&gt;&lt;/a&gt;代码样版&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Base&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name=&lt;span class=&quot;string&quot;&gt;&#39;Base&#39;&lt;/span&gt;;
+}
+Base.prototype = {
+    &lt;span class=&quot;keyword&quot;&gt;constructor&lt;/span&gt;: Base,
+    getName: function() {
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name;
+    }
+}
+
+&lt;span class=&quot;comment&quot;&gt;// Sub1 inherited from Base through prototype chain&lt;/span&gt;
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Sub1&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name=&lt;span class=&quot;string&quot;&gt;&#39;Sub1&#39;&lt;/span&gt;;
+}
+Sub1.prototype = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Base(); &lt;span class=&quot;comment&quot;&gt;// 原型链继承&lt;/span&gt;
+Sub1.prototype.constructor = Sub1; &lt;span class=&quot;comment&quot;&gt;// 继承完后定义好构造函数, 可选&lt;/span&gt;
+Sub1.superclass = Base.prototype; &lt;span class=&quot;comment&quot;&gt;// 继承完后定义好基类, 可选&lt;/span&gt;
+
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; b = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Sub1(); &lt;span class=&quot;comment&quot;&gt;// 使用&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// =&amp;gt; Sub1 {name: &quot;Sub1&quot;}&lt;/span&gt;
+b.getName(); &lt;span class=&quot;comment&quot;&gt;// 使用继承自Base原型链上的getName函数&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;// =&amp;gt;&quot;Sub1&quot;&lt;/span&gt;
+Sub1.prototype;
+&lt;span class=&quot;comment&quot;&gt;// =&amp;gt; Base {name: &quot;Base&quot;, constructor: ƒ}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;代码样版&quot;&gt;&lt;a href=&quot;#代码样版&quot; class=&quot;headerlink&quot; title=&quot;代码样版&quot;&gt;&lt;/a&gt;代码样版&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
+    
+  </entry>
   
   <entry>
     <title>javascript函数式编程之 函子（functor）</title>
@@ -126,7 +173,7 @@
     <link href="http://www.kuangzen.com/2017/07/12/point-free/"/>
     <id>http://www.kuangzen.com/2017/07/12/point-free/</id>
     <published>2017-07-12T00:46:35.000Z</published>
-    <updated>2017-07-12T02:10:16.093Z</updated>
+    <updated>2017-07-12T02:10:16.094Z</updated>
     
     <content type="html">&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;无参风格是一种编程范例，其中函数定义&lt;strong&gt;不能识别它们所运行的参数（或“点”）&lt;/strong&gt;。 相反，它只是组合(&lt;code&gt;compose&lt;/code&gt;)其他函数，在其子函数中操纵参数的组合器。&lt;br&gt;因为严格使用组合可以很好地适应等式推理的程序，它也是某些编程语言的自然风格，包括APL和诸如Forth之类的连接语言。&lt;br&gt;例子如下：  &lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 比如，现成的函数如下：&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; toUpperCase = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; str.toUpperCase(); &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; split = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; str.split(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;); &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; reverse = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;arr&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; arr.reverse(); &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; join = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;arr&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; arr.join(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;); &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 现要由现成的函数定义一个point-free函数toUpperCaseAndReverse&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; toUpperCaseAndReverse = _.flowRight(join, reverse, split, toUpperCase); &lt;span class=&quot;comment&quot;&gt;// 自右向左流动执行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// toUpperCaseAndReverse是一个point-free函数，它定义时并无可识别参数。只是在其子函数中操纵参数。flowRight是引入了lodash库的组合函数，相当于compose组合函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(toUpperCaseAndReverse(&lt;span class=&quot;string&quot;&gt;&#39;abcd&#39;&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; DCBA&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -250,7 +297,7 @@
     <link href="http://www.kuangzen.com/2017/02/17/advanced-algorithm-scripting/"/>
     <id>http://www.kuangzen.com/2017/02/17/advanced-algorithm-scripting/</id>
     <published>2017-02-17T07:56:51.000Z</published>
-    <updated>2017-02-17T08:25:30.306Z</updated>
+    <updated>2017-02-17T08:25:30.307Z</updated>
     
     <content type="html">&lt;h3 id=&quot;一、Validate-US-Telephone-Numbers-美国电话号码正则匹配&quot;&gt;&lt;a href=&quot;#一、Validate-US-Telephone-Numbers-美国电话号码正则匹配&quot; class=&quot;headerlink&quot; title=&quot;一、Validate US Telephone Numbers 美国电话号码正则匹配&quot;&gt;&lt;/a&gt;一、Validate US Telephone Numbers 美国电话号码正则匹配&lt;/h3&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;strong&gt;代码如下&lt;/strong&gt;:   &lt;/p&gt;
@@ -598,7 +645,7 @@
     <link href="http://www.kuangzen.com/2016/12/16/node-tool-for-kaomang-cn/"/>
     <id>http://www.kuangzen.com/2016/12/16/node-tool-for-kaomang-cn/</id>
     <published>2016-12-16T09:54:17.000Z</published>
-    <updated>2016-12-16T10:42:24.591Z</updated>
+    <updated>2016-12-16T10:42:24.592Z</updated>
     
     <content type="html">&lt;h3 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://kaomang.cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;烤芒网&lt;/a&gt;因为是全静态的网站，但要实现类似CMS系统的功能，要发布文章。所以每次要创建一个新静态文章页面，然后要修改主页文章列表，把新增的文章加上；或者要在左侧快捷菜单列表加上新的文章。   &lt;/p&gt;
 &lt;p&gt;如果每次都要手功创建的话，非常麻烦，现用node实现发布自动化。   &lt;/p&gt;
@@ -884,66 +931,6 @@
     
     </summary>
     
-    
-      <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>各类域名总数统计</title>
-    <link href="http://www.kuangzen.com/2016/08/26/statistic-of-domain-name-s-count/"/>
-    <id>http://www.kuangzen.com/2016/08/26/statistic-of-domain-name-s-count/</id>
-    <published>2016-08-26T03:11:50.000Z</published>
-    <updated>2016-08-26T06:29:50.932Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;域名无限，但精品域名资源有限，所以近几年来优质域名价格水涨船高，现在就来统计一下所有优质域名的个数吧。   &lt;/p&gt;
-&lt;h3 id=&quot;统计js代码如下：&quot;&gt;&lt;a href=&quot;#统计js代码如下：&quot; class=&quot;headerlink&quot; title=&quot;统计js代码如下：&quot;&gt;&lt;/a&gt;统计js代码如下：&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 1数10个&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 2数&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 100&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 3数&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 1,000&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 4不含0,4&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 4,096&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 4数含0,4&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;) - &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 5,904&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 5数不含0,4&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 32,768&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 5数含0,4&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;) - &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 67,232&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 6数不含0,4&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 262,144&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 6数含0,4&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;) - &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 737,856&lt;/span&gt;
-
-&lt;span class=&quot;comment&quot;&gt;// 1字母26个&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 两声域名&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 400&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 两字母非两声&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;26&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;) - &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 276&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 三声域名&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 8,000&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 三字母非三声&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;26&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;) - &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 9,576&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 四声域名&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 160,000&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 四字母非四声&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;26&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;) - &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 296,976&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;// 五声域名&lt;/span&gt;
-&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;)); &lt;span class=&quot;comment&quot;&gt;// =&amp;gt; 3,200,000&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;域名无限，但精品域名资源有限，所以近几年来优质域名价格水涨船高，现在就来统计一下所有优质域名的个数吧。   &lt;/p&gt;
-&lt;h3 id=&quot;统计j
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="http://www.kuangzen.com/tags/javascript/"/>
-    
-      <category term="前端" scheme="http://www.kuangzen.com/tags/front-end/"/>
     
       <category term="一些事一些情" scheme="http://www.kuangzen.com/tags/others/"/>
     

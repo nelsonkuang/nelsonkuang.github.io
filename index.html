@@ -289,6 +289,91 @@
 
 
   
+    <article id="post-prototype-chain-inherite" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/31/prototype-chain-inherite/" class="article-date">
+  	<time datetime="2018-01-31T02:01:13.000Z" itemprop="datePublished">2018-01-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/31/prototype-chain-inherite/">javascript原型链继承</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h3 id="代码样版"><a href="#代码样版" class="headerlink" title="代码样版"></a>代码样版</h3><pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">Base</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.name=<span class="string">'Base'</span>;
+}
+Base.prototype = {
+    <span class="keyword">constructor</span>: Base,
+    getName: function() {
+        <span class="keyword">return</span> <span class="keyword">this</span>.name;
+    }
+}
+
+<span class="comment">// Sub1 inherited from Base through prototype chain</span>
+<span class="function"><span class="keyword">function</span> <span class="title">Sub1</span>(<span class="params"></span>) </span>{
+    <span class="keyword">this</span>.name=<span class="string">'Sub1'</span>;
+}
+Sub1.prototype = <span class="keyword">new</span> Base(); <span class="comment">// 原型链继承</span>
+Sub1.prototype.constructor = Sub1; <span class="comment">// 继承完后定义好构造函数, 可选</span>
+Sub1.superclass = Base.prototype; <span class="comment">// 继承完后定义好基类, 可选</span>
+
+<span class="keyword">var</span> b = <span class="keyword">new</span> Sub1(); <span class="comment">// 使用</span>
+<span class="comment">// =&gt; Sub1 {name: "Sub1"}</span>
+b.getName(); <span class="comment">// 使用继承自Base原型链上的getName函数</span>
+<span class="comment">// =&gt;"Sub1"</span>
+Sub1.prototype;
+<span class="comment">// =&gt; Base {name: "Base", constructor: ƒ}</span>
+</code></pre>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-functor" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -801,69 +886,6 @@
 
 
   
-    <article id="post-intermediate-algorithm-scripting-7-12" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/17/intermediate-algorithm-scripting-7-12/" class="article-date">
-  	<time datetime="2017-02-17T07:28:38.000Z" itemprop="datePublished">2017-02-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/17/intermediate-algorithm-scripting-7-12/">我完成的FreeCodeCamp中的中级算法编码题 7-12</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h3 id="七、DNA-Pairing-生成DNA配对"><a href="#七、DNA-Pairing-生成DNA配对" class="headerlink" title="七、DNA Pairing 生成DNA配对"></a>七、DNA Pairing 生成DNA配对</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FreeCodeCamp/">FreeCodeCamp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/front-end/">前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/02/17/intermediate-algorithm-scripting-7-12/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -877,7 +899,7 @@
             友情链接：<a target="_blank" href="http://www.iampua.com/">泡学达人</a> | <a target="_blank" href="http://www.cnblogs.com/fastmover/">我的cnblog</a> | <a target="_blank" href="mailto:kbl_1794@qq.com">联系博主</a>
     	    <br>
     	    <br>    	
-    		Copyright &copy; 2015-2017 kuangzen.com | Hexo theme designed by Yilia.
+    		Copyright &copy; 2015-2018 kuangzen.com | Hexo theme designed by Yilia.
     	</div>
     </div>
   </div>         
