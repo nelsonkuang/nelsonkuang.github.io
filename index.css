@@ -24,15 +24,42 @@ html, body {
 }
 
 .editor__code {
-  width: 50%;
+  flex: none;
+  width: 754px;
   height: 100%;
   position: relative;
 }
 
+.editor__code__resizer {
+  flex: none;
+  width: 10px;
+  height: 100%;
+  cursor: ew-resize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 12px;
+}
+
+.editor__code__resizer:hover {
+  background-color: #ccc;
+}
+
+.code-editor__resizer-layer {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+
 .editor__viewport {
-  width: 50%;
+  flex: auto;
   height: 100%;
   position: relative;
+  background-color: #000;
 }
 
 .editor__menu {
@@ -94,4 +121,36 @@ html, body {
 .code-editor__dropdown-item {
   padding: 10px;
   cursor: pointer;
+}
+
+.loading-container {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  bottom: 50px;
+  right: 50px;
+  z-index: 9999;
+  display: none;
+}
+
+.loading-container--visible {
+  display: block;
+}
+
+.loading-spinner {
+  border: 10px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3498db;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
 }
